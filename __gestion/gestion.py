@@ -12,6 +12,7 @@ for estudiante in estudiantes['Información de curso']:
     estudiante = estudiante.title()
     estudiante = estudiante.split(',')
     estudiante = estudiante[1].strip() + ' ' + estudiante[0].strip()
+    estudiante = estudiante.replace('ñ', 'n')
 
     try:
         os.mkdir(os.path.join('estudiantes', estudiante))
