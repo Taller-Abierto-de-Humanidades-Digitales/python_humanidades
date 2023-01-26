@@ -5,6 +5,7 @@
 - Fecha de inicio: 2023-01-24
 - Fecha final: 2023-05-23
 - Horario: martes, 17:00 - 19:40 [GMT-5](https://hora.mx/GMT-5)
+- Repo: [https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso](https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso)
 
 ---
 
