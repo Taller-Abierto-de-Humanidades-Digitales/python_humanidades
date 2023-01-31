@@ -7,6 +7,7 @@
 - Horario: martes, 17:00 - 19:40 [GMT-5](https://hora.mx/GMT-5)
 - Repo: [https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso](https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso)
 
+
 ---
 
 ## Programa del curso
@@ -17,12 +18,22 @@
 
 ### 1. Introducción: Configurar un entorno de desarrollo para Python
 
-- [Instalar Python](tutoriales/1.instalarPython.md)
-- [Introducción a la terminal de comandos](tutoriales/2.terminal.md)
-- [Instalar Visual Studio Code](tutoriales/3.instalarVSCode.md)
-- [Instalar Git](tutoriales/4.Git.md)
-- [Sincronizar con Github](tutoriales/5.Github.md)
+- [Instalar Python](tutoriales/1-instalarPython.md)
+- [Introducción a la terminal de comandos](tutoriales/2-terminal.md)
+- [Instalar Visual Studio Code](tutoriales/3-instalarVSCode.md)
+- [Instalar Git](tutoriales/4-Git.md)
+- [Sincronizar con Github](tutoriales/5-Github.md)
 
 #### Actividad 1: Configurar un entorno de desarrollo para Python
 
 - [Actividad 1: Configurar un entorno de desarrollo para Python](actividades/1.configuracion.md)
+
+### 2. Introducción a Python
+
+- [Introducción a Python](tutoriales/6-python.md)
+- [Variables y tipos de datos](tutoriales/7-variables.md)
+- [Operadores](tutoriales/8-operadores.md)
+
+#### Actividad 2: Variables y sintaxis
+
+- [Actividad 2: Variables y sintaxis](actividades/2.sintaxis_variables.md)
