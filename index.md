@@ -33,6 +33,7 @@
 - [Introducción a Python](tutoriales/6-python.md)
 - [Variables y tipos de datos](tutoriales/7-variables.md)
 - [Operadores](tutoriales/8-operadores.md)
+- [Operaciones con cadenas de texto](tutoriales/9-operaciones_string.md)
 
 #### Actividad 2: Variables y sintaxis
 
