@@ -62,6 +62,18 @@ del listado_nombres[-3]
 
 # # Selecciona el último elemento
 # print(listado_nombres.pop())
+# .pop elimina de la lista pero guarda el elemento eliminado
+
+# programming languages list
+languages = ['Python', 'Java', 'C++', 'French', 'C']
+
+# remove and return the 4th item
+return_value = languages.pop(3)
+
+print('Return Value:', return_value)
+
+# Updated List
+print('Updated List:', languages)
 
 # # Eliminar uno de los elementos
 
