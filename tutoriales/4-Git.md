@@ -19,9 +19,7 @@ Git es un sistema de control de versiones que nos permite guardar el historial d
 
 1. Abrir la terminal de comandos.
 2. Escribir el comando `git config --global user.name "Tu nombre"` para configurar el nombre de usuario de Git. Utiliza tu mismo usuario de Github.
-3. Escribir el comando `git config --global user.email "
-
-Tu correo electrónico"` para configurar el correo electrónico de usuario de Git. Utiliza el mismo correo electrónico que utilizas en Github.
+3. Escribir el comando `git config --global user.email "Tu correo electrónico"` para configurar el correo electrónico de usuario de Git. Utiliza el mismo correo electrónico que utilizas en Github.
 
 ```bash
 git config --global user.name "Tu nombre"
