@@ -26,7 +26,7 @@
 
 #### Actividad 1: Configurar un entorno de desarrollo para Python
 
-- [Actividad 1: Configurar un entorno de desarrollo para Python](actividades/1.configuracion.md)
+- [Actividad 1: Configurar un entorno de desarrollo para Python](actividades/1-configuracion.md)
 
 ### 2. Introducción a Python
 
@@ -37,4 +37,4 @@
 
 #### Actividad 2: Variables y sintaxis
 
-- [Actividad 2: Variables y sintaxis](actividades/2.sintaxis_variables.md)
+- [Actividad 2: Variables y sintaxis](actividades/2-sintaxis_variables.md)

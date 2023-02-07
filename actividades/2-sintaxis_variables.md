@@ -92,7 +92,7 @@ Cada operador debe ser aplicado a la frase e imprimirla usando `format()`. Por e
 print(f"Esta es la frase concatenada: {frase + 'hola'}")
 ```
 
-Para este ejercicio, debes crear un archivo llamado `act2_4.py` en el directorio con tu nombre. 
+Para este ejercicio, debes crear un archivo llamado `act2_4.py` en el directorio con tu nombre.
 
 ## Entrega
 
