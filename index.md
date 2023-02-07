@@ -38,3 +38,11 @@
 #### Actividad 2: Variables y sintaxis
 
 - [Actividad 2: Variables y sintaxis](actividades/2-sintaxis_variables.md)
+
+### 3. Listas
+
+- [Listas](tutoriales/10-listas.md)
+
+#### Actividad 3: Listas
+
+- [Actividad 3: Listas](actividades/3-listas.md)
