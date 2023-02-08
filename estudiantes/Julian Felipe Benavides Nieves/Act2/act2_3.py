@@ -17,11 +17,12 @@ print(f"\nEsta es la frase con la primera letra en mayúsculas: {frase.strip().c
 print(f"\nEsta es la frase con la primera letra de cada palabra en mayúscula: {frase.title()}")
 print(f"\nEsta es la frase con las mayúsculas y las minúsculas invertidas: {frase.swapcase()}")
 print(f"\nEsta es la frase sin espacios al principio y al final: {frase.strip()}")
+print(f"\nEsta es la frase si todas las 'a' fueron arrobas: {frase.replace('a' , '@')}")
 print(f"\nEsta es la frase con las palabras separadas por comas: {frase.split()}")
 
 # Tuve que hacer una trampa acá porque no me dejaba hacer el remplazo de esta forma:
-# print(f"Esta es la frase si todas las 'a' fueron arrobas: {frase.replace("a" , "@")}")
+
 # entonces modifique la variable de forma independiente y me funcionó
 
-frase = frase.replace("a" , "@")
-print(f"\nEsta es la frase si todas las 'a' fueron arrobas: {frase}")
+# frase = frase.replace("a" , "@")
+# print(f"\nEsta es la frase si todas las 'a' fueron arrobas: {frase}")
