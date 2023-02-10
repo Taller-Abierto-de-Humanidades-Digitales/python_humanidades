@@ -14,6 +14,10 @@
 
 - [Descargar el programa del curso](https://drive.google.com/file/d/1AyzRp0SmcHGU20aGteHM4f1W2GVYnBvH/view?usp=share_link)
 
+## Material adicional y de soporte
+
+- [Presentación Git & Github](https://docs.google.com/presentation/d/1yDexViSugtpToTQO7wGrx1P1yDuBJqrH7jePB9_6zac/edit?usp=sharing)
+
 ## Desarrollo del curso
 
 ### 1. Introducción: Configurar un entorno de desarrollo para Python
