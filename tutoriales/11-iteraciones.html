@@ -1,0 +1,1260 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Iteraciones (for loops) &#8212; Curso de Python para las HD</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Actividad 4: Iteraciones" href="../actividades/4-iteraciones.html" />
+    <link rel="prev" title="Actividad 3: Listas (operaciones básicas)" href="../actividades/3-listas.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso de Python para las HD</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Fundamentos de programación
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción. Configurar un entorno de desarrollo para Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-instalarPython.html">
+   Instalar Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-terminal.html">
+   Terminal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-instalarVSCode.html">
+   Instalar VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-Git.html">
+   Configurar Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-Github.html">
+   Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/1-configuracion.html">
+   Actividad 1: Configurar un entorno de desarrollo para Python
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción a Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-python.html">
+   Introducción a Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-variables.html">
+   Sintaxis, variables y tipos de datos básicos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-operadores.html">
+   Operadores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-operaciones_string.html">
+   Operaciones con cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/2-sintaxis_variables.html">
+   Actividad 2: Variables y sintaxis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Listas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-listas.html">
+   Listas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/3-listas.html">
+   Actividad 3: Listas (operaciones básicas)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Iteraciones (for loops)
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Iteraciones (
+   <em>
+    for loops
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/4-iteraciones.html">
+   Actividad 4: Iteraciones
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Recursos adicionales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/gh-pages?urlpath=tree/tutoriales/11-iteraciones.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/11-iteraciones.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/tutoriales/11-iteraciones.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/tutoriales/11-iteraciones.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterando-sobre-una-lista">
+   Iterando sobre una lista
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sintaxis-de-los-loops">
+   Sintaxis de los
+   <em>
+    loops
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#olvidarse-de-indentar">
+     Olvidarse de indentar
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#olvidarse-de-indentar-lineas-adicionales">
+     Olvidarse de indentar líneas adicionales
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indentacion-innecesaria">
+     Indentación innecesaria
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#olvidarse-de-los-dos-puntos">
+     Olvidarse de los dos puntos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listas-numericas-o-por-rango">
+   Listas numéricas o por rango
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#llenar-listas-con-loops">
+   Llenar listas con
+   <em>
+    loops
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops-anidados">
+   <em>
+    Loops
+   </em>
+   anidados
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops-sobre-cadenas-de-caracteres">
+   <em>
+    Loops
+   </em>
+   sobre cadenas de caracteres
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterar-sobre-partes-de-una-lista">
+   Iterar sobre partes de una lista
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterar-en-una-lista-anidada">
+   Iterar en una lista anidada
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listas-de-comprension">
+   Listas de comprensión
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Iteraciones (for loops)</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterando-sobre-una-lista">
+   Iterando sobre una lista
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sintaxis-de-los-loops">
+   Sintaxis de los
+   <em>
+    loops
+   </em>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#olvidarse-de-indentar">
+     Olvidarse de indentar
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#olvidarse-de-indentar-lineas-adicionales">
+     Olvidarse de indentar líneas adicionales
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#indentacion-innecesaria">
+     Indentación innecesaria
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#olvidarse-de-los-dos-puntos">
+     Olvidarse de los dos puntos
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listas-numericas-o-por-rango">
+   Listas numéricas o por rango
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#llenar-listas-con-loops">
+   Llenar listas con
+   <em>
+    loops
+   </em>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops-anidados">
+   <em>
+    Loops
+   </em>
+   anidados
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loops-sobre-cadenas-de-caracteres">
+   <em>
+    Loops
+   </em>
+   sobre cadenas de caracteres
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterar-sobre-partes-de-una-lista">
+   Iterar sobre partes de una lista
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#iterar-en-una-lista-anidada">
+   Iterar en una lista anidada
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listas-de-comprension">
+   Listas de comprensión
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="iteraciones-for-loops">
+<h1>Iteraciones (<em>for loops</em>)<a class="headerlink" href="#iteraciones-for-loops" title="Permalink to this headline">#</a></h1>
+<p>Después de haber explorado las variables, tipos básicos de datos, operaciones con textos y listas, podemos iniciar nuestro camino hacia la automatización de tareas. Uno de estos procesos es la iteración, repetición o <em>loops</em>.</p>
+<p>Efectivamente, una de las tareas más directas en las que nos puede ayudar una computador es la de poder ejecutar tareas repetitivas de manera lógica. Una iteración, en términos simples, es un proceso en el cual se repite una tarea una y otra vez, hasta que se cumpla una condición. En el caso de un <em>for loop</em>, esta condición es que se hayan recorrido todos los elementos de una lista o un rango de números.</p>
+<p>Vamos a ver esto con un poco más de detalle.</p>
+<section id="iterando-sobre-una-lista">
+<h2>Iterando sobre una lista<a class="headerlink" href="#iterando-sobre-una-lista" title="Permalink to this headline">#</a></h2>
+<p>Vamos a crear una lista con los nombres de los países de Sudamérica:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paises</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Argentina&#39;</span><span class="p">,</span> <span class="s1">&#39;Bolivia&#39;</span><span class="p">,</span> <span class="s1">&#39;Brasil&#39;</span><span class="p">,</span> <span class="s1">&#39;Chile&#39;</span><span class="p">,</span> <span class="s1">&#39;Colombia&#39;</span><span class="p">,</span> <span class="s1">&#39;Ecuador&#39;</span><span class="p">,</span> <span class="s1">&#39;Guyana&#39;</span><span class="p">,</span> <span class="s1">&#39;Paraguay&#39;</span><span class="p">,</span> <span class="s1">&#39;Perú&#39;</span><span class="p">,</span> <span class="s1">&#39;Surinam&#39;</span><span class="p">,</span> <span class="s1">&#39;Uruguay&#39;</span><span class="p">,</span> <span class="s1">&#39;Venezuela&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora, vamos a iterar sobre esta lista, imprimiendo cada uno de los elementos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pais</span> <span class="ow">in</span> <span class="n">paises</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pais</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Argentina
+Bolivia
+Brasil
+Chile
+Colombia
+Ecuador
+Guyana
+Paraguay
+Perú
+Surinam
+Uruguay
+Venezuela
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vamos a ver qué está pasando en este código. La primera línea es la que define el <em>loop</em>:</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pais</span> <span class="ow">in</span> <span class="n">paises</span><span class="p">:</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La palabra  <code class="docutils literal notranslate"><span class="pre">for</span></code> indica que vamos a iterar sobre una lista. Podemos entender el valor <code class="docutils literal notranslate"><span class="pre">pais</span></code> como una variable que va a tomar el valor de cada uno de los elementos de la lista <code class="docutils literal notranslate"><span class="pre">paises</span></code>. En cada iteración, el valor de <code class="docutils literal notranslate"><span class="pre">pais</span></code> va a cambiar, y va a tomar el valor del siguiente elemento de la lista. En la primera iteración, <code class="docutils literal notranslate"><span class="pre">pais</span></code> va a tomar el valor de <code class="docutils literal notranslate"><span class="pre">'Argentina'</span></code>, en la segunda, el valor de <code class="docutils literal notranslate"><span class="pre">'Bolivia'</span></code>, y así sucesivamente.</p>
+<p>La segunda línea es la que se va a ejecutar en cada iteración:</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    <span class="nb">print</span><span class="p">(</span><span class="n">pais</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, estamos imprimiendo el valor de la variable <code class="docutils literal notranslate"><span class="pre">pais</span></code>. En la primera iteración, se va a imprimir <code class="docutils literal notranslate"><span class="pre">'Argentina'</span></code>, en la segunda, <code class="docutils literal notranslate"><span class="pre">'Bolivia'</span></code>, y así sucesivamente. Técnicamente, podemos hacer lo que queramos con esta variable, dependiendo de su tipo de dato y obviamente de lo que queramos lograr. En este caso, solo queremos imprimir el valor de la variable.</p>
+<p>¡Y listo! Ya hemos iterado sobre una lista. Veamos ahora un poco más sobre la sintaxis de los <em>loops</em>.</p>
+</section>
+<section id="sintaxis-de-los-loops">
+<h2>Sintaxis de los <em>loops</em><a class="headerlink" href="#sintaxis-de-los-loops" title="Permalink to this headline">#</a></h2>
+<p>La sintaxis de los <em>loops</em> es muy simple. En general, se define de la siguiente manera:</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="n">lista</span><span class="p">:</span>
+    <span class="c1"># hacer algo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Presta atención a los elementos de esta sintaxis.</p>
+<p>Por una parte, la primera línea se escribe siempre de la forma <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">variable</span> <span class="pre">in</span> <span class="pre">lista</span></code>, es decir, siempre utilizamos los términos <code class="docutils literal notranslate"><span class="pre">for</span></code> e <code class="docutils literal notranslate"><span class="pre">in</span></code>. Estos términos son palabras claves del lenguaje Python, y no pueden ser reemplazados por otros ni pueden usarse como nombres de variables.</p>
+<p>La línea además termina con dos puntos (<code class="docutils literal notranslate"><span class="pre">:</span></code>). Esto es muy importante, ya que indica que la línea es una definición de un <em>loop</em>, y que la siguiente línea es la primera línea de código que se va a ejecutar en cada iteración.</p>
+<p>A partir de la segunda línea, se escribe el bloque de código que queremos que se ejecute en cada iteración. Este bloque de código debe estar indentado, es decir, debe tener un tabulador o cuatro espacios al comienzo de cada línea.</p>
+<p>Si no tenemos en cuenta lo anterior podemos encontrar los siguientes errores:</p>
+<section id="olvidarse-de-indentar">
+<h3>Olvidarse de indentar<a class="headerlink" href="#olvidarse-de-indentar" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pais</span> <span class="ow">in</span> <span class="n">paises</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pais</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pais</span><span class="p">)</span>
+    <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block after &#39;for&#39; statement on line 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este error de indentación muestra que no hemos dado los espacios necesarios para que Python entienda que este es un bloque de código. Esto lo sabe porque espera que después de los dos puntos exista un bloque de código o al menos una instrucción.</p>
+</section>
+<section id="olvidarse-de-indentar-lineas-adicionales">
+<h3>Olvidarse de indentar líneas adicionales<a class="headerlink" href="#olvidarse-de-indentar-lineas-adicionales" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pais</span> <span class="ow">in</span> <span class="n">paises</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pais</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">pais</span><span class="si">}</span><span class="s1"> es una país sudamericano.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Argentina
+Bolivia
+Brasil
+Chile
+Colombia
+Ecuador
+Guyana
+Paraguay
+Perú
+Surinam
+Uruguay
+Venezuela
+Venezuela es una país sudamericano.
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso no hay un error de sintaxis, pero el resultado no es el que esperábamos. La idea original del código es que se mostrara en pantalla lo siguiente:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Argentina
+Argentina<span class="w"> </span>es<span class="w"> </span>un<span class="w"> </span>país<span class="w"> </span>sudamericano
+Bolivia
+Bolivia<span class="w"> </span>es<span class="w"> </span>un<span class="w"> </span>país<span class="w"> </span>sudamericano
+Brasil
+Brasil<span class="w"> </span>es<span class="w"> </span>un<span class="w"> </span>país<span class="w"> </span>sudamericano
+...
+Uruguay
+Uruguay<span class="w"> </span>es<span class="w"> </span>un<span class="w"> </span>país<span class="w"> </span>sudamericano
+Venezuela
+Venezuela<span class="w"> </span>es<span class="w"> </span>un<span class="w"> </span>país<span class="w"> </span>sudamericano
+</pre></div>
+</div>
+<p>En lugar de eso, solamente nos muestra el último país de la lista. Esto se debe a un error lógico.</p>
+</section>
+<section id="indentacion-innecesaria">
+<h3>Indentación innecesaria<a class="headerlink" href="#indentacion-innecesaria" title="Permalink to this headline">#</a></h3>
+<p>También puede suceder lo contrario, que se haya indentado una línea que no debía estar indentada:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pais</span> <span class="ow">in</span> <span class="n">paises</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pais</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Ha finalizado la lista de países sudamericanos.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Argentina
+Ha finalizado la lista de países sudamericanos.
+Bolivia
+Ha finalizado la lista de países sudamericanos.
+Brasil
+Ha finalizado la lista de países sudamericanos.
+Chile
+Ha finalizado la lista de países sudamericanos.
+Colombia
+Ha finalizado la lista de países sudamericanos.
+Ecuador
+Ha finalizado la lista de países sudamericanos.
+Guyana
+Ha finalizado la lista de países sudamericanos.
+Paraguay
+Ha finalizado la lista de países sudamericanos.
+Perú
+Ha finalizado la lista de países sudamericanos.
+Surinam
+Ha finalizado la lista de países sudamericanos.
+Uruguay
+Ha finalizado la lista de países sudamericanos.
+Venezuela
+Ha finalizado la lista de países sudamericanos.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como podemos observar, el resultado no es el esperado. Queríamos que al finalizar de mostrarse cada elemento de la lista se mostrara el mensaje <code class="docutils literal notranslate"><span class="pre">Ha</span> <span class="pre">finalizado</span> <span class="pre">la</span> <span class="pre">lista</span> <span class="pre">de</span> <span class="pre">países</span> <span class="pre">sudamericanos.</span></code>. Una mala indentación hace que el mensaje se muestre con cada iteración.</p>
+</section>
+<section id="olvidarse-de-los-dos-puntos">
+<h3>Olvidarse de los dos puntos<a class="headerlink" href="#olvidarse-de-los-dos-puntos" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pais</span> <span class="ow">in</span> <span class="n">paises</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pais</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">pais</span> <span class="ow">in</span> <span class="n">paises</span>
+                      <span class="o">^</span>
+<span class="ne">SyntaxError</span>: expected &#39;:&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, nos enfrentamos a un error en la sintaxis. Python entiende que se está usando la instrucción <code class="docutils literal notranslate"><span class="pre">for</span></code>, pero requiere que se le indique que se está definiendo un <em>loop</em> con los dos puntos.</p>
+</section>
+</section>
+<section id="listas-numericas-o-por-rango">
+<h2>Listas numéricas o por rango<a class="headerlink" href="#listas-numericas-o-por-rango" title="Permalink to this headline">#</a></h2>
+<p>Son muchas las ocasiones en las que necesitamos iterar sobre una serie de números, es decir, sobre una lista numérica. Si esta lista sigue una secuencia numérica, podemos utilizar la función <code class="docutils literal notranslate"><span class="pre">range()</span></code> para crearla. Esta función recibe dos parámetros, el número inicial y el final de la secuencia. Por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notemos que el número final no se incluye en la lista. En este caso, la lista va a contener los números del 1 al 4. Es decir, tenemos que tener en cuenta que la lista dentro del rango incluye el número inicial y excluye el número final.</p>
+<p>También podemos crear sencuencias numéricas para mostrar los números pares, por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+6
+8
+10
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, el tercer parámetro de la función <code class="docutils literal notranslate"><span class="pre">range()</span></code> indica el <em>step</em>, es decir, el número de unidades que se va a avanzar en cada iteración. Si el <em>step</em> es 2 significa que se va a avanzar de 2 en 2. Claramente podríamos hacer algo similar para mostrar los números impares:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+3
+5
+7
+9
+</pre></div>
+</div>
+</div>
+</div>
+<p>Siguiendo este mismo método podemos crear secuencias numéricas inversas si añadimos un argumento de pasos negativo. Por ejemplo, si queremos mostrar los números del 5 al 1, podemos hacer lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">numero</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+4
+3
+2
+1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="llenar-listas-con-loops">
+<h2>Llenar listas con <em>loops</em><a class="headerlink" href="#llenar-listas-con-loops" title="Permalink to this headline">#</a></h2>
+<p>Uno de los procesos que podemos hacer con los <em>loops</em> consiste en llenar listas vacías. Por ejemplo, si queremos crear una lista con las iniciales de cada uno de los países sudamericanos, podemos hacer lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iniciales</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">pais</span> <span class="ow">in</span> <span class="n">paises</span><span class="p">:</span>
+    <span class="n">iniciales</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pais</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iniciales</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;C&#39;, &#39;C&#39;, &#39;E&#39;, &#39;G&#39;, &#39;P&#39;, &#39;P&#39;, &#39;S&#39;, &#39;U&#39;, &#39;V&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como puedes ver, aquí combinamos varias operaciones que hemos aprendido a lo largo del curso:</p>
+<ul class="simple">
+<li><p>Creamos una lista vacía.</p></li>
+<li><p>Iteramos sobre la lista <code class="docutils literal notranslate"><span class="pre">paises</span></code>.</p></li>
+<li><p>“Recortamos” una cadena de texto para obtener la primera letra.</p></li>
+<li><p>Añadimos la letra a la lista vacía.</p></li>
+</ul>
+</section>
+<section id="loops-anidados">
+<h2><em>Loops</em> anidados<a class="headerlink" href="#loops-anidados" title="Permalink to this headline">#</a></h2>
+<p>Un <em>loop</em> anidado se refiere a una iteración dentro de otra iteración. Revisa el siguiente ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;Era la estación de las lluvias en Bangkok&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">palabra</span> <span class="ow">in</span> <span class="n">frase</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">letra</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">letra</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E r a 
+l a 
+e s t a c i ó n 
+d e 
+l a s 
+l l u v i a s 
+e n 
+B a n g k o k 
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este ejemplo, tomamos una lista obtenida a partir de aplicar el método <code class="docutils literal notranslate"><span class="pre">split()</span></code> a la frase. El primer <em>loop</em> itera sobre cada una de las palabras de la lista, en tanto el segundo <em>loop</em> itera sobre cada una de las letras de cada palabra. Por cada iteración del segundo <em>loop</em> se imprime la letra y se agrega un espacio en blanco. Al finalizar la iteración del segundo <em>loop</em> se imprime un salto de línea.</p>
+</section>
+<section id="loops-sobre-cadenas-de-caracteres">
+<h2><em>Loops</em> sobre cadenas de caracteres<a class="headerlink" href="#loops-sobre-cadenas-de-caracteres" title="Permalink to this headline">#</a></h2>
+<p>En el ejemplo anterior realizamos el <code class="docutils literal notranslate"><span class="pre">split</span></code> de la frase antes de iterar sobre ella. ¿Qué pasaría si no hicieramos esto? Veamos:</p>
+<div class="cell tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">frase</span> <span class="o">=</span> <span class="s2">&quot;Era la estación de las lluvias en Bangkok&quot;</span>
+
+<span class="k">for</span> <span class="n">palabra</span> <span class="ow">in</span> <span class="n">frase</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E
+r
+a
+ 
+l
+a
+ 
+e
+s
+t
+a
+c
+i
+ó
+n
+ 
+d
+e
+ 
+l
+a
+s
+ 
+l
+l
+u
+v
+i
+a
+s
+ 
+e
+n
+ 
+B
+a
+n
+g
+k
+o
+k
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esto sucede porque la cadena de caracteres es iterable. Es importante tener en cuenta esto porque nos podemos enfrentar a situaciones donde este no sería el resultado esperado.</p>
+</section>
+<section id="iterar-sobre-partes-de-una-lista">
+<h2>Iterar sobre partes de una lista<a class="headerlink" href="#iterar-sobre-partes-de-una-lista" title="Permalink to this headline">#</a></h2>
+<p>Podemos tener la posibilidad de iterar solamente sobre una parte de la lista, lo cual en general es una práctica recomendable si tenemos una gran cantidad de datos y queremos probar nuestro código con una pequeña muestra. Para ello podemos utilizar el operador de <em>slicing</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pais</span> <span class="ow">in</span> <span class="n">paises</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pais</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Argentina
+Bolivia
+Brasil
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, estamos iterando sobre los tres primeros elementos de la lista <code class="docutils literal notranslate"><span class="pre">paises</span></code>. Si queremos iterar sobre los tres últimos elementos, podemos hacer lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pais</span> <span class="ow">in</span> <span class="n">paises</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">:]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pais</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Surinam
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Uruguay
+Venezuela
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="iterar-en-una-lista-anidada">
+<h2>Iterar en una lista anidada<a class="headerlink" href="#iterar-en-una-lista-anidada" title="Permalink to this headline">#</a></h2>
+<p>En ocasiones, las listas pueden contener otras listas. En este caso, podemos iterar sobre cada una de las listas anidadas. Por ejemplo, si tenemos una lista de listas con los nombres de los países sudamericanos y sus capitales, podemos iterar sobre cada una de las listas anidadas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">paises_capitales</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">&#39;Argentina&#39;</span><span class="p">,</span> <span class="s1">&#39;Buenos Aires&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Bolivia&#39;</span><span class="p">,</span> <span class="s1">&#39;La Paz&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Brasil&#39;</span><span class="p">,</span> <span class="s1">&#39;Brasilia&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Chile&#39;</span><span class="p">,</span> <span class="s1">&#39;Santiago de Chile&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Colombia&#39;</span><span class="p">,</span> <span class="s1">&#39;Bogotá&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Ecuador&#39;</span><span class="p">,</span> <span class="s1">&#39;Quito&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Guyana&#39;</span><span class="p">,</span> <span class="s1">&#39;Georgetown&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Paraguay&#39;</span><span class="p">,</span> <span class="s1">&#39;Asunción&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Perú&#39;</span><span class="p">,</span> <span class="s1">&#39;Lima&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Surinam&#39;</span><span class="p">,</span> <span class="s1">&#39;Paramaribo&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Uruguay&#39;</span><span class="p">,</span> <span class="s1">&#39;Montevideo&#39;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s1">&#39;Venezuela&#39;</span><span class="p">,</span> <span class="s1">&#39;Caracas&#39;</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">pais_capital</span> <span class="ow">in</span> <span class="n">paises_capitales</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pais_capital</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Argentina&#39;, &#39;Buenos Aires&#39;]
+[&#39;Bolivia&#39;, &#39;La Paz&#39;]
+[&#39;Brasil&#39;, &#39;Brasilia&#39;]
+[&#39;Chile&#39;, &#39;Santiago de Chile&#39;]
+[&#39;Colombia&#39;, &#39;Bogotá&#39;]
+[&#39;Ecuador&#39;, &#39;Quito&#39;]
+[&#39;Guyana&#39;, &#39;Georgetown&#39;]
+[&#39;Paraguay&#39;, &#39;Asunción&#39;]
+[&#39;Perú&#39;, &#39;Lima&#39;]
+[&#39;Surinam&#39;, &#39;Paramaribo&#39;]
+[&#39;Uruguay&#39;, &#39;Montevideo&#39;]
+[&#39;Venezuela&#39;, &#39;Caracas&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, la variable <code class="docutils literal notranslate"><span class="pre">pais_capital</span></code> es una lista anidada que contiene el nombre del país y su capital. Teniendo en cuenta esto, podríamos iterar sobre cada una de las listas anidadas para obtener su capital:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">pais_capital</span> <span class="ow">in</span> <span class="n">paises_capitales</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">pais_capital</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Buenos Aires
+La Paz
+Brasilia
+Santiago de Chile
+Bogotá
+Quito
+Georgetown
+Asunción
+Lima
+Paramaribo
+Montevideo
+Caracas
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esto se logra porque <code class="docutils literal notranslate"><span class="pre">print()</span></code> está recibiendo un argumento de tipo lista, por lo que nos es posible acceder a su segundo elemento a través de un índice.</p>
+</section>
+<section id="listas-de-comprension">
+<h2>Listas de comprensión<a class="headerlink" href="#listas-de-comprension" title="Permalink to this headline">#</a></h2>
+<p>Una forma eficiente para crear listas es a través de las denominadas listas de comprensión. Estas nos permite crear una lista a través de iteraciones en una sola línea de código. Veamos cómo funciona.</p>
+<p>Recordemos cómo llenamos una lista vacía a través de un loop:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iniciales</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">pais</span> <span class="ow">in</span> <span class="n">paises</span><span class="p">:</span>
+    <span class="n">iniciales</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pais</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iniciales</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;C&#39;, &#39;C&#39;, &#39;E&#39;, &#39;G&#39;, &#39;P&#39;, &#39;P&#39;, &#39;S&#39;, &#39;U&#39;, &#39;V&#39;]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora bien, una lista de comprensión nos permite hacerlo en una sola línea de código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iniciales</span> <span class="o">=</span> <span class="p">[</span><span class="n">pais</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">pais</span> <span class="ow">in</span> <span class="n">paises</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">iniciales</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;A&#39;, &#39;B&#39;, &#39;B&#39;, &#39;C&#39;, &#39;C&#39;, &#39;E&#39;, &#39;G&#39;, &#39;P&#39;, &#39;P&#39;, &#39;S&#39;, &#39;U&#39;, &#39;V&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>La sintaxis de este tipo de listas es la siguiente:</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">nombre_variable</span> <span class="k">for</span> <span class="n">nombre_variable</span> <span class="ow">in</span> <span class="n">nombre_lista</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa que estamos utilizando los mismos elementos de un <em>loop</em> tradicional, pero simplemente cambiamos el orden para que todo se pueda escribir en una sola línea.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutoriales"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../actividades/3-listas.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Actividad 3: Listas (operaciones básicas)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../actividades/4-iteraciones.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Actividad 4: Iteraciones</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

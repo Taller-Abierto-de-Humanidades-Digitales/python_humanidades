@@ -1,0 +1,667 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Actividad 2: Variables y sintaxis &#8212; Curso de Python para las HD</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Listas" href="../tutoriales/10-listas.html" />
+    <link rel="prev" title="Operaciones con cadenas de caracteres" href="../tutoriales/9-operaciones_string.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso de Python para las HD</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Fundamentos de programación
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción. Configurar un entorno de desarrollo para Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/1-instalarPython.html">
+   Instalar Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/2-terminal.html">
+   Terminal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/3-instalarVSCode.html">
+   Instalar VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/4-Git.html">
+   Configurar Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/5-Github.html">
+   Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-configuracion.html">
+   Actividad 1: Configurar un entorno de desarrollo para Python
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción a Python
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/6-python.html">
+   Introducción a Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/7-variables.html">
+   Sintaxis, variables y tipos de datos básicos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/8-operadores.html">
+   Operadores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/9-operaciones_string.html">
+   Operaciones con cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Actividad 2: Variables y sintaxis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Listas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/10-listas.html">
+   Listas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-listas.html">
+   Actividad 3: Listas (operaciones básicas)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Iteraciones (for loops)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/11-iteraciones.html">
+   Iteraciones (
+   <em>
+    for loops
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-iteraciones.html">
+   Actividad 4: Iteraciones
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Recursos adicionales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Factividades/2-sintaxis_variables.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/actividades/2-sintaxis_variables.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-1-sintaxis">
+   Ejercicio 1: Sintaxis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-2-variables">
+   Ejercicio 2: Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-3-manipulacion-de-cadenas-de-texto">
+   Ejercicio 3: Manipulación de cadenas de texto
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-4-operadores-con-cadenas-de-texto">
+   Ejercicio 4: Operadores con cadenas de texto
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entrega">
+   Entrega
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fecha-de-entrega">
+     Fecha de entrega
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Actividad 2: Variables y sintaxis</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-1-sintaxis">
+   Ejercicio 1: Sintaxis
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-2-variables">
+   Ejercicio 2: Variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-3-manipulacion-de-cadenas-de-texto">
+   Ejercicio 3: Manipulación de cadenas de texto
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-4-operadores-con-cadenas-de-texto">
+   Ejercicio 4: Operadores con cadenas de texto
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#entrega">
+   Entrega
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fecha-de-entrega">
+     Fecha de entrega
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="actividad-2-variables-y-sintaxis">
+<h1>Actividad 2: Variables y sintaxis<a class="headerlink" href="#actividad-2-variables-y-sintaxis" title="Permalink to this headline">#</a></h1>
+<p>Las variables y la sintaxis de Python son dos aspectos básicos, sencillos y fundamentales para la programación. En esta actividad, realizaremos tres ejercicios para practicar la sintaxis de Python y aprender a utilizar variables.</p>
+<section id="ejercicio-1-sintaxis">
+<h2>Ejercicio 1: Sintaxis<a class="headerlink" href="#ejercicio-1-sintaxis" title="Permalink to this headline">#</a></h2>
+<p>El primer ejericio consiste en corregir el código de Python que se encuentra en el archivo <code class="docutils literal notranslate"><span class="pre">act2.py</span></code> en el directorio <code class="docutils literal notranslate"><span class="pre">code</span></code> de <a class="reference external" href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/tree/main/code">este repositorio</a>. El código tiene múltiples errores que deben ser corregidos para que el programa funcione correctamente.</p>
+<p>Antes de empezar la actividad, deberás sincronizar tu repositorio local con el repositorio remoto. Para esto, debes abrir la terminal de comandos y ejecutar los siguientes comandos:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>curso_python_extenso
+git<span class="w"> </span>pull
+</pre></div>
+</div>
+<p>Antes de hacer cualquier cambio, crea un branch para esta actividad. Para crear un branch, debes ejecutar el siguiente comando:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>act2
+</pre></div>
+</div>
+<p>Copia los archivos <code class="docutils literal notranslate"><span class="pre">act2.py</span></code> y <code class="docutils literal notranslate"><span class="pre">act2Validator.py</span></code> en el directorio con tu nombre (de preferencia, crea un subdirectorio para esta actividad). Deben estar ambos en el mismo directorio, de otra manera el validador no funcionará.</p>
+<p>Abre el archivo <code class="docutils literal notranslate"><span class="pre">act2.py</span></code> en Visual Studio Code y corrige los errores que se encuentran en el código. Para corregir los errores, debes leer el mensaje de error que aparece en la terminal de comandos y corregir el código en el archivo <code class="docutils literal notranslate"><span class="pre">act2.py</span></code> de acuerdo a lo que te indica el mensaje de error.</p>
+<p>Una vez que hayas corregido los errores, debes guardar los cambios en el archivo <code class="docutils literal notranslate"><span class="pre">act2.py</span></code> y ejecutar el programa. Para ejecutar el programa, debes abrir la terminal de comandos y ejecutar el siguiente comando:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>act2.py
+</pre></div>
+</div>
+<p>También puedes hacerlo directamente desde Visual Studio Code. Para esto, debes abrir el archivo <code class="docutils literal notranslate"><span class="pre">act2.py</span></code> y hacer clic en el botón <code class="docutils literal notranslate"><span class="pre">Run</span></code> que aparece en la parte superior de la ventana.</p>
+<p>Las últimas líneas del programa corresponden a un validador del código. Es decir, el programa ejecuta una serie de pruebas para verificar que el código que has escrito funciona correctamente. Si el programa no muestra ningún mensaje de error, significa que el código que has escrito funciona correctamente. Si el programa muestra un mensaje de error, significa que el código que has escrito tiene errores y debes corregirlo.</p>
+</section>
+<section id="ejercicio-2-variables">
+<h2>Ejercicio 2: Variables<a class="headerlink" href="#ejercicio-2-variables" title="Permalink to this headline">#</a></h2>
+<p>El segundo ejercicio consiste en escribir un programa que exprese la conversación entre dos personas. El programa debe contener las siguientes variables:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">nombre1</span></code>: Nombre de la primera persona</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">nombre2</span></code>: Nombre de la segunda persona</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">edad1</span></code>: Edad de la primera persona</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">edad2</span></code>: Edad de la segunda persona</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lugar</span></code>: Lugar donde se encuentran las personas</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tiempo</span></code>: Tiempo que llevan conversando</p></li>
+</ul>
+<p>El programa debe imprimir la siguiente conversación:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hola</span><span class="p">,</span> <span class="n">mi</span> <span class="n">nombre</span> <span class="n">es</span> <span class="p">[</span><span class="n">nombre1</span><span class="p">]</span> <span class="n">y</span> <span class="n">tengo</span> <span class="p">[</span><span class="n">edad1</span><span class="p">]</span> <span class="n">años</span><span class="o">.</span>
+<span class="n">Hola</span><span class="p">,</span> <span class="n">mi</span> <span class="n">nombre</span> <span class="n">es</span> <span class="p">[</span><span class="n">nombre2</span><span class="p">]</span> <span class="n">y</span> <span class="n">tengo</span> <span class="p">[</span><span class="n">edad2</span><span class="p">]</span> <span class="n">años</span><span class="o">.</span>
+<span class="n">Hemos</span> <span class="n">estado</span> <span class="n">conversando</span> <span class="n">por</span> <span class="p">[</span><span class="n">tiempo</span><span class="p">]</span> <span class="n">minutos</span> <span class="n">mientras</span> <span class="n">estábamos</span> <span class="n">en</span> <span class="p">[</span><span class="n">lugar</span><span class="p">]</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Para este ejercicio, debes crear un archivo llamado <code class="docutils literal notranslate"><span class="pre">act2_2.py</span></code> en el directorio con tu nombre.</p>
+</section>
+<section id="ejercicio-3-manipulacion-de-cadenas-de-texto">
+<h2>Ejercicio 3: Manipulación de cadenas de texto<a class="headerlink" href="#ejercicio-3-manipulacion-de-cadenas-de-texto" title="Permalink to this headline">#</a></h2>
+<p>El tercer ejercicio consiste en escribir un programa que tome una frase y aplique las siguientes funciones:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lower()</span></code>: Convierte todas las letras de la frase a minúsculas</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">upper()</span></code>: Convierte todas las letras de la frase a mayúsculas</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">capitalize()</span></code>: Convierte la primera letra de la frase a mayúscula</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">title()</span></code>: Convierte la primera letra de cada palabra de la frase a mayúscula</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">swapcase()</span></code>: Convierte todas las letras de la frase a mayúsculas y minúsculas</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">strip()</span></code>: Elimina los espacios en blanco al inicio y al final de la frase</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">replace()</span></code>: Reemplaza una palabra por otra en la frase</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">split()</span></code>: Divide la frase en palabras</p></li>
+</ul>
+<p>Cada función debe ser aplicada a la frase e imprimirla usando <code class="docutils literal notranslate"><span class="pre">format()</span></code>. Por ejemplo, si la frase es <code class="docutils literal notranslate"><span class="pre">hola</span> <span class="pre">mundo</span></code>, el programa debe imprimir:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Esta es la frase en minúsculas: </span><span class="si">{</span><span class="n">frase</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Para este ejercicio, debes crear un archivo llamado <code class="docutils literal notranslate"><span class="pre">act2_3.py</span></code> en el directorio con tu nombre.</p>
+</section>
+<section id="ejercicio-4-operadores-con-cadenas-de-texto">
+<h2>Ejercicio 4: Operadores con cadenas de texto<a class="headerlink" href="#ejercicio-4-operadores-con-cadenas-de-texto" title="Permalink to this headline">#</a></h2>
+<p>El cuarto ejercicio consiste en escribir un programa que tome una frase y aplique los siguientes operadores:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code>: Concatena dos cadenas de texto</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>: Repite una cadena de texto un número de veces</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">in</span></code>: Verifica si una cadena de texto está contenida en otra</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>: Verifica si una cadena de texto no está contenida en otra</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code>: Verifica si dos cadenas de texto son iguales</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code>: Verifica si dos cadenas de texto son diferentes</p></li>
+</ul>
+<p>Cada operador debe ser aplicado a la frase e imprimirla usando <code class="docutils literal notranslate"><span class="pre">format()</span></code>. Por ejemplo, si la frase es <code class="docutils literal notranslate"><span class="pre">hola</span> <span class="pre">mundo</span></code>, el programa debe imprimir:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Esta es la frase concatenada: </span><span class="si">{</span><span class="n">frase</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;hola&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Para este ejercicio, debes crear un archivo llamado <code class="docutils literal notranslate"><span class="pre">act2_4.py</span></code> en el directorio con tu nombre.</p>
+</section>
+<section id="entrega">
+<h2>Entrega<a class="headerlink" href="#entrega" title="Permalink to this headline">#</a></h2>
+<p>Para entregar la actividad, debes hacer un <code class="docutils literal notranslate"><span class="pre">commit</span></code> de los modificados y hacer un <code class="docutils literal notranslate"><span class="pre">push</span></code> de tu brazo al repositorio remoto.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Entrega de la actividad 2&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>nombre-del-brazo
+</pre></div>
+</div>
+<section id="fecha-de-entrega">
+<h3>Fecha de entrega<a class="headerlink" href="#fecha-de-entrega" title="Permalink to this headline">#</a></h3>
+<p>Entrega la actividad antes del martes 7 de febrero.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./actividades"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../tutoriales/9-operaciones_string.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Operaciones con cadenas de caracteres</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../tutoriales/10-listas.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Listas</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
