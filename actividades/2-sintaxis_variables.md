@@ -92,16 +92,16 @@ Cada operador debe ser aplicado a la frase e imprimirla usando `format()`. Por e
 print(f"Esta es la frase concatenada: {frase + 'hola'}")
 ```
 
-Para este ejercicio, debes crear un archivo llamado `act2_4.py` en el directorio con tu nombre. 
+Para este ejercicio, debes crear un archivo llamado `act2_4.py` en el directorio con tu nombre.
 
 ## Entrega
 
-Para entregar la actividad, debes hacer un `commit` de los archivos `act2.py`, `act2_2.py`, `act2_3.py` y `act2_4.py` y hacer un `push` a tu repositorio remoto. 
+Para entregar la actividad, debes hacer un `commit` de los modificados y hacer un `push` de tu brazo al repositorio remoto.
 
 ```bash
-git add act2.py act2_2.py act2_3.py act2_4.py
+git add .
 git commit -m "Entrega de la actividad 2"
-git push
+git push -u origin nombre-del-brazo
 ```
 
 ### Fecha de entrega
