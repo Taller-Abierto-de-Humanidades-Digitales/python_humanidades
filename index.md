@@ -20,33 +20,5 @@
 
 ## Desarrollo del curso
 
-### 1. Introducción: Configurar un entorno de desarrollo para Python
-
-- [Instalar Python](tutoriales/1-instalarPython.md)
-- [Introducción a la terminal de comandos](tutoriales/2-terminal.md)
-- [Instalar Visual Studio Code](tutoriales/3-instalarVSCode.md)
-- [Instalar Git](tutoriales/4-Git.md)
-- [Sincronizar con Github](tutoriales/5-Github.md)
-
-#### Actividad 1: Configurar un entorno de desarrollo para Python
-
-- [Actividad 1: Configurar un entorno de desarrollo para Python](actividades/1-configuracion.md)
-
-### 2. Introducción a Python
-
-- [Introducción a Python](tutoriales/6-python.md)
-- [Variables y tipos de datos](tutoriales/7-variables.md)
-- [Operadores](tutoriales/8-operadores.md)
-- [Operaciones con cadenas de texto](tutoriales/9-operaciones_string.md)
-
-#### Actividad 2: Variables y sintaxis
-
-- [Actividad 2: Variables y sintaxis](actividades/2-sintaxis_variables.md)
-
-### 3. Listas
-
-- [Listas](tutoriales/10-listas.md)
-
-#### Actividad 3: Listas
-
-- [Actividad 3: Listas](actividades/3-listas.md)
+```{tableofcontents}
+```
