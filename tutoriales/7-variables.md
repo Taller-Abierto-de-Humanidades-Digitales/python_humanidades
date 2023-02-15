@@ -180,7 +180,7 @@ nombre_completo = nombre_completo * 3
 print(nombre_completo)
 ```
 
-```{admonition} Sobre las cadenas de texto
+```{admonition} Sobre las cadenas de texto:
 :class: tip
 Debemos entender que las cadenas de texto son una secuencia de caracteres. Es decir, la computadora entiende una palabra como "perro" como la secuencia de los caracteres "p", "e", "r", "r", "o". Y es una secuencia totalmente diferente a "P", "e", "r", "r", "o". Es decir, para la computadora "perro" es diferente a "Perro". Así, cuando tratamos de un tipo de valor de "texto" no nos referimos al texto en el sentido humano (letras, palabras, frases...), sino al texto en el sentido de la computadora.
 ```
