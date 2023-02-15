@@ -13,10 +13,10 @@ cd curso_python_extenso
 git pull
 ```
 
-Antes de hacer cualquier cambio, crea un branch para esta actividad. Para crear un branch, debes ejecutar el siguiente comando:
+Antes de hacer cualquier cambio, muevete al brazo en el que estás realizando las actividades:
 
 ```bash
-git checkout -b act2
+git checkout tu_brazo
 ```
 
 Copia los archivos `act2.py` y `act2Validator.py` en el directorio con tu nombre (de preferencia, crea un subdirectorio para esta actividad). Deben estar ambos en el mismo directorio, de otra manera el validador no funcionará.
