@@ -17,7 +17,7 @@ lista_nuevos=["Donald Cohn; Measure Theory; 2015; Matemáticas", "Frigyes Riesz;
 libros.extend(lista_nuevos)
 
 
-#Ejercicio 3 #Para este ejercicio me confunde un poco el hacer uso del pop(), pues esta función retorna el valor eliminado. Esto también teniendo en cuenta que no quiero crear una nueva lista, sino modificar la que ya está. Uso la función rstrip() [que encontré en internet] para eliminar el último "; ".
+#Ejercicio 3 #Para este ejercicio uso la función rstrip() [que encontré en internet] para eliminar el último "; ".
 for i in range(len(libros)):
     libros[i]=libros[i].replace(libros[i].split(";").pop(),"").rstrip(";")
 print(libros)
