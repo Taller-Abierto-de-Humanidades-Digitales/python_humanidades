@@ -1,3 +1,18 @@
+---
+jupytext:
+  cell_metadata_filter: -all
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.14.4
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
+---
+
 # Operadores
 
 Los operadores son símbolos especiales que le indican al intérprete de Python qué debe realizar una tarea matemática, relacional o lógica y qué debe mostrar en pantalla como resultado.
@@ -76,7 +91,7 @@ Los operadores de membresía se utilizan para probar si una secuencia está pres
 
 ### Ejemplo 1
 
-```python
+```{code-cell}
 # Operadores aritméticos
 print(2 + 2) # Suma
 print(2 - 2) # Resta
@@ -123,7 +138,7 @@ print("pineapple" not in x)
 
 ### Ejemplo 2. Operadores con cadenas
 
-```python
+```{code-cell}
 # Operadores aritméticos
 print("Hola " + "mundo") # Suma
 print("Hola " * 3) # Multiplicación
