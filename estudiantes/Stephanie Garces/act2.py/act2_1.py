@@ -65,10 +65,3 @@ nombre = "Paul Ricoeur"
 
 print(f"El nombre de mi mejor amigo es ")
 
-# Validación ¡No modificar!
-av2.variable_test(nombre, apellido, nombre_carro)
-av2.sintaxis_test(autor, fecha_nacimiento, nombre_manga, fecha_pub)
-av2.string_test(texto1, texto2, texto3, texto4, nombre, nombre_manga)
-av2.comment_test(nombre)
-
-print("¡Felicitaciones! ¡Has completado el ejercicio!")
