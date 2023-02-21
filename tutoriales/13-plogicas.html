@@ -1,0 +1,1039 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Pruebas condicionales &#8212; Curso de Python para las HD</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Operadores de pertenencia" href="14-condicionPertenencia.html" />
+    <link rel="prev" title="Introducción a los condicionales" href="12-condicionales.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso de Python para las HD</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Fundamentos de programación
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción. Configurar un entorno de desarrollo para Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-instalarPython.html">
+   Instalar Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-terminal.html">
+   Terminal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-instalarVSCode.html">
+   Instalar VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-Git.html">
+   Configurar Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-Github.html">
+   Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/1-configuracion.html">
+   Actividad 1: Configurar un entorno de desarrollo para Python
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción a Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-python.html">
+   Introducción a Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-variables.html">
+   Sintaxis, variables y tipos de datos básicos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-operadores.html">
+   Operadores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-operaciones_string.html">
+   Operaciones con cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/2-sintaxis_variables.html">
+   Actividad 2: Variables y sintaxis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Listas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-listas.html">
+   Listas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/3-listas.html">
+   Actividad 3: Listas (operaciones básicas)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Iteraciones (for loops)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-iteraciones.html">
+   Iteraciones (
+   <em>
+    for loops
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/4-iteraciones.html">
+   Actividad 4: Iteraciones
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Condicionales (if else)
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-condicionales.html">
+   Introducción a los condicionales
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Pruebas condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-condicionPertenencia.html">
+   Operadores de pertenencia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-ifelse.html">
+   Sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   ,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     elif
+    </span>
+   </code>
+   y
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     else
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-listaseif.html">
+   Combinar listas y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/5-condicionales.html">
+   Actividad 5: Condicionales y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Recursos adicionales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/gh-pages?urlpath=tree/tutoriales/13-plogicas.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/13-plogicas.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/tutoriales/13-plogicas.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/tutoriales/13-plogicas.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operaciones-de-igualdad">
+   Operaciones de igualdad
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operaciones-de-desigualdad">
+   Operaciones de desigualdad
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operaciones-de-mayor-que-y-menor-que">
+   Operaciones de mayor que y menor que
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operaciones-de-mayor-o-igual-que-y-menor-o-igual-que">
+   Operaciones de mayor o igual que y menor o igual que
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probando-condiciones-multiples">
+   Probando condiciones múltiples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#un-poco-de-logica-proposicional">
+   Un poco de lógica proposicional
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-modo-de-cierre">
+   A modo de cierre
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Pruebas condicionales</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operaciones-de-igualdad">
+   Operaciones de igualdad
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operaciones-de-desigualdad">
+   Operaciones de desigualdad
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operaciones-de-mayor-que-y-menor-que">
+   Operaciones de mayor que y menor que
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operaciones-de-mayor-o-igual-que-y-menor-o-igual-que">
+   Operaciones de mayor o igual que y menor o igual que
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probando-condiciones-multiples">
+   Probando condiciones múltiples
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#un-poco-de-logica-proposicional">
+   Un poco de lógica proposicional
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-modo-de-cierre">
+   A modo de cierre
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="pruebas-condicionales">
+<h1>Pruebas condicionales<a class="headerlink" href="#pruebas-condicionales" title="Permalink to this headline">#</a></h1>
+<p>Las pruebas condicionales consisten en evaluar una condición lógica matemática (igualdad, desigualdad, mayor que, menor que, entre otras). Para ello, nos valemos de una serie de operadores para representar proposiciones y para manipular y evaluar expresiones. Estos operadores pueden ser lógicos (<code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code>) o relacionales (<code class="docutils literal notranslate"><span class="pre">==</span></code>, <code class="docutils literal notranslate"><span class="pre">!=</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>). Los operadores relacionales se utilizan para comparar dos valores y devolver un valor booleano (<code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>). Los operadores lógicos se utilizan para combinar expresiones booleanas y devolver un valor booleano (<code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>). Veamos esto con mayor detalle.</p>
+<section id="operaciones-de-igualdad">
+<h2>Operaciones de igualdad<a class="headerlink" href="#operaciones-de-igualdad" title="Permalink to this headline">#</a></h2>
+<p>Las operaciones de igualdad se utilizan para comparar dos valores y determinar si son iguales o no. Para ello, se utiliza el operador <code class="docutils literal notranslate"><span class="pre">==</span></code>. Como ya vimos, si la igualdad se cumple, la expresión devuelve <code class="docutils literal notranslate"><span class="pre">True</span></code>, de lo contrario devuelve <code class="docutils literal notranslate"><span class="pre">False</span></code>. Veamos algunos ejemplos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perro</span> <span class="o">=</span> <span class="s2">&quot;Firulais&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">perro</span> <span class="o">==</span> <span class="s2">&quot;Firulais&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso es evidente que la igualdad se cumple, ya que el valor de la variable es idéntica al valor que se compara. Ahora, veamos un caso diferente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perro</span> <span class="o">=</span> <span class="s2">&quot;Firulais&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">perro</span> <span class="o">==</span> <span class="s2">&quot;Lassie&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>La condición ahora no se cumple, ya que el valor de la variable (<code class="docutils literal notranslate"><span class="pre">Firulais</span></code>) es diferente al valor que se compara (<code class="docutils literal notranslate"><span class="pre">Lassie</span></code>). Veamos un ejemplo más:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perro</span> <span class="o">=</span> <span class="s2">&quot;Firulais&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">perro</span> <span class="o">==</span> <span class="s2">&quot;firulais&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>La condición ahora no se cumple aunque los valores <code class="docutils literal notranslate"><span class="pre">Firulais</span></code> y <code class="docutils literal notranslate"><span class="pre">firulais</span></code> tienen el mismo significado (son iguales en términos semánticos). Esto se debe a que Python distingue entre mayúsculas y minúsculas. Para evitar esto, podemos utilizar el método <code class="docutils literal notranslate"><span class="pre">lower()</span></code> que convierte todos los caracteres de una cadena a minúsculas:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perro</span> <span class="o">=</span> <span class="s2">&quot;Firulais&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">perro</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;firulais&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Obviamente, esto no es un caso que siempre se pueda utilizar, ya que en ciertas ocasiones es relevante identificar mayúsculas y minúsculas. Por ejemplo, si queremos saber si una palabra es un palíndromo, es decir, si se lee igual de izquierda a derecha que de derecha a izquierda, entonces sí es importante distinguir entre mayúsculas y minúsculas. Por ello, la elección de utilizar o no el método <code class="docutils literal notranslate"><span class="pre">lower()</span></code> (o cualquier otra transformación que favorezca la igualdad) dependerá del contexto.</p>
+</section>
+<section id="operaciones-de-desigualdad">
+<h2>Operaciones de desigualdad<a class="headerlink" href="#operaciones-de-desigualdad" title="Permalink to this headline">#</a></h2>
+<p>En este caso, lo que se busca es determinar si dos valores son diferentes. Si la condición se cumple, será verdadera. Para ello, se utiliza el operador <code class="docutils literal notranslate"><span class="pre">!=</span></code>. Veamos algunos ejemplos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perro</span> <span class="o">=</span> <span class="s2">&quot;Firulais&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">perro</span> <span class="o">!=</span> <span class="s2">&quot;Firulais&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, la condición no se cumple, ya que el valor de la variable es idéntico al valor que se compara. Ahora, veamos un caso diferente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perro</span> <span class="o">=</span> <span class="s2">&quot;Firulais&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">perro</span> <span class="o">!=</span> <span class="s2">&quot;Lassie&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>La condición ahora sí se cumple, ya que el valor de la variable (<code class="docutils literal notranslate"><span class="pre">Firulais</span></code>) es diferente al valor que se compara (<code class="docutils literal notranslate"><span class="pre">Lassie</span></code>). Veamos un ejemplo más:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perro</span> <span class="o">=</span> <span class="s2">&quot;Firulais&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">perro</span> <span class="o">!=</span> <span class="s2">&quot;firulais&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>La condición ahora sí se cumple porque los valores son diferentes al comparar mayúsculas y minúsculas.</p>
+</section>
+<section id="operaciones-de-mayor-que-y-menor-que">
+<h2>Operaciones de mayor que y menor que<a class="headerlink" href="#operaciones-de-mayor-que-y-menor-que" title="Permalink to this headline">#</a></h2>
+<p>Estas operaciones son utilizadas para comparar valores numéricos (podríamos comparar si dos cadenas son mayores o menores, pero no tiene mucho sentido). Si la condición se cumple, será verdadera. Para ello, se utilizan los operadores <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>, respectivamente. Veamos algunos ejemplos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, la condición se cumple, ya que el valor de la variable es mayor que el valor que se compara. Ahora, veamos un caso diferente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este fue el tipo de comparación que utilizamos en el ejemplo introductorio de este capítulo. La condición que buscamos era determinar si el valor aleatorio obtenido por la función <code class="docutils literal notranslate"><span class="pre">randint()</span></code> era menor que 50 (dentro de un rango de 1 a 100). Veamos ese ejemplo nuevamente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="n">numero</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numero</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>14
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este ejemplo es útil porque en general lo que buscamos con un operador de este tipo es asegurar una condición para tomar una decisión específica.</p>
+</section>
+<section id="operaciones-de-mayor-o-igual-que-y-menor-o-igual-que">
+<h2>Operaciones de mayor o igual que y menor o igual que<a class="headerlink" href="#operaciones-de-mayor-o-igual-que-y-menor-o-igual-que" title="Permalink to this headline">#</a></h2>
+<p>Una extensión de las operaciones anteriores está dada por las de mayor o igual que y menor o igual que. Para ello, utilizamos los operadores <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> y <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>, respectivamente. Veamos un ejemplo simple:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, el operador cumple la misma función que el operador <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>. Pero veamos este caso:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">5</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Observa como la primera condición no se cumple (porque 5 no es mayor que 5), pero la segunda sí (por la igualdad). Esto es un asunto fundamental en una serie numérica, por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+6
+7
+8
+9
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, la serie de números incluye al cinco, pero si utilizáramos el operador <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, el cinco no sería incluido en la serie. Nuevamente, este uso depende de la intención de nuestro programa, por lo que es importante no utilizar los operadores de manera indiscriminada.</p>
+</section>
+<section id="probando-condiciones-multiples">
+<h2>Probando condiciones múltiples<a class="headerlink" href="#probando-condiciones-multiples" title="Permalink to this headline">#</a></h2>
+<p>En ocasiones, necesitamos probar más de una condición. Por ejemplo, en el ejemplo introductorio de este capítulo, queríamos determinar si el valor aleatorio obtenido por la función <code class="docutils literal notranslate"><span class="pre">randint()</span></code> era menor que 50 y mayor que 25. Para ello, podemos utilizar los operadores <code class="docutils literal notranslate"><span class="pre">and</span></code> y <code class="docutils literal notranslate"><span class="pre">or</span></code>. Veamos un ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="n">numero</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numero</span> <span class="o">&lt;=</span> <span class="mi">50</span> <span class="ow">and</span> <span class="n">numero</span> <span class="o">&gt;=</span> <span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>67
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para que la condición se cumpla, el número aleatorio debe ser menor o igual que 50 y mayor o igual que 25, o lo que es lo mismo, debe estar dentro del rango de 25 a 50. Veamos otro ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+<span class="n">numero</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numero</span> <span class="o">&lt;=</span> <span class="mi">50</span> <span class="ow">or</span> <span class="n">numero</span> <span class="o">&gt;=</span> <span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>73
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso la condición siempre se va a cumplir, por lo que hablamos de una tautología. No importa el valor que nos de la función <code class="docutils literal notranslate"><span class="pre">randint()</span></code>, todo número que es menor o igual a 50 siempre será mayor o igual a 25 (incluso si el número es igual a 25 o 50). Por esta razón, es relevante considerar que en estos casos utilizamos operadores lógicos cercanos a la lógica proposicional, por lo que es importante tener en cuenta la validez de las proposiciones que se forman.</p>
+<p>Ahora bien, <code class="docutils literal notranslate"><span class="pre">and</span></code> y <code class="docutils literal notranslate"><span class="pre">or</span></code> no aplican solamente para condiciones matemáticas, sino que también pueden ser utilizados para comparar cadenas de caracteres. Veamos un ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perro</span> <span class="o">=</span> <span class="s2">&quot;Firulais&quot;</span>
+<span class="n">gato</span> <span class="o">=</span> <span class="s2">&quot;Garfield&quot;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">perro</span> <span class="o">==</span> <span class="s2">&quot;Firulais&quot;</span> <span class="ow">and</span> <span class="n">gato</span> <span class="o">==</span> <span class="s2">&quot;Garfield&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>En todo caso, siempre estamos evaluando condiciones, por lo que debemos ser capaces de interpretar los resultados como valores booleanos, o lo que es lo mismo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+False
+False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Lo siguiente no es indispensable para aprender a programar en Python, pero entender un poco la lógica proposicional nos puede ayudar a entender mejor los operadores <code class="docutils literal notranslate"><span class="pre">and</span></code> y <code class="docutils literal notranslate"><span class="pre">or</span></code>.</p>
+</section>
+<section id="un-poco-de-logica-proposicional">
+<h2>Un poco de lógica proposicional<a class="headerlink" href="#un-poco-de-logica-proposicional" title="Permalink to this headline">#</a></h2>
+<p>Podemos entender así cualquier valor booleano como una proposición. Por ejemplo:</p>
+<ul class="simple">
+<li><p>Firulais es el nombre de un perro: <code class="docutils literal notranslate"><span class="pre">perro</span> <span class="pre">==</span> <span class="pre">&quot;Firulais&quot;</span></code></p></li>
+<li><p>Garfield es el nombre de un gato: <code class="docutils literal notranslate"><span class="pre">gato</span> <span class="pre">==</span> <span class="pre">&quot;Garfield&quot;</span></code></p></li>
+<li><p>Firulais es el nombre de un perro y Garfield es el nombre de un gato: <code class="docutils literal notranslate"><span class="pre">perro</span> <span class="pre">==</span> <span class="pre">&quot;Firulais&quot;</span> <span class="pre">and</span> <span class="pre">gato</span> <span class="pre">==</span> <span class="pre">&quot;Garfield&quot;</span></code></p></li>
+</ul>
+<p>Lo que formalmente se puede escribir con variables proposicionales de la siguiente forma:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+P &amp;= \text{Firulais es el nombre de un perro} \\
+Q &amp;= \text{Garfield es el nombre de un gato} \\
+R &amp;= \text{Firulais es el nombre de un perro y Garfield es el nombre de un gato} \\
+O &amp;= \text{Firulais es el nombre de un perro o Garfield es el nombre de un gato} \\
+\end{align}
+\end{split}\]</div>
+<p>Y así, una tabla de verdad con estas proposiciones sería:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{c|c|c|c|c}
+P &amp; Q &amp; R &amp; O \\
+\hline
+\text{V} &amp; \text{V} &amp; \text{V} &amp; \text{V} \\
+\text{V} &amp; \text{F} &amp; \text{F} &amp; \text{V} \\
+\text{F} &amp; \text{V} &amp; \text{F} &amp; \text{V} \\
+\text{F} &amp; \text{F} &amp; \text{F} &amp; \text{F} \\
+\end{array}
+\end{split}\]</div>
+<p>De manera lógica, podemos escribir cualquiera de estas proposiciones como código Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perro</span> <span class="o">=</span> <span class="s2">&quot;Firulais&quot;</span>
+<span class="n">gato</span> <span class="o">=</span> <span class="s2">&quot;Garfield&quot;</span>
+
+<span class="n">condicion1</span> <span class="o">=</span> <span class="n">perro</span> <span class="o">!=</span> <span class="s2">&quot;Firulais&quot;</span> <span class="c1"># corresponde a P falsa en la tabla de verdad</span>
+<span class="n">condicion2</span> <span class="o">=</span> <span class="n">gato</span> <span class="o">==</span> <span class="s2">&quot;Garfield&quot;</span> <span class="c1"># corresponde a Q verdadera en la tabla de verdad</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">condicion1</span> <span class="ow">and</span> <span class="n">condicion2</span><span class="p">)</span> <span class="c1"># corresponde a R falsa en la tabla de verdad</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">condicion1</span> <span class="ow">or</span> <span class="n">condicion2</span><span class="p">)</span> <span class="c1"># corresponde a O verdadera en la tabla de verdad</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-modo-de-cierre">
+<h2>A modo de cierre<a class="headerlink" href="#a-modo-de-cierre" title="Permalink to this headline">#</a></h2>
+<p>En este apartado nos hemos centrado en los operadores de comparación que nos permiten evaluar condiciones de verdad o falsedad de manera lógica. Antes de entrar a explorar la estructura de control <code class="docutils literal notranslate"><span class="pre">if</span></code>, veremos rápidamente los operadores de pertenencia, los cuales nos permiten evaluar si un elemento se encuentra dentro de una colección.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutoriales"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="12-condicionales.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Introducción a los condicionales</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="14-condicionPertenencia.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Operadores de pertenencia</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
