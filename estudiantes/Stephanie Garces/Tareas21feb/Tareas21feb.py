@@ -60,13 +60,18 @@ for libro in libros:
 
 libros = libros_nada
 print(libros)
-
 #mirarfoto
 
+#4_4
 libro = ["Juanita Castañeda; Desespero; 2003, poesía ","Laura Restrepo; Demasiados Héroes; 1998; Ficción Histórica", "Mercedes Ron; La Ocasión; 2014; Novela", "Ana Shua; Piedra y Cielo; 1987; Cuentos","Gabriel García Márquez; La Mala hora; 1962; Realismo mágico"]
 
 anios = []
+anios = [int(libro.split(";")[2]) for libro in libros]
 
+fecha_promedio = sum(anios) / len(anios)
+print(f"La fecha promedio de los libros de mi catálogo es: {fecha_promedio}")
+
+#otraforma
 for libro in libro:
     libro_info = libro.split(";")
     anios.append(int(libro_info[2].strip().split(",")[0]))
@@ -75,6 +80,15 @@ fecha_promedio = sum(anios) / len(anios)
 
 print(f"La fecha promedio de los libros de mi catálogo es: {fecha_promedio}")
 
-#4_4
+#5_4
 
-titulos = ["Desespero; Demasiados héroes; La ocasión; Piedra y cielo; La mala hora"]
+
+titulos = [libro.split(";")[0] for libro in libros]
+caracteres_titulos = [len(titulo) for titulos in titulos]
+promedio = sum(caracteres_titulos) / len(caracteres_titulos)
+
+#lista de comprensión 
+
+variable = [i for i in range(0,100)]
+print (variable)
+
