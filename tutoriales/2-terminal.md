@@ -1,3 +1,18 @@
+---
+jupytext:
+  cell_metadata_filter: -all
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.14.4
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
+---
+
 # Terminal
 
 ## ¿Qué es?
@@ -25,7 +40,7 @@ El terminal es una herramienta que nos permite interactuar con el sistema operat
 3. Escribir `print("Hola mundo")` y presionar `Enter`.
 4. Escribir `exit()` y presionar `Enter` para salir.
 
-```bash
+```{code-cell}
 C:\Users\Usuario>python
 Python 3.11.0 (tags/v3.11.0:1a79785, Oct  5 2021, 19:00:00) [MSC v.1929 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
@@ -41,7 +56,7 @@ Hola mundo
 3. Escribir `print("Hola mundo")` y presionar `Enter`.
 4. Escribir `exit()` y presionar `Enter` para salir.
 
-```bash
+```{code-cell}
 $ python3
 Python 3.11.0 (tags/v3.11.0:1a79785, Oct  5 2021, 19:00:00) [Clang 13.0.0 (clang-1300.0.29.3)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.

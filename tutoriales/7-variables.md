@@ -1,3 +1,18 @@
+---
+jupytext:
+  cell_metadata_filter: -all
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.14.4
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
+---
+
 # Sintaxis, variables y tipos de datos básicos
 
 Vamos a entrar en algunos detalles relacionados con lo que hicimos en la sección anterior.
@@ -165,7 +180,7 @@ nombre_completo = nombre_completo * 3
 print(nombre_completo)
 ```
 
-```{admonition} Sobre las cadenas de texto
+```{admonition} Sobre las cadenas de texto:
 :class: tip
 Debemos entender que las cadenas de texto son una secuencia de caracteres. Es decir, la computadora entiende una palabra como "perro" como la secuencia de los caracteres "p", "e", "r", "r", "o". Y es una secuencia totalmente diferente a "P", "e", "r", "r", "o". Es decir, para la computadora "perro" es diferente a "Perro". Así, cuando tratamos de un tipo de valor de "texto" no nos referimos al texto en el sentido humano (letras, palabras, frases...), sino al texto en el sentido de la computadora.
 ```

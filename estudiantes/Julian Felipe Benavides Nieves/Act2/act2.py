@@ -6,16 +6,16 @@ import act2Validator as av2
 # La variable debe ser 'nombre' y 'apellido' respectivamente.
 
 # Escribe aquí tu código
-nombre = "Gabriel" 
-apellido = "Lora"
-print(nombre + " " + apellido)
+
+nombre = "Yuval Noah"
+apellido = "Harari"
 
 # Ejercicio 2: Crea una variable para la marca de un carro. El nombre de la variable
 # debe ser 'nombre_carro'. Imprime el nombre del carro.
 
 # Escribe aquí tu código
-nombre_carro = "Chevrolet Onix"
-print(nombre_carro)
+
+nombre_carro = "Citroen"
 
 ####################################
 
@@ -24,7 +24,8 @@ print(nombre_carro)
 
 primer_nombre = "Akira"
 primer_apellido = "Toriyama"
-autor = primer_nombre + " " + primer_apellido
+
+autor = primer_nombre+" "+primer_apellido
 
 print(autor)
 
@@ -38,9 +39,16 @@ fecha_pub = 1979
 
 # Ejercicio 4: Corrige las siguientes variables de texto para que el código funcione correctamente.
 
-texto1 = "Akira Toriyama publicó su manga 'Dragon Ball' en 1984."
+texto1 = "Akira Toriyama publicó su manga 'Dragon Ball' en 1984"
+
 texto2 = "Quentin Tarantino es el director de la película Pulp Fiction"
-texto3 = "Yo, señor, soy acontista. Mi profesión es hacer disparos al aire. Todavía no habré descendido la primera nube. Mas, la delicia está en curvar el arco y en suponer la flecha donde la clava el ojo."
+
+texto3 = """Yo, señor, soy acontista.
+Mi profesión es hacer disparos al aire.
+Todavía no habré descendido la primera nube.
+Mas, la delicia está en curvar el arco
+y en suponer la flecha donde la clava el ojo."""
+
 texto4 = f"Es posible que {nombre} no haya leído {nombre_manga}."
 
 ####################################
@@ -48,7 +56,7 @@ texto4 = f"Es posible que {nombre} no haya leído {nombre_manga}."
 # Ejercicio 5: En el siguiente programa, necesitamos que no se ejecute la variable
 # 'nombre', pero no la debes eliminar. ¿Cómo lo harías?
 
-#nombre = "Paul Ricoeur"
+# nombre = "Paul Ricoeur"
 
 print(f"El nombre de mi mejor amigo es {nombre}")
 
@@ -63,5 +71,4 @@ av2.comment_test(nombre)
 
 print("¡Felicitaciones! ¡Has completado el ejercicio!")
 
-#
-####################################
+#####################################
