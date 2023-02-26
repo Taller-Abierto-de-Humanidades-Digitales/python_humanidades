@@ -26,4 +26,3 @@ print(f"El libro {lista_publicaciones[4].split('; ')[1]} fue escrito por {lista_
 print(f"El libro {lista_publicaciones[5].split('; ')[1]} fue escrito por {lista_publicaciones[5].split('; ')[0]} en el año {lista_publicaciones[5].split('; ')[2]} y es de género {lista_publicaciones[5].split('; ')[3]}.")
 print(f"El libro {lista_publicaciones[6].split('; ')[1]} fue escrito por {lista_publicaciones[6].split('; ')[0]} en el año {lista_publicaciones[6].split('; ')[2]} y es de género {lista_publicaciones[6].split('; ')[3]}.")
 print(f"El libro {lista_publicaciones[7].split('; ')[1]} fue escrito por {lista_publicaciones[7].split('; ')[0]} en el año {lista_publicaciones[7].split('; ')[2]} y es de género {lista_publicaciones[7].split('; ')[3]}.")
-print(lista_publicaciones)

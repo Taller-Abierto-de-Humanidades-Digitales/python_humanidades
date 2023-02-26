@@ -6,49 +6,49 @@ import act2Validator as av2
 # La variable debe ser 'nombre' y 'apellido' respectivamente.
 
 # Escribe aquí tu código
-nombre = "Gabriel" 
-apellido = "Lora"
-print(nombre + " " + apellido)
 
 # Ejercicio 2: Crea una variable para la marca de un carro. El nombre de la variable
 # debe ser 'nombre_carro'. Imprime el nombre del carro.
 
 # Escribe aquí tu código
-nombre_carro = "Chevrolet Onix"
-print(nombre_carro)
 
 ####################################
 
 # Ejercicio 3: El siguiente código está escrito de manera incorrecta.
 # Corrige el código para que funcione correctamente.
 
-primer_nombre = "Akira"
-primer_apellido = "Toriyama"
-autor = primer_nombre + " " + primer_apellido
+1primer_nombre = Akira
+2primer_apellido = "Toriyama
 
-print(autor)
 
-fecha_nacimiento = 1955
+print autor
 
-nombre_manga = "Dr. Slump"
+fech@_nacimiento = 1955
 
-fecha_pub = 1979
+Nombre_Manga = "Dr. Slump"
+
+fecha pub = "1979"
 
 ####################################
 
 # Ejercicio 4: Corrige las siguientes variables de texto para que el código funcione correctamente.
 
-texto1 = "Akira Toriyama publicó su manga 'Dragon Ball' en 1984."
-texto2 = "Quentin Tarantino es el director de la película Pulp Fiction"
-texto3 = "Yo, señor, soy acontista. Mi profesión es hacer disparos al aire. Todavía no habré descendido la primera nube. Mas, la delicia está en curvar el arco y en suponer la flecha donde la clava el ojo."
-texto4 = f"Es posible que {nombre} no haya leído {nombre_manga}."
+texto1 = "Akira Toriyama publicó su manga "Dragon Ball" en 1984"
+texto2 = "Quentin Tarantino es el director" "de la película Pulp Fiction"
+texto3 = "Yo, señor, soy acontista.
+        Mi profesión es hacer disparos al aire.
+        Todavía no habré descendido la primera nube.
+        Mas, la delicia está en curvar el arco
+        y en suponer la flecha donde la clava el ojo."
+texto4 = "Es posible que {nombre} no haya leído nombre_manga."
+
 
 ####################################
 
 # Ejercicio 5: En el siguiente programa, necesitamos que no se ejecute la variable
 # 'nombre', pero no la debes eliminar. ¿Cómo lo harías?
 
-#nombre = "Paul Ricoeur"
+nombre = "Paul Ricoeur"
 
 print(f"El nombre de mi mejor amigo es {nombre}")
 
