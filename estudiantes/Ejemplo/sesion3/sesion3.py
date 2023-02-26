@@ -80,3 +80,10 @@ print(lista_nombres)
 
 print(f"Este listado contiene {len(lista_nombres)} elementos.")
 
+
+
+
+
+
+
+
