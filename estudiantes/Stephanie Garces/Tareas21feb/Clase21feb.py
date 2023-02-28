@@ -70,3 +70,6 @@ if respuesta in presidentescol:
     print(f"asi es {respuesta} cierto")
 else: 
     print (f"error {respuesta} no fue ")
+#else se usa cuando ninguna condicion se cumple
+
+#revisar foto de revisar condiciones en las novelas que puso el profe 

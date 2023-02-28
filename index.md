@@ -14,6 +14,10 @@
 
 - [Descargar el programa del curso](https://drive.google.com/file/d/1AyzRp0SmcHGU20aGteHM4f1W2GVYnBvH/view?usp=share_link)
 
+## Material adicional y de soporte
+
+- [Presentación Git & Github](https://docs.google.com/presentation/d/1yDexViSugtpToTQO7wGrx1P1yDuBJqrH7jePB9_6zac/edit?usp=sharing)
+
 ## Desarrollo del curso
 
 ### 1. Introducción: Configurar un entorno de desarrollo para Python
@@ -26,7 +30,7 @@
 
 #### Actividad 1: Configurar un entorno de desarrollo para Python
 
-- [Actividad 1: Configurar un entorno de desarrollo para Python](actividades/1.configuracion.md)
+- [Actividad 1: Configurar un entorno de desarrollo para Python](actividades/1-configuracion.md)
 
 ### 2. Introducción a Python
 
@@ -37,4 +41,12 @@
 
 #### Actividad 2: Variables y sintaxis
 
-- [Actividad 2: Variables y sintaxis](actividades/2.sintaxis_variables.md)
+- [Actividad 2: Variables y sintaxis](actividades/2-sintaxis_variables.md)
+
+### 3. Listas
+
+- [Listas](tutoriales/10-listas.md)
+
+#### Actividad 3: Listas
+
+- [Actividad 3: Listas](actividades/3-listas.md)
