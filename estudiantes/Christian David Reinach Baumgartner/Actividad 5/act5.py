@@ -94,7 +94,7 @@ else:
     for i in range(len(matemáticas)):
         print(f"- <{matemáticas[i].split('; ')[0]}>, <{matemáticas[i].split('; ')[1]}> (<{matemáticas[i].split('; ')[2]}>), <{matemáticas[i].split('; ')[3]}>")
 
-if matemáticas == []:
+if filosofía == []:
     print("No hay libros de género \"Filosofía\".")
 else:
     print("Libros de filosofía:")
