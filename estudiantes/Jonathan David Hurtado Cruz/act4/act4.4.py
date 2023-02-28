@@ -12,9 +12,6 @@ for anio_libro1 in lista_nueva:
     anios.append(int(anio_libro1[2]))
 
 
-
-    
-
 print(anios)
 print(len(anios))
  

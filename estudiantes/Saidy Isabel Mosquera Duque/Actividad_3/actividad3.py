@@ -17,7 +17,7 @@ catalogo=["Harry Potter y la piedra filosofal; J. K. Rowling; 1997; Ficción", "
 
 #print(catalogo)
 
-catalogo[0]= "La brújula dorada; Philip Pullman; 2017, Narrativa"
+catalogo[0]= "La brújula dorada; Philip Pullman; 2017; Narrativa"
 
 #print(catalogo)
 
