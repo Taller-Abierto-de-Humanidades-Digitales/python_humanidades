@@ -32,9 +32,14 @@ print(oracion1.strip())
 
 oracion1 = "Seguiremos cantando. Un canto a mi tierra, un canto de resistencia"
 palabra1 = "canto"
+print(palabra1)
+print(F"Seguiremos cantando. Un {palabra1} a mi tierra, un {palabra1} de resistencia")
 palabra2 = "grito"
-print(f"oracion1.replace{palabra1}")
-print(f"import{palabra2}")
+print(palabra2)
+
+print(oracion1.replace(palabra1, palabra2))
+
+
 
 ##split(): Divide la frase en palabras
 

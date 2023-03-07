@@ -40,7 +40,7 @@ nombre_manga = "Dr. Slump"
 print(nombre_manga)
 nombre_manga2 = "Dragón Ball"
 nombre_pelicula = "Pulp Fiction"
-prin(nombre_pelicula)
+print(nombre_pelicula)
 fecha_pub = 1979
 print(fecha_pub)
 fecha_pub2 = 1984
@@ -54,12 +54,16 @@ print(fecha_pelicula)
 
 
 texto1 = f"{nombre_completo1} publicó su manga {nombre_manga2} en {fecha_pub2}"
+print(texto1)
 
 texto2 = f"{nombre_completo2} es el director de la película {nombre_pelicula}. Fue emitida por primera vez en {fecha_pelicula}."
+print(texto2)
 
 texto3 = f"Yo, señor, soy acontista. Mi profesión es hacer disparos al aire. Todavía no habré descendido la primera nube. Mas, la delicia está en curvar el arco y en suponer la flecha donde la clava el ojo."
+print(texto3)
 
 texto4 = f"Es posible que {nombre} no haya leído {nombre_manga2}."
+print(texto4)
 
 ####################################
 
