@@ -1,0 +1,1160 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Funciones: Introducción &#8212; Curso de Python para las HD</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Función input()" href="20-input.html" />
+    <link rel="prev" title="Actividad 6: Manejo de diccionarios" href="../actividades/6-diccionarios.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso de Python para las HD</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Fundamentos de programación
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción. Configurar un entorno de desarrollo para Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-instalarPython.html">
+   Instalar Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-terminal.html">
+   Terminal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-instalarVSCode.html">
+   Instalar VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-Git.html">
+   Configurar Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-Github.html">
+   Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/1-configuracion.html">
+   Actividad 1: Configurar un entorno de desarrollo para Python
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción a Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-python.html">
+   Introducción a Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-variables.html">
+   Sintaxis, variables y tipos de datos básicos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-operadores.html">
+   Operadores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-operaciones_string.html">
+   Operaciones con cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/2-sintaxis_variables.html">
+   Actividad 2: Variables y sintaxis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Listas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-listas.html">
+   Listas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/3-listas.html">
+   Actividad 3: Listas (operaciones básicas)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Iteraciones (for loops)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-iteraciones.html">
+   Iteraciones (
+   <em>
+    for loops
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/4-iteraciones.html">
+   Actividad 4: Iteraciones
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Condicionales (if else)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-condicionales.html">
+   Introducción a los condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-plogicas.html">
+   Pruebas condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-condicionPertenencia.html">
+   Operadores de pertenencia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-ifelse.html">
+   Sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   ,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     elif
+    </span>
+   </code>
+   y
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     else
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-listaseif.html">
+   Combinar listas y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/5-condicionales.html">
+   Actividad 5: Condicionales y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Diccionarios
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-diccionarios.html">
+   Diccionarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-iterardiccio.html">
+   Iterar a través de un diccionario
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/6-diccionarios.html">
+   Actividad 6: Manejo de diccionarios
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Funciones
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Funciones: Introducción
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-input.html">
+   Función
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     input()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-funciones_y_TryExcept.html">
+   Control de errores con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Try
+    </span>
+   </code>
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Except
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/7-funciones.html">
+   Actividad 7: Funciones
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Recursos adicionales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/gh-pages?urlpath=tree/tutoriales/19-funcionesIntro.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/19-funcionesIntro.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/tutoriales/19-funcionesIntro.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/tutoriales/19-funcionesIntro.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definicion-de-una-funcion">
+   Definición de una función
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pasar-valores-a-una-funcion">
+   Pasar valores a una función
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pasar-argumentos">
+   Pasar argumentos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#argumentos-posicionales">
+     Argumentos posicionales
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#como-facilitar-el-uso-de-las-funciones">
+     ¿Cómo facilitar el uso de las funciones?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#argumentos-con-palabras-clave">
+     Argumentos con palabras clave
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#argumentos-predeterminados">
+     Argumentos predeterminados
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#errores-comunes">
+     Errores comunes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numero-incorrecto-de-argumentos">
+       Número incorrecto de argumentos
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#argumentos-con-palabras-clave-incorrectos">
+       Argumentos con palabras clave incorrectos
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#en-resumen">
+   En resumen
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Funciones: Introducción</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#definicion-de-una-funcion">
+   Definición de una función
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pasar-valores-a-una-funcion">
+   Pasar valores a una función
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pasar-argumentos">
+   Pasar argumentos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#argumentos-posicionales">
+     Argumentos posicionales
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#como-facilitar-el-uso-de-las-funciones">
+     ¿Cómo facilitar el uso de las funciones?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#argumentos-con-palabras-clave">
+     Argumentos con palabras clave
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#argumentos-predeterminados">
+     Argumentos predeterminados
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#errores-comunes">
+     Errores comunes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numero-incorrecto-de-argumentos">
+       Número incorrecto de argumentos
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#argumentos-con-palabras-clave-incorrectos">
+       Argumentos con palabras clave incorrectos
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#en-resumen">
+   En resumen
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="funciones-introduccion">
+<h1>Funciones: Introducción<a class="headerlink" href="#funciones-introduccion" title="Permalink to this headline">#</a></h1>
+<p>Hasta ahora, hemos apredido a realizar programas que tiene un comportamiento lineal, que se ejecutan sencuencialmente y de ser necesario repetir una acción, debemos escribir nuevamente el código que la realiza. Esto tiene varios inconvenientes, entre ellos, que el código se hace muy largo y difícil de leer, además, si queremos modificar una de estas acciones, debemos hacerlo sobre cada una de las repeticiones, lo cual es una receta para el desastre. Las funciones son bloques de código que nos permiten agrupar acciones que se repiten y que además nos permiten reutilizarlas en otros programas. Básicamente, una función tiene la intención de realizar una función específica a partir de unos parámetros de entrada y con ello devolver un resultado.</p>
+<section id="definicion-de-una-funcion">
+<h2>Definición de una función<a class="headerlink" href="#definicion-de-una-funcion" title="Permalink to this headline">#</a></h2>
+<p>La siguiente imagen muestra la estructura de una función en Python:</p>
+<figure class="align-default" id="estructura-funcion">
+<a class="reference internal image-reference" href="../_images/función_estructura.png"><img alt="../_images/función_estructura.png" src="../_images/función_estructura.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Estructura de una función en Python</span><a class="headerlink" href="#estructura-funcion" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Como verás, la sintaxis de una función es bastante simple:</p>
+<ul class="simple">
+<li><p>Se define con la palabra reservada <code class="docutils literal notranslate"><span class="pre">def</span></code></p></li>
+<li><p>Le sigue el nombre de la función. La convención es que se escriba en minúsculas y separando las palabras con guiones bajos.</p></li>
+<li><p>Se abre un paréntesis y se escriben los parámetros de entrada de la función, separados por comas. Si la función no tiene parámetros de entrada, se deja el paréntesis vacío.</p></li>
+<li><p>Se cierra el paréntesis y se abre un dos puntos.</p></li>
+<li><p>Se escribe el código de la función, indentado.</p></li>
+</ul>
+<p>Veamos un ejemplo de una función que no tiene parámetros de entrada:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saludar</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola, ¿cómo estás?&quot;</span><span class="p">)</span>
+
+<span class="n">saludar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola, ¿cómo estás?
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, la función <code class="docutils literal notranslate"><span class="pre">saludar()</span></code> no tiene parámetros de entrada, por lo que no hay ningún elemento dentro del paréntesis. La acción, en este caso, es sencillamente imprimir un mensaje en pantalla que dice “Hola, ¿cómo estás?”. La función se invoca en la última línea del código escribiendo el nombre de la función y abriendo y cerrando paréntesis.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Nota que cuando invocamos la función <code class="docutils literal notranslate"><span class="pre">saludar()</span></code> no estamos haciendo print en la línea (<code class="docutils literal notranslate"><span class="pre">print(saludar())</span></code>), sino que es el bloque de código de la función el que hace el print.</p>
+</div>
+</section>
+<section id="pasar-valores-a-una-funcion">
+<h2>Pasar valores a una función<a class="headerlink" href="#pasar-valores-a-una-funcion" title="Permalink to this headline">#</a></h2>
+<p>Como vimos en la imagen anterior, las funciones pueden tener parámetros de entrada. Un <em>parámetro</em> es una “pieza de información” que se pasa a la función para que esta pueda realizar sus acciones. Un <em>argumento</em> sería el valor que se le pasa a la función para que ésta lo utilice como parámetro.</p>
+<p>Modifiquemos la función anterior para que reciba un nombre y lo imprima en pantalla:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hola </span><span class="si">{</span><span class="n">nombre</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">, ¿cómo estás?&quot;</span><span class="p">)</span>
+
+<span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Virginia&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Virginia, ¿cómo estás?
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora la función recibe un valor (“Virginia”) y lo utiliza para personalizar el mensaje. Es decir, el <em>argumento</em> es “Virginia” y se asigna al <em>parámetro</em> <code class="docutils literal notranslate"><span class="pre">nombre</span></code>. Podríamos decir que el <em>parámetro</em> es un nombre de variable, y el <em>argumento</em> el valor que se le asigna</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Esta distinción que realizamos no es estrictamente necesaria. De hecho, es común que estos términos se usen como sinónimos. Por esta razón, es posible que encuentres que en algunos libros se usan los términos de manera intercambiable.</p>
+</div>
+</section>
+<section id="pasar-argumentos">
+<h2>Pasar argumentos<a class="headerlink" href="#pasar-argumentos" title="Permalink to this headline">#</a></h2>
+<p>Una función suele tener más de un parámetro, por lo que necesitamos definir cómo pasar los argumentos de tal manera que el bloque de código utilice los valores de manera correcta. Para esto, Python nos ofrece varias formas de pasar los argumentos a una función, los cuales veremos con detalle.</p>
+<section id="argumentos-posicionales">
+<h3>Argumentos posicionales<a class="headerlink" href="#argumentos-posicionales" title="Permalink to this headline">#</a></h3>
+<p>Este es el método más sencillo de pasar argumentos a una función. Básicamente, el orden de los parámetros es el mismo que el orden de los argumentos. Por ejemplo, si en nuestra función queremos recibir el nombre y la fecha de nacimiento, para regresar un saludo y la edad de la persona, podemos hacer lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">fecha_nacimiento</span><span class="p">):</span>
+    <span class="n">edad</span> <span class="o">=</span> <span class="mi">2023</span> <span class="o">-</span> <span class="n">fecha_nacimiento</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hola </span><span class="si">{</span><span class="n">nombre</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">, ¿cómo estás? Tienes </span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s2"> años.&quot;</span><span class="p">)</span>
+
+<span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Virginia&quot;</span><span class="p">,</span> <span class="mi">1990</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Virginia, ¿cómo estás? Tienes 33 años.
+</pre></div>
+</div>
+</div>
+</div>
+<p>La función define que requerimos dos valores: un nombre y una fecha. El orden en este caso es fundamental, de otra manera obtendremos un error:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saludar</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="s2">&quot;Virginia&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">saludar</span><span class="p">(</span><span class="mi">1990</span><span class="p">,</span> <span class="s2">&quot;Virginia&quot;</span><span class="p">)</span>
+
+<span class="nn">Cell In[3], line 2,</span> in <span class="ni">saludar</span><span class="nt">(nombre, fecha_nacimiento)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">fecha_nacimiento</span><span class="p">):</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">edad</span> <span class="o">=</span> <span class="mi">2023</span> <span class="o">-</span> <span class="n">fecha_nacimiento</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hola </span><span class="si">{</span><span class="n">nombre</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">, ¿cómo estás? Tienes </span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s2"> años.&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for -: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los argumentos son los mismos, pero al cambiarse el orden la función pasa el valor de la fecha de nacimiento al parámetro <code class="docutils literal notranslate"><span class="pre">nombre</span></code> y el valor del nombre a <code class="docutils literal notranslate"><span class="pre">fecha_nacimiento</span></code>. Obviamente esto tiene como consecuencia que no se pueda calcular la edad porque no se puede restar un string a un entero.</p>
+</section>
+<section id="como-facilitar-el-uso-de-las-funciones">
+<h3>¿Cómo facilitar el uso de las funciones?<a class="headerlink" href="#como-facilitar-el-uso-de-las-funciones" title="Permalink to this headline">#</a></h3>
+<p>Debido a que la función es directamente visible por nosotros, conocemos los parámetros y su posición, pero esto no es el caso en todas las situaciones. De hecho, suele ser la excepción. Para lograr que cualquier persona o nosotros mismos podamos reutilizar la función, es importante documentarla y explicar qué hace y qué parámetros recibe, su orden y su tipo. Esto se puede hacer con comentarios en el código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">fecha_nacimiento</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Saluda a una persona y le dice su edad.</span>
+<span class="sd">    </span>
+<span class="sd">    Parámetros</span>
+<span class="sd">    ----------</span>
+<span class="sd">    nombre: str</span>
+<span class="sd">        Nombre de la persona a saludar</span>
+<span class="sd">    fecha_nacimiento: int</span>
+<span class="sd">        Año de nacimiento de la persona</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">edad</span> <span class="o">=</span> <span class="mi">2023</span> <span class="o">-</span> <span class="n">fecha_nacimiento</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hola </span><span class="si">{</span><span class="n">nombre</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">, ¿cómo estás? Tienes </span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s2"> años.&quot;</span><span class="p">)</span>
+
+<span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Virginia&quot;</span><span class="p">,</span> <span class="mi">1990</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Virginia, ¿cómo estás? Tienes 33 años.
+</pre></div>
+</div>
+</div>
+</div>
+<p>La mayoría de editores de código en la actualidad tienen funcionalidades que permiten ver la documentación de una función. Por ejemplo, en VS Code, podemos situar el cursor sobre el nombre de la función y ver la documentación en una ventana emergente:</p>
+<figure class="align-default" id="parametros">
+<a class="reference internal image-reference" href="../_images/parametros.png"><img alt="../_images/parametros.png" src="../_images/parametros.png" style="height: 200px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Documentación de una función en VS Code</span><a class="headerlink" href="#parametros" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>También podemos utilizar la función <code class="docutils literal notranslate"><span class="pre">help()</span></code> para ver la documentación de una función:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">saludar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on function saludar in module __main__:
+
+saludar(nombre, fecha_nacimiento)
+    Saluda a una persona y le dice su edad.
+    
+    Parámetros
+    ----------
+    nombre: str
+        Nombre de la persona a saludar
+    fecha_nacimiento: int
+        Año de nacimiento de la persona
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Documentación</p>
+<p>La labor de documentar las funciones es una de las tareas más importantes que debemos realizar cuando elaboramos un programa. Incluso si lo hacemos para nosotros sin la intención de distribuirlo, podemos olvidarnos de los detalles y no recordar qué hace una función en un tiempo. Por esta razón, es importante documentar las funciones para que podamos entenderlas en el futuro. Por otra parte, una documentación detallada (aunque no excesiva) es evidencia de un procedimiento metódico y profesional.</p>
+</div>
+</section>
+<section id="argumentos-con-palabras-clave">
+<h3>Argumentos con palabras clave<a class="headerlink" href="#argumentos-con-palabras-clave" title="Permalink to this headline">#</a></h3>
+<p>También podemos pasar argumentos asociando directamente el valor a un parámetro. Esto se conoce como <em>argumentos con palabras clave</em>. Por ejemplo, podemos hacer lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="o">=</span><span class="s2">&quot;Virginia&quot;</span><span class="p">,</span> <span class="n">fecha_nacimiento</span><span class="o">=</span><span class="mi">1990</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Virginia, ¿cómo estás? Tienes 33 años.
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, el orden de los argumentos no importa, ya que se asocia directamente el valor a un parámetro. Esto es útil cuando tenemos muchas funciones y no queremos recordar el orden de los parámetros.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saludar</span><span class="p">(</span><span class="n">fecha_nacimiento</span><span class="o">=</span><span class="mi">1990</span><span class="p">,</span> <span class="n">nombre</span><span class="o">=</span><span class="s2">&quot;Virginia&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Virginia, ¿cómo estás? Tienes 33 años.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Incluso, no es necesario que todos los argumentos sean con palabras clave, podemos mezclarlos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Virginia&quot;</span><span class="p">,</span> <span class="n">fecha_nacimiento</span><span class="o">=</span><span class="mi">1990</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Virginia, ¿cómo estás? Tienes 33 años.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ten en cuenta que en este último caso el argumento “Virginia” se asigna posicionalmente, mientras el argumento <code class="docutils literal notranslate"><span class="pre">fecha_nacimiento</span></code> se asigna con palabras clave.</p>
+</section>
+<section id="argumentos-predeterminados">
+<h3>Argumentos predeterminados<a class="headerlink" href="#argumentos-predeterminados" title="Permalink to this headline">#</a></h3>
+<p>Otra forma útil de definir parámetros consiste en asignar un valor predeterminado. En este caso, a menos que se pase un argumento diferente, Python tomará el valor predeterminado para ejecutar el bloque de código de la función. Por ejemplo, podemos modificar la función anterior para incluir un valor que puede ser muy común, por ejemplo, lugar de nacimiento:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">fecha_nacimiento</span><span class="p">,</span> <span class="n">lugar_de_nacimiento</span><span class="o">=</span><span class="s2">&quot;Colombia&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Saluda a una persona y le dice su edad.</span>
+<span class="sd">    </span>
+<span class="sd">    Parámetros</span>
+<span class="sd">    ----------</span>
+<span class="sd">    nombre: str</span>
+<span class="sd">        Nombre de la persona a saludar</span>
+<span class="sd">    fecha_nacimiento: int</span>
+<span class="sd">        Año de nacimiento de la persona</span>
+<span class="sd">    lugar_de_nacimiento: str</span>
+<span class="sd">        Lugar de nacimiento de la persona</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">edad</span> <span class="o">=</span> <span class="mi">2023</span> <span class="o">-</span> <span class="n">fecha_nacimiento</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hola </span><span class="si">{</span><span class="n">nombre</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">, ¿cómo estás? Tienes </span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s2"> años y naciste en </span><span class="si">{</span><span class="n">lugar_de_nacimiento</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+<span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Virginia&quot;</span><span class="p">,</span> <span class="mi">1990</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Virginia, ¿cómo estás? Tienes 33 años y naciste en Colombia.
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notarás que no necesitamos pasar un argumento para el parámetro <code class="docutils literal notranslate"><span class="pre">lugar_de_nacimiento</span></code>, ya que Python toma el valor predeterminado. Sin embargo, si queremos cambiar el valor predeterminado, podemos hacerlo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Virginia&quot;</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="n">lugar_de_nacimiento</span><span class="o">=</span><span class="s2">&quot;México&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Virginia, ¿cómo estás? Tienes 33 años y naciste en México.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="important admonition">
+<p class="admonition-title">Importante</p>
+<p>Los argumentos con palabras clave deben ir después de los argumentos posicionales, de otra manera tendrás un error de sintaxis.</p>
+</div>
+</section>
+<section id="errores-comunes">
+<h3>Errores comunes<a class="headerlink" href="#errores-comunes" title="Permalink to this headline">#</a></h3>
+<p>A continuación, veremos algunos errores comunes que se pueden presentar al pasar argumentos a una función.</p>
+<section id="numero-incorrecto-de-argumentos">
+<h4>Número incorrecto de argumentos<a class="headerlink" href="#numero-incorrecto-de-argumentos" title="Permalink to this headline">#</a></h4>
+<p>Si pasamos un número incorrecto de argumentos, Python nos arrojará un error indicando que falta un argumento o que hay un argumento de más:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Virginia&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Virginia&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: saludar() missing 1 required positional argument: &#39;fecha_nacimiento&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Virginia&quot;</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="s2">&quot;México&quot;</span><span class="p">,</span> <span class="s2">&quot;Michoacán&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Virginia&quot;</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="s2">&quot;México&quot;</span><span class="p">,</span> <span class="s2">&quot;Michoacán&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: saludar() takes from 2 to 3 positional arguments but 4 were given
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="argumentos-con-palabras-clave-incorrectos">
+<h4>Argumentos con palabras clave incorrectos<a class="headerlink" href="#argumentos-con-palabras-clave-incorrectos" title="Permalink to this headline">#</a></h4>
+<p>Si pasamos un argumento con palabras clave incorrecto, Python nos arrojará un error indicando que el parámetro no existe:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Virginia&quot;</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="n">lugar_de_nacimiento</span><span class="o">=</span><span class="s2">&quot;México&quot;</span><span class="p">,</span> <span class="n">lugar_de_residencia</span><span class="o">=</span><span class="s2">&quot;Michoacán&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Virginia&quot;</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="n">lugar_de_nacimiento</span><span class="o">=</span><span class="s2">&quot;México&quot;</span><span class="p">,</span> <span class="n">lugar_de_residencia</span><span class="o">=</span><span class="s2">&quot;Michoacán&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: saludar() got an unexpected keyword argument &#39;lugar_de_residencia&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este error también puede presentarse si escribimos mal el nombre del parámetro:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Virginia&quot;</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="n">nacimiento</span><span class="o">=</span><span class="s2">&quot;México&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Virginia&quot;</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="n">nacimiento</span><span class="o">=</span><span class="s2">&quot;México&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: saludar() got an unexpected keyword argument &#39;nacimiento&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="en-resumen">
+<h2>En resumen<a class="headerlink" href="#en-resumen" title="Permalink to this headline">#</a></h2>
+<p>Las funciones son bloques de código que podemos reutilizar en cualquier parte del programa o incluso en otros programas. Hemos visto la sintaxis de las funciones y aprendimos a evitar algunos errores comunes al pasar argumentos a una función. En la siguiente lección, veremos cómo podemos lograr recibir información directamente del usuario del programa con el método <code class="docutils literal notranslate"><span class="pre">input</span></code>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutoriales"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../actividades/6-diccionarios.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Actividad 6: Manejo de diccionarios</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="20-input.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Función <code class="docutils literal notranslate"><span class="pre">input()</span></code></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

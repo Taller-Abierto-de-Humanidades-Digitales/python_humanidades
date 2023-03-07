@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Introducción a los condicionales &#8212; Curso de Python para las HD</title>
+    <title>Función input() &#8212; Curso de Python para las HD</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Pruebas condicionales" href="13-plogicas.html" />
-    <link rel="prev" title="Actividad 4: Iteraciones" href="../actividades/4-iteraciones.html" />
+    <link rel="next" title="Control de errores con Try Except" href="21-funciones_y_TryExcept.html" />
+    <link rel="prev" title="Funciones: Introducción" href="19-funcionesIntro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -226,9 +226,9 @@ const thebe_selector_output = ".output, .cell_output"
   Condicionales (if else)
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-condicionales.html">
    Introducción a los condicionales
   </a>
  </li>
@@ -312,14 +312,14 @@ const thebe_selector_output = ".output, .cell_output"
   Funciones
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="19-funcionesIntro.html">
    Funciones: Introducción
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="20-input.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Función
    <code class="docutils literal notranslate">
     <span class="pre">
@@ -419,7 +419,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/gh-pages?urlpath=tree/tutoriales/12-condicionales.md"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/gh-pages?urlpath=tree/tutoriales/20-input.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -479,7 +479,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/12-condicionales.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/20-input.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -507,7 +507,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/tutoriales/12-condicionales.ipynb"
+        <a href="../_sources/tutoriales/20-input.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -524,7 +524,7 @@ title="Download notebook file"
       </li>
       
       <li>
-        <a href="../_sources/tutoriales/12-condicionales.md"
+        <a href="../_sources/tutoriales/20-input.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -561,23 +561,70 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aceptar-valores-numericos">
+   Aceptar valores numéricos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notas">
+   Notas
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introducción a los condicionales</h1>
+                <h1>Función input()</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#aceptar-valores-numericos">
+   Aceptar valores numéricos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notas">
+   Notas
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -585,56 +632,133 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-los-condicionales">
-<h1>Introducción a los condicionales<a class="headerlink" href="#introduccion-a-los-condicionales" title="Permalink to this headline">#</a></h1>
-<p>En la lección anterior exploramos cómo realizar una tarea repetitiva con un bucle <em>for</em>, ese es un paso muy importante hacia la automatización de nuestras tareas. Ahora, podemos hacer que estas tareas sean mucho más complejas si tomamos decisiones en función de ciertas condiciones lógicas. Para ello, Python dispone de las sentencias <code class="docutils literal notranslate"><span class="pre">if</span></code> y <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
-<p>Antes de iniciar nuestro programa en Python, quiero que veamos un ejemplo de uso de condicionales en <a class="reference external" href="https://scratch.mit.edu/">Scratch</a>. En este ejemplo vamos a hacer lo siguiente:</p>
-<ul class="simple">
-<li><p>Cada vez que se pulse la barra espaciadora se asignará un valor aleatorio entre 1 y 10 a la variable <em>my variable</em></p></li>
-<li><p>Si el valor de <em>my variable</em> es menor que 50, el personaje se moverá 100 pasos, rebotando si llega al borde, y hará el sonido de <em>meow</em></p></li>
-<li><p>Si el valor de <em>my variable</em> es mayor que 50, el personaje cambiará de gesto, irá a una posición aleatoria en el cuadro y no hará el sonido de <em>meow</em>.</p></li>
-<li><p>En ambos casos, el personaje mostrará un mensaje con el valor de <em>my variable</em>.</p></li>
-</ul>
-<p>Para ello, vamos a utilizar los bloques <code class="docutils literal notranslate"><span class="pre">if</span></code> y <code class="docutils literal notranslate"><span class="pre">else</span></code> de Scratch. El bloque <code class="docutils literal notranslate"><span class="pre">if</span></code> se ejecuta si la condición que se le pasa es verdadera, y el bloque <code class="docutils literal notranslate"><span class="pre">else</span></code> se ejecuta si la condición es falsa. En el siguiente ejemplo, el bloque <code class="docutils literal notranslate"><span class="pre">if</span></code> se ejecuta si el valor de <em>my variable</em> es menor que 50, y el bloque <code class="docutils literal notranslate"><span class="pre">else</span></code> se ejecuta si el valor de <em>my variable</em> es mayor que 50.</p>
-<p><img alt="Scratch" src="../_images/scratch.png" /></p>
-<p>Juega con el ejemplo e intenta identificar qué hace cada bloque y por qué el personaje se comporta de la manera que lo hace.</p>
-<iframe src="https://scratch.mit.edu/projects/807081542/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
-<p>Si intentáramos replicar este ejemplo en Python, tendríamos que hacer algo similar a lo siguiente <a class="footnote-reference brackets" href="#id2" id="id1">1</a>:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="funcion-input">
+<h1>Función <code class="docutils literal notranslate"><span class="pre">input()</span></code><a class="headerlink" href="#funcion-input" title="Permalink to this headline">#</a></h1>
+<p>La función <code class="docutils literal notranslate"><span class="pre">input()</span></code> tiene el propósito de recibir un valor desde la consola por un usuario. Esta función es muy útil para recibir datos de entrada sin tener que escribirlos en una variable. Retomemots nuestra función <code class="docutils literal notranslate"><span class="pre">saludar()</span></code> y supongamos que el programa lo está usando “Juan”, quien nació en 1980 <a class="footnote-reference brackets" href="#id2" id="id1">1</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
-
-<span class="n">my_variable</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-
-<span class="n">posicion_personaje</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">my_variable</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
-    <span class="n">posicion_personaje</span> <span class="o">=</span> <span class="p">(</span><span class="n">posicion_personaje</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">100</span><span class="p">,</span> <span class="n">posicion_personaje</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">my_variable</span><span class="si">}</span><span class="se">\n</span><span class="s2">El personaje se ha movido a la posición </span><span class="si">{</span><span class="n">posicion_personaje</span><span class="si">}</span><span class="se">\n</span><span class="s2">Meow!&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">posicion_personaje</span> <span class="o">=</span> <span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">480</span><span class="p">),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">360</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">my_variable</span><span class="si">}</span><span class="se">\n</span><span class="s2">El personaje se ha movido a la posición </span><span class="si">{</span><span class="n">posicion_personaje</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">fecha_nacimiento</span><span class="o">=</span><span class="mi">1990</span><span class="p">,</span> <span class="n">lugar_de_nacimiento</span><span class="o">=</span><span class="s2">&quot;Colombia&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Saluda a una persona y le dice su edad.</span>
+<span class="sd">    </span>
+<span class="sd">    Parámetros</span>
+<span class="sd">    ----------</span>
+<span class="sd">    nombre: str</span>
+<span class="sd">        Nombre de la persona a saludar</span>
+<span class="sd">    fecha_nacimiento: int</span>
+<span class="sd">        Año de nacimiento de la persona</span>
+<span class="sd">    lugar_de_nacimiento: str</span>
+<span class="sd">        Lugar de nacimiento de la persona</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">edad</span> <span class="o">=</span> <span class="mi">2023</span> <span class="o">-</span> <span class="n">fecha_nacimiento</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hola </span><span class="si">{</span><span class="n">nombre</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">, ¿cómo estás? Tienes </span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s2"> años y naciste en </span><span class="si">{</span><span class="n">lugar_de_nacimiento</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</div>
+<p>Podemos entonces pedirle su nombre al usuario y saludarlo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresa tu nombre: &quot;</span><span class="p">)</span>
+<span class="n">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>67
-El personaje se ha movido a la posición (184, 175)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Juan, ¿cómo estás? Tienes 33 años y naciste en Colombia.
 </pre></div>
 </div>
 </div>
 </div>
-<p>No te preocupes si no entiendes completamente este programa. Lo que debes saber por lo pronto es que cada vez que ejecutes este código el personaje se habrá movido a una posición que bien puede ser <code class="docutils literal notranslate"><span class="pre">(100,</span> <span class="pre">0)</span></code> o cualquier coordenada aleatoria entre <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">0)</span></code> y <code class="docutils literal notranslate"><span class="pre">(480,</span> <span class="pre">360)</span></code>, es decir, el personaje toma una decisión en función de la condición que se le pasa, la cual desconocemos por completo al inicio del programa. Copia este código en un archivo de Python y ejecútalo varias veces para ver cómo se comporta el personaje.</p>
-<p>Entendamos entonces las condicionales como una forma de tomar decisiones de acuerdo con una condición lógica que puede ser verdadera o falsa. Esto se puede representar con un diagrama de flujo, como el siguiente:</p>
-<p><img alt="Diagrama de flujo" src="../_images/condicional.png" /></p>
-<p>Vemos como, dependiendo de si se cumple o no la condición (si el valor de <code class="docutils literal notranslate"><span class="pre">my_variable</span></code> es menor a 50) el valor de <code class="docutils literal notranslate"><span class="pre">posición</span></code> será diferente. Esta simple estructura es la base de la programación condicional en Python.</p>
-<p>A continuación veremos cómo se realizan las pruebas condicionales en Python para obtener resultados de verdad o falsedad.</p>
+<p>La función <code class="docutils literal notranslate"><span class="pre">input()</span></code> asigna cualquier valor que hayas pasado en la consola como una cadena de caracteres y la asigna a la variable asociada, en este caso <code class="docutils literal notranslate"><span class="pre">nombre</span></code>.</p>
+<section id="aceptar-valores-numericos">
+<h2>Aceptar valores numéricos<a class="headerlink" href="#aceptar-valores-numericos" title="Permalink to this headline">#</a></h2>
+<p>En nuestro ejemplo anterior tuvimos que modificar el parámetro <code class="docutils literal notranslate"><span class="pre">fecha_nacimiento</span></code> para que el programa funcionara. Si no lo hubiéramos hecho de esa manera, obtendríamos el siguiente error:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresa tu nombre: &quot;</span><span class="p">)</span>
+<span class="n">fecha_nacimiento</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresa tu año de nacimiento: &quot;</span><span class="p">)</span>
+
+<span class="n">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">fecha_nacimiento</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">nombre</span> <span class="o">=</span> <span class="s2">&quot;Juan&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fecha_nacimiento</span> <span class="o">=</span> <span class="s2">&quot;1980&quot;</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">fecha_nacimiento</span><span class="p">)</span>
+
+<span class="nn">Cell In[1], line 13,</span> in <span class="ni">saludar</span><span class="nt">(nombre, fecha_nacimiento, lugar_de_nacimiento)</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">fecha_nacimiento</span><span class="o">=</span><span class="mi">1990</span><span class="p">,</span> <span class="n">lugar_de_nacimiento</span><span class="o">=</span><span class="s2">&quot;Colombia&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Saluda a una persona y le dice su edad.</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="sd">     </span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="sd">     Parámetros</span>
+<span class="sd">   (...)</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="sd">         Lugar de nacimiento de la persona</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">13</span>     <span class="n">edad</span> <span class="o">=</span> <span class="mi">2023</span> <span class="o">-</span> <span class="n">fecha_nacimiento</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span>     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hola </span><span class="si">{</span><span class="n">nombre</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">, ¿cómo estás? Tienes </span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s2"> años y naciste en </span><span class="si">{</span><span class="n">lugar_de_nacimiento</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: unsupported operand type(s) for -: &#39;int&#39; and &#39;str&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este error se debe a que la función <code class="docutils literal notranslate"><span class="pre">input()</span></code> no recibe otro tipo de valor diferente a un texto. Por ello, para lidiar con esto, debemos convertir el valor que recibimos de la consola a un número entero. Esto lo podemos hacer con la función <code class="docutils literal notranslate"><span class="pre">int()</span></code> directamente en el <code class="docutils literal notranslate"><span class="pre">input()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresa tu nombre: &quot;</span><span class="p">)</span>
+<span class="n">fecha_nacimiento</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresa tu año de nacimiento: &quot;</span><span class="p">))</span>
+<span class="n">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">fecha_nacimiento</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Juan, ¿cómo estás? Tienes 43 años y naciste en Colombia.
+</pre></div>
+</div>
+</div>
+</div>
+<p>O, podemos hacerlo directamente en la función:</p>
+<div class="cell tag_remove-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">fecha_nacimiento</span><span class="p">,</span> <span class="n">lugar_de_nacimiento</span><span class="o">=</span><span class="s2">&quot;Colombia&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Saluda a una persona y le dice su edad.</span>
+<span class="sd">    </span>
+<span class="sd">    Parámetros</span>
+<span class="sd">    ----------</span>
+<span class="sd">    nombre: str</span>
+<span class="sd">        Nombre de la persona a saludar</span>
+<span class="sd">    fecha_nacimiento: int</span>
+<span class="sd">        Año de nacimiento de la persona</span>
+<span class="sd">    lugar_de_nacimiento: str</span>
+<span class="sd">        Lugar de nacimiento de la persona</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">edad</span> <span class="o">=</span> <span class="mi">2023</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">fecha_nacimiento</span><span class="p">)</span> <span class="c1"># Convertimos el valor a entero</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hola </span><span class="si">{</span><span class="n">nombre</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">, ¿cómo estás? Tienes </span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s2"> años y naciste en </span><span class="si">{</span><span class="n">lugar_de_nacimiento</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+
+
+<span class="n">nombre</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresa tu nombre: &quot;</span><span class="p">)</span>
+<span class="n">fecha_nacimiento</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingresa tu año de nacimiento: &quot;</span><span class="p">)</span>
+<span class="n">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">fecha_nacimiento</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Juan, ¿cómo estás? Tienes 43 años y naciste en Colombia.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Así ya no tendremos problemas con el tipo de dato que recibimos de la consola.</p>
+</section>
+<section id="notas">
+<h2>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">#</a></h2>
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>Este ejemplo es extremadamete sintético. Si quisiéramos replicar el ejemplo de Scratch en Python, tendríamos que utilizar la librería <a class="reference external" href="https://www.pygame.org/news">Pygame</a> para dibujar el personaje y el fondo, y la librería <a class="reference external" href="https://pygame-zero.readthedocs.io/en/stable/">Pygame Zero</a> para gestionar los eventos de teclado y ratón. No obstante, es un ejemplo funcional para empezar a entender el funcionamiento de las sentencias <code class="docutils literal notranslate"><span class="pre">if</span></code> y <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<dd><p>Debido a que no contamos con una consola de entrada en este cuaderno, hemos asignado los valores directamente para simular el comportamiento de la función <code class="docutils literal notranslate"><span class="pre">input()</span></code>.</p>
 </dd>
 </dl>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -664,17 +788,17 @@ El personaje se ha movido a la posición (184, 175)
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../actividades/4-iteraciones.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="19-funcionesIntro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Actividad 4: Iteraciones</p>
+            <p class="prev-next-title">Funciones: Introducción</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="13-plogicas.html" title="next page">
+    <a class='right-next' id="next-link" href="21-funciones_y_TryExcept.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Pruebas condicionales</p>
+        <p class="prev-next-title">Control de errores con <code class="docutils literal notranslate"><span class="pre">Try</span></code> <code class="docutils literal notranslate"><span class="pre">Except</span></code></p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
