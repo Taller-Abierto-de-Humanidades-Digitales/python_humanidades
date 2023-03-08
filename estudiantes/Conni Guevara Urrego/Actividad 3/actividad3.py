@@ -51,12 +51,12 @@ print(lista_autores_as)
 lista_obras = ["La Casa de los espíritus", "Las Cosas que perdimos en el fuego", "El Complot de los románticos", "La Nave de los locos", "El País de las mujeres", "La Muerte de Artemio Cruz", "Los Días hábiles", "Huasipungo", "Justo antes del final", "Un mundo huérfano"]
 print(lista_obras) """
 
-libros1 = ["La Casa de los espíritus; Isabel Allende; 1982; Novela", "Las Cosas que perdimos en el fuego; Mariana Enríquez; 2016; Cuentos", "El Complot de los románticos; Carmen Boullosa; 2009; Novela", "La Nave de los locos; Cristina Peri; 1984; Ficción", "El País de las mujeres; Gioconda Belli; 2010; Novela", "La Muerte de Artemio Cruz; Carlos Fuentes; 1962; Novela ", "Sergio Gutiérrez; Los Días hábiles; 2020; Novela", "Jorge Icaza; Huasipungo; 1934; Novela indigenista", "Emiliano Monge; Justo antes del final; 2022; Novela", "Giuseppe Caputo; Un mundo huérfano; 2016; Novela"]
+libros1 = ["La Casa de los espíritus; Isabel Allende; 1982; novela", "Las Cosas que perdimos en el fuego; Mariana Enríquez; 2016; cuentos", "El Complot de los románticos; Carmen Boullosa; 2009; novela", "La Nave de los locos; Cristina Peri; 1984; ficción", "El País de las mujeres; Gioconda Belli; 2010; novela", "La Muerte de Artemio Cruz; Carlos Fuentes; 1962; novela ", "Los Días hábiles; Sergio Gutiérrez; 2020; novela", "Huasipungo; Jorge Icaza; 1934; novela indigenista", "Justo antes del final; Emiliano Monge; 2022; novela", "Un mundo huérfano; Giuseppe Caputo; 2016; novela"]
 print(libros1)
 
 ##Reemplazar
 
-libros1[3] = "Cuentos completos; Jorge Luis Borges; 1995; Ficción"
+libros1[3] = "Cuentos completos; Jorge Luis Borges; 1995; ficción"
 
 print(libros1)
 
@@ -64,17 +64,17 @@ print(libros1)
 
 ##Un libro al inicio mediante el método insert()
 
-libros1.insert(0, "EL Coronel no tiene quien le escriba; Gabriel García Márquez; 1961; Novela corta")
+libros1.insert(0, "EL Coronel no tiene quien le escriba; Gabriel García Márquez; 1961; novela corta")
 print(libros1)
 
 ##Un libro al final mediante el método append()
 
-libros1.append("Travesuras de la niña mala; Mario Vargas Llosa; 2006; Novela")
+libros1.append("Travesuras de la niña mala; Mario Vargas Llosa; 2006; novela")
 print(libros1)
 
 ##Un libro en la posición 3 mediante el método insert()
 
-libros1.insert(3,"Lo que no tiene nombre; Piedad Bonnet; 2013; Biografía")
+libros1.insert(3,"Lo que no tiene nombre; Piedad Bonnet; 2013; biografía")
 print(libros1)
 
 ##Conocer número de elementos en la lista lent()
@@ -102,4 +102,31 @@ print(f"La lista tiene ahora {len(libros1)} libros.")
 
 ##El libro [título del libro] fue escrito por [autor o autora] en el año [año de publicación] y es de género [género]
 
-print(f"")
+print(f"El libro {libros1[0].split('; ')[0]} fue escrito por {libros1[0].split('; ')[-3]} en el año {libros1[0].split('; ')[2]} y es de género {libros1[0].split('; ')[3]}")
+print(f"El libro {libros1[1].split('; ')[0]} fue escrito por {libros1[1].split('; ')[1]} en el año {libros1[1].split('; ')[2]} y es de género {libros1[1].split('; ')[3]}")
+print(f"El libro {libros1[2].split('; ')[0]} fue escrito por {libros1[2].split('; ')[1]} en el año {libros1[2].split('; ')[2]} y es de género {libros1[2].split('; ')[3]}")
+print(f"El libro {libros1[3].split('; ')[0]} fue escrito por {libros1[3].split('; ')[-3]} en el año {libros1[3].split('; ')[2]} y es de género {libros1[3].split('; ')[3]}")
+print(f"El libro {libros1[4].split('; ')[0]} fue escrito por {libros1[4].split('; ')[1]} en el año {libros1[4].split('; ')[2]} y es de género {libros1[4].split('; ')[3]}")
+print(f"El libro {libros1[5].split('; ')[0]} fue escrito por {libros1[5].split('; ')[1]} en el año {libros1[5].split('; ')[2]} y es de género {libros1[5].split('; ')[3]}")
+print(f"El libro {libros1[6].split('; ')[0]} fue escrito por {libros1[6].split('; ')[1]} en el año {libros1[6].split('; ')[2]} y es de género {libros1[6].split('; ')[3]}")
+print(f"El libro {libros1[7].split('; ')[0]} fue escrito por {libros1[7].split('; ')[1]} en el año {libros1[7].split('; ')[2]} y es de género {libros1[7].split('; ')[3]}")
+print(f"El libro {libros1[8].split('; ')[0]} fue escrito por {libros1[8].split('; ')[1]} en el año {libros1[8].split('; ')[2]} y es de género {libros1[8].split('; ')[3]}")
+print(f"El libro {libros1[9].split('; ')[-4]} fue escrito por {libros1[9].split('; ')[1]} en el año {libros1[9].split('; ')[2]} y es de género {libros1[9].split('; ')[3]}")
+
+
+##Ejercicio 3: Organizar una lista
+
+""" libros1.sort()
+print(libros1) """
+
+titulo_asc = libros1.copy()
+print(titulo_asc)
+
+titulo_asc.sort()
+print(titulo_asc)
+
+titulo_desc = libros1.copy()
+print(titulo_desc)
+
+titulo_desc.sort(reverse=True)
+print(titulo_desc)
