@@ -81,5 +81,25 @@ print(libros1)
 
 print(f"La lista tiene ahora {len(libros1)} libros.")
 
-print(f"El libro {libros1[0].split('; ')[0]} fue escrito por {libros1[0].split('; ')[0]} en el año {libros1[0].split('; ')[2]} y es de género {libros1[0].split('; ')[3]}.")
+#Eliminación de obra en la lista
 
+libros1.pop(12)
+print(libros1)
+
+print(f"La lista tiene ahora {len(libros1)} libros.")
+
+del libros1[3]
+print(libros1)
+
+print(f"La lista tiene ahora {len(libros1)} libros.")
+
+del libros1[-3]
+print(libros1)
+
+print(f"La lista tiene ahora {len(libros1)} libros.")
+
+##Impresión cada elementos de la lista
+
+##El libro [título del libro] fue escrito por [autor o autora] en el año [año de publicación] y es de género [género]
+
+print(f"")
