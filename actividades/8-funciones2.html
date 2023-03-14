@@ -751,14 +751,33 @@ La función <code class="docutils literal notranslate"><span class="pre">edad_de
 <section id="ejercicio-6-escribe-una-funcion-para-llamar-a-todo-el-programa">
 <h2>Ejercicio 6 - Escribe una función para llamar a todo el programa<a class="headerlink" href="#ejercicio-6-escribe-una-funcion-para-llamar-a-todo-el-programa" title="Permalink to this headline">#</a></h2>
 <p>Debes crear una función llamada <code class="docutils literal notranslate"><span class="pre">main()</span></code> que permita llamar a todas las funciones que acabamos de crear. Esta función no recibe parámetros y no regresa ningún valor. Debe escribirse de la siguiente manera:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">diccionario_bios</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Esta función llama a las funciones que acabamos de crear</span>
+<span class="sd">    PARAMETROS:</span>
+<span class="sd">        diccionario_bios: diccionario con la información de los autores del boom latinoamericano</span>
+<span class="sd">    RETORNA:</span>
+<span class="sd">        None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Llama a las funciones que acabamos de crear</span>
-    <span class="n">autores_boom</span> <span class="o">=</span> <span class="n">autores</span><span class="p">(</span><span class="n">biografias_boom</span><span class="p">)</span>
+    <span class="n">autores_boom</span> <span class="o">=</span> <span class="n">autores</span><span class="p">(</span><span class="n">diccionario_bios</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">autores_boom</span><span class="p">)</span>
-    <span class="n">promedio_edad_autores_boom</span> <span class="o">=</span> <span class="n">edad_promedio</span><span class="p">(</span><span class="n">autores_boom</span><span class="p">,</span> <span class="n">bios</span><span class="o">=</span><span class="n">biografias_boom</span> <span class="p">)</span>
+    <span class="n">promedio_edad_autores_boom</span> <span class="o">=</span> <span class="n">edad_promedio</span><span class="p">(</span><span class="n">autores_boom</span><span class="p">,</span> <span class="n">bios</span><span class="o">=</span><span class="n">diccionario_bios</span> <span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La edad promedio de los autores_boom del Boom Latinoamericano fue de </span><span class="si">{</span><span class="n">promedio_edad_autores_boom</span><span class="si">}</span><span class="s2"> años&quot;</span><span class="p">)</span>
-    <span class="n">longevo_autores_boom</span> <span class="o">=</span> <span class="n">longevo</span><span class="p">(</span><span class="n">autores_boom</span><span class="p">,</span> <span class="n">bio</span><span class="o">=</span><span class="n">biografias_boom</span> <span class="p">)</span>
+    <span class="n">longevo_autores_boom</span> <span class="o">=</span> <span class="n">longevo</span><span class="p">(</span><span class="n">autores_boom</span><span class="p">,</span> <span class="n">bio</span><span class="o">=</span><span class="n">diccionario_bios</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El autor más longevo de los autores_boom del Boom Latinoamericano fue </span><span class="si">{</span><span class="n">longevo_autores_boom</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> quien vivió </span><span class="si">{</span><span class="n">longevo_autores_boom</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> años&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Al final del programa, invoque la función <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">biografias_boom</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Mario Vargas Llosa&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;biografia&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+        <span class="o">....</span>
+    <span class="p">},</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+
+<span class="n">main</span><span class="p">(</span><span class="n">biografias_boom</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -774,7 +793,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
 </div>
 <section id="fecha-de-entrega">
 <h3>Fecha de entrega<a class="headerlink" href="#fecha-de-entrega" title="Permalink to this headline">#</a></h3>
-<p>Entrega la actividad antes del martes 21 de marzo.</p>
+<p>Entrega la actividad antes del martes 28 de marzo.</p>
 </section>
 </section>
 </section>

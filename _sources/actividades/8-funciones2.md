@@ -90,15 +90,37 @@ La función `longevo()` recibe como parámetros una lista con los nombres de los
 Debes crear una función llamada `main()` que permita llamar a todas las funciones que acabamos de crear. Esta función no recibe parámetros y no regresa ningún valor. Debe escribirse de la siguiente manera:
 
 ```python
-def main():
+def main(diccionario_bios: dict):
+    """
+    Esta función llama a las funciones que acabamos de crear
+    PARAMETROS:
+        diccionario_bios: diccionario con la información de los autores del boom latinoamericano
+    RETORNA:
+        None
+    """
     # Llama a las funciones que acabamos de crear
-    autores_boom = autores(biografias_boom)
+    autores_boom = autores(diccionario_bios)
     print(autores_boom)
-    promedio_edad_autores_boom = edad_promedio(autores_boom, bios=biografias_boom )
+    promedio_edad_autores_boom = edad_promedio(autores_boom, bios=diccionario_bios )
     print(f"La edad promedio de los autores_boom del Boom Latinoamericano fue de {promedio_edad_autores_boom} años")
-    longevo_autores_boom = longevo(autores_boom, bio=biografias_boom )
+    longevo_autores_boom = longevo(autores_boom, bio=diccionario_bios)
     print(f"El autor más longevo de los autores_boom del Boom Latinoamericano fue {longevo_autores_boom[0]} quien vivió {longevo_autores_boom[1]} años")
 ```
+
+Al final del programa, invoque la función `main()`.
+
+```python
+biografias_boom = {
+    "Mario Vargas Llosa": {
+        "biografia": ""
+        ....
+    },
+    ...
+}
+
+main(biografias_boom)
+```
+
 
 ## Envío de la actividad
 
@@ -116,4 +138,4 @@ git push -u origin nombre-del-brazo
 
 ### Fecha de entrega
 
-Entrega la actividad antes del martes 21 de marzo.
+Entrega la actividad antes del martes 28 de marzo.
