@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Github &#8212; Curso de Python para las HD</title>
+    <title>Pasar cantidades arbitrarias de argumentos &#8212; Curso de Python para las HD</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Actividad 1: Configurar un entorno de desarrollo para Python" href="../actividades/1-configuracion.html" />
-    <link rel="prev" title="Configurar Git" href="4-Git.html" />
+    <link rel="next" title="Actividad 8: Funciones II" href="../actividades/8-funciones2.html" />
+    <link rel="prev" title="Funciones y modularidad" href="23-funcionesLlamados.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -119,7 +119,7 @@ const thebe_selector_output = ".output, .cell_output"
   Introducción. Configurar un entorno de desarrollo para Python
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="1-instalarPython.html">
    Instalar Python
@@ -140,8 +140,8 @@ const thebe_selector_output = ".output, .cell_output"
    Configurar Git
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-Github.html">
    Github
   </a>
  </li>
@@ -312,7 +312,7 @@ const thebe_selector_output = ".output, .cell_output"
   Funciones
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="19-funcionesIntro.html">
    Funciones: Introducción
@@ -358,8 +358,8 @@ const thebe_selector_output = ".output, .cell_output"
    Funciones y modularidad
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="24-argsykwargs.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Pasar cantidades arbitrarias de argumentos
   </a>
  </li>
@@ -431,6 +431,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/gh-pages?urlpath=tree/tutoriales/24-argsykwargs.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -470,7 +499,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/5-Github.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/24-argsykwargs.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -498,7 +527,24 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/tutoriales/5-Github.md"
+        <a href="../_sources/tutoriales/24-argsykwargs.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/tutoriales/24-argsykwargs.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -558,23 +604,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clonar-el-repositorio-del-curso">
-   Clonar el repositorio del curso
+  <a class="reference internal nav-link" href="#mezclar-argumentos-posicionales-y-arbitrarios">
+   Mezclar argumentos posicionales y arbitrarios
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#crear-un-branch-para-tu-nombre">
-   Crear un branch para tu nombre
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#crear-un-pull-request">
-   Crear un pull request
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#actualizar-tu-repositorio-local">
-   Actualizar tu repositorio local
+  <a class="reference internal nav-link" href="#pasar-cantidades-arbitrarias-de-argumentos-con-palabras-clave">
+   Pasar cantidades arbitrarias de argumentos con palabras clave
   </a>
  </li>
 </ul>
@@ -586,7 +622,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Github</h1>
+                <h1>Pasar cantidades arbitrarias de argumentos</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -597,23 +633,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#clonar-el-repositorio-del-curso">
-   Clonar el repositorio del curso
+  <a class="reference internal nav-link" href="#mezclar-argumentos-posicionales-y-arbitrarios">
+   Mezclar argumentos posicionales y arbitrarios
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#crear-un-branch-para-tu-nombre">
-   Crear un branch para tu nombre
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#crear-un-pull-request">
-   Crear un pull request
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#actualizar-tu-repositorio-local">
-   Actualizar tu repositorio local
+  <a class="reference internal nav-link" href="#pasar-cantidades-arbitrarias-de-argumentos-con-palabras-clave">
+   Pasar cantidades arbitrarias de argumentos con palabras clave
   </a>
  </li>
 </ul>
@@ -626,59 +652,183 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="github">
-<h1>Github<a class="headerlink" href="#github" title="Permalink to this headline">#</a></h1>
-<p>Al ser un repositorio colaborativo, Github nos permite compartir el código que escribimos con nuestros compañeros de equipo y colaborar en el desarrollo de un proyecto. Para facilitar la sincronización de los cambios que hacemos en nuestro repositorio local con el repositorio remoto en Github, vamos a utilizar la herramienta de Git.</p>
-<section id="clonar-el-repositorio-del-curso">
-<h2>Clonar el repositorio del curso<a class="headerlink" href="#clonar-el-repositorio-del-curso" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Abrir la terminal y ejecutar los siguientes comandos:</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso.git
-<span class="nb">cd</span><span class="w"> </span>curso_python_extenso
+  <section class="tex2jax_ignore mathjax_ignore" id="pasar-cantidades-arbitrarias-de-argumentos">
+<h1>Pasar cantidades arbitrarias de argumentos<a class="headerlink" href="#pasar-cantidades-arbitrarias-de-argumentos" title="Permalink to this headline">#</a></h1>
+<p>Debido a que los parámetros en Python se comportan de manera similar a un tuple, podemos pasar una cantidad arbitraria de argumentos para una función. Para hacer esto, debemos agregar un asterisco (<code class="docutils literal notranslate"><span class="pre">*</span></code>) antes del nombre del parámetro. Por ejemplo, podemos tener una función que nos pida cuáles libros nuevos hemos comprado:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">libros_nuevos</span><span class="p">(</span><span class="o">*</span><span class="n">libros</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Imprime los libros nuevos que se han comprado.</span>
+<span class="sd">    </span>
+<span class="sd">    Parámetros</span>
+<span class="sd">    ----------</span>
+<span class="sd">    libros: tuple</span>
+<span class="sd">        Lista de libros nuevos que se han comprado</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Los libros nuevos que se han comprado son:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">libro</span> <span class="ow">in</span> <span class="n">libros</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">libro</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>Abrir el proyecto en VSCode con el comando <code class="docutils literal notranslate"><span class="pre">code</span> <span class="pre">.</span></code></p></li>
-<li><p>Abrir el archivo <code class="docutils literal notranslate"><span class="pre">README.md</span></code> en el directorio “estudiantes/tu_nombre” y agregar tu nombre, carrera, semestre y nombre de usuario de Github.</p></li>
-</ul>
-</section>
-<section id="crear-un-branch-para-tu-nombre">
-<h2>Crear un branch para tu nombre<a class="headerlink" href="#crear-un-branch-para-tu-nombre" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Crear un branch con el comando <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">checkout</span> <span class="pre">-b</span> <span class="pre">tu_nombre</span></code> (cambia “tu_nombre” por tu nombre)</p></li>
-<li><p>Agregar los cambios con el comando <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">.</span></code></p></li>
-<li><p>Hacer un commit con el comando <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span> <span class="pre">&quot;Mis</span> <span class="pre">cambios:</span> <span class="pre">tu_nombre&quot;</span></code></p></li>
-<li><p>Hacer un push con el comando <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">-u</span> <span class="pre">origin</span> <span class="pre">tu_nombre</span></code></p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>tu_nombre
-git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Mis cambios: tu_nombre&quot;</span>
-git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>tu_nombre
+</div>
+</div>
+<p>Ahora podemos llamar a la función <code class="docutils literal notranslate"><span class="pre">libros_nuevos()</span></code> con una cantidad arbitraria de argumentos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">libros_nuevos</span><span class="p">(</span><span class="s2">&quot;El principito&quot;</span><span class="p">,</span> <span class="s2">&quot;El señor de los anillos&quot;</span><span class="p">,</span> <span class="s2">&quot;El quijote&quot;</span><span class="p">,</span> <span class="s2">&quot;Ser y tiempo&quot;</span><span class="p">,</span> <span class="s2">&quot;El aleph&quot;</span><span class="p">,</span> <span class="s2">&quot;Vigilar y castigar&quot;</span><span class="p">,</span> <span class="s2">&quot;Elogio de la locura&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="crear-un-pull-request">
-<h2>Crear un pull request<a class="headerlink" href="#crear-un-pull-request" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Ir a la página de Github del repositorio del curso: <a class="reference external" href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso">https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso</a></p></li>
-<li><p>Hacer click en el botón “Compare &amp; pull request”</p></li>
-<li><p>Hacer click en el botón “Create pull request”</p></li>
-<li><p>Hacer click en el botón “Create pull request” de nuevo</p></li>
-<li><p>Hacer click en el botón “Merge pull request”</p></li>
-<li><p>Hacer click en el botón “Confirm merge”</p></li>
-<li><p>Hacer click en el botón “Delete branch”</p></li>
-</ul>
-</section>
-<section id="actualizar-tu-repositorio-local">
-<h2>Actualizar tu repositorio local<a class="headerlink" href="#actualizar-tu-repositorio-local" title="Permalink to this headline">#</a></h2>
-<ul class="simple">
-<li><p>Abrir la terminal y ejecutar los siguientes comandos:</p></li>
-</ul>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>master
-git<span class="w"> </span>pull
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Los libros nuevos que se han comprado son:
+- El principito
+- El señor de los anillos
+- El quijote
+- Ser y tiempo
+- El aleph
+- Vigilar y castigar
+- Elogio de la locura
 </pre></div>
 </div>
+</div>
+</div>
+<p>En este caso, no importa si compramos un libro o 100 libros, la función <code class="docutils literal notranslate"><span class="pre">libros_nuevos()</span></code> imprimirá todos los libros que se han comprado.</p>
+<section id="mezclar-argumentos-posicionales-y-arbitrarios">
+<h2>Mezclar argumentos posicionales y arbitrarios<a class="headerlink" href="#mezclar-argumentos-posicionales-y-arbitrarios" title="Permalink to this headline">#</a></h2>
+<p>Ahora, podemos modificar esta función para que reciba un argumento posicional y un argumento arbitrario. Por ejemplo, si queremos agregar el nombre de la persona que compró los libros, podemos hacer lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">libros_nuevos</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="o">*</span><span class="n">libros</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Imprime los libros nuevos que se han comprado.</span>
+<span class="sd">    </span>
+<span class="sd">    Parámetros</span>
+<span class="sd">    ----------</span>
+<span class="sd">    nombre: str</span>
+<span class="sd">        Nombre de la persona que compró los libros</span>
+<span class="sd">    libros: tuple</span>
+<span class="sd">        Lista de libros nuevos que se han comprado</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hola </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2">. Has comprado los siguientes libros:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">libro</span> <span class="ow">in</span> <span class="n">libros</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">libro</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora podemos llamar a la función <code class="docutils literal notranslate"><span class="pre">libros_nuevos()</span></code> con un argumento posicional y una cantidad arbitraria de argumentos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">usuario</span> <span class="o">=</span> <span class="s2">&quot;Juan&quot;</span>
+<span class="n">libros_nuevos</span><span class="p">(</span><span class="n">usuario</span><span class="p">,</span> <span class="s2">&quot;El principito&quot;</span><span class="p">,</span> <span class="s2">&quot;El señor de los anillos&quot;</span><span class="p">,</span> <span class="s2">&quot;El quijote&quot;</span><span class="p">,</span> <span class="s2">&quot;Ser y tiempo&quot;</span><span class="p">,</span> <span class="s2">&quot;El aleph&quot;</span><span class="p">,</span> <span class="s2">&quot;Vigilar y castigar&quot;</span><span class="p">,</span> <span class="s2">&quot;Elogio de la locura&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Juan. Has comprado los siguientes libros:
+- El principito
+- El señor de los anillos
+- El quijote
+- Ser y tiempo
+- El aleph
+- Vigilar y castigar
+- Elogio de la locura
+</pre></div>
+</div>
+</div>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">Observación</p>
+<p>El argumento arbitrario es de tipo <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, no listado. Si pasamos como argumento una lista la función no iterará sobre cada elemento, para ello debemos desempaquetar la lista con el operador <code class="docutils literal notranslate"><span class="pre">*</span></code>.</p>
+<p>Por ejemplo:</p>
+<p>usuario = “Juan”
+listado_libros = [“El señor de los anillos”, “El principito”, “El quijote”]</p>
+<p>libros_nuevos(usuario, *listado_libros)</p>
+</div>
+</section>
+<section id="pasar-cantidades-arbitrarias-de-argumentos-con-palabras-clave">
+<h2>Pasar cantidades arbitrarias de argumentos con palabras clave<a class="headerlink" href="#pasar-cantidades-arbitrarias-de-argumentos-con-palabras-clave" title="Permalink to this headline">#</a></h2>
+<p>Debido a que los parámetros en Python se comportan de manera similar a un diccionario, podemos pasar una cantidad arbitraria de argumentos con palabras clave para una función. Para hacer esto, debemos agregar dos asteriscos (<code class="docutils literal notranslate"><span class="pre">**</span></code>) antes del nombre del parámetro. Por ejemplo, podemos tener una función que nos pida cuáles libros nuevos hemos comprado:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">libros_nuevos</span><span class="p">(</span><span class="o">**</span><span class="n">libros</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Imprime los libros nuevos que se han comprado.</span>
+<span class="sd">    </span>
+<span class="sd">    Parámetros</span>
+<span class="sd">    ----------</span>
+<span class="sd">    libros: dict</span>
+<span class="sd">        Diccionario con los libros nuevos que se han comprado</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Los libros nuevos que se han comprado son:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">libro</span><span class="p">,</span> <span class="n">autor</span> <span class="ow">in</span> <span class="n">libros</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;- </span><span class="si">{</span><span class="n">libro</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">autor</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora podemos llamar a la función <code class="docutils literal notranslate"><span class="pre">libros_nuevos()</span></code> con una cantidad arbitraria de argumentos con palabras clave:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">libros_nuevos</span><span class="p">(</span>
+    <span class="n">El_principito</span><span class="o">=</span><span class="s2">&quot;Antoine de Saint-Exupéry&quot;</span><span class="p">,</span>
+    <span class="n">El_señor_de_los_anillos</span><span class="o">=</span><span class="s2">&quot;J. R. R. Tolkien&quot;</span><span class="p">,</span>
+    <span class="n">El_quijote</span><span class="o">=</span><span class="s2">&quot;Miguel de Cervantes&quot;</span><span class="p">,</span>
+    <span class="n">Ser_y_tiempo</span><span class="o">=</span><span class="s2">&quot;Martin Heidegger&quot;</span><span class="p">,</span>
+    <span class="n">El_aleph</span><span class="o">=</span><span class="s2">&quot;Jorge Luis Borges&quot;</span><span class="p">,</span>
+    <span class="n">Vigilar_y_castigar</span><span class="o">=</span><span class="s2">&quot;Michel Foucault&quot;</span><span class="p">,</span>
+    <span class="n">Elogio_de_la_locura</span><span class="o">=</span><span class="s2">&quot;Erasmo de Rotterdam&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Los libros nuevos que se han comprado son:
+- El_principito (Antoine de Saint-Exupéry)
+- El_señor_de_los_anillos (J. R. R. Tolkien)
+- El_quijote (Miguel de Cervantes)
+- Ser_y_tiempo (Martin Heidegger)
+- El_aleph (Jorge Luis Borges)
+- Vigilar_y_castigar (Michel Foucault)
+- Elogio_de_la_locura (Erasmo de Rotterdam)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podemos, de la misma manera, pasar argumentos posicionales y argumentos con palabras clave a la función <code class="docutils literal notranslate"><span class="pre">libros_nuevos()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">libros_nuevos</span><span class="p">(</span><span class="n">autor</span><span class="p">,</span> <span class="n">titulo</span><span class="p">,</span> <span class="o">**</span><span class="n">atributos</span><span class="p">):</span>
+    <span class="n">atributos</span><span class="p">[</span><span class="s2">&quot;autor&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">autor</span>
+    <span class="n">atributos</span><span class="p">[</span><span class="s2">&quot;titulo&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">titulo</span>
+    <span class="k">return</span> <span class="n">atributos</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">libros_nuevos</span><span class="p">(</span>
+    <span class="s2">&quot;Antoine de Saint-Exupéry&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;El principito&quot;</span><span class="p">,</span>
+    <span class="n">editorial</span><span class="o">=</span><span class="s2">&quot;Salamandra&quot;</span><span class="p">,</span>
+    <span class="n">año</span><span class="o">=</span><span class="mi">1943</span><span class="p">,</span>
+    <span class="n">genero</span><span class="o">=</span><span class="s2">&quot;Ciencia ficción&quot;</span><span class="p">,</span>
+    <span class="n">idioma</span><span class="o">=</span><span class="s2">&quot;Francés&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;editorial&#39;: &#39;Salamandra&#39;,
+ &#39;año&#39;: 1943,
+ &#39;genero&#39;: &#39;Ciencia ficción&#39;,
+ &#39;idioma&#39;: &#39;Francés&#39;,
+ &#39;autor&#39;: &#39;Antoine de Saint-Exupéry&#39;,
+ &#39;titulo&#39;: &#39;El principito&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>En general, el uso de argumentos arbitrarios es útil cuando no sabemos cuántos argumentos se pasarán a una función. No es algo que utilicemos a menudo, pero es ampliamente usado en librerías de terceros, por eso es importante conocerlo y aprender a utilizarlo.</p>
 </section>
 </section>
 
@@ -709,17 +859,17 @@ git<span class="w"> </span>pull
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="4-Git.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="23-funcionesLlamados.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Configurar Git</p>
+            <p class="prev-next-title">Funciones y modularidad</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../actividades/1-configuracion.html" title="next page">
+    <a class='right-next' id="next-link" href="../actividades/8-funciones2.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Actividad 1: Configurar un entorno de desarrollo para Python</p>
+        <p class="prev-next-title">Actividad 8: Funciones II</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

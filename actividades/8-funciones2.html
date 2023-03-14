@@ -1,0 +1,850 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Actividad 8: Funciones II &#8212; Curso de Python para las HD</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bibliografía" href="../references.html" />
+    <link rel="prev" title="Pasar cantidades arbitrarias de argumentos" href="../tutoriales/24-argsykwargs.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso de Python para las HD</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Fundamentos de programación
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción. Configurar un entorno de desarrollo para Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/1-instalarPython.html">
+   Instalar Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/2-terminal.html">
+   Terminal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/3-instalarVSCode.html">
+   Instalar VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/4-Git.html">
+   Configurar Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/5-Github.html">
+   Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-configuracion.html">
+   Actividad 1: Configurar un entorno de desarrollo para Python
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción a Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/6-python.html">
+   Introducción a Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/7-variables.html">
+   Sintaxis, variables y tipos de datos básicos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/8-operadores.html">
+   Operadores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/9-operaciones_string.html">
+   Operaciones con cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-sintaxis_variables.html">
+   Actividad 2: Variables y sintaxis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Listas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/10-listas.html">
+   Listas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-listas.html">
+   Actividad 3: Listas (operaciones básicas)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Iteraciones (for loops)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/11-iteraciones.html">
+   Iteraciones (
+   <em>
+    for loops
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-iteraciones.html">
+   Actividad 4: Iteraciones
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Condicionales (if else)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/12-condicionales.html">
+   Introducción a los condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/13-plogicas.html">
+   Pruebas condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/14-condicionPertenencia.html">
+   Operadores de pertenencia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/15-ifelse.html">
+   Sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   ,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     elif
+    </span>
+   </code>
+   y
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     else
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/16-listaseif.html">
+   Combinar listas y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-condicionales.html">
+   Actividad 5: Condicionales y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Diccionarios
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/17-diccionarios.html">
+   Diccionarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/18-iterardiccio.html">
+   Iterar a través de un diccionario
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-diccionarios.html">
+   Actividad 6: Manejo de diccionarios
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Funciones
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/19-funcionesIntro.html">
+   Funciones: Introducción
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/20-input.html">
+   Función
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     input()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/21-funciones_y_TryExcept.html">
+   Control de errores con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Try
+    </span>
+   </code>
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Except
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-funciones.html">
+   Actividad 7: Funciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/22-retornarvalores.html">
+   Retornar valores en una función
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/23-funcionesLlamados.html">
+   Funciones y modularidad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/24-argsykwargs.html">
+   Pasar cantidades arbitrarias de argumentos
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Actividad 8: Funciones II
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Recursos adicionales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Factividades/8-funciones2.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/actividades/8-funciones2.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-1-crear-una-lista-con-los-autores-que-estan-en-el-diccionario">
+   Ejercicio 1: Crear una lista con los autores que están en el diccionario
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-2-escribe-una-funcion-que-regrese-la-fecha-de-nacimiento-del-autor-a-partir-de-la-informacion-de-su-biografia">
+   Ejercicio 2: Escribe una función que regrese la fecha de nacimiento del autor a partir de la información de su biografía
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-3-escribe-una-funcion-que-regrese-la-edad-promedio-de-los-autores-al-momento-de-publicar-su-obra-principal">
+   Ejercicio 3 - Escribe una función que regrese la edad promedio de los autores al momento de publicar su obra principal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-4-escribe-una-funcion-que-regrese-la-edad-de-los-autores-al-momento-de-su-defuncion">
+   Ejercicio 4 - Escribe una función que regrese la edad de los autores al momento de su defunción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-5-escribe-una-funcion-que-regrese-el-nombre-del-autor-mas-longevo">
+   Ejercicio 5 - Escribe una función que regrese el nombre del autor más longevo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-6-escribe-una-funcion-para-llamar-a-todo-el-programa">
+   Ejercicio 6 - Escribe una función para llamar a todo el programa
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#envio-de-la-actividad">
+   Envío de la actividad
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fecha-de-entrega">
+     Fecha de entrega
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Actividad 8: Funciones II</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-1-crear-una-lista-con-los-autores-que-estan-en-el-diccionario">
+   Ejercicio 1: Crear una lista con los autores que están en el diccionario
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-2-escribe-una-funcion-que-regrese-la-fecha-de-nacimiento-del-autor-a-partir-de-la-informacion-de-su-biografia">
+   Ejercicio 2: Escribe una función que regrese la fecha de nacimiento del autor a partir de la información de su biografía
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-3-escribe-una-funcion-que-regrese-la-edad-promedio-de-los-autores-al-momento-de-publicar-su-obra-principal">
+   Ejercicio 3 - Escribe una función que regrese la edad promedio de los autores al momento de publicar su obra principal
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-4-escribe-una-funcion-que-regrese-la-edad-de-los-autores-al-momento-de-su-defuncion">
+   Ejercicio 4 - Escribe una función que regrese la edad de los autores al momento de su defunción
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-5-escribe-una-funcion-que-regrese-el-nombre-del-autor-mas-longevo">
+   Ejercicio 5 - Escribe una función que regrese el nombre del autor más longevo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-6-escribe-una-funcion-para-llamar-a-todo-el-programa">
+   Ejercicio 6 - Escribe una función para llamar a todo el programa
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#envio-de-la-actividad">
+   Envío de la actividad
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fecha-de-entrega">
+     Fecha de entrega
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="actividad-8-funciones-ii">
+<h1>Actividad 8: Funciones II<a class="headerlink" href="#actividad-8-funciones-ii" title="Permalink to this headline">#</a></h1>
+<p>En esta actividad vamos a realizar una serie de ejercicios que nos permitirán practicar el uso de funciones en Python.</p>
+<p>Vamos a utilizar como insumo el siguiente diccionario, el cual contiene las biografías de algunos autores del Boom latinoamericano:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">biografias_boom</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;Julio Cortázar&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;nacionalidad&quot;</span><span class="p">:</span> <span class="s2">&quot;Argentina&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bio&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;Julio Cortázar nació en 1914. Vivió con sus padres en Suiza hasta que se mudó a Buenos Aires a la edad de cuatro años.40​ Al igual que otros escritores del boom, Cortázar llegó a cuestionar la política de su país: su oposición a Juan Domingo Perón lo llevó a dejar su puesto de profesor en la Universidad Nacional de Cuyo y en última instancia, a su exilio.41​.</span>
+<span class="s2">        En 1951 se trasladó a París, donde pasó la mayor parte de su vida profesional, y en 1981 se convirtió en ciudadano francés.42​ Como García Márquez, Cortázar apoyó al gobierno cubano de Fidel Castro, al presidente chileno Salvador Allende, y a otros movimientos de izquierda como los sandinistas en Nicaragua.42​</span>
+<span class="s2">        Entre sus influencias se encuentran Jorge Luis Borges y Edgar Allan Poe.43​ Su obra más importante y la que lo catapultó al reconocimiento internacional, es la novela Rayuela, publicada en 1963.42​ Se compone de 155 capítulos, 99 de los cuales son «fungibles», que se pueden leer en varios pedidos de acuerdo a la predilección de los lectores.</span>
+<span class="s2">        Sus otros trabajos incluyen colecciones de cuentos como Bestiario (1951), Final del juego (1956), Las armas secretas (1959) y Todos los fuegos el fuego (1966). También escribió novelas como Los premios (1960) y Libro de Manuel (1973), y el inclasificable Historias de cronopios y de famas (1962). Falleció en París el 12 de febrero de 1984.&quot;&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;obra_principal&quot;</span><span class="p">:</span> <span class="s2">&quot;Rayuela&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fecha_publicacion&quot;</span><span class="p">:</span> <span class="s2">&quot;1963&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;vivo&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Gabriel García Márquez&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;nacionalidad&quot;</span><span class="p">:</span> <span class="s2">&quot;Colombia&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bio&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        Gabriel García Márquez nació en Aracataca, Colombia, en 1927. Junto a Mario Vargas Llosa, ha sido quien mayor proyección internacional ha logrado entre los escritores del boom. Gabo, como también se le conocía, empezó como periodista y escribió muchos artículos y relatos cortos, que fueron publicados en el diario El Espectador de Bogotá.44​ Después de residir unos años en Europa, se instaló en la Ciudad de México en 1961, donde residió hasta su fallecimiento.</span>
+<span class="s2">        Es conocido por novelas como El coronel no tiene quien le escriba (1962), Cien años de soledad (1967), El otoño del patriarca (1975), y post-boom, como El amor en los tiempos del cólera (1985), y por haber recibido el Premio Nobel de Literatura en 1982. Ha logrado elogios de la crítica y éxito comercial general, sobre todo por la introducción de lo que se ha denominado realismo mágico en el mundo literario. Narró con métodos tradicionales hechos más o menos ajenos a la realidad, de modo que «lo más espantoso, las cosas más insólitas se dicen con la expresión impasible».45​ Un ejemplo comúnmente citado es el físico y espiritual de ascender al cielo de un personaje, mientras que cuelga la ropa a secar en Cien años de soledad. Esta novela cumbre del escritor colombiano, según estudios actuales, modifica la percepción que tenemos del pasado y construye una nueva mirada sobre el futuro.46​ García Márquez es ahora considerado como uno de los autores más significativos del siglo XX, como lo atestigua el haber sido galardonado con el Premio Nobel de Literatura en 1982. Falleció en México D.F. el 17 de abril de 2014.47​</span>
+<span class="s2">        El autor es considerado, junto con Álvaro Mutis, como un escritor que realizó desde su obra un valioso aporte desde las letras colombianas durante el período denominado boom latinoamericano que está fuertemente influenciado por la presencia de escritores mexicanos, de la talla de Carlos Fuentes y Juan Rulfo. A partir del concepto de campo literario es lícito afirmar que la escritura de autor de Cien años de soledad produjo profundas transformaciones en la literatura del siglo XX.48​</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;obra_principal&quot;</span><span class="p">:</span> <span class="s2">&quot;Cien años de soledad&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fecha_publicacion&quot;</span><span class="p">:</span> <span class="s2">&quot;1967&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;vivo&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Carlos Fuentes&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;nacionalidad&quot;</span><span class="p">:</span> <span class="s2">&quot;México&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bio&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">        Nacido en Panamá de padres mexicanos, en 1928, Carlos Fuentes comenzó a publicar en la década de 1950.49​ Fue hijo de un diplomático mexicano y vivió en ciudades como Buenos Aires, Santiago, Quito, Montevideo y Río de Janeiro, así como Washington D. C..50​ Sus experiencias de lucha contra la discriminación de México en los Estados Unidos le llevó a examinar más de cerca la cultura mexicana.51​ Su novela La muerte de Artemio Cruz (1962) describe la vida de un ex revolucionario mexicano en su lecho de muerte, cambios innovadores que emplean en un punto de vista. Otros trabajos importantes incluyen La región más transparente (1959), Aura (1962), Terra Nostra (1975), y la novela post-boom Gringo Viejo (1985).</span>
+<span class="s2">        Fuentes no solo escribió algunas de las novelas más importantes de la época, también fue un crítico y publicista de Latinoamérica. En 1955, Fuentes y Emmanuel Carballo fueron fundadores de la Revista Mexicana de Literatura, que introdujo los latinoamericanos a las obras modernistas de Europa y las ideas de Jean-Paul Sartre y Albert Camus.52​ En 1969 publicó la obra crítica importante, La nueva novela hispanoamericana. Fuentes ocupó el cargo de profesor de literatura latinoamericana en la Universidad de Columbia (1978) y en Harvard (1987).53​ En una ocasión dijo que «el llamado boom, en realidad, es el resultado de cuatro siglos, literariamente, llegado a un momento de urgencia en que la ficción se convirtió en la manera de organizar las lecciones del pasado».54​Falleció en México D.F. el 15 de mayo de 2012.</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;obra_principal&quot;</span><span class="p">:</span> <span class="s2">&quot;La muerte de Artemio Cruz&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fecha_publicacion&quot;</span><span class="p">:</span> <span class="s2">&quot;1962&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;vivo&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="p">},</span>
+
+    <span class="s2">&quot;Mario Vargas Llosa&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;nacionalidad&quot;</span><span class="p">:</span> <span class="s2">&quot;Perú&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;bio&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            Jorge Mario Pedro Vargas Llosa (Arequipa, 28 de marzo de 1936), conocido como Mario Vargas Llosa, es un escritor peruano que cuenta también con la nacionalidad española desde 1993. Considerado uno de los más importantes novelistas y ensayistas contemporáneos, sus obras han cosechado numerosos premios, entre los que destacan el Nobel de Literatura 2010, el Cervantes 1994 —considerado como el más importante en lengua española—, el Príncipe de Asturias de las Letras 1986, el Biblioteca Breve 1962, el Rómulo Gallegos 1967 y el Planeta 1993, entre otros.</span>
+<span class="s2">            Como escritor, alcanzó la fama en la década de 1960 con novelas como La ciudad y los perros (1963), La casa verde (1966) y Conversación en La Catedral (1969). Continuó escribiendo prolíficamente en varios géneros literarios, como el ensayo, el artículo y el teatro. Varias de sus obras han sido adaptadas al cine y a la televisión. La mayoría de sus novelas están ambientadas en Perú y exploran su concepción sobre la sociedad peruana; en cambio, en La guerra del fin del mundo (1981), La fiesta del Chivo (2000) y El sueño del celta (2010), ubica sus tramas en otros países.</span>
+<span class="s2">            &quot;&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;obra_principal&quot;</span><span class="p">:</span> <span class="s2">&quot;La casa verde&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fecha_publicacion&quot;</span><span class="p">:</span> <span class="s2">&quot;1966&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;vivo&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="p">}}</span>
+</pre></div>
+</div>
+<p>Estas biografías fueron tomadas de Wikipedia y van a servirnos para realizar las siguientes operaciones:</p>
+<section id="ejercicio-1-crear-una-lista-con-los-autores-que-estan-en-el-diccionario">
+<h2>Ejercicio 1: Crear una lista con los autores que están en el diccionario<a class="headerlink" href="#ejercicio-1-crear-una-lista-con-los-autores-que-estan-en-el-diccionario" title="Permalink to this headline">#</a></h2>
+<p>Debes crear una función llamada <code class="docutils literal notranslate"><span class="pre">autores()</span></code>, que regrese una lista con el nombre de cada uno de los autores del boom.</p>
+<p>La función recibe como parámetro un diccionario con la información de los autores del boom latinoamericano. La función debe regresar una lista con el nombre de cada uno de los autores del boom.</p>
+</section>
+<section id="ejercicio-2-escribe-una-funcion-que-regrese-la-fecha-de-nacimiento-del-autor-a-partir-de-la-informacion-de-su-biografia">
+<h2>Ejercicio 2: Escribe una función que regrese la fecha de nacimiento del autor a partir de la información de su biografía<a class="headerlink" href="#ejercicio-2-escribe-una-funcion-que-regrese-la-fecha-de-nacimiento-del-autor-a-partir-de-la-informacion-de-su-biografia" title="Permalink to this headline">#</a></h2>
+<p>Crea dos funciones, una llamada <code class="docutils literal notranslate"><span class="pre">extraer_fechas()</span></code> que permita obtener las fechas de la biografía de cada autor, y otra llamada <code class="docutils literal notranslate"><span class="pre">fecha_nacimiento()</span></code> que permita obtener la fecha de nacimiento de cada autor.</p>
+<p>La función <code class="docutils literal notranslate"><span class="pre">extraer_fechas()</span></code> recibe como parámetro un string con la biografía de un autor. La función debe regresar una lista con las fechas que se encuentren en la biografía.
+La función <code class="docutils literal notranslate"><span class="pre">fecha_nacimiento()</span></code> recibe como parámetro un string con el nombre del autor. La función debe regresar la fecha de nacimiento del autor.</p>
+</section>
+<section id="ejercicio-3-escribe-una-funcion-que-regrese-la-edad-promedio-de-los-autores-al-momento-de-publicar-su-obra-principal">
+<h2>Ejercicio 3 - Escribe una función que regrese la edad promedio de los autores al momento de publicar su obra principal<a class="headerlink" href="#ejercicio-3-escribe-una-funcion-que-regrese-la-edad-promedio-de-los-autores-al-momento-de-publicar-su-obra-principal" title="Permalink to this headline">#</a></h2>
+<p>Debes crear dos funciones, una llamada <code class="docutils literal notranslate"><span class="pre">calcular_edad()</span></code> que permita calcular la edad de cada autor al momento de publicar su obra principal, y otra llamada <code class="docutils literal notranslate"><span class="pre">edad_promedio()</span></code> que permita calcular la edad promedio de los autores al momento de publicar su obra principal.</p>
+<p>La función <code class="docutils literal notranslate"><span class="pre">calcular_edad()</span></code> recibe como parámetro un string con el nombre del autor. La función debe regresar la edad del autor al momento de publicar su obra principal.
+La función <code class="docutils literal notranslate"><span class="pre">edad_promedio()</span></code> recibe como parámetros una lista con los nombres de los autores y un diccionario. La función debe regresar la edad promedio de los autores al momento de publicar su obra principal (<code class="docutils literal notranslate"><span class="pre">int</span></code>).</p>
+</section>
+<section id="ejercicio-4-escribe-una-funcion-que-regrese-la-edad-de-los-autores-al-momento-de-su-defuncion">
+<h2>Ejercicio 4 - Escribe una función que regrese la edad de los autores al momento de su defunción<a class="headerlink" href="#ejercicio-4-escribe-una-funcion-que-regrese-la-edad-de-los-autores-al-momento-de-su-defuncion" title="Permalink to this headline">#</a></h2>
+<p>Será necesario crear una función llamada <code class="docutils literal notranslate"><span class="pre">fecha_defuncion()</span></code> para extraer la fecha de defunción de la biografía. Debes llamar la función <code class="docutils literal notranslate"><span class="pre">fecha_nacimiento()</span></code> para obtener la fecha de nacimiento de cada autor, y crearla función <code class="docutils literal notranslate"><span class="pre">edad_defuncion()</span></code> para calcular la edad de cada autor al momento de su defunción.</p>
+<p>La función <code class="docutils literal notranslate"><span class="pre">fecha_defuncion()</span></code> recibe como parámetros un string con el nombre del autor y un diccionario. La función debe regresar un valor <code class="docutils literal notranslate"><span class="pre">None</span></code> si el autor no ha fallecido, o la fecha de defunción del autor si ya falleció (<code class="docutils literal notranslate"><span class="pre">int</span></code>).
+La función <code class="docutils literal notranslate"><span class="pre">edad_defuncion()</span></code> recibe como parámetros un string con el nombre del autor y un diccionario. La función debe regresar la edad del autor al momento de su defunción (<code class="docutils literal notranslate"><span class="pre">int</span></code>).</p>
+</section>
+<section id="ejercicio-5-escribe-una-funcion-que-regrese-el-nombre-del-autor-mas-longevo">
+<h2>Ejercicio 5 - Escribe una función que regrese el nombre del autor más longevo<a class="headerlink" href="#ejercicio-5-escribe-una-funcion-que-regrese-el-nombre-del-autor-mas-longevo" title="Permalink to this headline">#</a></h2>
+<p>Vamos a utilizar la función que acabamos de crear para calcular la edad de cada autor al momento de su defunción. También será necesario determinar si el autor ya falleció o no. Debes crear una función llamada <code class="docutils literal notranslate"><span class="pre">longevo()</span></code> que permita determinar el nombre del autor más longevo. Esta función regresa un tuple con el nombre del autor y su edad.</p>
+<p>La función <code class="docutils literal notranslate"><span class="pre">longevo()</span></code> recibe como parámetros una lista con los nombres de los autores y un diccionario. La función debe regresar un tuple con el nombre del autor más longevo y su edad (<code class="docutils literal notranslate"><span class="pre">tuple</span></code>).</p>
+</section>
+<section id="ejercicio-6-escribe-una-funcion-para-llamar-a-todo-el-programa">
+<h2>Ejercicio 6 - Escribe una función para llamar a todo el programa<a class="headerlink" href="#ejercicio-6-escribe-una-funcion-para-llamar-a-todo-el-programa" title="Permalink to this headline">#</a></h2>
+<p>Debes crear una función llamada <code class="docutils literal notranslate"><span class="pre">main()</span></code> que permita llamar a todas las funciones que acabamos de crear. Esta función no recibe parámetros y no regresa ningún valor. Debe escribirse de la siguiente manera:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Llama a las funciones que acabamos de crear</span>
+    <span class="n">autores_boom</span> <span class="o">=</span> <span class="n">autores</span><span class="p">(</span><span class="n">biografias_boom</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">autores_boom</span><span class="p">)</span>
+    <span class="n">promedio_edad_autores_boom</span> <span class="o">=</span> <span class="n">edad_promedio</span><span class="p">(</span><span class="n">autores_boom</span><span class="p">,</span> <span class="n">bios</span><span class="o">=</span><span class="n">biografias_boom</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La edad promedio de los autores_boom del Boom Latinoamericano fue de </span><span class="si">{</span><span class="n">promedio_edad_autores_boom</span><span class="si">}</span><span class="s2"> años&quot;</span><span class="p">)</span>
+    <span class="n">longevo_autores_boom</span> <span class="o">=</span> <span class="n">longevo</span><span class="p">(</span><span class="n">autores_boom</span><span class="p">,</span> <span class="n">bio</span><span class="o">=</span><span class="n">biografias_boom</span> <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El autor más longevo de los autores_boom del Boom Latinoamericano fue </span><span class="si">{</span><span class="n">longevo_autores_boom</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> quien vivió </span><span class="si">{</span><span class="n">longevo_autores_boom</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> años&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="envio-de-la-actividad">
+<h2>Envío de la actividad<a class="headerlink" href="#envio-de-la-actividad" title="Permalink to this headline">#</a></h2>
+<p>Al igual que las actividades anteriores, envía tu código a través de Github.</p>
+<p>Los cinco ejercicios deberán ser realizados en un archivo llamado <code class="docutils literal notranslate"><span class="pre">actividad8.py</span></code>. Guárdalo en el directorio con tu nombre (de preferencia en un subdirectorio).</p>
+<p>Para entregar la actividad, debes hacer un <code class="docutils literal notranslate"><span class="pre">commit</span></code> de los modificados y hacer un <code class="docutils literal notranslate"><span class="pre">push</span></code> de tu brazo al repositorio remoto.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Entrega de la actividad 8&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>nombre-del-brazo
+</pre></div>
+</div>
+<section id="fecha-de-entrega">
+<h3>Fecha de entrega<a class="headerlink" href="#fecha-de-entrega" title="Permalink to this headline">#</a></h3>
+<p>Entrega la actividad antes del martes 21 de marzo.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./actividades"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../tutoriales/24-argsykwargs.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Pasar cantidades arbitrarias de argumentos</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../references.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliografía</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,1065 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Retornar valores en una función &#8212; Curso de Python para las HD</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Funciones y modularidad" href="23-funcionesLlamados.html" />
+    <link rel="prev" title="Actividad 7: Funciones" href="../actividades/7-funciones.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso de Python para las HD</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Fundamentos de programación
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción. Configurar un entorno de desarrollo para Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-instalarPython.html">
+   Instalar Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-terminal.html">
+   Terminal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-instalarVSCode.html">
+   Instalar VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-Git.html">
+   Configurar Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-Github.html">
+   Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/1-configuracion.html">
+   Actividad 1: Configurar un entorno de desarrollo para Python
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción a Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-python.html">
+   Introducción a Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-variables.html">
+   Sintaxis, variables y tipos de datos básicos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-operadores.html">
+   Operadores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-operaciones_string.html">
+   Operaciones con cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/2-sintaxis_variables.html">
+   Actividad 2: Variables y sintaxis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Listas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-listas.html">
+   Listas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/3-listas.html">
+   Actividad 3: Listas (operaciones básicas)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Iteraciones (for loops)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-iteraciones.html">
+   Iteraciones (
+   <em>
+    for loops
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/4-iteraciones.html">
+   Actividad 4: Iteraciones
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Condicionales (if else)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-condicionales.html">
+   Introducción a los condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-plogicas.html">
+   Pruebas condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-condicionPertenencia.html">
+   Operadores de pertenencia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-ifelse.html">
+   Sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   ,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     elif
+    </span>
+   </code>
+   y
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     else
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-listaseif.html">
+   Combinar listas y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/5-condicionales.html">
+   Actividad 5: Condicionales y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Diccionarios
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-diccionarios.html">
+   Diccionarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-iterardiccio.html">
+   Iterar a través de un diccionario
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/6-diccionarios.html">
+   Actividad 6: Manejo de diccionarios
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Funciones
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-funcionesIntro.html">
+   Funciones: Introducción
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-input.html">
+   Función
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     input()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-funciones_y_TryExcept.html">
+   Control de errores con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Try
+    </span>
+   </code>
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Except
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/7-funciones.html">
+   Actividad 7: Funciones
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Retornar valores en una función
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="23-funcionesLlamados.html">
+   Funciones y modularidad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-argsykwargs.html">
+   Pasar cantidades arbitrarias de argumentos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/8-funciones2.html">
+   Actividad 8: Funciones II
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Recursos adicionales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/gh-pages?urlpath=tree/tutoriales/22-retornarvalores.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/22-retornarvalores.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/tutoriales/22-retornarvalores.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/tutoriales/22-retornarvalores.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#retornar-multiples-valores-tuples">
+   Retornar múltiples valores (tuples)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#retornar-listas">
+   Retornar listas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#retornar-diccionarios">
+   Retornar diccionarios
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Retornar valores en una función</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#retornar-multiples-valores-tuples">
+   Retornar múltiples valores (tuples)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#retornar-listas">
+   Retornar listas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#retornar-diccionarios">
+   Retornar diccionarios
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="retornar-valores-en-una-funcion">
+<h1>Retornar valores en una función<a class="headerlink" href="#retornar-valores-en-una-funcion" title="Permalink to this headline">#</a></h1>
+<p>En los ejemplos anteriores cada función que creamos imprime un mensaje en la pantalla. Esto puede ser útil en algunos casos, pero en general lo que deseamos es que una función devuelva un valor que podamos utilizar en nuestro programa. Modifiquemos nuestra función  <code class="docutils literal notranslate"><span class="pre">saludar()</span></code> para que en lugar de imprimir un mensaje en la pantalla, devuelva el mensaje como un valor de cadena:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+    <span class="n">mensaje</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Hola </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2">, ¿cómo estás?&quot;</span>
+    <span class="k">return</span> <span class="n">mensaje</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora podemos llamar a la función <code class="docutils literal notranslate"><span class="pre">saludar()</span></code> y guardar el valor de retorno en una variable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saludo</span> <span class="o">=</span> <span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Juan&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Juan, ¿cómo estás?
+</pre></div>
+</div>
+</div>
+</div>
+<p>Aunque “técnicamente” nuestro programa cumple la misma función, una ventaja es que podemos reutilizar el valor del saludo en cualquier parte del programa:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saludo</span> <span class="o">=</span> <span class="n">saludo</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HOLA JUAN, ¿CÓMO ESTÁS?
+</pre></div>
+</div>
+</div>
+</div>
+<p>El anterior es un ejemplo sumamente simple, pero describe de manera sucinta lo que puede lograr una función. Ahora realicemos una acción un poco más compleja.</p>
+<section id="retornar-multiples-valores-tuples">
+<h2>Retornar múltiples valores (tuples)<a class="headerlink" href="#retornar-multiples-valores-tuples" title="Permalink to this headline">#</a></h2>
+<p>En el ejemplo anterior, la función <code class="docutils literal notranslate"><span class="pre">saludar()</span></code> devolvió un único valor. Sin embargo, es posible que una función devuelva múltiples valores. Por ejemplo, podemos modificar la función <code class="docutils literal notranslate"><span class="pre">saludar()</span></code> para que devuelva el saludo y la longitud del saludo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">):</span>
+    <span class="n">mensaje</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Hola </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2">, ¿cómo estás?&quot;</span>
+    <span class="k">return</span> <span class="n">mensaje</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">mensaje</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora podemos llamar a la función <code class="docutils literal notranslate"><span class="pre">saludar()</span></code> y guardar los valores de retorno en dos variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">saludo</span><span class="p">,</span> <span class="n">longitud</span> <span class="o">=</span> <span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Juan&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">longitud</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hola Juan, ¿cómo estás?
+23
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Observación</p>
+<p>En este caso, la función devuelve un tipo de dato denominado <code class="docutils literal notranslate"><span class="pre">tuple</span></code> (tupla). Una tupla es una estructura de datos que permite almacenar múltiples valores, de manera similar a un lista, pero con unas características ligeramente diferentes:</p>
+<ul class="simple">
+<li><p>La tupla es ordenada: los valores se almacenan en un orden específico.</p></li>
+<li><p>La tupla es inmutable: una vez creada, no es posible modificar sus valores.</p></li>
+<li><p>La tupla permite duplicados: es posible almacenar valores duplicados en una tupla.</p></li>
+</ul>
+<p>Veremos un poco más sobre las tuplas en el siguiente tutorial.</p>
+</div>
+<p>De la misma manera podemos lograr que la función regrese múltiples valores de cualquier tipo de dato:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">saludar</span><span class="p">(</span><span class="n">nombre</span><span class="p">,</span> <span class="n">fecha_nacimiento</span><span class="o">=</span><span class="mi">1990</span><span class="p">,</span> <span class="n">lugar_de_nacimiento</span><span class="o">=</span><span class="s2">&quot;Colombia&quot;</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Saluda a una persona y le dice su edad.</span>
+<span class="sd">    </span>
+<span class="sd">    Parámetros</span>
+<span class="sd">    ----------</span>
+<span class="sd">    nombre: str</span>
+<span class="sd">        Nombre de la persona a saludar</span>
+<span class="sd">    fecha_nacimiento: int</span>
+<span class="sd">        Año de nacimiento de la persona</span>
+<span class="sd">    lugar_de_nacimiento: str</span>
+<span class="sd">        Lugar de nacimiento de la persona   </span>
+
+<span class="sd">    Retorna</span>
+<span class="sd">    -------</span>
+<span class="sd">    edad: int</span>
+<span class="sd">        Edad de la persona</span>
+<span class="sd">    nombre: str</span>
+<span class="sd">        Nombre de la persona</span>
+<span class="sd">    lugar_de_nacimiento: str</span>
+<span class="sd">        Lugar de nacimiento de la persona</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">edad</span> <span class="o">=</span> <span class="mi">2023</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">fecha_nacimiento</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">edad</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">lugar_de_nacimiento</span> <span class="c1"># observa que el orden de los valores es diferente al de los parámetros</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La fecha de nacimiento ingresada (</span><span class="si">{</span><span class="n">fecha_nacimiento</span><span class="si">}</span><span class="s2">) no es un número.&quot;</span><span class="p">)</span>
+        <span class="k">raise</span>
+
+<span class="n">edad</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">lugar_de_nacimiento</span> <span class="o">=</span> <span class="n">saludar</span><span class="p">(</span><span class="s2">&quot;Juan&quot;</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="s2">&quot;Colombia&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2"> nació en </span><span class="si">{</span><span class="n">lugar_de_nacimiento</span><span class="si">}</span><span class="s2"> y tiene </span><span class="si">{</span><span class="n">edad</span><span class="si">}</span><span class="s2"> años.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Juan nació en Colombia y tiene 33 años.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Teniendo en cuenta que esta función regresa un valor de edad a partir de una fecha de nacimiento, podríamos utilizarla en un programa que calcule la edad promedio de un grupo de estudiantes a partir de sus fechas de nacimiento:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grupo</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s2">&quot;Juan&quot;</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span> <span class="s2">&quot;Colombia&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;María&quot;</span><span class="p">,</span> <span class="mi">1992</span><span class="p">,</span> <span class="s2">&quot;Colombia&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Pedro&quot;</span><span class="p">,</span> <span class="mi">1994</span><span class="p">,</span> <span class="s2">&quot;Colombia&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Ana&quot;</span><span class="p">,</span> <span class="mi">1996</span><span class="p">,</span> <span class="s2">&quot;Colombia&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Luis&quot;</span><span class="p">,</span> <span class="mi">1998</span><span class="p">,</span> <span class="s2">&quot;Colombia&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Sofía&quot;</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="s2">&quot;Colombia&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Carlos&quot;</span><span class="p">,</span> <span class="mi">2002</span><span class="p">,</span> <span class="s2">&quot;Colombia&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Camila&quot;</span><span class="p">,</span> <span class="mi">2004</span><span class="p">,</span> <span class="s2">&quot;Colombia&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Jorge&quot;</span><span class="p">,</span> <span class="mi">2006</span><span class="p">,</span> <span class="s2">&quot;Colombia&quot;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;Laura&quot;</span><span class="p">,</span> <span class="mi">2008</span><span class="p">,</span> <span class="s2">&quot;Colombia&quot;</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">edades</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">estudiante</span> <span class="ow">in</span> <span class="n">grupo</span><span class="p">:</span>
+    <span class="n">edad</span><span class="p">,</span> <span class="n">nombre</span><span class="p">,</span> <span class="n">lugar_de_nacimiento</span> <span class="o">=</span> <span class="n">saludar</span><span class="p">(</span><span class="o">*</span><span class="n">estudiante</span><span class="p">)</span> <span class="c1"># este es un ejemplo de desempaquetamiento de tuplas</span>
+    <span class="n">edades</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edad</span><span class="p">)</span>
+
+<span class="n">edad_promedio</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">edades</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">edades</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La edad promedio del grupo es </span><span class="si">{</span><span class="n">edad_promedio</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> años.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La edad promedio del grupo es 24.00 años.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esto significa que también podríamos aplicar esta función a una lista de comprensión:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">edades</span> <span class="o">=</span> <span class="p">[</span><span class="n">saludar</span><span class="p">(</span><span class="o">*</span><span class="n">estudiante</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">estudiante</span> <span class="ow">in</span> <span class="n">grupo</span><span class="p">]</span>
+<span class="n">edad_promedio</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">edades</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">edades</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La edad promedio del grupo es </span><span class="si">{</span><span class="n">edad_promedio</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> años.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La edad promedio del grupo es 24.00 años.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="retornar-listas">
+<h2>Retornar listas<a class="headerlink" href="#retornar-listas" title="Permalink to this headline">#</a></h2>
+<p>En los ejemplos anteriores retornamos una tupla, una estructura de datos inmutable y ordenada. No obstate, es posible retornar una lista. Vamos a cambiar de función. En este caso, vamos a crear una que nos permita retornar todas los años que se encuentren en un texto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">extraer_fechas</span><span class="p">(</span><span class="n">texto</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extrae todas las fechas que aparezcan en un texto.</span>
+<span class="sd">    </span>
+<span class="sd">    Parámetros</span>
+<span class="sd">    ----------</span>
+<span class="sd">    texto: str</span>
+<span class="sd">        Texto del cual se extraerán las fechas</span>
+
+<span class="sd">    Retorna</span>
+<span class="sd">    -------</span>
+<span class="sd">    fechas: list</span>
+<span class="sd">        Lista de fechas extraídas del texto</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fechas</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">palabra</span> <span class="ow">in</span> <span class="n">texto</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+        <span class="n">palabra</span> <span class="o">=</span> <span class="n">palabra</span> <span class="o">=</span> <span class="n">palabra</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;,;:()[]</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">palabra</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">):</span>
+            <span class="n">palabra</span> <span class="o">=</span> <span class="n">palabra</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">palabra</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">fechas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="s2">&quot;-&quot;</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">palabra</span> <span class="ow">in</span> <span class="n">palabra</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">palabra</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                    <span class="n">fechas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="s2">&quot;.&quot;</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+            <span class="k">for</span> <span class="n">palabra</span> <span class="ow">in</span> <span class="n">palabra</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">):</span>
+                <span class="k">if</span> <span class="n">palabra</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+                    <span class="n">fechas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">fechas</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Esta función nos permitirá encontrar los valores numéricos en un texto y todos aquellos que tengan cuatro dígitos serán considerados una fecha. Además, consideramos dos casos particulares, los rangos de fecha separados por un guión y los valores de fecha que puedan estar unidos a un llamado a nota al pie (p. ej, “1894.45”).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>La lógica de esta función viene determinada por el tipo de información que le estamos pasando al programa. En este caso, sabemos que las fechas se escriben completas (AAAA) y que no contamos con valores decimales que nos puedan confundir (p. ej, en “1894.45” el primer valor - 1894 - es una fecha y el segundo valor - 45 - es un llamado a una nota al pie). Es por tanto una función hecha a propósito para este caso particular.</p>
+<p>Asimismo, esta función utiliza una estrategia lógica para encontrar coincidencias. Sin embargo, será más eficiente cuando utilicemos expresiones regulares, como veremos al final del curso.</p>
+</div>
+<p>Vamos a realizar nuestro ejercicio con algunos textos tomados de unas biografías en Wikipedia:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tomamos el primer párrafo de la biografía en español de Wikipedia</span>
+
+<span class="n">Cervantes</span> <span class="o">=</span> <span class="s2">&quot;Miguel de Cervantes Saavedra (Alcalá de Henares,4​ 29 de septiembre de 1547-Madrid, 22 de abril3​ de 1616) fue un novelista, poeta, dramaturgo y soldado español.&quot;</span>
+<span class="n">Quevedo</span> <span class="o">=</span> <span class="s2">&quot;Francisco Gómez de Quevedo Villegas y Santibáñez Cevallos (Madrid, 14 de septiembre de 1580-Villanueva de los Infantes, Ciudad Real, 8 de septiembre de 1645) fue un noble, político y escritor español del Siglo de Oro.&quot;</span>
+<span class="n">Calderon</span> <span class="o">=</span> <span class="s2">&quot;Pedro Calderón de la Barca (Madrid, 17 de enero de 1600-25 de mayo de 1681) fue un escritor español, sacerdote católico, miembro de la Venerable Congregación de Presbíteros Seculares Naturales de Madrid San Pedro Apóstol y caballero de la Orden de Santiago, conocido fundamentalmente por ser uno de los más insignes literatos barrocos del Siglo de Oro, en especial por su teatro.&quot;</span>
+
+<span class="n">bios</span> <span class="o">=</span> <span class="p">[</span><span class="n">Cervantes</span><span class="p">,</span> <span class="n">Quevedo</span><span class="p">,</span> <span class="n">Calderon</span><span class="p">]</span>
+
+<span class="n">fechas</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bios</span><span class="p">:</span>
+    <span class="n">fechas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">extraer_fechas</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>En cada caso recuperamos una lista de fechas. En caso de que no existieran elementos se devolvería una lista vacía. Incluso, por la forma de nuestros datos, podríamos determinar la edad de la persona en el momento de su muerte:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fechas</span><span class="p">:</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La edad de la persona en el momento de su muerte fue de </span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nb">int</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s2"> años.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No se encontró la fecha de muerte.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>La edad de la persona en el momento de su muerte fue de 69 años.
+La edad de la persona en el momento de su muerte fue de 65 años.
+La edad de la persona en el momento de su muerte fue de 81 años.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nuevamente, estamos tratando aquí de un ejemplo muy puntual que funcionará solamente en unos cuantos casos, pero nos es útil para ilustrar el uso de las funciones y su retorno.</p>
+</section>
+<section id="retornar-diccionarios">
+<h2>Retornar diccionarios<a class="headerlink" href="#retornar-diccionarios" title="Permalink to this headline">#</a></h2>
+<p>En el ejemplo anterior, retornamos una lista de fechas. Sin embargo, es posible retornar un diccionario. Vamos a crear una función que nos permita extraer las palabras de un texto y contar cuántas veces aparecen:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">contar_palabras</span><span class="p">(</span><span class="n">texto</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Cuenta las palabras que aparecen en un texto.</span>
+<span class="sd">    </span>
+<span class="sd">    Parámetros</span>
+<span class="sd">    ----------</span>
+<span class="sd">    texto: str</span>
+<span class="sd">        Texto del cual se extraerán las palabras</span>
+
+<span class="sd">    Retorna</span>
+<span class="sd">    -------</span>
+<span class="sd">    palabras: dict</span>
+<span class="sd">        Diccionario con las palabras y su frecuencia</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">palabras</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">palabra</span> <span class="ow">in</span> <span class="n">texto</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+        <span class="n">palabra</span> <span class="o">=</span> <span class="n">palabra</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;,;:()[]</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">palabra</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">):</span>
+            <span class="n">palabra</span> <span class="o">=</span> <span class="n">palabra</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">palabra</span> <span class="ow">in</span> <span class="n">palabras</span><span class="p">:</span>
+            <span class="n">palabras</span><span class="p">[</span><span class="n">palabra</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">palabras</span><span class="p">[</span><span class="n">palabra</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">palabras</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Esta función también utiliza una estrategia lógica para encontrar coincidencias, no obstante, una manera más sofisticada de hacerlo sería utilizando una librería como <code class="docutils literal notranslate"><span class="pre">nltk</span></code> para tokenizar el texto y luego contar las palabras. Veremos un poco de esta librería en sesiones posteriores.</p>
+</div>
+<p>Vamos a realizar nuestro ejercicio con algunos textos tomados de unas biografías en Wikipedia:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bios</span><span class="p">:</span>
+    <span class="n">palabras</span> <span class="o">=</span> <span class="n">contar_palabras</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Biografía de </span><span class="si">{</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+    <span class="c1"># imprime solamente las palabras que aparecen más de una vez</span>
+    <span class="k">for</span> <span class="n">palabra</span><span class="p">,</span> <span class="n">frecuencia</span> <span class="ow">in</span> <span class="n">palabras</span><span class="o">.</span><span class="n">items</span><span class="p">():</span> <span class="c1"># iteramos sobre el diccionario</span>
+        <span class="k">if</span> <span class="n">frecuencia</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">palabra</span><span class="p">,</span> <span class="n">frecuencia</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BIOGRAFÍA DE MIGUEL DE CERVANTES SAAVEDRA
+
+de 6
+
+BIOGRAFÍA DE FRANCISCO GÓMEZ DE QUEVEDO
+
+de 7
+y 2
+septiembre 2
+
+BIOGRAFÍA DE PEDRO CALDERÓN DE LA
+
+Pedro 2
+de 12
+la 3
+Madrid 2
+por 2
+</pre></div>
+</div>
+</div>
+</div>
+<p>Vemos entonces que dependiendo del tipo de dato que retornemos, podremos utilizar la función de distintas maneras. Por ejemplo, si retornamos una lista, podemos iterar sobre ella y utilizarla para realizar otras operaciones. Si retornamos un diccionario, podemos iterar sobre él y utilizarlo para realizar otras operaciones.</p>
+<p>En el siguiente apartado veremos cómo llamar a una función desde otra función.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutoriales"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../actividades/7-funciones.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Actividad 7: Funciones</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="23-funcionesLlamados.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Funciones y modularidad</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
