@@ -40,7 +40,6 @@ print(palabra2)
 print(oracion1.replace(palabra1, palabra2))
 
 
-
 ##split(): Divide la frase en palabras
 
 oracion1 = "Seguiremos cantando. Un canto a mi tierra, un canto de resistencia"

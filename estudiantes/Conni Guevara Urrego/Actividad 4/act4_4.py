@@ -1,0 +1,1 @@
+##Ejercicio 4: Calcula la fecha promedio de los libros de tu catálogo
