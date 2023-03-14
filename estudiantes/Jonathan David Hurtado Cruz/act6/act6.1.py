@@ -96,8 +96,8 @@ bibliografia[clave] = {
 for lib in video:
     clave = int(list(bibliografia.keys())[-1]) + 1
     clave = str (clave).zfill(3)
-
-bibliografia[clave] = {
+   
+    bibliografia [clave] = {
         'canal':[{"nombre": lib.split(";")[0].split(" ")[0], "apellido": lib.split(";")[0].split(" ")[1]}],
         'titulo':lib.split('; ')[1],
         'fecha':lib.split('; ')[2],
