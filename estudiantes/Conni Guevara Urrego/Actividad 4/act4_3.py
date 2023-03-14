@@ -17,3 +17,5 @@ print(titulos, autores, anios, generos)
 
 print(titulos, autores, anios, generos.pop)
 
+
+
