@@ -108,4 +108,3 @@ for lib in video:
 
 
 print (bibliografia)
-
