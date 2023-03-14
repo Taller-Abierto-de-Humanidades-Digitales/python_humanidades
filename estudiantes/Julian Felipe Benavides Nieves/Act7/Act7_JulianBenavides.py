@@ -7,11 +7,13 @@ bibliografia = {'001': {'tipo': 'Libro', 'autor': {'nombre': 'Isaac', 'apellido'
 
 # Funcion de busqueda por palabra
 
-def busquedapalabra():
+def busquedapalabra(diccionario):
     '''Busca una cadena de caracteres en el título de los elementos de un catálogo bibliográfico.
      
     PARAMETROS
     --------
+    diccionario (dict): Llama un diccionario con la estructura [clave]['tipo','autor','titulo','editorial','fecha','lugar','revista':revista,'volumen', 'numero','url','periodico','seccion','canal']
+
     - Usa la función input para guardar una palabra clave que se buscará en el catálogo.
     - La palabra se guarda en la variable "palabraclave".
     - La función busca coincidencias de palabras exactas y coincidencias de cadenas de caracteres y las imprime por aparte.
@@ -23,16 +25,16 @@ def busquedapalabra():
     resultadoamplio = []
     resultadodiferencia = []
 
-    for l in bibliografia:
-        palabras = bibliografia[l]['titulo'].split(' ')
+    for l in diccionario:
+        palabras = diccionario[l]['titulo'].split(' ')
         for palabra in palabras:
             if palabraclave.lower() == palabra.lower():
-                resultadoexacto.append(bibliografia[l]['titulo'])
+                resultadoexacto.append(diccionario[l]['titulo'])
                 break
     
-    for l in bibliografia:
-        if palabraclave.lower() in bibliografia[l]['titulo'].lower():
-            resultadoamplio.append(bibliografia[l]['titulo'])
+    for l in diccionario:
+        if palabraclave.lower() in diccionario[l]['titulo'].lower():
+            resultadoamplio.append(diccionario[l]['titulo'])
     
     for l in resultadoamplio:
         if l not in resultadoexacto:
@@ -56,12 +58,14 @@ def busquedapalabra():
 # ------------------------------------------
 # ACTIVIDAD 7: EJERCICIO 2
 
-def bus_anio_palabra():
+def bus_anio_palabra(diccionario):
 
     '''Busca una concidencia de una cadena de caracteres en el título y una fecha por año en cada uno de los elementos de un catálogo bibliográfico.
      
     PARAMETROS
     --------
+    diccionario (dict): Llama un diccionario con la estructura [clave]['tipo','autor','titulo','editorial','fecha','lugar','revista':revista,'volumen', 'numero','url','periodico','seccion','canal']
+
     - Usa la función input para guardar una palabra clave y un año que se buscará en el catálogo.
     - La palabra se guarda en la variable "palabraclave".
     - El año se guarda en la variable "anioclave".
@@ -69,7 +73,7 @@ def bus_anio_palabra():
     - Imprime mensaje sino se encuentra ninguna coincidencia.
     ''' 
 
-    aniosbiblio = [bibliografia[a]['fecha'][-4:] for a in bibliografia]
+    aniosbiblio = [diccionario[a]['fecha'][-4:] for a in diccionario]
 
     palabraclave = input('Ingrese la palabra clave para su busqueda de título: ')
     print()
@@ -92,13 +96,13 @@ def bus_anio_palabra():
     coinpalabra = []
     coinfecha = []
     
-    for l in bibliografia: 
-        if palabraclave.lower() in bibliografia[l]['titulo'].lower() and anioclave == int(bibliografia[l]['fecha'][-4:]):
-            coinexacta.append(bibliografia[l]['titulo'])
-        elif palabraclave.lower() in bibliografia[l]['titulo'].lower() and anioclave != int(bibliografia[l]['fecha'][-4:]):
-            coinpalabra.append(bibliografia[l]['titulo'])
-        elif palabraclave.lower() not in bibliografia[l]['titulo'].lower() and anioclave == int(bibliografia[l]['fecha'][-4:]):
-            coinfecha.append(bibliografia[l]['titulo'])
+    for l in diccionario: 
+        if palabraclave.lower() in diccionario[l]['titulo'].lower() and anioclave == int(diccionario[l]['fecha'][-4:]):
+            coinexacta.append(diccionario[l]['titulo'])
+        elif palabraclave.lower() in diccionario[l]['titulo'].lower() and anioclave != int(diccionario[l]['fecha'][-4:]):
+            coinpalabra.append(diccionario[l]['titulo'])
+        elif palabraclave.lower() not in diccionario[l]['titulo'].lower() and anioclave == int(diccionario[l]['fecha'][-4:]):
+            coinfecha.append(diccionario[l]['titulo'])
                 
     if len(coinexacta) > 0:
         print(f'Se encontraron {len(coinexacta)} elemento(s) que incluyen la palabra "{palabraclave}" y la fecha "{anioclave}":')
@@ -121,12 +125,14 @@ def bus_anio_palabra():
 # ------------------------------------------
 # ACTIVIDAD 7: EJERCICIO 3
 
-def entradabiblio():
+def entradabiblio(diccionario):
     
     '''Le pide al usuario ingresar los datos de un nuevo elemento en el catalogo bibliográfico.
      
     PARAMETROS
-    --------
+    ----------
+    diccionario (dict): Llama un diccionario con la estructura [clave]['tipo','autor','titulo','editorial','fecha','lugar','revista':revista,'volumen', 'numero','url','periodico','seccion','canal']
+
     - Usa la función input para guardar los valores de las claves del diccionario.
     - Usa el metodo "while" para asegurar la escogencia del tipo de elemento y el año como número.
     - Usa while para confirma la entrada o repertir todos los campos por parte del usuario.
@@ -141,8 +147,7 @@ def entradabiblio():
         
         errorselecc = True
         while errorselecc:
-            seleccion = input('''
-            Ingrese la letra correspondiente al tipo de material que desea agregar: 
+            seleccion = input('''Ingrese la letra correspondiente al tipo de material que desea agregar: '
             'a. libro, b. artículo revista, c. artículo periódico, d. video youtube, e. otro
             ''')
             if seleccion == "a":
@@ -186,8 +191,7 @@ def entradabiblio():
 
         con_entradas = True
         while con_entradas:
-            confirm = input('''
-                Para continuar tecleé una de las opciones y de "enter": '
+            confirm = input('''Para continuar tecleé una de las opciones y de "enter": '
                 'a. Confirmar entradas  ó  b. Repetir entradas para corregir
                 ''')
             if confirm == "a":
@@ -199,10 +203,10 @@ def entradabiblio():
                 print("Selección errada, intente de nuevo.")
 
     
-    clave = int(list(bibliografia.keys())[-1]) + 1
+    clave = int(list(diccionario.keys())[-1]) + 1
     clave = str(clave).zfill(3)    
         
-    bibliografia[clave] = {
+    diccionario[clave] = {
         "tipo":tipo,
         'autor':{'nombre':nombre,'apellido': apellido},
         'titulo':titulo,
@@ -218,19 +222,20 @@ def entradabiblio():
         'canal':canal
     }
     
-    for c in bibliografia:
-        for sc in list(bibliografia[c]):
-            if not bibliografia[c][sc]:
-                del bibliografia[c][sc]
+    for c in diccionario:
+        for sc in list(diccionario[c]):
+            if not diccionario[c][sc]:
+                del diccionario[c][sc]
+
 
 # ------------------------------------------
 # Ejecución de las funciones creadas
 
-busquedapalabra()
+busquedapalabra(bibliografia)
 continuar = input("Enter para continuar")
-bus_anio_palabra()
+bus_anio_palabra(bibliografia)
 continuar = input("Enter para continuar")
-entradabiblio()
+entradabiblio(bibliografia)
 
 # ------------------------------------------
 # Impresión último elemento de la librería
