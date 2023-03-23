@@ -1,3 +1,39 @@
+""" diccionario = {
+   # "clave" : "valor"
+    2: 258 , 
+    5.2 : ["valor2", "valor3", "valor4"]
+    "d": 
+    {"clave": "valor anidado", "clave2"}
+
+    "clave2": "valor2"
+    "clave3": "valor3"
+}
+print (diccionario) """
+
+protagonistas = {
+    "Jerry" : "Jerry Seinfeld",
+    "George" : 
+    {"nombre": "Jason Alexander"},
+    "Elaine" : "Julia Louis",
+    "Kramer" : {
+            "Nombre" :"Michael Richards",
+            "año_nacimiento": 1949,
+            "nacionalidad": "estadounidense",
+            "género" : "masculino",
+            }
+    }
+if protagonistas:
+    print(protagonistas["Kramer"]["nacionalidad"])
+else: 
+    print ("no hay elementos en el dicc")
+
+protagonistas["George"]["Empleos"] = ["propiedades", "sanalac", "publicista"]
+for l in protagonistas['George']['Empleos']:
+    print(l.upper())
+del protagonistas['George']['Empleos'] 
+#para borrar del+ el dicc + la clave a eliminar
+
+#iterar a través de un diccionario
 bibliografia = {
     "001": {
         "tipo": "libro",
@@ -43,11 +79,21 @@ bibliografia = {
     }
 }
 
+print(bibliografia["001"]["autor"][0]['nombre'])
 
-#print(bibliografia["001"]["autor"][0]['nombre'])
+for c in bibliografia: 
+    print(c)
 
-# (clave, valor)
+""" #clave,valor
+for clave, valor in bibliografia.items():
+    print (f"clave: {clave} | valor: {valor}")
 
+for clave, valor in bibliografia.items():
+    if valor [] """
+
+#terminar con la foto
+
+#otro ejercicio de agregar
 lista_bibliografia = [
     "Edgar Alan Poe; Cuentos completos; 2019; Alianza Editorial",
     "David Hume; Del conocimiento; 1984; Aguilar",
@@ -55,42 +101,14 @@ lista_bibliografia = [
     "Francois Hartog; Cronos; 2022; Siglo XXI",
     "David Spiegelhalter; The art of statistics; 2021; Basic Books"
 ]
-
 for l in lista_bibliografia:
     clave = int(list(bibliografia.keys())[-1]) + 1
-    
     clave = str(clave).zfill(3)
-
-    if len(l.split("; ")[0].split(" ")) > 2:
-        nombre = l.split("; ")[0].split(" ")[:2]
-    else:
-        nombre = l.split("; ")[0].split(" ")[0]
-
-    bibliografia[clave] = {
-        "tipo": "libro",
-        "autor": [
-             {'nombre':nombre,'apellido': l.split(';')[1].split(' ')[-1]}
-        ],
-        "titulo": l.split("; ")[1],
-        "editorial": l.split("; ")[-1],
-        "fecha": int(l.split("; ")[2]),
-        "lugar": ""
+    bibliografia(clave) = {
+        "tipo":"libro"
+        "autor":"[
+        {"nombre": 1.split("; ")[0].split(" ")[0], "apellido": l.split("; ")[0].split(" ")[-1]}
     }
 
-
-
-
-lugares = {
-    "006": "Madrid",
-    "007": "Madrid",
-    "008": "Madrid",
-    "009": "México",
-    "010": "Nueva York"
-}
-
-for clave, valor in lugares.items():
-    bibliografia[clave]['lugar'] = valor
-
-for clave, valor in bibliografia.items():
     print(clave)
-    print(valor)
+

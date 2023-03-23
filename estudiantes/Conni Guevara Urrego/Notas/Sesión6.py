@@ -43,54 +43,11 @@ bibliografia = {
     }
 }
 
+""" print(bibliografia["001"]["autor"][0]['nombre']) """
 
-#print(bibliografia["001"]["autor"][0]['nombre'])
+""" for c in bibliografia.keys():
+    print(c) """
 
-# (clave, valor)
+""" for clave, valor in bibliografia["001"]['autor'][0].items():
+    print(f"Clave: {clave} | Valor: {valor}") """
 
-lista_bibliografia = [
-    "Edgar Alan Poe; Cuentos completos; 2019; Alianza Editorial",
-    "David Hume; Del conocimiento; 1984; Aguilar",
-    "Ludwig Wittgenstein; Tractatus Logico-Philosophicus; 2017; Tecnos",
-    "Francois Hartog; Cronos; 2022; Siglo XXI",
-    "David Spiegelhalter; The art of statistics; 2021; Basic Books"
-]
-
-for l in lista_bibliografia:
-    clave = int(list(bibliografia.keys())[-1]) + 1
-    
-    clave = str(clave).zfill(3)
-
-    if len(l.split("; ")[0].split(" ")) > 2:
-        nombre = l.split("; ")[0].split(" ")[:2]
-    else:
-        nombre = l.split("; ")[0].split(" ")[0]
-
-    bibliografia[clave] = {
-        "tipo": "libro",
-        "autor": [
-             {'nombre':nombre,'apellido': l.split(';')[1].split(' ')[-1]}
-        ],
-        "titulo": l.split("; ")[1],
-        "editorial": l.split("; ")[-1],
-        "fecha": int(l.split("; ")[2]),
-        "lugar": ""
-    }
-
-
-
-
-lugares = {
-    "006": "Madrid",
-    "007": "Madrid",
-    "008": "Madrid",
-    "009": "México",
-    "010": "Nueva York"
-}
-
-for clave, valor in lugares.items():
-    bibliografia[clave]['lugar'] = valor
-
-for clave, valor in bibliografia.items():
-    print(clave)
-    print(valor)
