@@ -69,7 +69,7 @@ for l in lista_bibliografia:
     bibliografia[clave] = {
         "tipo": "libro",
         "autor": [
-            {"nombre": nombre, "apellido": l.split("; ")[0].split(" ")[-1]}
+             {'nombre':nombre,'apellido': l.split(';')[1].split(' ')[-1]}
         ],
         "titulo": l.split("; ")[1],
         "editorial": l.split("; ")[-1],
