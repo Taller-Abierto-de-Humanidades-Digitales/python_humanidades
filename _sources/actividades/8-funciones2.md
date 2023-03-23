@@ -63,7 +63,7 @@ La función recibe como parámetro un diccionario con la información de los aut
 Crea dos funciones, una llamada `extraer_fechas()` que permita obtener las fechas de la biografía de cada autor, y otra llamada `fecha_nacimiento()` que permita obtener la fecha de nacimiento de cada autor.
 
 La función `extraer_fechas()` recibe como parámetro un string con la biografía de un autor. La función debe regresar una lista con las fechas que se encuentren en la biografía.
-La función `fecha_nacimiento()` recibe como parámetro un string con el nombre del autor. La función debe regresar la fecha de nacimiento del autor.
+La función `fecha_nacimiento()` recibe dos parámetros: un string con el nombre del autor y un diccionario. La función debe regresar la fecha de nacimiento del autor.
 
 ## Ejercicio 3 - Escribe una función que regrese la edad promedio de los autores al momento de publicar su obra principal
 
