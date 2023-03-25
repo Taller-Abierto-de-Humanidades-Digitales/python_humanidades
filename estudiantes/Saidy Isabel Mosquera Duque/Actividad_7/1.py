@@ -67,21 +67,23 @@ for clave, valor in bibliografia.items():
                 
                 """
 
-resultado = []
 
-def Busqueda(palabra):
+def Busqueda(palabra,diccionario):
    
    print(f"{palabra}")
-   
-   palabra = input("Escribe una palabra clave del título que estas buscando: ")
-
-for clave, valor in bibliografia.items():
-      titulo = {valor["titulo"]}
-
-
-if  palabra in str(titulo).lower():
+   resultado = []
+   for clave, valor in diccionario.items():
+      titulo = valor["titulo"]
+      if  palabra in str(titulo).lower():
           resultado.append(titulo)
-                
-print(f"se encontraron {len(resultado)}  los cuales son: {resultado}")
+
+   print(f"se encontraron {len(resultado)}  los cuales son: {resultado}")
+   
+palabra = input("Escribe una palabra clave del título que estas buscando: ")
+
+resultado = Busqueda(palabra,bibliografia)     
+
+
+
 
 

@@ -37,7 +37,8 @@ for c in Catalogo:
     }
 
 
-
+N_tipo = []
+N_titulo = []
 
  
 
@@ -47,16 +48,17 @@ for c in Catalogo:
     clave = str(clave).zfill(3)
 
 
-tipo = input("Escribe aqui si es un [capítulo de libro o libro]: ")
-bibliografia["tipo"] = tipo
+N_tipo = input("Escribe aqui si es un [capítulo de libro o libro]: ")
+bibliografia["tipo"] = N_tipo
 
-titulo = input("Escribe el tíitulo: ")
-bibliografia["titulo"] = titulo
-
-
-print(f"El nuevo elemnto subido es: tipo:{tipo}, titulo:{titulo}")
+N_titulo = input("Escribe el tíitulo: ")
+bibliografia["titulo"] = N_titulo
 
 
+[N_titulo + N_tipo].A
 
-print(bibliografia)
+print(f"El nuevo elemnto subido es: tipo:{N_tipo}, titulo:{N_titulo}")
+
+
+#print(bibliografia)
 
