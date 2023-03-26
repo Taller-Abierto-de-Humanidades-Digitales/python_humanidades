@@ -43,85 +43,91 @@ biografias_boom = {
     }}
 
 
-"""Autores = list(biografias_boom)
-print(Autores)"""
 
-# Intento de los autores: 
-"""def autores(autor):
-    print(autor)
+    # ejercicio 1
 
-    autor = list(biografias_boom)
-    return autores"""
+def nombrar(catalogo: str):
 
-"""Bibliografia = biografias_boom.values()
-Bibliografia = list(Bibliografia)"""
+    """ esta función retorna el nombre de los autores. 
 
-# dict = diccionario (clase)
-# list = Devuelve un alista con las claves del diccionario. 
+    Parámetros
+    ------------
+    nombre: str 
+    
+    Retorna
+    -------
+    nombre: str 
+    nombre de autores
+    """
+   
 
-
-# Ejercicio_1
-
-def autores(bbio:dict) -> list:
     autores = []
-    for autor in bbio.keys():
-        autores.append(autor)
+
+    for nombres in catalogo: 
+        autores.append(nombres.split(';')[0])
+
+
 
     return autores
 
-#print(autores(biografias_boom))
+print(nombrar(catalogo= biografias_boom))
 
 
+#ejercicio 2
 
-#__________________________
-#Ejercicio_2
+def extraer_fechas(texto):
+    """Extrae todas las fechas que aparezcan en un texto.
+    
+    Parámetros
+    ----------
+    texto: str
+        Texto del cual se extraerán las fechas
 
-#limpiar texto: 
-
-def limpiar_texto(texto:str) -> str:
-    caracteres_especiales = "''.,()[]/\:;-{}"
-    for caracter in caracteres_especiales:
-        if caracter in texto:
-            texto = texto.replace(caracter, " ")
-    return texto
-
-
-#print(limpiar_texto(biografias_boom))
-
-def extraer_fechas(texto:dict, autor:str):
-
+    Retorna
+    -------
+    fechas: list
+        Lista de fechas extraídas del texto
+    """
     fechas = []
-    texto = limpiar_texto(texto)
-    autor = texto.keys()
+    for palabra in texto.split():
+        palabra = palabra = palabra.strip(",;:()[]{}")
+        if palabra.endswith("."):
+            palabra = palabra.replace(".", "")
 
-    for anios in texto[autor]["bio"]:
-        if anios.isdigital() and len(anios) == 4:
-            fechas.append(anios)
+        if palabra.isdigit() and len(palabra) == 4:
+            fechas.append(palabra)
+        elif len(palabra) > 5 and "-" in palabra:
+            for palabra in palabra.split("-"):
+                if palabra.isdigit() and len(palabra) == 4:
+                    fechas.append(palabra)
+        elif len(palabra) > 5 and "." in palabra:
+            for palabra in palabra.split("."):
+                if palabra.isdigit() and len(palabra) == 4:
+                    fechas.append(palabra)
 
-            return fechas
-        
+    return fechas
+
 print(extraer_fechas(biografias_boom))
 
-
-"""
-
-Intento_1:
-
-def extraer_fechas(texto:dict):
-
-    fechas = []
-    texto = limpiar_texto(texto)
-
-    for anios in texto[autores]["bio"]:
-        if anios.isdigital() and len(anios) == 4:
-            fechas.append(anios)
-
-            return fechas
+def fecha_nacimiento (autor: str, diccionario_bio: dict):
+    """ esta función encuentra las fechas de nacimiento de los autores en el diccionario
+    Parámetros
+    -----------
+    Parámetros
+    -------
+    autor: str
+        nombre del autor
+   diccionario_bios: dict
+        diccionario de las biografías
         
-print(extraer_fechas(biografias_boom))
+        
+    """
 
-"""
 
-#######
+
+
+      
+
+      
 
 

@@ -71,57 +71,83 @@ def autores(bbio:dict) -> list:
 
 #print(autores(biografias_boom))
 
-
-
-#__________________________
 #Ejercicio_2
 
-#limpiar texto: 
+#limpiar texto:
 
 def limpiar_texto(texto:str) -> str:
+
+    """
+    caracteres_especiales : define los caracteres especiales a quitar
+
+
+    """
     caracteres_especiales = "''.,()[]/\:;-{}"
     for caracter in caracteres_especiales:
         if caracter in texto:
             texto = texto.replace(caracter, " ")
     return texto
 
-
 #print(limpiar_texto(biografias_boom))
 
-def extraer_fechas(texto:dict, autor:str):
+def extraer_fechas(texto:dict, autor:str) -> dict:
 
+
+""""
+
+def extraer_fechas(texto:dict, autor:str) -> dict:
+ 
     fechas = []
     texto = limpiar_texto(texto)
-    autor = texto.keys()
+    autor = autores
 
-    for anios in texto[autor]["bio"]:
-        if anios.isdigital() and len(anios) == 4:
-            fechas.append(anios)
+    for autor in texto.keys():
+        if autor.lower() in texto.keys():
+            
+            for anios in texto[autores]["bio"]:
+                if anios.isdigit() and len(anios) == 4:
+
+                    fechas.append(anios)
+            
 
             return fechas
-        
+
+
 print(extraer_fechas(biografias_boom))
 
+""""
 
-"""
 
-Intento_1:
+
+
+####### intento 2
+
+def edad_publicacion(texto:dict): 
+    texto = limpiar_texto(texto)
+    fecha = []
+    for anios in texto.keys():
+        anios = texto["fecha_publicacion"]
+        fecha.append(int(anios))
+        return fecha
+
+
+print(edad_publicacion(biografias_boom))
+
+
+##### intento 3
+
+def edad_publicacion(texto:dict):
+    fecha = []
+    texto = texto.get(autores)
+    for anios in texto:
+        if anios in texto[autores]["fecha_publicacion"]:
+            fecha.append(anios)
+
+
+print(edad_publicacion(biografias_boom))     
+
+
 
 def extraer_fechas(texto:dict):
-
-    fechas = []
-    texto = limpiar_texto(texto)
-
-    for anios in texto[autores]["bio"]:
-        if anios.isdigital() and len(anios) == 4:
-            fechas.append(anios)
-
-            return fechas
-        
-print(extraer_fechas(biografias_boom))
-
-"""
-
-#######
-
-
+    for anios in texto.items():
+        if anios in 

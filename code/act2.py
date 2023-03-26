@@ -7,39 +7,50 @@ import act2Validator as av2
 
 # Escribe aquí tu código
 
+nombre = "Daniel"
+apellido = "quiñones"
+nombre_completo = nombre + apellido 
+
+print (nombre_completo)
+
 # Ejercicio 2: Crea una variable para la marca de un carro. El nombre de la variable
 # debe ser 'nombre_carro'. Imprime el nombre del carro.
 
 # Escribe aquí tu código
+
+nombre_carro = "mazda"
+
+print (nombre_carro)
 
 ####################################
 
 # Ejercicio 3: El siguiente código está escrito de manera incorrecta.
 # Corrige el código para que funcione correctamente.
 
-1primer_nombre = Akira
-2primer_apellido = "Toriyama
+primer_nombre = "Akira"
+primer_apellido = "Toriyama"
 
+autor = "Roxan"
 
-print autor
+print ("autor")
 
-fech@_nacimiento = 1955
+fecha_nacimiento = 1955
 
-Nombre_Manga = "Dr. Slump"
+nombre_manga = "Dr. Slump"
 
-fecha pub = "1979"
+fecha_pub = "1979"
 
 ####################################
 
 # Ejercicio 4: Corrige las siguientes variables de texto para que el código funcione correctamente.
 
-texto1 = "Akira Toriyama publicó su manga "Dragon Ball" en 1984"
-texto2 = "Quentin Tarantino es el director" "de la película Pulp Fiction"
-texto3 = "Yo, señor, soy acontista.
+texto1 = "Akira Toriyama publicó su manga \"Dragon Ball\" en 1984"
+texto2 = "Quentin Tarantino es el director" + " de la película Pulp Fiction"
+texto3 = """Yo, señor, soy acontista.
         Mi profesión es hacer disparos al aire.
         Todavía no habré descendido la primera nube.
         Mas, la delicia está en curvar el arco
-        y en suponer la flecha donde la clava el ojo."
+        y en suponer la flecha donde la clava el ojo."""
 texto4 = "Es posible que {nombre} no haya leído nombre_manga."
 
 
@@ -50,7 +61,7 @@ texto4 = "Es posible que {nombre} no haya leído nombre_manga."
 
 nombre = "Paul Ricoeur"
 
-print(f"El nombre de mi mejor amigo es {nombre}")
+print("El nombre de mi mejor amigo es {nombre}")
 
 ####################################
 

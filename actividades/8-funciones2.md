@@ -1,3 +1,10 @@
+# Actividad 8: Funciones II
+
+En esta actividad vamos a realizar una serie de ejercicios que nos permitirán practicar el uso de funciones en Python.
+
+Vamos a utilizar como insumo el siguiente diccionario, el cual contiene las biografías de algunos autores del Boom latinoamericano:
+
+```python
 biografias_boom = {
     "Julio Cortázar": {
         "nacionalidad": "Argentina",
@@ -41,87 +48,93 @@ biografias_boom = {
         "fecha_publicacion": "1966",
         "vivo": True,
     }}
+```
 
+Estas biografías fueron tomadas de Wikipedia y van a servirnos para realizar las siguientes operaciones:
 
-"""Autores = list(biografias_boom)
-print(Autores)"""
+## Ejercicio 1: Crear una lista con los autores que están en el diccionario
 
-# Intento de los autores: 
-"""def autores(autor):
-    print(autor)
+Debes crear una función llamada `autores()`, que regrese una lista con el nombre de cada uno de los autores del boom.
 
-    autor = list(biografias_boom)
-    return autores"""
+La función recibe como parámetro un diccionario con la información de los autores del boom latinoamericano. La función debe regresar una lista con el nombre de cada uno de los autores del boom.
 
-"""Bibliografia = biografias_boom.values()
-Bibliografia = list(Bibliografia)"""
+## Ejercicio 2: Escribe una función que regrese la fecha de nacimiento del autor a partir de la información de su biografía
 
-# dict = diccionario (clase)
-# list = Devuelve un alista con las claves del diccionario. 
+Crea dos funciones, una llamada `extraer_fechas()` que permita obtener las fechas de la biografía de cada autor, y otra llamada `fecha_nacimiento()` que permita obtener la fecha de nacimiento de cada autor.
 
+La función `extraer_fechas()` recibe como parámetro un string con la biografía de un autor. La función debe regresar una lista con las fechas que se encuentren en la biografía.
+La función `fecha_nacimiento()` recibe dos parámetros: un string con el nombre del autor y un diccionario. La función debe regresar la fecha de nacimiento del autor.
 
-# Ejercicio_1
+## Ejercicio 3 - Escribe una función que regrese la edad promedio de los autores al momento de publicar su obra principal
 
-def autores(bbio:dict) -> list:
-    autores = []
-    for autor in bbio.keys():
-        autores.append(autor)
+Debes crear dos funciones, una llamada `calcular_edad()` que permita calcular la edad de cada autor al momento de publicar su obra principal, y otra llamada `edad_promedio()` que permita calcular la edad promedio de los autores al momento de publicar su obra principal.
 
-    return autores
+La función `calcular_edad()` recibe como parámetro un string con el nombre del autor. La función debe regresar la edad del autor al momento de publicar su obra principal.
+La función `edad_promedio()` recibe como parámetros una lista con los nombres de los autores y un diccionario. La función debe regresar la edad promedio de los autores al momento de publicar su obra principal (`int`).
 
-#print(autores(biografias_boom))
+## Ejercicio 4 - Escribe una función que regrese la edad de los autores al momento de su defunción
 
+Será necesario crear una función llamada `fecha_defuncion()` para extraer la fecha de defunción de la biografía. Debes llamar la función `fecha_nacimiento()` para obtener la fecha de nacimiento de cada autor, y crearla función `edad_defuncion()` para calcular la edad de cada autor al momento de su defunción.
 
+La función `fecha_defuncion()` recibe como parámetros un string con el nombre del autor y un diccionario. La función debe regresar un valor `None` si el autor no ha fallecido, o la fecha de defunción del autor si ya falleció (`int`).
+La función `edad_defuncion()` recibe como parámetros un string con el nombre del autor y un diccionario. La función debe regresar la edad del autor al momento de su defunción (`int`).
 
-#__________________________
-#Ejercicio_2
+## Ejercicio 5 - Escribe una función que regrese el nombre del autor más longevo
 
-#limpiar texto: 
+Vamos a utilizar la función que acabamos de crear para calcular la edad de cada autor al momento de su defunción. También será necesario determinar si el autor ya falleció o no. Debes crear una función llamada `longevo()` que permita determinar el nombre del autor más longevo. Esta función regresa un tuple con el nombre del autor y su edad.
 
-def limpiar_texto(texto:str) -> str:
-    caracteres_especiales = "''.,()[]/\:;-{}"
-    for caracter in caracteres_especiales:
-        if caracter in texto:
-            texto = texto.replace(caracter, " ")
-    return texto
+La función `longevo()` recibe como parámetros una lista con los nombres de los autores y un diccionario. La función debe regresar un tuple con el nombre del autor más longevo y su edad (`tuple`).
 
+## Ejercicio 6 - Escribe una función para llamar a todo el programa
 
-#print(limpiar_texto(biografias_boom))
+Debes crear una función llamada `main()` que permita llamar a todas las funciones que acabamos de crear. Esta función no recibe parámetros y no regresa ningún valor. Debe escribirse de la siguiente manera:
 
-def extraer_fechas(texto:dict, autor:str):
+```python
+def main(diccionario_bios: dict):
+    """
+    Esta función llama a las funciones que acabamos de crear
+    PARAMETROS:
+        diccionario_bios: diccionario con la información de los autores del boom latinoamericano
+    RETORNA:
+        None
+    """
+    # Llama a las funciones que acabamos de crear
+    autores_boom = autores(diccionario_bios)
+    print(autores_boom)
+    promedio_edad_autores_boom = edad_promedio(autores_boom, bios=diccionario_bios )
+    print(f"La edad promedio de los autores_boom del Boom Latinoamericano fue de {promedio_edad_autores_boom} años")
+    longevo_autores_boom = longevo(autores_boom, bio=diccionario_bios)
+    print(f"El autor más longevo de los autores_boom del Boom Latinoamericano fue {longevo_autores_boom[0]} quien vivió {longevo_autores_boom[1]} años")
+```
 
-    fechas = []
-    texto = limpiar_texto(texto)
-    autor = texto.keys()
+Al final del programa, invoque la función `main()`.
 
-    for anios in texto[autor]["bio"]:
-        if anios.isdigital() and len(anios) == 4:
-            fechas.append(anios)
+```python
+biografias_boom = {
+    "Mario Vargas Llosa": {
+        "biografia": ""
+        ....
+    },
+    ...
+}
 
-            return fechas
-        
-print(extraer_fechas(biografias_boom))
+main(biografias_boom)
+```
 
+## Envío de la actividad
 
-"""
+Al igual que las actividades anteriores, envía tu código a través de Github.
 
-Intento_1:
+Los cinco ejercicios deberán ser realizados en un archivo llamado `actividad8.py`. Guárdalo en el directorio con tu nombre (de preferencia en un subdirectorio).
 
-def extraer_fechas(texto:dict):
+Para entregar la actividad, debes hacer un `commit` de los modificados y hacer un `push` de tu brazo al repositorio remoto.
 
-    fechas = []
-    texto = limpiar_texto(texto)
+```bash
+git add .
+git commit -m "Entrega de la actividad 8"
+git push -u origin nombre-del-brazo
+```
 
-    for anios in texto[autores]["bio"]:
-        if anios.isdigital() and len(anios) == 4:
-            fechas.append(anios)
+### Fecha de entrega
 
-            return fechas
-        
-print(extraer_fechas(biografias_boom))
-
-"""
-
-#######
-
-
+Entrega la actividad antes del martes 28 de marzo.
