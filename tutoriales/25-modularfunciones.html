@@ -603,12 +603,58 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importar-modulos">
+   Importar módulos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importar-funciones-especificas">
+     Importar funciones específicas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importar-modulos-con-alias">
+     Importar módulos con alias
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crear-modulos">
+   Crear módulos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notas">
+   Notas
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -620,6 +666,41 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#importar-modulos">
+   Importar módulos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importar-funciones-especificas">
+     Importar funciones específicas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importar-modulos-con-alias">
+     Importar módulos con alias
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crear-modulos">
+   Crear módulos
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notas">
+   Notas
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -629,6 +710,182 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="funciones-modularidad">
 <h1>Funciones: Modularidad<a class="headerlink" href="#funciones-modularidad" title="Permalink to this headline">#</a></h1>
+<p>Hasta el momento, nuestros programas han consistido en varios bloques de código que se ejecutan secuencialmente. Seguramente habrás notado que cada vez que quieres probar una función tienes que ejecutar todo el programa, incluso aquellos bloques de código que no quieres usar en ese momento.</p>
+<p>A mayor complejidad del código, más difícil es leer y entender el programa. Además, si sumamos conjuntos de datos, diccionarios, listados y otros tipos de datos, la extensión del script aumenta hasta acumular miles de líneas de código. Al igual que en un sitio Web, la lectura se hace más difícil entre más “largo” es el texto.</p>
+<p>La modularidad es una técnica de diseño de software ampliamente utilizada en la industria, que permite dividir un programa en partes más pequeñas, llamadas módulos. Cada módulo contiene una parte del programa, incluso puede ser un programa en sí mismo, que se puede importar y usar en otros programas o en un programa complejo.</p>
+<p>Todos los lenguajes de programación modernos tienen mecanismos para modularizar el código, y Python no es la excepción.</p>
+<p>En este segmento del curso, aprenderás a importar módulos desde la biblioteca estándar de Python, a crear tus propios módulos y a importar funciones específicas de un módulo.</p>
+<section id="importar-modulos">
+<h2>Importar módulos<a class="headerlink" href="#importar-modulos" title="Permalink to this headline">#</a></h2>
+<p>La biblioteca estándar de Python es una colección de módulos que se instalan junto con el lenguaje. Estos módulos proporcionan una amplia variedad de funciones que pueden ser utilizadas en tus programas. Para ver una lista completa de los módulos de la biblioteca estándar, puedes consultar la <a class="reference external" href="https://docs.python.org/es/3/library/index.html">documentación oficial de Python</a>.</p>
+<p>Para los fines de nuestro curso, vamos a utilizar el módulo <code class="docutils literal notranslate"><span class="pre">datetime</span></code> para trabajar con fechas y horas. Para importar un módulo, utilizamos la palabra reservada <code class="docutils literal notranslate"><span class="pre">import</span></code> seguida del nombre del módulo. Por ejemplo, para importar el módulo <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, escribimos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una vez importado el módulo, podemos utilizar sus funciones. Por ejemplo, para obtener la fecha y hora actuales, escribimos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 3, 27, 14, 30, 28, 4191)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este valor devuelve la fecha y hora en la que fue construido este libro. Si ejecutas este código en tu computadora, obtendrás la fecha y hora actuales.</p>
+<p>Con este módulo también podemos calcular la diferencia entre dos fechas. Por ejemplo, para calcular la diferencia entre la fecha de hoy y el fin del año, escribimos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fin_de_ano</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="n">diferencia</span> <span class="o">=</span> <span class="n">fin_de_ano</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">diferencia</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>278 days, 9:29:31.942511
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cuando importamos la librería <code class="docutils literal notranslate"><span class="pre">datetime</span></code> con la instrucción <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">datetime</span></code>, estamos importando todo el módulo. Esto significa que podemos acceder a todas las funciones del módulo utilizando el prefijo <code class="docutils literal notranslate"><span class="pre">datetime.</span></code>. Es decir, cuando escribimos <code class="docutils literal notranslate"><span class="pre">datetime.datetime.now()</span></code>, estamos accediendo a la función <code class="docutils literal notranslate"><span class="pre">now()</span></code> de la clase <code class="docutils literal notranslate"><span class="pre">datetime</span></code> que pertenece al módulo <code class="docutils literal notranslate"><span class="pre">datetime</span></code>.<a class="footnote-reference brackets" href="#nota1" id="id1">1</a></p>
+<section id="importar-funciones-especificas">
+<h3>Importar funciones específicas<a class="headerlink" href="#importar-funciones-especificas" title="Permalink to this headline">#</a></h3>
+<p>Otra manera de importar un módulo es importando funciones específicas. Por ejemplo, para importar la función <code class="docutils literal notranslate"><span class="pre">datetime()</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, escribimos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una vez importada la función, podemos utilizarla directamente. Por ejemplo, para obtener la fecha y hora actuales, escribimos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 3, 27, 14, 30, 28, 172975)
+</pre></div>
+</div>
+</div>
+</div>
+<p>En general es buena práctica importar funciones específicas de un módulo, ya que evita que se sobreescriban nombres de funciones que ya existen en el programa.<a class="footnote-reference brackets" href="#nota2" id="id2">2</a></p>
+</section>
+<section id="importar-modulos-con-alias">
+<h3>Importar módulos con alias<a class="headerlink" href="#importar-modulos-con-alias" title="Permalink to this headline">#</a></h3>
+<p>Una práctica muy común es importar módulos con alias. Por ejemplo, para importar el módulo <code class="docutils literal notranslate"><span class="pre">datetime</span></code> con el alias <code class="docutils literal notranslate"><span class="pre">dt</span></code>, escribimos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una vez importado el módulo, podemos utilizar sus funciones utilizando el alias. Por ejemplo, para obtener la fecha y hora actuales, escribimos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 3, 27, 14, 30, 28, 267258)
+</pre></div>
+</div>
+</div>
+</div>
+<p>En la librería estándar no es muy común utilizar alias para importar los módulos, pero es una costumbre con librerías populares como <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> y <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+</section>
+</section>
+<section id="crear-modulos">
+<h2>Crear módulos<a class="headerlink" href="#crear-modulos" title="Permalink to this headline">#</a></h2>
+<p>En esta parte, realizaremos una modularización simple para que podamos entender cómo funciona. Para ello, vamos a retomar el diccionario con el conjunto de bibliografía que utilizamos en el capítulo <a class="reference internal" href="18-iterardiccio.html"><span class="doc std std-doc">18</span></a>. Para ello, creamos un archivo llamado <code class="docutils literal notranslate"><span class="pre">biblio.py</span></code> y escribimos el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bibliografia</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;001&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;tipo&quot;</span><span class="p">:</span> <span class="s2">&quot;libro&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;autor&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Martin&quot;</span><span class="p">,</span> <span class="s2">&quot;apellido&quot;</span><span class="p">:</span> <span class="s2">&quot;Heidegger&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;titulo&quot;</span><span class="p">:</span> <span class="s2">&quot;Ser y tiempo&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;editorial&quot;</span><span class="p">:</span> <span class="s2">&quot;Trotta&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lugar&quot;</span><span class="p">:</span> <span class="s2">&quot;Madrid&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fecha&quot;</span><span class="p">:</span> <span class="mi">2003</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;002&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;tipo&quot;</span><span class="p">:</span> <span class="s2">&quot;libro&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;autor&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Fernand&quot;</span><span class="p">,</span> <span class="s2">&quot;apellido&quot;</span><span class="p">:</span> <span class="s2">&quot;Braudel&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;titulo&quot;</span><span class="p">:</span> <span class="s2">&quot;El Mediterráneo y el mundo mediterráneo en la época de Felipe II&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;editorial&quot;</span><span class="p">:</span> <span class="s2">&quot;Fondo de Cultura Económica&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lugar&quot;</span><span class="p">:</span> <span class="s2">&quot;México&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fecha&quot;</span><span class="p">:</span> <span class="mi">2022</span><span class="p">,</span>
+        <span class="s2">&quot;edicion&quot;</span><span class="p">:</span> <span class="s2">&quot;tercera&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;003&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;tipo&quot;</span><span class="p">:</span> <span class="s2">&quot;libro&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;autor&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Hans-Georg&quot;</span><span class="p">,</span> <span class="s2">&quot;apellido&quot;</span><span class="p">:</span> <span class="s2">&quot;Gadamer&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;titulo&quot;</span><span class="p">:</span> <span class="s2">&quot;Verdad y método I: fundamentos de una hermenéutica filosófica&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;editorial&quot;</span><span class="p">:</span> <span class="s2">&quot;Sígueme&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lugar&quot;</span><span class="p">:</span> <span class="s2">&quot;Salamanca&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fecha&quot;</span><span class="p">:</span> <span class="mi">1996</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;004&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;tipo&quot;</span><span class="p">:</span> <span class="s2">&quot;libro&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;autor&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Giorgio&quot;</span><span class="p">,</span> <span class="s2">&quot;apellido&quot;</span><span class="p">:</span> <span class="s2">&quot;Agamben&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;titulo&quot;</span><span class="p">:</span> <span class="s2">&quot;Estado de excepción&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;editorial&quot;</span><span class="p">:</span> <span class="s2">&quot;Adriana Hidalgo Editora&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lugar&quot;</span><span class="p">:</span> <span class="s2">&quot;Buenos Aires&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fecha&quot;</span><span class="p">:</span> <span class="mi">2010</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;005&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;tipo&quot;</span><span class="p">:</span> <span class="s2">&quot;libro&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;autor&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Ludwig&quot;</span><span class="p">,</span> <span class="s2">&quot;apellido&quot;</span><span class="p">:</span> <span class="s2">&quot;Wittgenstein&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;titulo&quot;</span><span class="p">:</span> <span class="s2">&quot;Zettel&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;editorial&quot;</span><span class="p">:</span> <span class="s2">&quot;University of California Press&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lugar&quot;</span><span class="p">:</span> <span class="s2">&quot;Berkeley&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fecha&quot;</span><span class="p">:</span> <span class="mi">1970</span><span class="p">,</span>
+        <span class="s2">&quot;idioma&quot;</span><span class="p">:</span> <span class="s2">&quot;en&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este archivo funcionará como un módulo cuya única intención es almacenar un diccionario con la bibliografía.<a class="footnote-reference brackets" href="#nota3" id="id3">3</a></p>
+<p>En el <strong>mismo directorio</strong>, creamos un archivo llamado <code class="docutils literal notranslate"><span class="pre">biblioteca.py</span></code> y escribimos el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">biblio</span> <span class="kn">import</span> <span class="n">bibliografia</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si todo ha salido bien, al ejecutar el código anterior no debería aparecer ningún error. En caso contrario, es posible que salga el error <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">'biblio'</span></code>. Esto significa que Python no encuentra el módulo <code class="docutils literal notranslate"><span class="pre">biblio</span></code>. Para solucionarlo, debemos asegurarnos de que el archivo <code class="docutils literal notranslate"><span class="pre">biblio.py</span></code> se encuentra en el mismo directorio que el archivo <code class="docutils literal notranslate"><span class="pre">biblioteca.py</span></code>.</p>
+</section>
+<section id="notas">
+<h2>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">#</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="nota1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>En los siguientes segmentos del curso abordaremos las clases y los objetos en Python.</p>
+</dd>
+<dt class="label" id="nota2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Una manera permitida pero no recomendada de realizar importaciones es a través de la instrucción <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">datetime</span> <span class="pre">import</span> <span class="pre">*</span></code>. Esta instrucción importa todas las funciones del módulo <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, pero no es recomendable utilizarla ya que puede sobreescribir nombres de funciones que ya existen en el programa. Por otra parte, es difícil reconocer qué se ha importado y qué no; lo que impacta en la legibilidad del código. Por esta razón, es mejor importar funciones específicas de un módulo.</p>
+</dd>
+<dt class="label" id="nota3"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
+<dd><p>En una aplicación real utilizaríamos un formato de archivo específico para almacenar información, como por ejemplo un archivo CSV o JSON. En las secciones del curso dedicadas a la lectura y escritura de archivos, abordaremos estos temas.</p>
+</dd>
+</dl>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

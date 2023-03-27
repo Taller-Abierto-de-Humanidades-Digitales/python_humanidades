@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Instalar Python &#8212; Curso de Python para las HD</title>
+    <title>Funciones: Modularidad &#8212; Curso de Python para las HD</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Terminal" href="2-terminal.html" />
-    <link rel="prev" title="Fundamentos de programación" href="../index.html" />
+    <link rel="next" title="Crear módulos" href="26-modularfunciones.html" />
+    <link rel="prev" title="Actividad 8: Funciones II" href="../actividades/8-funciones2.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -119,9 +119,9 @@ const thebe_selector_output = ".output, .cell_output"
   Introducción. Configurar un entorno de desarrollo para Python
  </span>
 </p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-instalarPython.html">
    Instalar Python
   </a>
  </li>
@@ -312,7 +312,7 @@ const thebe_selector_output = ".output, .cell_output"
   Funciones
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="19-funcionesIntro.html">
    Funciones: Introducción
@@ -368,8 +368,8 @@ const thebe_selector_output = ".output, .cell_output"
    Actividad 8: Funciones II
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="25-importarmodulos.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Funciones: Modularidad
   </a>
  </li>
@@ -453,6 +453,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/gh-pages?urlpath=tree/tutoriales/25-importarmodulos.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -492,7 +521,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/1-instalarPython.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/25-importarmodulos.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -520,7 +549,24 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/tutoriales/1-instalarPython.md"
+        <a href="../_sources/tutoriales/25-importarmodulos.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/tutoriales/25-importarmodulos.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -580,13 +626,25 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instalar-python-3-11-en-windows">
-   Instalar Python 3.11 en Windows
+  <a class="reference internal nav-link" href="#importar-modulos">
+   Importar módulos
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importar-funciones-especificas">
+     Importar funciones específicas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importar-modulos-con-alias">
+     Importar módulos con alias
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instalar-python-3-11-en-mac">
-   Instalar Python 3.11 en Mac
+  <a class="reference internal nav-link" href="#notas">
+   Notas
   </a>
  </li>
 </ul>
@@ -598,7 +656,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Instalar Python</h1>
+                <h1>Funciones: Modularidad</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -609,13 +667,25 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instalar-python-3-11-en-windows">
-   Instalar Python 3.11 en Windows
+  <a class="reference internal nav-link" href="#importar-modulos">
+   Importar módulos
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importar-funciones-especificas">
+     Importar funciones específicas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importar-modulos-con-alias">
+     Importar módulos con alias
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#instalar-python-3-11-en-mac">
-   Instalar Python 3.11 en Mac
+  <a class="reference internal nav-link" href="#notas">
+   Notas
   </a>
  </li>
 </ul>
@@ -628,24 +698,116 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="instalar-python">
-<h1>Instalar Python<a class="headerlink" href="#instalar-python" title="Permalink to this headline">#</a></h1>
-<section id="instalar-python-3-11-en-windows">
-<h2>Instalar Python 3.11 en Windows<a class="headerlink" href="#instalar-python-3-11-en-windows" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>Descargar el instalador de Python desde la página oficial de Python: <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p></li>
-<li><p>Ejecutar el instalador y seguir los pasos de instalación.</p></li>
-<li><p>Asegurarse de marcar la opción de “Add Python to PATH” para que el sistema pueda encontrar el ejecutable de Python.</p></li>
-</ol>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Bdm6bJYS92U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  <section class="tex2jax_ignore mathjax_ignore" id="funciones-modularidad">
+<h1>Funciones: Modularidad<a class="headerlink" href="#funciones-modularidad" title="Permalink to this headline">#</a></h1>
+<p>Hasta el momento, nuestros programas han consistido en varios bloques de código que se ejecutan secuencialmente. Seguramente habrás notado que cada vez que quieres probar una función tienes que ejecutar todo el programa, incluso aquellos bloques de código que no quieres usar en ese momento.</p>
+<p>A mayor complejidad del código, más difícil es leer y entender el programa. Además, si sumamos conjuntos de datos, diccionarios, listados y otros tipos de datos, la extensión del script aumenta hasta acumular miles de líneas de código. Al igual que en un sitio Web, la lectura se hace más difícil entre más “largo” es el texto.</p>
+<p>La modularidad es una técnica de diseño de software ampliamente utilizada en la industria, que permite dividir un programa en partes más pequeñas, llamadas módulos. Cada módulo contiene una parte del programa, incluso puede ser un programa en sí mismo, que se puede importar y usar en otros programas o en un programa complejo.</p>
+<p>Todos los lenguajes de programación modernos tienen mecanismos para modularizar el código, y Python no es la excepción.</p>
+<p>En este segmento del curso, aprenderás a importar módulos desde la biblioteca estándar de Python, a crear tus propios módulos y a importar funciones específicas de un módulo.</p>
+<section id="importar-modulos">
+<h2>Importar módulos<a class="headerlink" href="#importar-modulos" title="Permalink to this headline">#</a></h2>
+<p>La biblioteca estándar de Python es una colección de módulos que se instalan junto con el lenguaje. Estos módulos proporcionan una amplia variedad de funciones que pueden ser utilizadas en tus programas. Para ver una lista completa de los módulos de la biblioteca estándar, puedes consultar la <a class="reference external" href="https://docs.python.org/es/3/library/index.html">documentación oficial de Python</a>.</p>
+<p>Para los fines de nuestro curso, vamos a utilizar el módulo <code class="docutils literal notranslate"><span class="pre">datetime</span></code> para trabajar con fechas y horas. Para importar un módulo, utilizamos la palabra reservada <code class="docutils literal notranslate"><span class="pre">import</span></code> seguida del nombre del módulo. Por ejemplo, para importar el módulo <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, escribimos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una vez importado el módulo, podemos utilizar sus funciones. Por ejemplo, para obtener la fecha y hora actuales, escribimos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 3, 27, 15, 32, 57, 944528)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este valor devuelve la fecha y hora en la que fue construido este libro. Si ejecutas este código en tu computadora, obtendrás la fecha y hora actuales.</p>
+<p>Con este módulo también podemos calcular la diferencia entre dos fechas. Por ejemplo, para calcular la diferencia entre la fecha de hoy y el fin del año, escribimos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fin_de_ano</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2023</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="n">diferencia</span> <span class="o">=</span> <span class="n">fin_de_ano</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">diferencia</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>278 days, 8:27:01.974323
+</pre></div>
+</div>
+</div>
+</div>
+<p>Cuando importamos la librería <code class="docutils literal notranslate"><span class="pre">datetime</span></code> con la instrucción <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">datetime</span></code>, estamos importando todo el módulo. Esto significa que podemos acceder a todas las funciones del módulo utilizando el prefijo <code class="docutils literal notranslate"><span class="pre">datetime.</span></code>. Es decir, cuando escribimos <code class="docutils literal notranslate"><span class="pre">datetime.datetime.now()</span></code>, estamos accediendo a la función <code class="docutils literal notranslate"><span class="pre">now()</span></code> de la clase <code class="docutils literal notranslate"><span class="pre">datetime</span></code> que pertenece al módulo <code class="docutils literal notranslate"><span class="pre">datetime</span></code>.<a class="footnote-reference brackets" href="#nota1" id="id1">1</a></p>
+<section id="importar-funciones-especificas">
+<h3>Importar funciones específicas<a class="headerlink" href="#importar-funciones-especificas" title="Permalink to this headline">#</a></h3>
+<p>Otra manera de importar un módulo es importando funciones específicas. Por ejemplo, para importar la función <code class="docutils literal notranslate"><span class="pre">datetime()</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, escribimos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una vez importada la función, podemos utilizarla directamente. Por ejemplo, para obtener la fecha y hora actuales, escribimos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 3, 27, 15, 32, 58, 142680)
+</pre></div>
+</div>
+</div>
+</div>
+<p>En general es buena práctica importar funciones específicas de un módulo, ya que evita que se sobreescriban nombres de funciones que ya existen en el programa.<a class="footnote-reference brackets" href="#nota2" id="id2">2</a></p>
 </section>
-<section id="instalar-python-3-11-en-mac">
-<h2>Instalar Python 3.11 en Mac<a class="headerlink" href="#instalar-python-3-11-en-mac" title="Permalink to this headline">#</a></h2>
-<ol class="simple">
-<li><p>Descargar el instalador de Python desde la página oficial de Python: <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p></li>
-<li><p>Ejecutar el instalador y seguir los pasos de instalación.</p></li>
-</ol>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gycntQ6D7y0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<section id="importar-modulos-con-alias">
+<h3>Importar módulos con alias<a class="headerlink" href="#importar-modulos-con-alias" title="Permalink to this headline">#</a></h3>
+<p>Una práctica muy común es importar módulos con alias. Por ejemplo, para importar el módulo <code class="docutils literal notranslate"><span class="pre">datetime</span></code> con el alias <code class="docutils literal notranslate"><span class="pre">dt</span></code>, escribimos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span> <span class="k">as</span> <span class="nn">dt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Una vez importado el módulo, podemos utilizar sus funciones utilizando el alias. Por ejemplo, para obtener la fecha y hora actuales, escribimos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2023, 3, 27, 15, 32, 58, 260566)
+</pre></div>
+</div>
+</div>
+</div>
+<p>En la librería estándar no es muy común utilizar alias para importar los módulos, pero es una costumbre con librerías populares como <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, <code class="docutils literal notranslate"><span class="pre">numpy</span></code> y <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+</section>
+</section>
+<section id="notas">
+<h2>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">#</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="nota1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>En los siguientes segmentos del curso abordaremos las clases y los objetos en Python.</p>
+</dd>
+<dt class="label" id="nota2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Una manera permitida pero no recomendada de realizar importaciones es a través de la instrucción <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">datetime</span> <span class="pre">import</span> <span class="pre">*</span></code>. Esta instrucción importa todas las funciones del módulo <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, pero no es recomendable utilizarla ya que puede sobreescribir nombres de funciones que ya existen en el programa. Por otra parte, es difícil reconocer qué se ha importado y qué no; lo que impacta en la legibilidad del código. Por esta razón, es mejor importar funciones específicas de un módulo.</p>
+</dd>
+</dl>
 </section>
 </section>
 
@@ -676,17 +838,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../actividades/8-funciones2.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Fundamentos de programación</p>
+            <p class="prev-next-title">Actividad 8: Funciones II</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="2-terminal.html" title="next page">
+    <a class='right-next' id="next-link" href="26-modularfunciones.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Terminal</p>
+        <p class="prev-next-title">Crear módulos</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

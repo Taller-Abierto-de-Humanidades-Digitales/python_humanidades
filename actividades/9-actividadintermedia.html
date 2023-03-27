@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Bibliografía" href="../references.html" />
-    <link rel="prev" title="Importar módulos y funciones desde otros módulos" href="../tutoriales/26-importarmodulos.html" />
+    <link rel="prev" title="Crear módulos" href="../tutoriales/26-modularfunciones.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -369,13 +369,13 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutoriales/25-modularfunciones.html">
+  <a class="reference internal" href="../tutoriales/25-importarmodulos.html">
    Funciones: Modularidad
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../tutoriales/26-importarmodulos.html">
-   Importar módulos y funciones desde otros módulos
+  <a class="reference internal" href="../tutoriales/26-modularfunciones.html">
+   Crear módulos
   </a>
  </li>
 </ul>
@@ -734,18 +734,18 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="actividad-intermedia-construye-un-programa-real">
 <h1>Actividad intermedia: Construye un programa real<a class="headerlink" href="#actividad-intermedia-construye-un-programa-real" title="Permalink to this headline">#</a></h1>
-<p>En esta actividad vamos a construir un programa que nos permita consultar una biblioteca de citas bibliográficas. El programa debe permitirnos consultar la biblioteca de citas bibliográficas por título, autor, año de publicación y palabras claves.</p>
+<p>En esta actividad vamos a construir un programa que nos permita consultar una biblioteca de referencias bibliográficas. El programa debe permitirnos consultar la bibliografía por título, autor, año de publicación y palabras claves.</p>
 <section id="sobre-el-conjunto-de-datos">
 <h2>Sobre el conjunto de datos<a class="headerlink" href="#sobre-el-conjunto-de-datos" title="Permalink to this headline">#</a></h2>
-<p>Para realizar este ejercicio, les brindamos un conjunto de citas bibliográficas exportadas desde el programa <a class="reference external" href="https://www.zotero.org/">Zotero</a> las cuales pueden visualizar en el <a class="reference external" href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/blob/main/data/bibliografia.json">repositorio del curso</a>.</p>
+<p>Para realizar este ejercicio, les brindamos un <a class="reference external" href="https://www.zotero.org/groups/197065/humanidades_digitales/library">conjunto de referencias bibliográficas</a> exportadas desde el programa <a class="reference external" href="https://www.zotero.org/">Zotero</a> las cuales pueden visualizar en el <a class="reference external" href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/blob/main/data/bibliografia.json">repositorio del curso</a>.</p>
 <p>Este conjunto de datos contiene la siguiente información:</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número de elementos en la biblioteca: 263
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número de elementos en la biblioteca: 745
 
-Tipos de elementos: [&#39;book&#39;, &#39;webpage&#39;, &#39;article-journal&#39;, &#39;paper-conference&#39;, &#39;chapter&#39;, &#39;post-weblog&#39;, &#39;document&#39;, &#39;thesis&#39;, &#39;software&#39;, &#39;speech&#39;, &#39;article-newspaper&#39;, &#39;report&#39;, &#39;article-magazine&#39;]
+Tipos de elementos: [&#39;article-journal&#39;, &#39;article-magazine&#39;, &#39;article-newspaper&#39;, &#39;book&#39;, &#39;broadcast&#39;, &#39;chapter&#39;, &#39;document&#39;, &#39;entry-encyclopedia&#39;, &#39;interview&#39;, &#39;motion_picture&#39;, &#39;paper-conference&#39;, &#39;post-weblog&#39;, &#39;thesis&#39;, &#39;webpage&#39;]
 
-Claves de los elementos: [&#39;id&#39;, &#39;type&#39;, &#39;collection-title&#39;, &#39;event-place&#39;, &#39;ISBN&#39;, &#39;publisher&#39;, &#39;publisher-place&#39;, &#39;title&#39;, &#39;URL&#39;, &#39;author&#39;, &#39;issued&#39;, &#39;accessed&#39;, &#39;container-title&#39;, &#39;abstract&#39;, &#39;language&#39;, &#39;number-of-pages&#39;, &#39;source&#39;, &#39;title-short&#39;, &#39;ISSN&#39;, &#39;issue&#39;, &#39;license&#39;, &#39;page&#39;, &#39;volume&#39;, &#39;DOI&#39;, &#39;journalAbbreviation&#39;, &#39;collection-number&#39;, &#39;event-title&#39;, &#39;editor&#39;, &#39;genre&#39;, &#39;note&#39;, &#39;call-number&#39;, &#39;edition&#39;, &#39;translator&#39;, &#39;contributor&#39;, &#39;section&#39;]
+Claves de los elementos: [&#39;DOI&#39;, &#39;ISBN&#39;, &#39;ISSN&#39;, &#39;URL&#39;, &#39;abstract&#39;, &#39;accessed&#39;, &#39;archive&#39;, &#39;archive_location&#39;, &#39;author&#39;, &#39;call-number&#39;, &#39;collection-number&#39;, &#39;collection-title&#39;, &#39;container-title&#39;, &#39;contributor&#39;, &#39;dimensions&#39;, &#39;director&#39;, &#39;edition&#39;, &#39;editor&#39;, &#39;event-place&#39;, &#39;event-title&#39;, &#39;genre&#39;, &#39;guest&#39;, &#39;id&#39;, &#39;issue&#39;, &#39;issued&#39;, &#39;journalAbbreviation&#39;, &#39;language&#39;, &#39;license&#39;, &#39;medium&#39;, &#39;note&#39;, &#39;number-of-pages&#39;, &#39;number-of-volumes&#39;, &#39;page&#39;, &#39;performer&#39;, &#39;producer&#39;, &#39;publisher&#39;, &#39;publisher-place&#39;, &#39;source&#39;, &#39;title&#39;, &#39;title-short&#39;, &#39;translator&#39;, &#39;type&#39;, &#39;volume&#39;]
 </pre></div>
 </div>
 </div>
@@ -787,7 +787,7 @@ Claves de los elementos: [&#39;id&#39;, &#39;type&#39;, &#39;collection-title&#3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;http://zotero.org/users/163570/items/32TCDQ2T&#39;, &#39;type&#39;: &#39;book&#39;, &#39;collection-title&#39;: &#39;Blackwell Companions to Literature and Culture&#39;, &#39;event-place&#39;: &#39;Oxford&#39;, &#39;ISBN&#39;: &#39;1-4051-0321-3&#39;, &#39;publisher&#39;: &#39;Blackwell Publishing Professional&#39;, &#39;publisher-place&#39;: &#39;Oxford&#39;, &#39;title&#39;: &#39;Companion to Digital Humanities&#39;, &#39;URL&#39;: &#39;http://www.digitalhumanities.org/companion/&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Schreibman&#39;, &#39;given&#39;: &#39;Susan&#39;}, {&#39;family&#39;: &#39;Siemens&#39;, &#39;given&#39;: &#39;Ray&#39;}, {&#39;family&#39;: &#39;Unsworth&#39;, &#39;given&#39;: &#39;John&#39;}], &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2004&#39;, 12]]}}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;Paz-Trillo.etal2005information&#39;, &#39;type&#39;: &#39;article-journal&#39;, &#39;container-title&#39;: &#39;Journal of the Brazilian Computer Society&#39;, &#39;DOI&#39;: &#39;10/bq8g32&#39;, &#39;ISSN&#39;: &#39;0104-6500, 1678-4804&#39;, &#39;issue&#39;: &#39;2&#39;, &#39;language&#39;: &#39;en&#39;, &#39;note&#39;: &#39;number: 2\n00022&#39;, &#39;page&#39;: &#39;17-31&#39;, &#39;source&#39;: &#39;CrossRef&#39;, &#39;title&#39;: &#39;An information retrieval application using ontologies&#39;, &#39;URL&#39;: &#39;http://link.springer.com/10.1007/BF03192373&#39;, &#39;volume&#39;: &#39;11&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Paz-Trillo&#39;, &#39;given&#39;: &#39;Christian&#39;}, {&#39;family&#39;: &#39;Wassermann&#39;, &#39;given&#39;: &#39;Renata&#39;}, {&#39;family&#39;: &#39;Braga&#39;, &#39;given&#39;: &#39;Paula P.&#39;}], &#39;accessed&#39;: {&#39;date-parts&#39;: [[&#39;2016&#39;, 11, 15]]}, &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2005&#39;, 6]]}}
 </pre></div>
 </div>
 </div>
@@ -800,7 +800,7 @@ Claves de los elementos: [&#39;id&#39;, &#39;type&#39;, &#39;collection-title&#3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Companion to Digital Humanities
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>An information retrieval application using ontologies
 </pre></div>
 </div>
 </div>
@@ -810,7 +810,7 @@ Claves de los elementos: [&#39;id&#39;, &#39;type&#39;, &#39;collection-title&#3
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">biblioteca</span> <span class="kn">import</span> <span class="n">biblioteca</span>
 
-<span class="n">titulo</span> <span class="o">=</span> <span class="s1">&#39;What Do You Do With A Million Readers?&#39;</span>
+<span class="n">titulo</span> <span class="o">=</span> <span class="s1">&#39;¿Qué son las Humanidades Digitales?&#39;</span>
 
 <span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">biblioteca</span><span class="p">():</span>
     <span class="k">if</span> <span class="n">elemento</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">titulo</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
@@ -819,7 +819,8 @@ Claves de los elementos: [&#39;id&#39;, &#39;type&#39;, &#39;collection-title&#3
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;http://zotero.org/users/163570/items/93RVDA7Z&#39;, &#39;type&#39;: &#39;webpage&#39;, &#39;container-title&#39;: &#39;Dh2015.org&#39;, &#39;title&#39;: &#39;What Do You Do With A Million Readers?&#39;, &#39;URL&#39;: &#39;http://dh2015.org/abstracts/xml/TANGHERLINI_Timothy_Roland_What_Do_You_Do_With_A_/TANGHERLINI_Timothy_Roland_What_Do_You_Do_With_A_Millio.html&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Bandari&#39;, &#39;given&#39;: &#39;Roja&#39;}, {&#39;family&#39;: &#39;Tangherlini&#39;, &#39;given&#39;: &#39;Timothy Roland&#39;}, {&#39;family&#39;: &#39;Roychowdhury&#39;, &#39;given&#39;: &#39;Vwani&#39;}], &#39;accessed&#39;: {&#39;date-parts&#39;: [[&#39;2016&#39;, 6, 19]]}, &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2015&#39;, 7, 3]]}}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;Afanador2019Que&#39;, &#39;type&#39;: &#39;motion_picture&#39;, &#39;abstract&#39;: &#39;Maria José Afanador, profesora de la Maestría en Humanidades Digitales de la Universidad de los Andes, explica qué son las Humanidades Digitales y cuál es su pertinencia en la actualidad.&#39;, &#39;dimensions&#39;: &#39;0:56&#39;, &#39;note&#39;: &#39;Directors: _:n3225&#39;, &#39;source&#39;: &#39;YouTube&#39;, &#39;title&#39;: &#39;¿Qué son las Humanidades Digitales?&#39;, &#39;URL&#39;: &#39;https://www.youtube.com/watch?v=otNSk8oNz8k&#39;, &#39;director&#39;: [{&#39;family&#39;: &#39;Afanador&#39;, &#39;given&#39;: &#39;María José&#39;}], &#39;accessed&#39;: {&#39;date-parts&#39;: [[&#39;2019&#39;, 10, 14]]}, &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2019&#39;, 10, 14]]}}
+{&#39;id&#39;: &#39;GalinaRussell2011Que&#39;, &#39;type&#39;: &#39;article-journal&#39;, &#39;container-title&#39;: &#39;Revista digital universitaria&#39;, &#39;issue&#39;: &#39;7&#39;, &#39;note&#39;: &#39;ZSCC: 0000080&#39;, &#39;page&#39;: &#39;3-10&#39;, &#39;title&#39;: &#39;¿Qué son las humanidades digitales?&#39;, &#39;URL&#39;: &#39;http://www.revista.unam.mx/vol.12/num7/art68/art68.pdf&#39;, &#39;volume&#39;: &#39;12&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Galina Russell&#39;, &#39;given&#39;: &#39;Isabel&#39;}], &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2011&#39;]]}}
 </pre></div>
 </div>
 </div>
@@ -859,41 +860,62 @@ Claves de los elementos: [&#39;id&#39;, &#39;type&#39;, &#39;collection-title&#3
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1]------------
 
-id: http://zotero.org/users/163570/items/897DPHEI
+id: AdrianCaballeroRoldan2019Bid
 type: book
-call-number: P96.N35 D38 2018
-collection-title: A K Peters Visualization Series
-event-place: Boca Raton, Florida
-ISBN: 978-1-138-19710-7
-number-of-pages: 296
-publisher: CRC Press/Taylor &amp; Francis Group
-publisher-place: Boca Raton, Florida
-source: Library of Congress ISBN
-title: Data-driven storytelling
-editor: Riche, Nathalie Henry; Hurter, Christophe; Diakopoulos, Nicholas; Carpendale, Sheelagh
-issued: 2018
+abstract: rare book
+ISBN: 978-84-948972-0-7
+language: Spanish
+note: 00000
+publisher: RC Libros
+source: Amazon
+title: Bid data con Python. Recolección, almacenamiento y proceso
+author: Adrián Caballero Roldán, Rafael Caballero / Martín Martín
+issued: 2019
 -----------------
 
 [2]------------
 
-id: http://zotero.org/users/163570/items/NGAJFMZ6
+id: Hamidovic.etal2019Ancient
 type: book
-event-place: Madrid
-ISBN: 978-84-15832-10-2
+abstract: Ancient Manuscripts in Digital Culture presents an overview of the digital turn in Ancient Jewish and Christian manuscripts visualisation, data mining and communication. Edited by David Hamidović, Claire Clivaz and Sarah Bowen Savant, it gathers together the contributions of seventeen scholars involved in Biblical, Early Jewish and Christian studies. The volume attests to the spreading of digital humanities in these fields and presents fundamental analysis of the rise of visual culture as well as specific test-cases concerning ancient manuscripts. Sophisticated visualisation tools, stylometric analysis, teaching and visual data, epigraphy and visualisation belong notably to the varied overview presented in the volume.
+collection-number: 3
+collection-title: Digital Biblical Studies
+edition: 1ª
+event-place: Leiden - Boston
+ISBN: 978-90-04-39929-7
 language: English
-note: OCLC: 892201485
-publisher: Turner
-publisher-place: Madrid
-source: Open WorldCat
-title: Big data: la revolución de los datos masivos
-title-short: Big data
-author: Mayer-Schönberger, Viktor; Cukier, Kenneth; Iriarte, Antonio
-issued: 2013
+note: ZSCC: 0000001
+number-of-pages: xvi, 284
+number-of-volumes: 1
+publisher: Brill
+publisher-place: Leiden - Boston
+title: Ancient Manuscripts in Digital Culture. Visualisation, Data Mining, Communication
+URL: https://doi.org/10.1163/9789004399297
+volume: 1
+editor: Hamidović, D.; Clivaz, C.; Bowen Savant, S.
+issued: 2019
 -----------------
 
 [3]------------
 
-id: http://zotero.org/users/163570/items/TKF3IK4J
+id: Gitelman2013Rawa
+type: book
+call-number: Q355 .R385 2013
+collection-title: Infrastructures series
+event-place: Cambridge, Massachusetts ; London, England
+ISBN: 978-0-262-51828-4
+number-of-pages: 182
+publisher: The MIT Press
+publisher-place: Cambridge, Massachusetts ; London, England
+source: Library of Congress ISBN
+title: &quot;Raw data&quot; is an oxymoron
+editor: Gitelman, Lisa
+issued: 2013
+-----------------
+
+[4]------------
+
+id: Flanders.Jannidis2019shapea
 type: book
 abstract: &quot;Data and its technologies now play a large and growing role in humanities research and teaching. This book addresses the needs of humanities scholars who seek deeper expertise in the area of data modeling and representation. The authors, all experts in digital humanities, offer a clear explanation of key technical principles, a grounded discussion of case studies, and an exploration of important theoretical concerns. The book opens with an orientation, giving the reader a history of data modeling in the humanities and a grounding in the technical concepts necessary to understand and engage with the second part of the book. The second part of the book is a wide-ranging exploration of topics central for a deeper understanding of data modeling in digital humanities. Chapters cover data modeling standards and the role they play in shaping digital humanities practice, traditional forms of modeling in the humanities and how they have been transformed by digital approaches, ontologies which seek to anchor meaning in digital humanities resources, and how data models inhabit the other analytical tools used in digital humanities research. It concludes with a glossary chapter that explains specific terms and concepts for data modeling in the digital humanities context. This book is a unique and invaluable resource for teaching and practising data modeling in a digital humanities context&quot;--
 call-number: AZ105 .S43 2019
@@ -910,41 +932,7 @@ editor: Flanders, Julia; Jannidis, Fotis
 issued: 2019
 -----------------
 
-[4]------------
-
-id: http://zotero.org/users/163570/items/Z8VUPBD6
-type: book
-call-number: Q355 .R385 2013
-collection-title: Infrastructures series
-event-place: Cambridge, Massachusetts ; London, England
-ISBN: 978-0-262-51828-4
-number-of-pages: 182
-publisher: The MIT Press
-publisher-place: Cambridge, Massachusetts ; London, England
-source: Library of Congress ISBN
-title: &quot;Raw data&quot; is an oxymoron
-editor: Gitelman, Lisa
-issued: 2013
------------------
-
-[5]------------
-
-id: http://zotero.org/users/163570/items/PIYZREFG
-type: book
-abstract: &quot;The use of quantitative methods in the humanities and related social sciences has increased considerably in recent years, allowing researchers to discover patterns in a vast range of source materials. Despite this growth, there are few resources addressed to students and scholars who wish to take advantage of these powerful tools. Humanities Data Analysis offers the first intermediate-level guide to quantitative data analysis for humanities students and scholars using the Python programming language. This practical textbook, which assumes a basic knowledge of Python, teaches readers the necessary skills for conducting humanities research in the rapidly developing digital environment. The book begins with an overview of the place of data science in the humanities, and proceeds to cover data carpentry: the essential techniques for gathering, cleaning, representing, and transforming textual and tabular data. Then, drawing from real-world, publicly available data sets that cover a variety of scholarly domains, the book delves into detailed case studies. Focusing on textual data analysis, the authors explore such diverse topics as network analysis, genre theory, onomastics, literacy, author attribution, mapping, stylometry, topic modeling, and time series analysis. Exercises and resources for further reading are provided at the end of each chapter. An ideal resource for humanities students and scholars aiming to take their Python skills to the next level, Humanities Data Analysis illustrates the benefits that quantitative methods can bring to complex research questions. Appropriate for advanced undergraduates, graduate students, and scholars with a basic knowledge of Python. Applicable to many humanities disciplines, including history, literature, and sociology. Offers real-world case studies using publicly available data sets. Provides exercises at the end of each chapter for students to test acquired skills. Emphasizes visual storytelling via data visualizations&quot;--
-call-number: AZ186 .K37 2021
-event-place: Princeton
-ISBN: 978-0-691-17236-1
-publisher: Princeton University Press
-publisher-place: Princeton
-source: Library of Congress ISBN
-title: Humanities data analysis: case studies with Python
-title-short: Humanities data analysis
-author: Karsdorp, Folgert; Kestemont, Mike; Riddell, Allen
-issued: 2021
------------------
-
-Se encontraron 5 resultados
+Se encontraron 4 resultados
 </pre></div>
 </div>
 </div>
@@ -971,50 +959,36 @@ Buscando<span class="w"> </span><span class="s1">&#39;Data&#39;</span><span clas
 
 <span class="o">[</span><span class="m">1</span><span class="o">]</span>------------
 
-id:<span class="w"> </span>http://zotero.org/users/163570/items/897DPHEI
+id:<span class="w"> </span>AdrianCaballeroRoldan2019Bid
 type:<span class="w"> </span>book
-call-number:<span class="w"> </span>P96.N35<span class="w"> </span>D38<span class="w"> </span><span class="m">2018</span>
-collection-title:<span class="w"> </span>A<span class="w"> </span>K<span class="w"> </span>Peters<span class="w"> </span>Visualization<span class="w"> </span>Series
-event-place:<span class="w"> </span>Boca<span class="w"> </span>Raton,<span class="w"> </span>Florida
-ISBN:<span class="w"> </span><span class="m">978</span>-1-138-19710-7
-number-of-pages:<span class="w"> </span><span class="m">296</span>
-publisher:<span class="w"> </span>CRC<span class="w"> </span>Press/Taylor<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Francis<span class="w"> </span>Group
-publisher-place:<span class="w"> </span>Boca<span class="w"> </span>Raton,<span class="w"> </span>Florida
-source:<span class="w"> </span>Library<span class="w"> </span>of<span class="w"> </span>Congress<span class="w"> </span>ISBN
-title:<span class="w"> </span>Data-driven<span class="w"> </span>storytelling
-editor:<span class="w"> </span>Riche,<span class="w"> </span>Nathalie<span class="w"> </span>Henry<span class="p">;</span><span class="w"> </span>Hurter,<span class="w"> </span>Christophe<span class="p">;</span><span class="w"> </span>Diakopoulos,<span class="w"> </span>Nicholas<span class="p">;</span><span class="w"> </span>Carpendale,<span class="w"> </span>Sheelagh
-issued:<span class="w"> </span><span class="m">2018</span>
+abstract:<span class="w"> </span>rare<span class="w"> </span>book
+ISBN:<span class="w"> </span><span class="m">978</span>-84-948972-0-7
+language:<span class="w"> </span>Spanish
+note:<span class="w"> </span><span class="m">00000</span>
+publisher:<span class="w"> </span>RC<span class="w"> </span>Libros
+source:<span class="w"> </span>Amazon
+title:<span class="w"> </span>Bid<span class="w"> </span>data<span class="w"> </span>con<span class="w"> </span>Python.<span class="w"> </span>Recolección,<span class="w"> </span>almacenamiento<span class="w"> </span>y<span class="w"> </span>proceso
+author:<span class="w"> </span>Adrián<span class="w"> </span>Caballero<span class="w"> </span>Roldán,<span class="w"> </span>Rafael<span class="w"> </span>Caballero<span class="w"> </span>/<span class="w"> </span>Martín<span class="w"> </span>Martín
+issued:<span class="w"> </span><span class="m">2019</span>
 -----------------
 
 <span class="o">[</span><span class="m">2</span><span class="o">]</span>------------
 
-id:<span class="w"> </span>http://zotero.org/users/163570/items/NGAJFMZ6
+id:<span class="w"> </span>Hamidovic.etal2019Ancient
 type:<span class="w"> </span>book
-event-place:<span class="w"> </span>Madrid
-ISBN:<span class="w"> </span><span class="m">978</span>-84-15832-10-2
+abstract:<span class="w"> </span>Ancient<span class="w"> </span>Manuscripts<span class="w"> </span><span class="k">in</span><span class="w"> </span>Digital<span class="w"> </span>Culture<span class="w"> </span>presents<span class="w"> </span>an<span class="w"> </span>overview<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>digital<span class="w"> </span>turn<span class="w"> </span><span class="k">in</span><span class="w"> </span>Ancient<span class="w"> </span>Jewish<span class="w"> </span>and<span class="w"> </span>Christian<span class="w"> </span>manuscripts<span class="w"> </span>visualisation,<span class="w"> </span>data<span class="w"> </span>mining<span class="w"> </span>and<span class="w"> </span>communication.<span class="w"> </span>Edited<span class="w"> </span>by<span class="w"> </span>David<span class="w"> </span>Hamidović,<span class="w"> </span>Claire<span class="w"> </span>Clivaz<span class="w"> </span>and<span class="w"> </span>Sarah<span class="w"> </span>Bowen<span class="w"> </span>Savant,<span class="w"> </span>it<span class="w"> </span>gathers<span class="w"> </span>together<span class="w"> </span>the<span class="w"> </span>contributions<span class="w"> </span>of<span class="w"> </span>seventeen<span class="w"> </span>scholars<span class="w"> </span>involved<span class="w"> </span><span class="k">in</span><span class="w"> </span>Biblical,<span class="w"> </span>Early<span class="w"> </span>Jewish<span class="w"> </span>and<span class="w"> </span>Christian<span class="w"> </span>studies.<span class="w"> </span>The<span class="w"> </span>volume<span class="w"> </span>attests<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>spreading<span class="w"> </span>of<span class="w"> </span>digital<span class="w"> </span>humanities<span class="w"> </span><span class="k">in</span><span class="w"> </span>these<span class="w"> </span>fields<span class="w"> </span>and<span class="w"> </span>presents<span class="w"> </span>fundamental<span class="w"> </span>analysis<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>rise<span class="w"> </span>of<span class="w"> </span>visual<span class="w"> </span>culture<span class="w"> </span>as<span class="w"> </span>well<span class="w"> </span>as<span class="w"> </span>specific<span class="w"> </span>test-cases<span class="w"> </span>concerning<span class="w"> </span>ancient<span class="w"> </span>manuscripts.<span class="w"> </span>Sophisticated<span class="w"> </span>visualisation<span class="w"> </span>tools,<span class="w"> </span>stylometric<span class="w"> </span>analysis,<span class="w"> </span>teaching<span class="w"> </span>and<span class="w"> </span>visual<span class="w"> </span>data,<span class="w"> </span>epigraphy<span class="w"> </span>and<span class="w"> </span>visualisation<span class="w"> </span>belong<span class="w"> </span>notably<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>varied<span class="w"> </span>overview<span class="w"> </span>presented<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>volume.
+collection-number:<span class="w"> </span><span class="m">3</span>
+collection-title:<span class="w"> </span>Digital<span class="w"> </span>Biblical<span class="w"> </span>Studies
+edition:<span class="w"> </span>1ª
+event-place:<span class="w"> </span>Leiden<span class="w"> </span>-<span class="w"> </span>Boston
+ISBN:<span class="w"> </span><span class="m">978</span>-90-04-39929-7
 language:<span class="w"> </span>English
-note:<span class="w"> </span>OCLC:<span class="w"> </span><span class="m">892201485</span>
-publisher:<span class="w"> </span>Turner
-publisher-place:<span class="w"> </span>Madrid
-source:<span class="w"> </span>Open<span class="w"> </span>WorldCat
-title:<span class="w"> </span>Big<span class="w"> </span>data:<span class="w"> </span>la<span class="w"> </span>revolución<span class="w"> </span>de<span class="w"> </span>los<span class="w"> </span>datos<span class="w"> </span>masivos
-title-short:<span class="w"> </span>Big<span class="w"> </span>data
-author:<span class="w"> </span>Mayer-Schönberger,<span class="w"> </span>Viktor<span class="p">;</span><span class="w"> </span>Cukier,<span class="w"> </span>Kenneth<span class="p">;</span><span class="w"> </span>Iriarte,<span class="w"> </span>Antonio
-issued:<span class="w"> </span><span class="m">2013</span>
------------------
-
-<span class="o">[</span><span class="m">3</span><span class="o">]</span>------------
-
-id:<span class="w"> </span>http://zotero.org/users/163570/items/TKF3IK4J
-type:<span class="w"> </span>book
-abstract:<span class="w"> </span><span class="s2">&quot;Data and its technologies now play a large and growing role in humanities research and teaching. This book addresses the needs of humanities scholars who seek deeper expertise in the area of data modeling and representation. The authors, all experts in digital humanities, offer a clear explanation of key technical principles, a grounded discussion of case studies, and an exploration of important theoretical concerns. The book opens with an orientation, giving the reader a history of data modeling in the humanities and a grounding in the technical concepts necessary to understand and engage with the second part of the book. The second part of the book is a wide-ranging exploration of topics central for a deeper understanding of data modeling in digital humanities. Chapters cover data modeling standards and the role they play in shaping digital humanities practice, traditional forms of modeling in the humanities and how they have been transformed by digital approaches, ontologies which seek to anchor meaning in digital humanities resources, and how data models inhabit the other analytical tools used in digital humanities research. It concludes with a glossary chapter that explains specific terms and concepts for data modeling in the digital humanities context. This book is a unique and invaluable resource for teaching and practising data modeling in a digital humanities context&quot;</span>--
-call-number:<span class="w"> </span>AZ105<span class="w"> </span>.S43<span class="w"> </span><span class="m">2019</span>
-collection-title:<span class="w"> </span>Digital<span class="w"> </span>research<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>arts<span class="w"> </span>and<span class="w"> </span>humanities
-event-place:<span class="w"> </span>London<span class="w"> </span><span class="p">;</span><span class="w"> </span>New<span class="w"> </span>York
-ISBN:<span class="w"> </span><span class="m">978</span>-1-4724-4324-3
-number-of-pages:<span class="w"> </span><span class="m">341</span>
-publisher:<span class="w"> </span>Routledge,<span class="w"> </span>Taylor<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Francis<span class="w"> </span>Group
-publisher-place:<span class="w"> </span>London<span class="w"> </span><span class="p">;</span><span class="w"> </span>New<span class="w"> </span>York
+note:<span class="w"> </span>ZSCC:<span class="w"> </span><span class="m">0000001</span>
+number-of-pages:<span class="w"> </span>xvi,<span class="w"> </span><span class="m">284</span>
+number-of-volumes:<span class="w"> </span><span class="m">1</span>
+publisher:<span class="w"> </span>Brill
+publisher-place:<span class="w"> </span>Leiden<span class="w"> </span>-<span class="w"> </span>Boston
+title:<span class="w"> </span>Ancient<span class="w"> </span>Manuscripts<span class="w"> </span><span class="k">in</span><span class="w"> </span>Digital<span class="w"> </span>Culture.<span class="w"> </span>Visualisation,<span class="w"> </span>Data<span class="w"> </span>Mining,<span class="w"> </span>Communication
 source:<span class="w"> </span>Library<span class="w"> </span>of<span class="w"> </span>Congress<span class="w"> </span>ISBN
 title:<span class="w"> </span>The<span class="w"> </span>shape<span class="w"> </span>of<span class="w"> </span>data<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>digital<span class="w"> </span>humanities:<span class="w"> </span>modeling<span class="w"> </span>texts<span class="w"> </span>and<span class="w"> </span>text-based<span class="w"> </span>resources
 title-short:<span class="w"> </span>The<span class="w"> </span>shape<span class="w"> </span>of<span class="w"> </span>data<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>digital<span class="w"> </span>humanities
@@ -1022,41 +996,7 @@ editor:<span class="w"> </span>Flanders,<span class="w"> </span>Julia<span class
 issued:<span class="w"> </span><span class="m">2019</span>
 -----------------
 
-<span class="o">[</span><span class="m">4</span><span class="o">]</span>------------
-
-id:<span class="w"> </span>http://zotero.org/users/163570/items/Z8VUPBD6
-type:<span class="w"> </span>book
-call-number:<span class="w"> </span>Q355<span class="w"> </span>.R385<span class="w"> </span><span class="m">2013</span>
-collection-title:<span class="w"> </span>Infrastructures<span class="w"> </span>series
-event-place:<span class="w"> </span>Cambridge,<span class="w"> </span>Massachusetts<span class="w"> </span><span class="p">;</span><span class="w"> </span>London,<span class="w"> </span>England
-ISBN:<span class="w"> </span><span class="m">978</span>-0-262-51828-4
-number-of-pages:<span class="w"> </span><span class="m">182</span>
-publisher:<span class="w"> </span>The<span class="w"> </span>MIT<span class="w"> </span>Press
-publisher-place:<span class="w"> </span>Cambridge,<span class="w"> </span>Massachusetts<span class="w"> </span><span class="p">;</span><span class="w"> </span>London,<span class="w"> </span>England
-source:<span class="w"> </span>Library<span class="w"> </span>of<span class="w"> </span>Congress<span class="w"> </span>ISBN
-title:<span class="w"> </span><span class="s2">&quot;Raw data&quot;</span><span class="w"> </span>is<span class="w"> </span>an<span class="w"> </span>oxymoron
-editor:<span class="w"> </span>Gitelman,<span class="w"> </span>Lisa
-issued:<span class="w"> </span><span class="m">2013</span>
------------------
-
-<span class="o">[</span><span class="m">5</span><span class="o">]</span>------------
-
-id:<span class="w"> </span>http://zotero.org/users/163570/items/PIYZREFG
-type:<span class="w"> </span>book
-abstract:<span class="w"> </span><span class="s2">&quot;The use of quantitative methods in the humanities and related social sciences has increased considerably in recent years, allowing researchers to discover patterns in a vast range of source materials. Despite this growth, there are few resources addressed to students and scholars who wish to take advantage of these powerful tools. Humanities Data Analysis offers the first intermediate-level guide to quantitative data analysis for humanities students and scholars using the Python programming language. This practical textbook, which assumes a basic knowledge of Python, teaches readers the necessary skills for conducting humanities research in the rapidly developing digital environment. The book begins with an overview of the place of data science in the humanities, and proceeds to cover data carpentry: the essential techniques for gathering, cleaning, representing, and transforming textual and tabular data. Then, drawing from real-world, publicly available data sets that cover a variety of scholarly domains, the book delves into detailed case studies. Focusing on textual data analysis, the authors explore such diverse topics as network analysis, genre theory, onomastics, literacy, author attribution, mapping, stylometry, topic modeling, and time series analysis. Exercises and resources for further reading are provided at the end of each chapter. An ideal resource for humanities students and scholars aiming to take their Python skills to the next level, Humanities Data Analysis illustrates the benefits that quantitative methods can bring to complex research questions. Appropriate for advanced undergraduates, graduate students, and scholars with a basic knowledge of Python. Applicable to many humanities disciplines, including history, literature, and sociology. Offers real-world case studies using publicly available data sets. Provides exercises at the end of each chapter for students to test acquired skills. Emphasizes visual storytelling via data visualizations&quot;</span>--
-call-number:<span class="w"> </span>AZ186<span class="w"> </span>.K37<span class="w"> </span><span class="m">2021</span>
-event-place:<span class="w"> </span>Princeton
-ISBN:<span class="w"> </span><span class="m">978</span>-0-691-17236-1
-publisher:<span class="w"> </span>Princeton<span class="w"> </span>University<span class="w"> </span>Press
-publisher-place:<span class="w"> </span>Princeton
-source:<span class="w"> </span>Library<span class="w"> </span>of<span class="w"> </span>Congress<span class="w"> </span>ISBN
-title:<span class="w"> </span>Humanities<span class="w"> </span>data<span class="w"> </span>analysis:<span class="w"> </span><span class="k">case</span><span class="w"> </span>studies<span class="w"> </span>with<span class="w"> </span>Python
-title-short:<span class="w"> </span>Humanities<span class="w"> </span>data<span class="w"> </span>analysis
-author:<span class="w"> </span>Karsdorp,<span class="w"> </span>Folgert<span class="p">;</span><span class="w"> </span>Kestemont,<span class="w"> </span>Mike<span class="p">;</span><span class="w"> </span>Riddell,<span class="w"> </span>Allen
-issued:<span class="w"> </span><span class="m">2021</span>
------------------
-
-Se<span class="w"> </span>encontraron<span class="w"> </span><span class="m">5</span><span class="w"> </span>resultados
+Se<span class="w"> </span>encontraron<span class="w"> </span><span class="m">4</span><span class="w"> </span>resultados
 </pre></div>
 </div>
 </section>
@@ -1100,11 +1040,11 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../tutoriales/26-importarmodulos.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../tutoriales/26-modularfunciones.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Importar módulos y funciones desde otros módulos</p>
+            <p class="prev-next-title">Crear módulos</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="../references.html" title="next page">

@@ -1,0 +1,1021 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Crear módulos &#8212; Curso de Python para las HD</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Actividad intermedia: Construye un programa real" href="../actividades/9-actividadintermedia.html" />
+    <link rel="prev" title="Funciones: Modularidad" href="25-importarmodulos.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso de Python para las HD</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Fundamentos de programación
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción. Configurar un entorno de desarrollo para Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-instalarPython.html">
+   Instalar Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-terminal.html">
+   Terminal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-instalarVSCode.html">
+   Instalar VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-Git.html">
+   Configurar Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-Github.html">
+   Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/1-configuracion.html">
+   Actividad 1: Configurar un entorno de desarrollo para Python
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción a Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-python.html">
+   Introducción a Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-variables.html">
+   Sintaxis, variables y tipos de datos básicos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-operadores.html">
+   Operadores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-operaciones_string.html">
+   Operaciones con cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/2-sintaxis_variables.html">
+   Actividad 2: Variables y sintaxis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Listas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-listas.html">
+   Listas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/3-listas.html">
+   Actividad 3: Listas (operaciones básicas)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Iteraciones (for loops)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-iteraciones.html">
+   Iteraciones (
+   <em>
+    for loops
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/4-iteraciones.html">
+   Actividad 4: Iteraciones
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Condicionales (if else)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-condicionales.html">
+   Introducción a los condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-plogicas.html">
+   Pruebas condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-condicionPertenencia.html">
+   Operadores de pertenencia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-ifelse.html">
+   Sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   ,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     elif
+    </span>
+   </code>
+   y
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     else
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-listaseif.html">
+   Combinar listas y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/5-condicionales.html">
+   Actividad 5: Condicionales y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Diccionarios
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-diccionarios.html">
+   Diccionarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-iterardiccio.html">
+   Iterar a través de un diccionario
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/6-diccionarios.html">
+   Actividad 6: Manejo de diccionarios
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Funciones
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-funcionesIntro.html">
+   Funciones: Introducción
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-input.html">
+   Función
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     input()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-funciones_y_TryExcept.html">
+   Control de errores con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Try
+    </span>
+   </code>
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Except
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/7-funciones.html">
+   Actividad 7: Funciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="22-retornarvalores.html">
+   Retornar valores en una función
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="23-funcionesLlamados.html">
+   Funciones y modularidad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-argsykwargs.html">
+   Pasar cantidades arbitrarias de argumentos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/8-funciones2.html">
+   Actividad 8: Funciones II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="25-importarmodulos.html">
+   Funciones: Modularidad
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Crear módulos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Actividad de evaluación intermedia
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/9-actividadintermedia.html">
+   Actividad intermedia: Construye un programa real
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Recursos adicionales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/gh-pages?urlpath=tree/tutoriales/26-modularfunciones.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/26-modularfunciones.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/tutoriales/26-modularfunciones.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/tutoriales/26-modularfunciones.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   Ejercicios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notas">
+   Notas
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Crear módulos</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   Ejercicios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notas">
+   Notas
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="crear-modulos">
+<h1>Crear módulos<a class="headerlink" href="#crear-modulos" title="Permalink to this headline">#</a></h1>
+<p>En esta parte, realizaremos una modularización simple para que podamos entender cómo funciona. Para ello, vamos a retomar el diccionario con el conjunto de bibliografía que utilizamos en el capítulo <a class="reference internal" href="18-iterardiccio.html"><span class="doc std std-doc">Iterar a través de un diccionario</span></a>. Para ello, creamos un archivo llamado <code class="docutils literal notranslate"><span class="pre">biblio.py</span></code> y escribimos el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bibliografia</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;001&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;tipo&quot;</span><span class="p">:</span> <span class="s2">&quot;libro&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;autor&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Martin&quot;</span><span class="p">,</span> <span class="s2">&quot;apellido&quot;</span><span class="p">:</span> <span class="s2">&quot;Heidegger&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;titulo&quot;</span><span class="p">:</span> <span class="s2">&quot;Ser y tiempo&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;editorial&quot;</span><span class="p">:</span> <span class="s2">&quot;Trotta&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lugar&quot;</span><span class="p">:</span> <span class="s2">&quot;Madrid&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fecha&quot;</span><span class="p">:</span> <span class="mi">2003</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;002&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;tipo&quot;</span><span class="p">:</span> <span class="s2">&quot;libro&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;autor&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Fernand&quot;</span><span class="p">,</span> <span class="s2">&quot;apellido&quot;</span><span class="p">:</span> <span class="s2">&quot;Braudel&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;titulo&quot;</span><span class="p">:</span> <span class="s2">&quot;El Mediterráneo y el mundo mediterráneo en la época de Felipe II&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;editorial&quot;</span><span class="p">:</span> <span class="s2">&quot;Fondo de Cultura Económica&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lugar&quot;</span><span class="p">:</span> <span class="s2">&quot;México&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fecha&quot;</span><span class="p">:</span> <span class="mi">2022</span><span class="p">,</span>
+        <span class="s2">&quot;edicion&quot;</span><span class="p">:</span> <span class="s2">&quot;tercera&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;003&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;tipo&quot;</span><span class="p">:</span> <span class="s2">&quot;libro&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;autor&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Hans-Georg&quot;</span><span class="p">,</span> <span class="s2">&quot;apellido&quot;</span><span class="p">:</span> <span class="s2">&quot;Gadamer&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;titulo&quot;</span><span class="p">:</span> <span class="s2">&quot;Verdad y método I: fundamentos de una hermenéutica filosófica&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;editorial&quot;</span><span class="p">:</span> <span class="s2">&quot;Sígueme&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lugar&quot;</span><span class="p">:</span> <span class="s2">&quot;Salamanca&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fecha&quot;</span><span class="p">:</span> <span class="mi">1996</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;004&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;tipo&quot;</span><span class="p">:</span> <span class="s2">&quot;libro&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;autor&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Giorgio&quot;</span><span class="p">,</span> <span class="s2">&quot;apellido&quot;</span><span class="p">:</span> <span class="s2">&quot;Agamben&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;titulo&quot;</span><span class="p">:</span> <span class="s2">&quot;Estado de excepción&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;editorial&quot;</span><span class="p">:</span> <span class="s2">&quot;Adriana Hidalgo Editora&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lugar&quot;</span><span class="p">:</span> <span class="s2">&quot;Buenos Aires&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fecha&quot;</span><span class="p">:</span> <span class="mi">2010</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;005&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;tipo&quot;</span><span class="p">:</span> <span class="s2">&quot;libro&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;autor&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Ludwig&quot;</span><span class="p">,</span> <span class="s2">&quot;apellido&quot;</span><span class="p">:</span> <span class="s2">&quot;Wittgenstein&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;titulo&quot;</span><span class="p">:</span> <span class="s2">&quot;Zettel&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;editorial&quot;</span><span class="p">:</span> <span class="s2">&quot;University of California Press&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;lugar&quot;</span><span class="p">:</span> <span class="s2">&quot;Berkeley&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;fecha&quot;</span><span class="p">:</span> <span class="mi">1970</span><span class="p">,</span>
+        <span class="s2">&quot;idioma&quot;</span><span class="p">:</span> <span class="s2">&quot;en&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este archivo funcionará como un módulo cuya única intención es almacenar un diccionario con la bibliografía.<a class="footnote-reference brackets" href="#nota3" id="id1">1</a></p>
+<p>En el <strong>mismo directorio</strong>, creamos un archivo llamado <code class="docutils literal notranslate"><span class="pre">biblioteca.py</span></code> y escribimos el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">biblio</span> <span class="kn">import</span> <span class="n">bibliografia</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si todo ha salido bien, al ejecutar el código anterior no debería aparecer ningún error. En caso contrario, es posible que salga el error <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError:</span> <span class="pre">No</span> <span class="pre">module</span> <span class="pre">named</span> <span class="pre">'biblio'</span></code>. Esto significa que Python no encuentra el módulo <code class="docutils literal notranslate"><span class="pre">biblio</span></code>. Para solucionarlo, debemos asegurarnos de que el archivo <code class="docutils literal notranslate"><span class="pre">biblio.py</span></code> se encuentra en el mismo directorio que el archivo <code class="docutils literal notranslate"><span class="pre">biblioteca.py</span></code>.</p>
+<div class="tip admonition">
+<p class="admonition-title">Nota</p>
+<p>La importación de la celda anterior funciona, de hecho, al realizar la importación del archivo <code class="docutils literal notranslate"><span class="pre">biblio.py</span></code> que se encuentra en el directorio <code class="docutils literal notranslate"><span class="pre">tutoriales</span></code>. En ese sentido, este cuaderno funciona porque es posible llamar a esta <code class="docutils literal notranslate"><span class="pre">bibliografia</span></code> desde el “módulo” biblio.</p>
+</div>
+<p>Ahora, podemos crear una función que nos permita realizar búsquedas en el diccionario <code class="docutils literal notranslate"><span class="pre">bibliografia</span></code>. Para ello, escribimos el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">buscar_biblio</span><span class="p">(</span><span class="n">campo</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">clave</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">bibliografia</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="n">campo</span><span class="p">]</span> <span class="o">==</span> <span class="n">valor</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">clave</span><span class="p">,</span> <span class="n">item</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>La función <code class="docutils literal notranslate"><span class="pre">buscar_biblio()</span></code> recibe dos argumentos: <code class="docutils literal notranslate"><span class="pre">campo</span></code> y <code class="docutils literal notranslate"><span class="pre">valor</span></code>. El argumento <code class="docutils literal notranslate"><span class="pre">campo</span></code> es una cadena de caracteres que indica el campo del diccionario <code class="docutils literal notranslate"><span class="pre">bibliografia</span></code> que queremos buscar (‘tipo’, ‘autor’, ‘titulo’, etc). El argumento <code class="docutils literal notranslate"><span class="pre">valor</span></code> la palabra o frase que queremos buscar en el campo indicado por <code class="docutils literal notranslate"><span class="pre">campo</span></code>. La función devuelve una tupla con la clave y el valor del diccionario <code class="docutils literal notranslate"><span class="pre">bibliografia</span></code> que cumple con la condición de búsqueda.</p>
+<p>Escribamos ahora una función que permita darle formato a la salida de la función <code class="docutils literal notranslate"><span class="pre">buscar_biblio()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">formato_biblio</span><span class="p">(</span><span class="n">clave</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Clave: </span><span class="si">{</span><span class="n">clave</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tipo: </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;tipo&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Autor: </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;autor&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;autor&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;apellido&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Título: </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;titulo&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Editorial: </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;editorial&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Lugar: </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;lugar&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fecha: </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;fecha&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finalmente, escribamos una función que una ambas funciones anteriores:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">busqueda_simple</span><span class="p">(</span><span class="n">campo</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+    <span class="n">clave</span><span class="p">,</span> <span class="n">item</span> <span class="o">=</span> <span class="n">buscar_biblio</span><span class="p">(</span><span class="n">campo</span><span class="p">,</span> <span class="n">valor</span><span class="p">)</span>
+    <span class="n">formato_biblio</span><span class="p">(</span><span class="n">clave</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora, podemos ejecutar la función <code class="docutils literal notranslate"><span class="pre">busqueda_simple()</span></code> para buscar un libro por su título:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">busqueda_simple</span><span class="p">(</span><span class="s2">&quot;titulo&quot;</span><span class="p">,</span> <span class="s2">&quot;Ser y tiempo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Clave: 001
+Tipo: libro
+Autor: Martin Heidegger
+Título: Ser y tiempo
+Editorial: Trotta
+Lugar: Madrid
+Fecha: 2003
+</pre></div>
+</div>
+</div>
+</div>
+<p>Este código tiene un problema: si realizamos la importación desde otro archivo, se ejecutará la linea <code class="docutils literal notranslate"><span class="pre">busqueda_simple(&quot;titulo&quot;,</span> <span class="pre">&quot;Ser</span> <span class="pre">y</span> <span class="pre">tiempo&quot;)</span></code> y se mostrará el resultado de la búsqueda. Esto no es deseable, ya que queremos que la función <code class="docutils literal notranslate"><span class="pre">busqueda_simple()</span></code> sea llamada desde otro archivo. Para solucionar este problema, podemos utilizar la instrucción <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></code>. Al final, nuestro código quedaría de la siguiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">biblio</span> <span class="kn">import</span> <span class="n">bibliografia</span>
+
+<span class="k">def</span> <span class="nf">buscar_biblio</span><span class="p">(</span><span class="n">campo</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">clave</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">bibliografia</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="n">item</span><span class="p">[</span><span class="n">campo</span><span class="p">]</span> <span class="o">==</span> <span class="n">valor</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">clave</span><span class="p">,</span> <span class="n">item</span>
+
+<span class="k">def</span> <span class="nf">formato_biblio</span><span class="p">(</span><span class="n">clave</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Clave: </span><span class="si">{</span><span class="n">clave</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Tipo: </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;tipo&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Autor: </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;autor&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;nombre&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;autor&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;apellido&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Título: </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;titulo&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Editorial: </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;editorial&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Lugar: </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;lugar&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fecha: </span><span class="si">{</span><span class="n">item</span><span class="p">[</span><span class="s1">&#39;fecha&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">busqueda_simple</span><span class="p">(</span><span class="n">campo</span><span class="p">,</span> <span class="n">valor</span><span class="p">):</span>
+    <span class="n">clave</span><span class="p">,</span> <span class="n">item</span> <span class="o">=</span> <span class="n">buscar_biblio</span><span class="p">(</span><span class="n">campo</span><span class="p">,</span> <span class="n">valor</span><span class="p">)</span>
+    <span class="n">formato_biblio</span><span class="p">(</span><span class="n">clave</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">busqueda_simple</span><span class="p">(</span><span class="s2">&quot;titulo&quot;</span><span class="p">,</span> <span class="s2">&quot;Ser y tiempo&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Clave: 001
+Tipo: libro
+Autor: Martin Heidegger
+Título: Ser y tiempo
+Editorial: Trotta
+Lugar: Madrid
+Fecha: 2003
+</pre></div>
+</div>
+</div>
+</div>
+<p>La instrucción <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></code> permite ejecutar el código que se encuentra dentro de ella únicamente si el archivo es ejecutado como un programa principal. En caso contrario, el código no se ejecuta. Esto es útil cuando queremos importar un módulo y no queremos que se ejecute el código que se encuentra fuera de las funciones.</p>
+<p>Finalmente, podemos crear un programa que aproveche el módulo <code class="docutils literal notranslate"><span class="pre">biblioteca</span></code> que acabamos de crear y que funcione como una interfaz de búsqueda de la bibliografía. Para ello, creamos un archivo llamado <code class="docutils literal notranslate"><span class="pre">busqueda.py</span></code> y escribimos el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">biblioteca</span> <span class="kn">import</span> <span class="n">busqueda_simple</span>
+
+<span class="k">def</span> <span class="nf">menu</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1. Buscar por título&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Buscar por autor&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Salir&quot;</span><span class="p">)</span>
+    <span class="n">opcion</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese una opción: &quot;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">opcion</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">opcion</span> <span class="o">=</span> <span class="n">menu</span><span class="p">()</span>
+    <span class="k">while</span> <span class="n">opcion</span> <span class="o">!=</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">opcion</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+            <span class="n">titulo</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese el título: &quot;</span><span class="p">)</span>
+            <span class="n">busqueda_simple</span><span class="p">(</span><span class="s2">&quot;titulo&quot;</span><span class="p">,</span> <span class="n">titulo</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">opcion</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+            <span class="n">autor</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese el autor: &quot;</span><span class="p">)</span>
+            <span class="n">busqueda_simple</span><span class="p">(</span><span class="s2">&quot;autor&quot;</span><span class="p">,</span> <span class="n">autor</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Opción inválida&quot;</span><span class="p">)</span>
+        <span class="n">opcion</span> <span class="o">=</span> <span class="n">menu</span><span class="p">()</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1. Buscar por título
+2. Buscar por autor
+3. Salir
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">24</span>
+<span class="g g-Whitespace">     </span><span class="mi">21</span>         <span class="n">opcion</span> <span class="o">=</span> <span class="n">menu</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">24</span>     <span class="n">main</span><span class="p">()</span>
+
+<span class="nn">Cell In[8], line 11,</span> in <span class="ni">main</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="ne">---&gt; </span><span class="mi">11</span>     <span class="n">opcion</span> <span class="o">=</span> <span class="n">menu</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">12</span>     <span class="k">while</span> <span class="n">opcion</span> <span class="o">!=</span> <span class="s2">&quot;3&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span>         <span class="k">if</span> <span class="n">opcion</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+
+<span class="nn">Cell In[8], line 7,</span> in <span class="ni">menu</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;2. Buscar por autor&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3. Salir&quot;</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">opcion</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ingrese una opción: &quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">return</span> <span class="n">opcion</span>
+
+<span class="nn">File E:\Proyectos\curso_python_extenso\curso_env\Lib\site-packages\ipykernel\kernelbase.py:1181,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1179</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1180</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1181</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1182</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1183</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1184</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1186</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<p>El programa <code class="docutils literal notranslate"><span class="pre">busqueda.py</span></code> importa la función <code class="docutils literal notranslate"><span class="pre">busqueda_simple()</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">biblioteca</span></code>. Luego, define una función <code class="docutils literal notranslate"><span class="pre">menu()</span></code> que muestra un menú de opciones y devuelve la opción elegida por el usuario. La función <code class="docutils literal notranslate"><span class="pre">main()</span></code> muestra el menú y ejecuta la función <code class="docutils literal notranslate"><span class="pre">busqueda_simple()</span></code> según la opción elegida por el usuario. Finalmente, la función <code class="docutils literal notranslate"><span class="pre">main()</span></code> se ejecuta únicamente si el archivo es ejecutado como un programa principal.</p>
+<p>Ahora puedes probar el programa <code class="docutils literal notranslate"><span class="pre">busqueda.py</span></code> desde la terminal:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>busqueda.py
+</pre></div>
+</div>
+<p>Así podrás realizar búsquedas en la bibliografía de manera similar a este ejemplo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>busqueda.py
+
+Ingrese<span class="w"> </span>una<span class="w"> </span>opción:<span class="w"> </span><span class="m">1</span>
+Ingrese<span class="w"> </span>el<span class="w"> </span>título:<span class="w"> </span>Ser<span class="w"> </span>y<span class="w"> </span>tiempo
+Clave:<span class="w"> </span><span class="m">001</span>
+Tipo:<span class="w"> </span>libro
+Autor:<span class="w"> </span>Martin<span class="w"> </span>Heidegger
+Título:<span class="w"> </span>Ser<span class="w"> </span>y<span class="w"> </span>tiempo
+Editorial:<span class="w"> </span>Trotta
+Lugar:<span class="w"> </span>Madrid
+Fecha:<span class="w"> </span><span class="m">2003</span>
+Ingrese<span class="w"> </span>una<span class="w"> </span>opción:
+</pre></div>
+</div>
+<p>De esta manera tenemos un buscador simple, modular y que podemos mantener de manera adecuada.</p>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">#</a></h2>
+<p>Estos ejercicios son opcionales. Si deseas practicar más, puedes intentar resolverlos.</p>
+<ol class="simple">
+<li><p>Modifica el programa <code class="docutils literal notranslate"><span class="pre">busqueda.py</span></code> para que permita realizar búsquedas por año de publicación.</p></li>
+<li><p>Modifica el programa <code class="docutils literal notranslate"><span class="pre">busqueda.py</span></code> para que no se presente el error <code class="docutils literal notranslate"><span class="pre">TypeError</span></code> cuando se ingresa un valor no existente (por ejemplo “Ser y Tiempo”)</p></li>
+<li><p>Modifica el programa <code class="docutils literal notranslate"><span class="pre">busqueda.py</span></code> para que permita realizar búsquedas por coincidencia parcial (por ejemplo, “Ser” o “tiempo”).</p></li>
+</ol>
+</section>
+<section id="notas">
+<h2>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">#</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="nota3"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>En una aplicación real utilizaríamos un formato de archivo específico para almacenar información, como por ejemplo un archivo CSV o JSON. En las secciones del curso dedicadas a la lectura y escritura de archivos, abordaremos estos temas.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutoriales"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="25-importarmodulos.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Funciones: Modularidad</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../actividades/9-actividadintermedia.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Actividad intermedia: Construye un programa real</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

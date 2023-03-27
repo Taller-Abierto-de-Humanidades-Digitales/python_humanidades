@@ -85,71 +85,8 @@ dt.datetime.now()
 
 En la librería estándar no es muy común utilizar alias para importar los módulos, pero es una costumbre con librerías populares como `matplotlib`, `numpy` y `pandas`.
 
-## Crear módulos
-
-En esta parte, realizaremos una modularización simple para que podamos entender cómo funciona. Para ello, vamos a retomar el diccionario con el conjunto de bibliografía que utilizamos en el capítulo [Iterar a través de un diccionario](18-iterardiccio.md). Para ello, creamos un archivo llamado `biblio.py` y escribimos el siguiente código:
-
-```{code-cell} ipython3
-bibliografia = {
-    "001": {
-        "tipo": "libro",
-        "autor": [{"nombre": "Martin", "apellido": "Heidegger"}],
-        "titulo": "Ser y tiempo",
-        "editorial": "Trotta",
-        "lugar": "Madrid",
-        "fecha": 2003
-    },
-    "002": {
-        "tipo": "libro",
-        "autor": [{"nombre": "Fernand", "apellido": "Braudel"}],
-        "titulo": "El Mediterráneo y el mundo mediterráneo en la época de Felipe II",
-        "editorial": "Fondo de Cultura Económica",
-        "lugar": "México",
-        "fecha": 2022,
-        "edicion": "tercera"
-    },
-    "003": {
-        "tipo": "libro",
-        "autor": [{"nombre": "Hans-Georg", "apellido": "Gadamer"}],
-        "titulo": "Verdad y método I: fundamentos de una hermenéutica filosófica",
-        "editorial": "Sígueme",
-        "lugar": "Salamanca",
-        "fecha": 1996
-    },
-    "004": {
-        "tipo": "libro",
-        "autor": [{"nombre": "Giorgio", "apellido": "Agamben"}],
-        "titulo": "Estado de excepción",
-        "editorial": "Adriana Hidalgo Editora",
-        "lugar": "Buenos Aires",
-        "fecha": 2010
-    },
-    "005": {
-        "tipo": "libro",
-        "autor": [{"nombre": "Ludwig", "apellido": "Wittgenstein"}],
-        "titulo": "Zettel",
-        "editorial": "University of California Press",
-        "lugar": "Berkeley",
-        "fecha": 1970,
-        "idioma": "en"
-    }
-}
-```
-
-Este archivo funcionará como un módulo cuya única intención es almacenar un diccionario con la bibliografía.[^nota3]
-
-En el **mismo directorio**, creamos un archivo llamado `biblioteca.py` y escribimos el siguiente código:
-
-```{code-cell} ipython3
-from biblio import bibliografia
-```
-
-Si todo ha salido bien, al ejecutar el código anterior no debería aparecer ningún error. En caso contrario, es posible que salga el error `ModuleNotFoundError: No module named 'biblio'`. Esto significa que Python no encuentra el módulo `biblio`. Para solucionarlo, debemos asegurarnos de que el archivo `biblio.py` se encuentra en el mismo directorio que el archivo `biblioteca.py`.
-
 ## Notas
   
 [^nota1]: En los siguientes segmentos del curso abordaremos las clases y los objetos en Python.
 
 [^nota2]: Una manera permitida pero no recomendada de realizar importaciones es a través de la instrucción `from datetime import *`. Esta instrucción importa todas las funciones del módulo `datetime`, pero no es recomendable utilizarla ya que puede sobreescribir nombres de funciones que ya existen en el programa. Por otra parte, es difícil reconocer qué se ha importado y qué no; lo que impacta en la legibilidad del código. Por esta razón, es mejor importar funciones específicas de un módulo.
-
-[^nota3]: En una aplicación real utilizaríamos un formato de archivo específico para almacenar información, como por ejemplo un archivo CSV o JSON. En las secciones del curso dedicadas a la lectura y escritura de archivos, abordaremos estos temas.
