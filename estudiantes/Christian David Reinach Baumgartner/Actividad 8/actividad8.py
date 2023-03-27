@@ -294,7 +294,7 @@ def main(katalog: dict)->None:
     autores_boom = autores(katalog)
     print(autores_boom)
     promedio_edad_autores_boom = edad_pub_promedio(katalog )
-    print(f"La edad promedio de los autores del Boom Latinoamericano es de {promedio_edad_autores_boom} años.")
+    print(f"La edad promedio de los autores del Boom Latinoamericano, a la hora de publicar su principal obra, es de {promedio_edad_autores_boom} años.")
     longevo_autores_boom = longevo(katalog)
     if len(longevo_autores_boom) >= 2:
          nombres=[i[0]for i in longevo_autores_boom]
