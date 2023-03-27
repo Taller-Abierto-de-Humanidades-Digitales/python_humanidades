@@ -121,7 +121,6 @@ biografias_boom = {
 main(biografias_boom)
 ```
 
-
 ## Envío de la actividad
 
 Al igual que las actividades anteriores, envía tu código a través de Github.

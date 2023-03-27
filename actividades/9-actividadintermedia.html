@@ -1,0 +1,1144 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Actividad intermedia: Construye un programa real &#8212; Curso de Python para las HD</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bibliografía" href="../references.html" />
+    <link rel="prev" title="Importar módulos y funciones desde otros módulos" href="../tutoriales/26-importarmodulos.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso de Python para las HD</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Fundamentos de programación
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción. Configurar un entorno de desarrollo para Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/1-instalarPython.html">
+   Instalar Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/2-terminal.html">
+   Terminal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/3-instalarVSCode.html">
+   Instalar VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/4-Git.html">
+   Configurar Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/5-Github.html">
+   Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-configuracion.html">
+   Actividad 1: Configurar un entorno de desarrollo para Python
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción a Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/6-python.html">
+   Introducción a Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/7-variables.html">
+   Sintaxis, variables y tipos de datos básicos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/8-operadores.html">
+   Operadores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/9-operaciones_string.html">
+   Operaciones con cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-sintaxis_variables.html">
+   Actividad 2: Variables y sintaxis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Listas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/10-listas.html">
+   Listas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-listas.html">
+   Actividad 3: Listas (operaciones básicas)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Iteraciones (for loops)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/11-iteraciones.html">
+   Iteraciones (
+   <em>
+    for loops
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-iteraciones.html">
+   Actividad 4: Iteraciones
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Condicionales (if else)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/12-condicionales.html">
+   Introducción a los condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/13-plogicas.html">
+   Pruebas condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/14-condicionPertenencia.html">
+   Operadores de pertenencia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/15-ifelse.html">
+   Sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   ,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     elif
+    </span>
+   </code>
+   y
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     else
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/16-listaseif.html">
+   Combinar listas y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-condicionales.html">
+   Actividad 5: Condicionales y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Diccionarios
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/17-diccionarios.html">
+   Diccionarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/18-iterardiccio.html">
+   Iterar a través de un diccionario
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-diccionarios.html">
+   Actividad 6: Manejo de diccionarios
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Funciones
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/19-funcionesIntro.html">
+   Funciones: Introducción
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/20-input.html">
+   Función
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     input()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/21-funciones_y_TryExcept.html">
+   Control de errores con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Try
+    </span>
+   </code>
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Except
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-funciones.html">
+   Actividad 7: Funciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/22-retornarvalores.html">
+   Retornar valores en una función
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/23-funcionesLlamados.html">
+   Funciones y modularidad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/24-argsykwargs.html">
+   Pasar cantidades arbitrarias de argumentos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-funciones2.html">
+   Actividad 8: Funciones II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/25-modularfunciones.html">
+   Funciones: Modularidad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../tutoriales/26-importarmodulos.html">
+   Importar módulos y funciones desde otros módulos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Actividad de evaluación intermedia
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Actividad intermedia: Construye un programa real
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Recursos adicionales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/gh-pages?urlpath=tree/actividades/9-actividadintermedia.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Factividades/9-actividadintermedia.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/actividades/9-actividadintermedia.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/actividades/9-actividadintermedia.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sobre-el-conjunto-de-datos">
+   Sobre el conjunto de datos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acceder-al-conjunto-de-datos">
+     Acceder al conjunto de datos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acceder-a-los-elementos-de-la-biblioteca">
+     Acceder a los elementos de la biblioteca
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrucciones">
+   Instrucciones
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#construir-el-modulo-de-busquedas">
+     1. Construir el módulo de búsquedas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#construir-el-modulo-de-interfaz">
+     2. Construir el módulo de interfaz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#envio-de-la-actividad">
+   Envío de la actividad
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Actividad intermedia: Construye un programa real</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sobre-el-conjunto-de-datos">
+   Sobre el conjunto de datos
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acceder-al-conjunto-de-datos">
+     Acceder al conjunto de datos
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#acceder-a-los-elementos-de-la-biblioteca">
+     Acceder a los elementos de la biblioteca
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instrucciones">
+   Instrucciones
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#construir-el-modulo-de-busquedas">
+     1. Construir el módulo de búsquedas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#construir-el-modulo-de-interfaz">
+     2. Construir el módulo de interfaz
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#envio-de-la-actividad">
+   Envío de la actividad
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="actividad-intermedia-construye-un-programa-real">
+<h1>Actividad intermedia: Construye un programa real<a class="headerlink" href="#actividad-intermedia-construye-un-programa-real" title="Permalink to this headline">#</a></h1>
+<p>En esta actividad vamos a construir un programa que nos permita consultar una biblioteca de citas bibliográficas. El programa debe permitirnos consultar la biblioteca de citas bibliográficas por título, autor, año de publicación y palabras claves.</p>
+<section id="sobre-el-conjunto-de-datos">
+<h2>Sobre el conjunto de datos<a class="headerlink" href="#sobre-el-conjunto-de-datos" title="Permalink to this headline">#</a></h2>
+<p>Para realizar este ejercicio, les brindamos un conjunto de citas bibliográficas exportadas desde el programa <a class="reference external" href="https://www.zotero.org/">Zotero</a> las cuales pueden visualizar en el <a class="reference external" href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/blob/main/data/bibliografia.json">repositorio del curso</a>.</p>
+<p>Este conjunto de datos contiene la siguiente información:</p>
+<div class="cell tag_remove-input docutils container">
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número de elementos en la biblioteca: 263
+
+Tipos de elementos: [&#39;book&#39;, &#39;webpage&#39;, &#39;article-journal&#39;, &#39;paper-conference&#39;, &#39;chapter&#39;, &#39;post-weblog&#39;, &#39;document&#39;, &#39;thesis&#39;, &#39;software&#39;, &#39;speech&#39;, &#39;article-newspaper&#39;, &#39;report&#39;, &#39;article-magazine&#39;]
+
+Claves de los elementos: [&#39;id&#39;, &#39;type&#39;, &#39;collection-title&#39;, &#39;event-place&#39;, &#39;ISBN&#39;, &#39;publisher&#39;, &#39;publisher-place&#39;, &#39;title&#39;, &#39;URL&#39;, &#39;author&#39;, &#39;issued&#39;, &#39;accessed&#39;, &#39;container-title&#39;, &#39;abstract&#39;, &#39;language&#39;, &#39;number-of-pages&#39;, &#39;source&#39;, &#39;title-short&#39;, &#39;ISSN&#39;, &#39;issue&#39;, &#39;license&#39;, &#39;page&#39;, &#39;volume&#39;, &#39;DOI&#39;, &#39;journalAbbreviation&#39;, &#39;collection-number&#39;, &#39;event-title&#39;, &#39;editor&#39;, &#39;genre&#39;, &#39;note&#39;, &#39;call-number&#39;, &#39;edition&#39;, &#39;translator&#39;, &#39;contributor&#39;, &#39;section&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-importante admonition">
+<p class="admonition-title">Importante</p>
+<p>Es sumamente recomendable (por no decir <em>obligatorio</em>) que realicen una revisión de la estructura y contenido del conjunto de datos antes de iniciar la escritura del programa. Por ejemplo, cuántos elementos hay por cada tipo, qué claves tiene cada tipo de elemento, cuáles de estas claves son obligatorias, etc.</p>
+</div>
+<section id="acceder-al-conjunto-de-datos">
+<h3>Acceder al conjunto de datos<a class="headerlink" href="#acceder-al-conjunto-de-datos" title="Permalink to this headline">#</a></h3>
+<p>El archivo contiene una biblioteca de citas bibliográficas en formato CSL-JSON. La biblioteca está construida a partir de una exportación de elementos de Zotero en el formato <a class="reference external" href="https://citeproc-js.readthedocs.io/en/latest/csl-json/markup.html">CSL-JSON</a>. En esta estructura, cada elemento un diccionario dentro de una lista. Cada diccionario contiene una serie de pares clave-valor.</p>
+<p>Para facilitar la recuperación de la información y evitar duplicar innecesariamente los datos, he creado el módulo <a class="reference external" href="http://biblioteca.py">biblioteca.py</a> (ubicado en <code class="docutils literal notranslate"><span class="pre">codigo/actividad_intermedia/biblioteca.py</span></code>) que contiene una función llamada <code class="docutils literal notranslate"><span class="pre">biblioteca</span></code> que se encarga de descargar y leer el conjunto de datos.</p>
+<p>Para usarlo, debes <strong>copiar</strong> el archivo <code class="docutils literal notranslate"><span class="pre">biblioteca.py</span></code> en tu carpeta de trabajo y luego importar la función <code class="docutils literal notranslate"><span class="pre">biblioteca</span></code> en un nuevo archivo de Python:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">biblioteca</span> <span class="kn">import</span> <span class="n">biblioteca</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Prueba que la importación sea correcta. En caso de que no lo sea y obtengas un error de <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code> o <code class="docutils literal notranslate"><span class="pre">ImportError</span></code>, revisa que el archivo <code class="docutils literal notranslate"><span class="pre">biblioteca.py</span></code> se encuentre en la misma carpeta de trabajo que el archivo donde estás escribiendo el código.</p>
+<div class="warning admonition">
+<p class="admonition-title">Advertencia</p>
+<p>No debes escribir en el código del módulo <code class="docutils literal notranslate"><span class="pre">biblioteca.py</span></code> ni borrar el archivo del directorio original. De otra manera puedes encontrar errores de importación o afectar el funcionamiento de los programas de tus compañeros.</p>
+</div>
+</section>
+<section id="acceder-a-los-elementos-de-la-biblioteca">
+<h3>Acceder a los elementos de la biblioteca<a class="headerlink" href="#acceder-a-los-elementos-de-la-biblioteca" title="Permalink to this headline">#</a></h3>
+<p>Debido a que la biblioteca es una lista de diccionarios, podemos acceder a cada elemento de la biblioteca usando la sintaxis de listas.</p>
+<p>Por ejemplo, para acceder al primer elemento de la biblioteca, podemos usar la siguiente sintaxis:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">biblioteca</span> <span class="kn">import</span> <span class="n">biblioteca</span>
+
+<span class="n">biblioteca</span> <span class="o">=</span> <span class="n">biblioteca</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">biblioteca</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;http://zotero.org/users/163570/items/32TCDQ2T&#39;, &#39;type&#39;: &#39;book&#39;, &#39;collection-title&#39;: &#39;Blackwell Companions to Literature and Culture&#39;, &#39;event-place&#39;: &#39;Oxford&#39;, &#39;ISBN&#39;: &#39;1-4051-0321-3&#39;, &#39;publisher&#39;: &#39;Blackwell Publishing Professional&#39;, &#39;publisher-place&#39;: &#39;Oxford&#39;, &#39;title&#39;: &#39;Companion to Digital Humanities&#39;, &#39;URL&#39;: &#39;http://www.digitalhumanities.org/companion/&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Schreibman&#39;, &#39;given&#39;: &#39;Susan&#39;}, {&#39;family&#39;: &#39;Siemens&#39;, &#39;given&#39;: &#39;Ray&#39;}, {&#39;family&#39;: &#39;Unsworth&#39;, &#39;given&#39;: &#39;John&#39;}], &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2004&#39;, 12]]}}
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y en este ejemplo, si queremos acceder al valor de la clave <code class="docutils literal notranslate"><span class="pre">title</span></code>, podemos usar la siguiente sintaxis:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">biblioteca</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Companion to Digital Humanities
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este sentido, un buscador deberá iterar sobre todo el diccionario y comparar el valor de cada clave con el valor de búsqueda. Por ejemplo, si queremos buscar un elemento por título, podemos usar la siguiente sintaxis para encontrar una coincidencia exacta:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">biblioteca</span> <span class="kn">import</span> <span class="n">biblioteca</span>
+
+<span class="n">titulo</span> <span class="o">=</span> <span class="s1">&#39;What Do You Do With A Million Readers?&#39;</span>
+
+<span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">biblioteca</span><span class="p">():</span>
+    <span class="k">if</span> <span class="n">elemento</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">titulo</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;http://zotero.org/users/163570/items/93RVDA7Z&#39;, &#39;type&#39;: &#39;webpage&#39;, &#39;container-title&#39;: &#39;Dh2015.org&#39;, &#39;title&#39;: &#39;What Do You Do With A Million Readers?&#39;, &#39;URL&#39;: &#39;http://dh2015.org/abstracts/xml/TANGHERLINI_Timothy_Roland_What_Do_You_Do_With_A_/TANGHERLINI_Timothy_Roland_What_Do_You_Do_With_A_Millio.html&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Bandari&#39;, &#39;given&#39;: &#39;Roja&#39;}, {&#39;family&#39;: &#39;Tangherlini&#39;, &#39;given&#39;: &#39;Timothy Roland&#39;}, {&#39;family&#39;: &#39;Roychowdhury&#39;, &#39;given&#39;: &#39;Vwani&#39;}], &#39;accessed&#39;: {&#39;date-parts&#39;: [[&#39;2016&#39;, 6, 19]]}, &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2015&#39;, 7, 3]]}}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="instrucciones">
+<h2>Instrucciones<a class="headerlink" href="#instrucciones" title="Permalink to this headline">#</a></h2>
+<section id="construir-el-modulo-de-busquedas">
+<h3>1. Construir el módulo de búsquedas<a class="headerlink" href="#construir-el-modulo-de-busquedas" title="Permalink to this headline">#</a></h3>
+<p>El primer paso es construir un módulo que permita realizar búsquedas en la biblioteca. Para esto, debes crear un nuevo archivo de Python en la carpeta de trabajo con el nombre <code class="docutils literal notranslate"><span class="pre">busqueda.py</span></code>.</p>
+<p>Este archivo debe tener una función para realizar búsquedas con las siguientes condiciones:</p>
+<ul class="simple">
+<li><p>Debe buscar por título, autor, año de publicación y palabras claves.</p></li>
+<li><p>Debe tener la opción de buscar por libro, artículo, tesis o cualquier otro tipo de elemento.</p></li>
+<li><p>Debe tener la opción de buscar por coincidencia exacta o por coincidencia parcial.</p></li>
+<li><p>Debe tener la capacidad de formatear el resultado para hacerlo legible al usuario.</p></li>
+<li><p>Debe poder lidiar con el tipo de dato de los autores (<code class="docutils literal notranslate"><span class="pre">list</span></code>) y de las fechas (<code class="docutils literal notranslate"><span class="pre">dict</span></code>).</p></li>
+</ul>
+<p>Este módulo debe tener un conjunto de funciones que permitan hacer estas tareas.</p>
+<p>Debe tener por lo menos dos funciones:</p>
+<ul class="simple">
+<li><p>Una función que permita buscar por título, autor, año de publicación y palabras claves.</p></li>
+<li><p>Una función que permita formatear el resultado de la búsqueda.</p></li>
+</ul>
+<p>El módulo debe estar en la capacidad de replicar un resultado como el siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">busqueda</span> <span class="kn">import</span> <span class="n">busqueda_simple</span><span class="p">,</span> <span class="n">formar_result</span>
+
+<span class="c1"># Buscar la palabra &quot;Data&quot; en el título de los libros</span>
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">busqueda_simple</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;book&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">formar_result</span><span class="p">(</span><span class="n">resultado</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1]------------
+
+id: http://zotero.org/users/163570/items/897DPHEI
+type: book
+call-number: P96.N35 D38 2018
+collection-title: A K Peters Visualization Series
+event-place: Boca Raton, Florida
+ISBN: 978-1-138-19710-7
+number-of-pages: 296
+publisher: CRC Press/Taylor &amp; Francis Group
+publisher-place: Boca Raton, Florida
+source: Library of Congress ISBN
+title: Data-driven storytelling
+editor: Riche, Nathalie Henry; Hurter, Christophe; Diakopoulos, Nicholas; Carpendale, Sheelagh
+issued: 2018
+-----------------
+
+[2]------------
+
+id: http://zotero.org/users/163570/items/NGAJFMZ6
+type: book
+event-place: Madrid
+ISBN: 978-84-15832-10-2
+language: English
+note: OCLC: 892201485
+publisher: Turner
+publisher-place: Madrid
+source: Open WorldCat
+title: Big data: la revolución de los datos masivos
+title-short: Big data
+author: Mayer-Schönberger, Viktor; Cukier, Kenneth; Iriarte, Antonio
+issued: 2013
+-----------------
+
+[3]------------
+
+id: http://zotero.org/users/163570/items/TKF3IK4J
+type: book
+abstract: &quot;Data and its technologies now play a large and growing role in humanities research and teaching. This book addresses the needs of humanities scholars who seek deeper expertise in the area of data modeling and representation. The authors, all experts in digital humanities, offer a clear explanation of key technical principles, a grounded discussion of case studies, and an exploration of important theoretical concerns. The book opens with an orientation, giving the reader a history of data modeling in the humanities and a grounding in the technical concepts necessary to understand and engage with the second part of the book. The second part of the book is a wide-ranging exploration of topics central for a deeper understanding of data modeling in digital humanities. Chapters cover data modeling standards and the role they play in shaping digital humanities practice, traditional forms of modeling in the humanities and how they have been transformed by digital approaches, ontologies which seek to anchor meaning in digital humanities resources, and how data models inhabit the other analytical tools used in digital humanities research. It concludes with a glossary chapter that explains specific terms and concepts for data modeling in the digital humanities context. This book is a unique and invaluable resource for teaching and practising data modeling in a digital humanities context&quot;--
+call-number: AZ105 .S43 2019
+collection-title: Digital research in the arts and humanities
+event-place: London ; New York
+ISBN: 978-1-4724-4324-3
+number-of-pages: 341
+publisher: Routledge, Taylor &amp; Francis Group
+publisher-place: London ; New York
+source: Library of Congress ISBN
+title: The shape of data in the digital humanities: modeling texts and text-based resources
+title-short: The shape of data in the digital humanities
+editor: Flanders, Julia; Jannidis, Fotis
+issued: 2019
+-----------------
+
+[4]------------
+
+id: http://zotero.org/users/163570/items/Z8VUPBD6
+type: book
+call-number: Q355 .R385 2013
+collection-title: Infrastructures series
+event-place: Cambridge, Massachusetts ; London, England
+ISBN: 978-0-262-51828-4
+number-of-pages: 182
+publisher: The MIT Press
+publisher-place: Cambridge, Massachusetts ; London, England
+source: Library of Congress ISBN
+title: &quot;Raw data&quot; is an oxymoron
+editor: Gitelman, Lisa
+issued: 2013
+-----------------
+
+[5]------------
+
+id: http://zotero.org/users/163570/items/PIYZREFG
+type: book
+abstract: &quot;The use of quantitative methods in the humanities and related social sciences has increased considerably in recent years, allowing researchers to discover patterns in a vast range of source materials. Despite this growth, there are few resources addressed to students and scholars who wish to take advantage of these powerful tools. Humanities Data Analysis offers the first intermediate-level guide to quantitative data analysis for humanities students and scholars using the Python programming language. This practical textbook, which assumes a basic knowledge of Python, teaches readers the necessary skills for conducting humanities research in the rapidly developing digital environment. The book begins with an overview of the place of data science in the humanities, and proceeds to cover data carpentry: the essential techniques for gathering, cleaning, representing, and transforming textual and tabular data. Then, drawing from real-world, publicly available data sets that cover a variety of scholarly domains, the book delves into detailed case studies. Focusing on textual data analysis, the authors explore such diverse topics as network analysis, genre theory, onomastics, literacy, author attribution, mapping, stylometry, topic modeling, and time series analysis. Exercises and resources for further reading are provided at the end of each chapter. An ideal resource for humanities students and scholars aiming to take their Python skills to the next level, Humanities Data Analysis illustrates the benefits that quantitative methods can bring to complex research questions. Appropriate for advanced undergraduates, graduate students, and scholars with a basic knowledge of Python. Applicable to many humanities disciplines, including history, literature, and sociology. Offers real-world case studies using publicly available data sets. Provides exercises at the end of each chapter for students to test acquired skills. Emphasizes visual storytelling via data visualizations&quot;--
+call-number: AZ186 .K37 2021
+event-place: Princeton
+ISBN: 978-0-691-17236-1
+publisher: Princeton University Press
+publisher-place: Princeton
+source: Library of Congress ISBN
+title: Humanities data analysis: case studies with Python
+title-short: Humanities data analysis
+author: Karsdorp, Folgert; Kestemont, Mike; Riddell, Allen
+issued: 2021
+-----------------
+
+Se encontraron 5 resultados
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="construir-el-modulo-de-interfaz">
+<h3>2. Construir el módulo de interfaz<a class="headerlink" href="#construir-el-modulo-de-interfaz" title="Permalink to this headline">#</a></h3>
+<p>El segundo paso es construir un módulo que permita interactuar con el usuario. Para esto, debes crear un nuevo archivo de Python en la carpeta de trabajo con el nombre <code class="docutils literal notranslate"><span class="pre">buscador.py</span></code>.</p>
+<p>Este archivo debe tener una función que permita interactuar con el usuario. Esta función debe tener un menú que permita al usuario elegir entre las siguientes opciones:</p>
+<ul class="simple">
+<li><p>Ingresar la palabra clave de búsqueda.</p></li>
+<li><p>Seleccionar si se desea buscar por título, autor, fecha o palabra clave.</p></li>
+<li><p>Seleccionar si se desea filtrar por libro, artículo, tesis o cualquier otro tipo de elemento.</p></li>
+</ul>
+<p>El módulo debe estar en la capacidad de replicar un resultado como el siguiente:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Ingrese<span class="w"> </span>los<span class="w"> </span>datos<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>búsqueda
+Palabra<span class="w"> </span>a<span class="w"> </span>buscar:<span class="w"> </span>Data
+Tipos<span class="w"> </span>de<span class="w"> </span>búsqueda:<span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span>Título,<span class="w"> </span><span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span>Autor,<span class="w"> </span><span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span>Fecha,<span class="w"> </span><span class="o">[</span><span class="m">4</span><span class="o">]</span><span class="w"> </span>Palabra<span class="w"> </span>clave
+Tipo<span class="w"> </span>de<span class="w"> </span>búsqueda<span class="w"> </span><span class="o">(</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">4</span><span class="o">)</span>:<span class="w"> </span><span class="m">1</span>
+Tipos<span class="w"> </span>de<span class="w"> </span>documento:<span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span>Libro,<span class="w"> </span><span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span>Artículo,<span class="w"> </span><span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span>Tesis,<span class="w"> </span><span class="o">[</span><span class="m">4</span><span class="o">]</span><span class="w"> </span>Cualquiera
+Tipo<span class="w"> </span>de<span class="w"> </span>documento<span class="w"> </span><span class="o">(</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">4</span><span class="o">)</span>:<span class="w"> </span><span class="m">1</span>
+Buscando<span class="w"> </span><span class="s1">&#39;Data&#39;</span><span class="w"> </span>en<span class="w"> </span><span class="s1">&#39;title&#39;</span><span class="w"> </span>de<span class="w"> </span>tipo<span class="w"> </span><span class="s1">&#39;book&#39;</span>
+
+
+<span class="o">[</span><span class="m">1</span><span class="o">]</span>------------
+
+id:<span class="w"> </span>http://zotero.org/users/163570/items/897DPHEI
+type:<span class="w"> </span>book
+call-number:<span class="w"> </span>P96.N35<span class="w"> </span>D38<span class="w"> </span><span class="m">2018</span>
+collection-title:<span class="w"> </span>A<span class="w"> </span>K<span class="w"> </span>Peters<span class="w"> </span>Visualization<span class="w"> </span>Series
+event-place:<span class="w"> </span>Boca<span class="w"> </span>Raton,<span class="w"> </span>Florida
+ISBN:<span class="w"> </span><span class="m">978</span>-1-138-19710-7
+number-of-pages:<span class="w"> </span><span class="m">296</span>
+publisher:<span class="w"> </span>CRC<span class="w"> </span>Press/Taylor<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Francis<span class="w"> </span>Group
+publisher-place:<span class="w"> </span>Boca<span class="w"> </span>Raton,<span class="w"> </span>Florida
+source:<span class="w"> </span>Library<span class="w"> </span>of<span class="w"> </span>Congress<span class="w"> </span>ISBN
+title:<span class="w"> </span>Data-driven<span class="w"> </span>storytelling
+editor:<span class="w"> </span>Riche,<span class="w"> </span>Nathalie<span class="w"> </span>Henry<span class="p">;</span><span class="w"> </span>Hurter,<span class="w"> </span>Christophe<span class="p">;</span><span class="w"> </span>Diakopoulos,<span class="w"> </span>Nicholas<span class="p">;</span><span class="w"> </span>Carpendale,<span class="w"> </span>Sheelagh
+issued:<span class="w"> </span><span class="m">2018</span>
+-----------------
+
+<span class="o">[</span><span class="m">2</span><span class="o">]</span>------------
+
+id:<span class="w"> </span>http://zotero.org/users/163570/items/NGAJFMZ6
+type:<span class="w"> </span>book
+event-place:<span class="w"> </span>Madrid
+ISBN:<span class="w"> </span><span class="m">978</span>-84-15832-10-2
+language:<span class="w"> </span>English
+note:<span class="w"> </span>OCLC:<span class="w"> </span><span class="m">892201485</span>
+publisher:<span class="w"> </span>Turner
+publisher-place:<span class="w"> </span>Madrid
+source:<span class="w"> </span>Open<span class="w"> </span>WorldCat
+title:<span class="w"> </span>Big<span class="w"> </span>data:<span class="w"> </span>la<span class="w"> </span>revolución<span class="w"> </span>de<span class="w"> </span>los<span class="w"> </span>datos<span class="w"> </span>masivos
+title-short:<span class="w"> </span>Big<span class="w"> </span>data
+author:<span class="w"> </span>Mayer-Schönberger,<span class="w"> </span>Viktor<span class="p">;</span><span class="w"> </span>Cukier,<span class="w"> </span>Kenneth<span class="p">;</span><span class="w"> </span>Iriarte,<span class="w"> </span>Antonio
+issued:<span class="w"> </span><span class="m">2013</span>
+-----------------
+
+<span class="o">[</span><span class="m">3</span><span class="o">]</span>------------
+
+id:<span class="w"> </span>http://zotero.org/users/163570/items/TKF3IK4J
+type:<span class="w"> </span>book
+abstract:<span class="w"> </span><span class="s2">&quot;Data and its technologies now play a large and growing role in humanities research and teaching. This book addresses the needs of humanities scholars who seek deeper expertise in the area of data modeling and representation. The authors, all experts in digital humanities, offer a clear explanation of key technical principles, a grounded discussion of case studies, and an exploration of important theoretical concerns. The book opens with an orientation, giving the reader a history of data modeling in the humanities and a grounding in the technical concepts necessary to understand and engage with the second part of the book. The second part of the book is a wide-ranging exploration of topics central for a deeper understanding of data modeling in digital humanities. Chapters cover data modeling standards and the role they play in shaping digital humanities practice, traditional forms of modeling in the humanities and how they have been transformed by digital approaches, ontologies which seek to anchor meaning in digital humanities resources, and how data models inhabit the other analytical tools used in digital humanities research. It concludes with a glossary chapter that explains specific terms and concepts for data modeling in the digital humanities context. This book is a unique and invaluable resource for teaching and practising data modeling in a digital humanities context&quot;</span>--
+call-number:<span class="w"> </span>AZ105<span class="w"> </span>.S43<span class="w"> </span><span class="m">2019</span>
+collection-title:<span class="w"> </span>Digital<span class="w"> </span>research<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>arts<span class="w"> </span>and<span class="w"> </span>humanities
+event-place:<span class="w"> </span>London<span class="w"> </span><span class="p">;</span><span class="w"> </span>New<span class="w"> </span>York
+ISBN:<span class="w"> </span><span class="m">978</span>-1-4724-4324-3
+number-of-pages:<span class="w"> </span><span class="m">341</span>
+publisher:<span class="w"> </span>Routledge,<span class="w"> </span>Taylor<span class="w"> </span><span class="p">&amp;</span><span class="w"> </span>Francis<span class="w"> </span>Group
+publisher-place:<span class="w"> </span>London<span class="w"> </span><span class="p">;</span><span class="w"> </span>New<span class="w"> </span>York
+source:<span class="w"> </span>Library<span class="w"> </span>of<span class="w"> </span>Congress<span class="w"> </span>ISBN
+title:<span class="w"> </span>The<span class="w"> </span>shape<span class="w"> </span>of<span class="w"> </span>data<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>digital<span class="w"> </span>humanities:<span class="w"> </span>modeling<span class="w"> </span>texts<span class="w"> </span>and<span class="w"> </span>text-based<span class="w"> </span>resources
+title-short:<span class="w"> </span>The<span class="w"> </span>shape<span class="w"> </span>of<span class="w"> </span>data<span class="w"> </span><span class="k">in</span><span class="w"> </span>the<span class="w"> </span>digital<span class="w"> </span>humanities
+editor:<span class="w"> </span>Flanders,<span class="w"> </span>Julia<span class="p">;</span><span class="w"> </span>Jannidis,<span class="w"> </span>Fotis
+issued:<span class="w"> </span><span class="m">2019</span>
+-----------------
+
+<span class="o">[</span><span class="m">4</span><span class="o">]</span>------------
+
+id:<span class="w"> </span>http://zotero.org/users/163570/items/Z8VUPBD6
+type:<span class="w"> </span>book
+call-number:<span class="w"> </span>Q355<span class="w"> </span>.R385<span class="w"> </span><span class="m">2013</span>
+collection-title:<span class="w"> </span>Infrastructures<span class="w"> </span>series
+event-place:<span class="w"> </span>Cambridge,<span class="w"> </span>Massachusetts<span class="w"> </span><span class="p">;</span><span class="w"> </span>London,<span class="w"> </span>England
+ISBN:<span class="w"> </span><span class="m">978</span>-0-262-51828-4
+number-of-pages:<span class="w"> </span><span class="m">182</span>
+publisher:<span class="w"> </span>The<span class="w"> </span>MIT<span class="w"> </span>Press
+publisher-place:<span class="w"> </span>Cambridge,<span class="w"> </span>Massachusetts<span class="w"> </span><span class="p">;</span><span class="w"> </span>London,<span class="w"> </span>England
+source:<span class="w"> </span>Library<span class="w"> </span>of<span class="w"> </span>Congress<span class="w"> </span>ISBN
+title:<span class="w"> </span><span class="s2">&quot;Raw data&quot;</span><span class="w"> </span>is<span class="w"> </span>an<span class="w"> </span>oxymoron
+editor:<span class="w"> </span>Gitelman,<span class="w"> </span>Lisa
+issued:<span class="w"> </span><span class="m">2013</span>
+-----------------
+
+<span class="o">[</span><span class="m">5</span><span class="o">]</span>------------
+
+id:<span class="w"> </span>http://zotero.org/users/163570/items/PIYZREFG
+type:<span class="w"> </span>book
+abstract:<span class="w"> </span><span class="s2">&quot;The use of quantitative methods in the humanities and related social sciences has increased considerably in recent years, allowing researchers to discover patterns in a vast range of source materials. Despite this growth, there are few resources addressed to students and scholars who wish to take advantage of these powerful tools. Humanities Data Analysis offers the first intermediate-level guide to quantitative data analysis for humanities students and scholars using the Python programming language. This practical textbook, which assumes a basic knowledge of Python, teaches readers the necessary skills for conducting humanities research in the rapidly developing digital environment. The book begins with an overview of the place of data science in the humanities, and proceeds to cover data carpentry: the essential techniques for gathering, cleaning, representing, and transforming textual and tabular data. Then, drawing from real-world, publicly available data sets that cover a variety of scholarly domains, the book delves into detailed case studies. Focusing on textual data analysis, the authors explore such diverse topics as network analysis, genre theory, onomastics, literacy, author attribution, mapping, stylometry, topic modeling, and time series analysis. Exercises and resources for further reading are provided at the end of each chapter. An ideal resource for humanities students and scholars aiming to take their Python skills to the next level, Humanities Data Analysis illustrates the benefits that quantitative methods can bring to complex research questions. Appropriate for advanced undergraduates, graduate students, and scholars with a basic knowledge of Python. Applicable to many humanities disciplines, including history, literature, and sociology. Offers real-world case studies using publicly available data sets. Provides exercises at the end of each chapter for students to test acquired skills. Emphasizes visual storytelling via data visualizations&quot;</span>--
+call-number:<span class="w"> </span>AZ186<span class="w"> </span>.K37<span class="w"> </span><span class="m">2021</span>
+event-place:<span class="w"> </span>Princeton
+ISBN:<span class="w"> </span><span class="m">978</span>-0-691-17236-1
+publisher:<span class="w"> </span>Princeton<span class="w"> </span>University<span class="w"> </span>Press
+publisher-place:<span class="w"> </span>Princeton
+source:<span class="w"> </span>Library<span class="w"> </span>of<span class="w"> </span>Congress<span class="w"> </span>ISBN
+title:<span class="w"> </span>Humanities<span class="w"> </span>data<span class="w"> </span>analysis:<span class="w"> </span><span class="k">case</span><span class="w"> </span>studies<span class="w"> </span>with<span class="w"> </span>Python
+title-short:<span class="w"> </span>Humanities<span class="w"> </span>data<span class="w"> </span>analysis
+author:<span class="w"> </span>Karsdorp,<span class="w"> </span>Folgert<span class="p">;</span><span class="w"> </span>Kestemont,<span class="w"> </span>Mike<span class="p">;</span><span class="w"> </span>Riddell,<span class="w"> </span>Allen
+issued:<span class="w"> </span><span class="m">2021</span>
+-----------------
+
+Se<span class="w"> </span>encontraron<span class="w"> </span><span class="m">5</span><span class="w"> </span>resultados
+</pre></div>
+</div>
+</section>
+</section>
+<section id="envio-de-la-actividad">
+<h2>Envío de la actividad<a class="headerlink" href="#envio-de-la-actividad" title="Permalink to this headline">#</a></h2>
+<p>Al igual que las actividades anteriores, envía tu código a través de Github.</p>
+<p>Para entregar la actividad, debes hacer un <code class="docutils literal notranslate"><span class="pre">commit</span></code> de los modificados y hacer un <code class="docutils literal notranslate"><span class="pre">push</span></code> de tu brazo al repositorio remoto.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Entrega de la actividad intermedia&quot;</span>
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>nombre-del-brazo
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./actividades"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../tutoriales/26-importarmodulos.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Importar módulos y funciones desde otros módulos</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../references.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliografía</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
