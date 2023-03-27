@@ -15,11 +15,11 @@ kernelspec:
 
 # Actividad intermedia: Construye un programa real
 
-En esta actividad vamos a construir un programa que nos permita consultar una biblioteca de citas bibliográficas. El programa debe permitirnos consultar la biblioteca de citas bibliográficas por título, autor, año de publicación y palabras claves.
+En esta actividad vamos a construir un programa que nos permita consultar una biblioteca de referencias bibliográficas. El programa debe permitirnos consultar la bibliografía por título, autor, año de publicación y palabras claves.
 
 ## Sobre el conjunto de datos
 
-Para realizar este ejercicio, les brindamos un conjunto de citas bibliográficas exportadas desde el programa [Zotero](https://www.zotero.org/) las cuales pueden visualizar en el [repositorio del curso](https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/blob/main/data/bibliografia.json).
+Para realizar este ejercicio, les brindamos un [conjunto de referencias bibliográficas](https://www.zotero.org/groups/197065/humanidades_digitales/library) exportadas desde el programa [Zotero](https://www.zotero.org/) las cuales pueden visualizar en el [repositorio del curso](https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/blob/main/data/bibliografia.json).
 
 Este conjunto de datos contiene la siguiente información:
 
@@ -161,50 +161,36 @@ Buscando 'Data' en 'title' de tipo 'book'
 
 [1]------------
 
-id: http://zotero.org/users/163570/items/897DPHEI
+id: AdrianCaballeroRoldan2019Bid
 type: book
-call-number: P96.N35 D38 2018
-collection-title: A K Peters Visualization Series
-event-place: Boca Raton, Florida
-ISBN: 978-1-138-19710-7
-number-of-pages: 296
-publisher: CRC Press/Taylor & Francis Group
-publisher-place: Boca Raton, Florida
-source: Library of Congress ISBN
-title: Data-driven storytelling
-editor: Riche, Nathalie Henry; Hurter, Christophe; Diakopoulos, Nicholas; Carpendale, Sheelagh
-issued: 2018
+abstract: rare book
+ISBN: 978-84-948972-0-7
+language: Spanish
+note: 00000
+publisher: RC Libros
+source: Amazon
+title: Bid data con Python. Recolección, almacenamiento y proceso
+author: Adrián Caballero Roldán, Rafael Caballero / Martín Martín
+issued: 2019
 -----------------
 
 [2]------------
 
-id: http://zotero.org/users/163570/items/NGAJFMZ6
+id: Hamidovic.etal2019Ancient
 type: book
-event-place: Madrid
-ISBN: 978-84-15832-10-2
+abstract: Ancient Manuscripts in Digital Culture presents an overview of the digital turn in Ancient Jewish and Christian manuscripts visualisation, data mining and communication. Edited by David Hamidović, Claire Clivaz and Sarah Bowen Savant, it gathers together the contributions of seventeen scholars involved in Biblical, Early Jewish and Christian studies. The volume attests to the spreading of digital humanities in these fields and presents fundamental analysis of the rise of visual culture as well as specific test-cases concerning ancient manuscripts. Sophisticated visualisation tools, stylometric analysis, teaching and visual data, epigraphy and visualisation belong notably to the varied overview presented in the volume.
+collection-number: 3
+collection-title: Digital Biblical Studies
+edition: 1ª
+event-place: Leiden - Boston
+ISBN: 978-90-04-39929-7
 language: English
-note: OCLC: 892201485
-publisher: Turner
-publisher-place: Madrid
-source: Open WorldCat
-title: Big data: la revolución de los datos masivos
-title-short: Big data
-author: Mayer-Schönberger, Viktor; Cukier, Kenneth; Iriarte, Antonio
-issued: 2013
------------------
-
-[3]------------
-
-id: http://zotero.org/users/163570/items/TKF3IK4J
-type: book
-abstract: "Data and its technologies now play a large and growing role in humanities research and teaching. This book addresses the needs of humanities scholars who seek deeper expertise in the area of data modeling and representation. The authors, all experts in digital humanities, offer a clear explanation of key technical principles, a grounded discussion of case studies, and an exploration of important theoretical concerns. The book opens with an orientation, giving the reader a history of data modeling in the humanities and a grounding in the technical concepts necessary to understand and engage with the second part of the book. The second part of the book is a wide-ranging exploration of topics central for a deeper understanding of data modeling in digital humanities. Chapters cover data modeling standards and the role they play in shaping digital humanities practice, traditional forms of modeling in the humanities and how they have been transformed by digital approaches, ontologies which seek to anchor meaning in digital humanities resources, and how data models inhabit the other analytical tools used in digital humanities research. It concludes with a glossary chapter that explains specific terms and concepts for data modeling in the digital humanities context. This book is a unique and invaluable resource for teaching and practising data modeling in a digital humanities context"--
-call-number: AZ105 .S43 2019
-collection-title: Digital research in the arts and humanities
-event-place: London ; New York
-ISBN: 978-1-4724-4324-3
-number-of-pages: 341
-publisher: Routledge, Taylor & Francis Group
-publisher-place: London ; New York
+note: ZSCC: 0000001
+number-of-pages: xvi, 284
+number-of-volumes: 1
+publisher: Brill
+publisher-place: Leiden - Boston
+title: Ancient Manuscripts in Digital Culture. Visualisation, Data Mining, Communication
 source: Library of Congress ISBN
 title: The shape of data in the digital humanities: modeling texts and text-based resources
 title-short: The shape of data in the digital humanities
@@ -212,41 +198,7 @@ editor: Flanders, Julia; Jannidis, Fotis
 issued: 2019
 -----------------
 
-[4]------------
-
-id: http://zotero.org/users/163570/items/Z8VUPBD6
-type: book
-call-number: Q355 .R385 2013
-collection-title: Infrastructures series
-event-place: Cambridge, Massachusetts ; London, England
-ISBN: 978-0-262-51828-4
-number-of-pages: 182
-publisher: The MIT Press
-publisher-place: Cambridge, Massachusetts ; London, England
-source: Library of Congress ISBN
-title: "Raw data" is an oxymoron
-editor: Gitelman, Lisa
-issued: 2013
------------------
-
-[5]------------
-
-id: http://zotero.org/users/163570/items/PIYZREFG
-type: book
-abstract: "The use of quantitative methods in the humanities and related social sciences has increased considerably in recent years, allowing researchers to discover patterns in a vast range of source materials. Despite this growth, there are few resources addressed to students and scholars who wish to take advantage of these powerful tools. Humanities Data Analysis offers the first intermediate-level guide to quantitative data analysis for humanities students and scholars using the Python programming language. This practical textbook, which assumes a basic knowledge of Python, teaches readers the necessary skills for conducting humanities research in the rapidly developing digital environment. The book begins with an overview of the place of data science in the humanities, and proceeds to cover data carpentry: the essential techniques for gathering, cleaning, representing, and transforming textual and tabular data. Then, drawing from real-world, publicly available data sets that cover a variety of scholarly domains, the book delves into detailed case studies. Focusing on textual data analysis, the authors explore such diverse topics as network analysis, genre theory, onomastics, literacy, author attribution, mapping, stylometry, topic modeling, and time series analysis. Exercises and resources for further reading are provided at the end of each chapter. An ideal resource for humanities students and scholars aiming to take their Python skills to the next level, Humanities Data Analysis illustrates the benefits that quantitative methods can bring to complex research questions. Appropriate for advanced undergraduates, graduate students, and scholars with a basic knowledge of Python. Applicable to many humanities disciplines, including history, literature, and sociology. Offers real-world case studies using publicly available data sets. Provides exercises at the end of each chapter for students to test acquired skills. Emphasizes visual storytelling via data visualizations"--
-call-number: AZ186 .K37 2021
-event-place: Princeton
-ISBN: 978-0-691-17236-1
-publisher: Princeton University Press
-publisher-place: Princeton
-source: Library of Congress ISBN
-title: Humanities data analysis: case studies with Python
-title-short: Humanities data analysis
-author: Karsdorp, Folgert; Kestemont, Mike; Riddell, Allen
-issued: 2021
------------------
-
-Se encontraron 5 resultados
+Se encontraron 4 resultados
 
 ```
 
