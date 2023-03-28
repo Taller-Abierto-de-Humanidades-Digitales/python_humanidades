@@ -109,15 +109,22 @@ elif len(resultado_completado) == 0:
 
 def añadir(catalogo__):
      elemento1 = input("Ponga el tipo de elemento que desea agregar al diccionario. Recuerde que el tipo de texto es una categoría que demuestra una característica del texto, por ejemplo, es una novela, perioódico o articulo academico. Recuerde escribir cuál es el tipo de texto conservando las tíldes de la oración anterior: ")
+     
      elemtentos  = [catalogo__[x]['tipo'].lower() for x in catalogo__]
+     
      listatipo = list(set(elemtentos))
+    
      elemento = {}
+
      if elemento1.lower() in listatipo:
+
             for lib3 in catalogo__:
                  if catalogo__[lib3]['tipo'].lower()== elemento1.lower():
                     lista=list(catalogo__[lib3].keys())
                     extension=len(lista)
+
                     break
+
             indicador = int(list(catalogo__.keys())[-1]) + 1
             indicador = str(indicador).zfill(3)
             for lib4 in range(extension-1):                 
