@@ -46,6 +46,9 @@ for elemento in biblioteca:
     if elemento['type'] not in tipos_bibliograficos:
         tipos_bibliograficos.append(elemento['type'])
 
+tipos_bibliograficos.sort()
+claves.sort()
+
 print(f'Tipos de elementos: {tipos_bibliograficos}\n')
 print(f'Claves de los elementos: {claves}\n')
 ```
@@ -98,7 +101,7 @@ En este sentido, un buscador deberá iterar sobre todo el diccionario y comparar
 ```{code-cell} ipython
 from biblioteca import biblioteca
 
-titulo = 'What Do You Do With A Million Readers?'
+titulo = '¿Qué son las Humanidades Digitales?'
 
 for elemento in biblioteca():
     if elemento['title'].lower() == titulo.lower():
