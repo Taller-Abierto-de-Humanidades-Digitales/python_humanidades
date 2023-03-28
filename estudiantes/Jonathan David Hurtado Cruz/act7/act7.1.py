@@ -35,6 +35,7 @@ for lib in resultado_similar:
                 resultado_diferente.append(lib)
 if len(resultado_completo) > 0:
     print(f'para tu búsqueda, se encontraron {len(resultado_completo)} títulos que incluyen la palabra "el{palabra}":')
+    
 for lib1 in resultado_completo:
                 print(f'- {lib1}')
         
@@ -60,18 +61,83 @@ def buscador(titulos: str, año: int):
         Año de publicaciones de los textos
 
         """
-
-for lib in resultado_similar:
-            if lib not in resultado_completo:
-                resultado_diferente.append(lib)
-if len(resultado_completo) > 0:
-    print(f'para tu búsqueda, se encontraron {len(resultado_completo)} títulos que incluyen la palabra "el{palabra}":')
-for lib1 in resultado_completo:
-                print(f'- {lib1}')
         
-if len(resultado_diferente) > 0:
-    print(f'para tu búsqueda se encontraron {len(resultado_diferente)} títulos que contienen los caracteres "{palabra}":')
-    for lib1 in resultado_diferente:
-                print(f'- {lib1}')
-elif len(resultado_completo) == 0:
-                print(f'No se encontraron elementos que incluyan la palabra "{palabra}".')
+palabras = input ('ponga una palabra clave del título que desea encontrar: ')
+resultado_completado = []
+resultado_similarizado = []
+resultado_diferenciado = []
+
+
+for libs in bibliografia:
+                palabras_clavesss = bibliografia[libs]['titulo'].split(" ")
+                for caracteresss in palabras_clavesss:
+                    if palabras.lower() == caracteresss.lower():
+                        resultado_completado.append(bibliografia[libs]['titulo'])
+                        
+            
+for libs in bibliografia:
+                if palabras.lower() in bibliografia[libs]['titulo'].lower():
+                    resultado_similarizado.append(bibliografia[libs]['titulo'])
+
+for libs in resultado_similar:
+                if libs not in resultado_completado:
+                    resultado_diferenciado.append(libs)
+if len(resultado_completado) > 0:
+        
+        print(f'para tu búsqueda, se encontraron {len(resultado_completado)} títulos que incluyen la palabra "el{palabras}":')
+
+
+for lib2 in resultado_completado:
+                    print(f'- {lib2}')
+
+                
+            
+if len(resultado_diferenciado) > 0:
+        print(f'para tu búsqueda se encontraron {len(resultado_diferenciado)} títulos que contienen los caracteres "{palabras}":')
+        for lib2 in resultado_diferenciado:
+                    print(f'- {lib2}')
+
+
+                    
+elif len(resultado_completado) == 0:
+                    print(f'No se encontraron títulos que incluyan la palabra "{palabras}".')
+
+
+
+
+#ejercicio 3
+
+def añadir(catalogo__):
+     elemento1 = input("Ponga el tipo de elemento que desea agregar al diccionario. Recuerde que el tipo de texto es una categoría que demuestra una característica del texto, por ejemplo, es una novela, perioódico o articulo academico. Recuerde escribir cuál es el tipo de texto conservando las tíldes de la oración anterior: ")
+     
+     elemtentos  = [catalogo__[x]['tipo'].lower() for x in catalogo__]
+     
+     listatipo = list(set(elemtentos))
+    
+     elemento = {}
+
+     if elemento1.lower() in listatipo:
+
+            for lib3 in catalogo__:
+                 if catalogo__[lib3]['tipo'].lower()== elemento1.lower():
+                    lista=list(catalogo__[lib3].keys())
+                    extension=len(lista)
+
+                    break
+
+            indicador = int(list(catalogo__.keys())[-1]) + 1
+            indicador = str(indicador).zfill(3)
+            for lib4 in range(extension-1):                 
+                 elemento[lista[lib4+1]]=input(f"Ingrese {lista[lib4+1]}:")
+            catalogo__[indicador] = elemento
+            print("Muy bien, ya agregó un elemento al catálogo.")
+     else:
+          print("no es posible ingresar este tipo. ")       
+                 
+añadir(bibliografia)
+
+print(bibliografia)
+
+
+
+
