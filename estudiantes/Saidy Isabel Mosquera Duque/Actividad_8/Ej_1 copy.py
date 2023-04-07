@@ -151,3 +151,22 @@ print(edad_publicacion(biografias_boom))
 def extraer_fechas(texto:dict):
     for anios in texto.items():
         if anios in 
+
+
+
+
+
+import re
+
+def extraer_fechas(biografia):
+    # use the pattern to find all dates in the biographical text
+    return re.compile(r"\b\d{4}\b").findall(biografia)
+
+
+def fecha_nacimiento(autores, biografias_boom): # pasa dos parámetros
+    """Completa la función para que devuelva la fecha de nacimiento del autor"""
+    autor = biografias_boom[autores] # completa esta línea
+    fechas = extraer_fechas(autor["bio"])
+    return min(fechas)
+
+print(fecha_nacimiento("Carlos Fuentes", biografias_boom))
