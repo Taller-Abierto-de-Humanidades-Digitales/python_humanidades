@@ -69,6 +69,22 @@ Para usarlo, debes **copiar** el archivo `biblioteca.py` en tu carpeta de trabaj
 from biblioteca import biblioteca
 ```
 
+También deberás instalar las dependencias necesarias para que el programa se ejecute correctamente. Para ello, debes ejecutar el siguiente comando en la terminal:
+
+```{code-cell} ipython
+py -m pip install -U pip
+py -m pip install -U requests
+```
+
+```{admonition} Importante
+:class: important
+Puede que la primera instrucción no funcione en tu computadora. En ese caso, debes ejecutar el comando `python -m pip install -U pip` en lugar de `py -m pip install -U pip`.
+
+Desde un sistema operativo Mac, debes ejecutar el comando `python3 -m pip install -U pip` en lugar de `py -m pip install -U pip`.
+
+Sigue la misma lógica para instalar las dependencias de `requests`.
+```
+
 Prueba que la importación sea correcta. En caso de que no lo sea y obtengas un error de `ModuleNotFoundError` o `ImportError`, revisa que el archivo `biblioteca.py` se encuentre en la misma carpeta de trabajo que el archivo donde estás escribiendo el código.
 
 ```{admonition} Advertencia
