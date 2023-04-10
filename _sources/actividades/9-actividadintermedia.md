@@ -72,6 +72,7 @@ from biblioteca import biblioteca
 También deberás instalar las dependencias necesarias para que el programa se ejecute correctamente. Para ello, debes ejecutar el siguiente comando en la terminal:
 
 ```{code-cell} ipython
+:tags: [remove-output]
 py -m pip install -U pip
 py -m pip install -U requests
 ```
