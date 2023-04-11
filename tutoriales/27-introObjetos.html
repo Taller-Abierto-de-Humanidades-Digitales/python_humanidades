@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bibliografía" href="../references.html" />
+    <link rel="next" title="Clases" href="28-clases.html" />
     <link rel="prev" title="Actividad intermedia: Construye un programa real" href="../actividades/9-actividadintermedia.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -402,6 +402,11 @@ const thebe_selector_output = ".output, .cell_output"
    Introducción a la programación orientada a objetos
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="28-clases.html">
+   Clases
+  </a>
+ </li>
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
@@ -678,7 +683,43 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-la-programacion-orientada-a-objetos">
 <h1>Introducción a la programación orientada a objetos<a class="headerlink" href="#introduccion-a-la-programacion-orientada-a-objetos" title="Permalink to this headline">#</a></h1>
-<p>En términos técnicos, todo en Python es un objeto <span id="id1">[<a class="reference internal" href="../references.html#id6" title="Jacob T. Vanderplas. A whirlwind tour of Python. O'Reilly Media, Sebastopol, CA, first edition edition, 2016. ISBN 978-1-4919-6464-4. OCLC: 1023864062.">Vanderplas, 2016</a>]</span> <a class="footnote-reference brackets" href="#id3" id="id2">1</a></p>
+<p>En términos técnicos, todo en Python es un objeto <span id="id1">[<a class="reference internal" href="../references.html#id6" title="Jacob T. Vanderplas. A whirlwind tour of Python. O'Reilly Media, Sebastopol, CA, first edition edition, 2016. ISBN 978-1-4919-6464-4. OCLC: 1023864062.">Vanderplas, 2016</a>]</span>.<a class="footnote-reference brackets" href="#id3" id="id2">1</a> Incluso los tipos de datos básicos como enteros, cadenas y listas son objetos en sí mismos y tienen sus propios métodos y propiedades.</p>
+<p>Las clases también son objetos y sirven para crear objetos. Tal vez parezca un poco complicado en este momento, pero con la práctica se hará más clara esta idea.</p>
+<p>En términos de la Programación Orientada a Objetos, podemos entender un objeto como una entidad que tiene un estado y un comportamiento. El estado de un objeto se refiere a sus propiedades y el comportamiento a sus métodos. Por ejemplo, un objeto de tipo <code class="docutils literal notranslate"><span class="pre">Coche</span></code> puede tener como propiedades el color, la marca, el modelo, etc. y como métodos el arrancar, el frenar, el girar, etc.</p>
+<p>Otro aspecto importante de entender, antes de iniciar nuestro proceso de programación, es la idea de instanciación. Cuando creamos un objeto a partir de una clase, decimos que estamos instanciando un objeto de esa clase. Por ejemplo, podemos instanciar un objeto de la clase <code class="docutils literal notranslate"><span class="pre">Coche</span></code> y asignarlo a una variable:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Coche</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="n">marca</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
+
+<span class="n">mi_coche</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">(</span><span class="s2">&quot;rojo&quot;</span><span class="p">,</span> <span class="s2">&quot;Renault&quot;</span><span class="p">,</span> <span class="s2">&quot;Megane&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>El objeto <code class="docutils literal notranslate"><span class="pre">mi_coche</span></code> es una instancia de la clase <code class="docutils literal notranslate"><span class="pre">Coche</span></code> y tiene como propiedades el color, la marca y el modelo. Podemos acceder a ellas de la siguiente forma:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mi_coche</span><span class="o">.</span><span class="n">marca</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mi_coche</span><span class="o">.</span><span class="n">modelo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rojo
+Renault
+Megane
+</pre></div>
+</div>
+</div>
+</div>
+<p>Podríamos verbalizarlo de la siguiente manera:</p>
+<p>Una clase es una plantilla para la creación de objetos. Cuando creamos un objeto a partir de una clase, decimos que estamos instanciando un objeto de esa clase.</p>
+<p>Lo que es relevante de entender en este momento, es que las clases nos ayudan a pensar como programadores. En lugar de pensar en un problema como un conjunto de variables y funciones, podemos pensar en él como un conjunto de objetos que interactúan entre sí. Esto nos permite abstraer el problema y centrarnos en los aspectos más importantes. Lo anterior implica que debamos diseñar antes de escribir código y en este sentido pasamos de un enfoque imperativo (una sucesión de instrucciones) a un enfoque orientado a objetos.</p>
 <section id="notas">
 <h2>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">#</a></h2>
 <hr class="footnotes docutils" />
@@ -724,10 +765,10 @@ title="Print to PDF"
             <p class="prev-next-title">Actividad intermedia: Construye un programa real</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../references.html" title="next page">
+    <a class='right-next' id="next-link" href="28-clases.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliografía</p>
+        <p class="prev-next-title">Clases</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
