@@ -1,0 +1,57 @@
+# Catalogo
+
+libros = ['Cuentos completos 1; Isaac Asimov; 2009; Ficción', 
+          'Cuentos completos 2; Isaac Asimov; 2009; Ficción', 
+          'De Animales a Dioses; Yuval Noah Harari; 2015; Historia General', 
+          'Homo Deus; Yuval Noah Harari; 2016; Historia General', 
+          'Prohibido Nacer; Trevor Noah; 2017; Autobiografía', 
+          'Somos Luces Abismales; Carolina Sanín; 2018; Ensayos Literarios', 
+          'Muerte con Pingüino; Andrei Kurkov; 1996; Novela', 
+          'Que Viva la Música!; Andrés Caicedo; 1977; Novela',
+          'The Beach; Alex Garland; 1996; Novela',
+          'La teoria del todo; Arturo Quirantes; 2018; Divulgación',
+          'Breve historia de la ciencia; Tom Jackson; 2022; Divulgación',
+          'Ensayo sobre la ceguera; Jose Saramago; 1995; Novela']
+
+lib_his = []
+lib_nov = []
+lib_fic = []
+lib_otros = []
+
+for libro in libros:
+    if "Historia" in libro:
+        lib_his.append(libro)
+    elif "Novela" in libro:
+        lib_nov.append(libro)
+    elif "Ficción" in libro:
+        lib_fic.append(libro)
+    else:
+        lib_otros.append(libro)
+
+print()
+print("Cantidad de libros en al catálogo:", len(libros))
+print()
+print("Libros de Historia", "Cant.:",len(lib_his))
+for libro in lib_his:
+    titulo, autor, anio, genero = libro.split(";")
+    print(f"- {autor}, {titulo} ({anio}), {genero}")
+
+print()
+print("Libros de Novela", "Cant.:",len(lib_nov))
+for libro in lib_nov:
+    titulo, autor, anio, genero = libro.split(";")
+    print(f"- {autor}, {titulo} ({anio}), {genero}")
+
+print()
+print("Libros de Ficción", "Cant.:",len(lib_fic))
+for libro in lib_fic:
+    titulo, autor, anio, genero = libro.split(";")
+    print(f"- {autor}, {titulo} ({anio}), {genero}")
+
+print()
+print("Otros libros", "Cant.:",len(lib_otros))
+for libro in lib_otros:
+    titulo, autor, anio, genero = libro.split(";")
+    print(f"- {autor}, {titulo} ({anio}), {genero}")
+print()
+

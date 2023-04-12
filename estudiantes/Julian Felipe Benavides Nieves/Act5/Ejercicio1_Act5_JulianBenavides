@@ -1,0 +1,29 @@
+# Catalogo
+
+libros = ['Cuentos completos 1; Isaac Asimov; 2009; Ficción', 
+          'Cuentos completos 2; Isaac Asimov; 2009; Ficción', 
+          'De Animales a Dioses; Yuval Noah Harari; 2015; Historia General', 
+          'Homo Deus; Yuval Noah Harari; 2016; Historia General', 
+          'Prohibido Nacer; Trevor Noah; 2017; Autobiografía', 
+          'Somos Luces Abismales; Carolina Sanín; 2018; Ensayos Literarios', 
+          'Muerte con Pingüino; Andrei Kurkov; 1996; Novela', 
+          'Que Viva la Música!; Andrés Caicedo; 1977; Novela',
+          'The Beach; Alex Garland; 1996; Novela',
+          'La teoria del todo; Arturo Quirantes; 2018; Divulgación',
+          'Breve historia de la ciencia; Tom Jackson; 2022; Divulgación',
+          'Ensayo sobre la ceguera; Jose Saramago; 1995; Novela']
+
+busqueda = input("Introduzca la palabra de busqueda: ")
+
+list_busqueda = []
+
+for libro in libros:
+    if busqueda.lower() in libro.lower():
+        list_busqueda.append(libro)
+
+if len(list_busqueda) > 0:
+    print(f"Los libros que contienen la palabra '{busqueda} son:")
+    for libro in list_busqueda:
+        print(libro)
+else:
+    print(f"La palabra '{busqueda}' no esta en la lista de libros")
