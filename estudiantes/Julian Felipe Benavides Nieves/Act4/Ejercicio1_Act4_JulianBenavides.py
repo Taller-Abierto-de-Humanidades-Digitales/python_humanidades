@@ -8,18 +8,26 @@ autores = []
 anios = []
 generos = []
 
-for titulo in libros:
-    titulos.append(titulo.split(';')[0])
+# for titulo in libros:
+#     titulos.append(titulo.split(';')[0])
 
-for autor in libros:
-    autores.append(autor.split(';')[1])
+# for autor in libros:
+#     autores.append(autor.split(';')[1])
 
-for anio in libros:
-    anios.append(anio.split(';')[2])
+# for anio in libros:
+#     anios.append(anio.split(';')[2])
 
-for genero in libros:
-    generos.append(genero.split(';')[3])
+# for genero in libros:
+#     generos.append(genero.split(';')[3])
+
+# print(titulos, autores, anios, generos, sep='\n')
+
+# Se hubiera podido hacer todo sobre un único for
+
+for libro in libros:
+    titulos.append(libro.split(';')[0])
+    autores.append(libro.split(';')[1])
+    anios.append(libro.split(';')[2])
+    generos.append(libro.split(';')[3])
 
 print(titulos, autores, anios, generos, sep='\n')
-
-

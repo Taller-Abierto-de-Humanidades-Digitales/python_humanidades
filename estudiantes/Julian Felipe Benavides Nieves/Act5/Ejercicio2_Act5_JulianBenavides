@@ -1,0 +1,110 @@
+# Catalogo
+
+libros = ['Cuentos completos 1; Isaac Asimov; 2009; Ficción', 
+          'Cuentos completos 2; Isaac Asimov; 2009; Ficción', 
+          'De Animales a Dioses; Yuval Noah Harari; 2015; Historia General', 
+          'Homo Deus; Yuval Noah Harari; 2016; Historia General', 
+          'Prohibido Nacer; Trevor Noah; 2017; Autobiografía', 
+          'Somos Luces Abismales; Carolina Sanín; 2018; Ensayos Literarios', 
+          'Muerte con Pingüino; Andrei Kurkov; 1996; Novela', 
+          'Que Viva la Música!; Andrés Caicedo; 1977; Novela',
+          'The Beach; Alex Garland; 1996; Novela',
+          'La teoria del todo; Arturo Quirantes; 2018; Divulgación',
+          'Breve historia de la ciencia; Tom Jackson; 2022; Divulgación',
+          'Ensayo sobre la ceguera; Jose Saramago; 1995; Novela']
+
+
+selanio = 2014
+
+seleccion = "a"
+
+selanio = int(selanio)
+
+bus_lib = []
+
+anios = []
+
+
+# #______________________________________________
+
+# # Propuesta para dar la entrada para la busqueda
+
+# selanio = input("Introduzca el número del año que desea buscar: ")
+# selanio = int(selanio)
+
+# errorselecc = True
+# while errorselecc:
+#     seleccion = input("Seleccione: a. anterior, b. igual, c. posterior: ")
+#     if seleccion == "a":
+#         errorselecc = False
+#     elif seleccion == "b":
+#         errorselecc = False
+#     elif seleccion == "c":
+#         errorselecc = False
+#     else:
+#         print("Selección errada, intente de nuevo.")
+
+#_____________________________
+# 
+
+# if seleccion == "a":
+#     for libro in libros:
+#         titulo, autor, anio, genero = libro.split(";")
+#         anio = int(anio)
+#         if anio < selanio:
+#             bus_lib.append(libro)
+#     if len(bus_lib) > 0:
+#         print("Los libros anteriores a esta fecha son: ")
+#         for res in bus_lib:
+#             print(res)
+#     else:
+#         print(f"No hay libros anteriores a {selanio}")
+
+
+# if seleccion == "b":
+#     for libro in libros:
+#         titulo, autor, anio, genero = libro.split(";")
+#         anio = int(anio)
+#         if anio == selanio:
+#             bus_lib.append(libro)
+#     if len(bus_lib) > 0:
+#         print("Los libros de esta fecha son: ")
+#         for res in bus_lib:
+#             print(res)
+#     else:
+#         print(f"No hay libros de {selanio}")
+
+# if seleccion == "c":
+#     for libro in libros:
+#         titulo, autor, anio, genero = libro.split(";")
+#         anio = int(anio)
+#         if anio > selanio:
+#             bus_lib.append(libro)
+#     if len(bus_lib) > 0:
+#         print("Los libros posteriores a esta fecha son: ")
+#         for res in bus_lib:
+#             print(res)
+#     else:
+#         print(f"No hay libros posteriores a {selanio}")
+
+
+#_________________________________________
+
+fecha = 2014
+direccion = "ant"
+
+resultado = []
+
+for l in libros:
+    if direccion == "ant":
+        if int(l.split(";")[2]) < fecha:
+            resultado.append(l)
+    else:
+        if int(l.split(";")[2]) >= fecha:
+            resultado.append(l)
+
+if len(resultado) > 0:
+    print(resultado)
+else:
+    print("No hay resultados")
+
