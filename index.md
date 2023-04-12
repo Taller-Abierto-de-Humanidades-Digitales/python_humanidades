@@ -1,48 +1,19 @@
 # Fundamentos de programación
 
----
-
 - Fecha de inicio: 2023-01-24
 - Fecha final: 2023-05-23
 - Horario: martes, 17:00 - 19:40 [GMT-5](https://hora.mx/GMT-5)
 - Repo: [https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso](https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso)
 
-
----
-
 ## Programa del curso
 
 - [Descargar el programa del curso](https://drive.google.com/file/d/1AyzRp0SmcHGU20aGteHM4f1W2GVYnBvH/view?usp=share_link)
 
+## Material adicional y de soporte
+
+- [Presentación Git & Github](https://docs.google.com/presentation/d/1yDexViSugtpToTQO7wGrx1P1yDuBJqrH7jePB9_6zac/edit?usp=sharing)
+
 ## Desarrollo del curso
 
-### 1. Introducción: Configurar un entorno de desarrollo para Python
-
-- [Instalar Python](tutoriales/1-instalarPython.md)
-- [Introducción a la terminal de comandos](tutoriales/2-terminal.md)
-- [Instalar Visual Studio Code](tutoriales/3-instalarVSCode.md)
-- [Instalar Git](tutoriales/4-Git.md)
-- [Sincronizar con Github](tutoriales/5-Github.md)
-
-#### Actividad 1: Configurar un entorno de desarrollo para Python
-
-- [Actividad 1: Configurar un entorno de desarrollo para Python](actividades/1-configuracion.md)
-
-### 2. Introducción a Python
-
-- [Introducción a Python](tutoriales/6-python.md)
-- [Variables y tipos de datos](tutoriales/7-variables.md)
-- [Operadores](tutoriales/8-operadores.md)
-- [Operaciones con cadenas de texto](tutoriales/9-operaciones_string.md)
-
-#### Actividad 2: Variables y sintaxis
-
-- [Actividad 2: Variables y sintaxis](actividades/2-sintaxis_variables.md)
-
-### 3. Listas
-
-- [Listas](tutoriales/10-listas.md)
-
-#### Actividad 3: Listas
-
-- [Actividad 3: Listas](actividades/3-listas.md)
+```{tableofcontents}
+```

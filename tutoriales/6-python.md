@@ -1,3 +1,18 @@
+---
+jupytext:
+  cell_metadata_filter: -all
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+    format_version: 0.13
+    jupytext_version: 1.14.4
+kernelspec:
+  display_name: Python 3 (ipykernel)
+  language: python
+  name: python3
+---
+
 # Introducción a Python
 
 ## ¿Qué es Python?
@@ -24,7 +39,7 @@ En general, es un muy buen lenguaje para aprender a programar y es posible desar
 
 Los comentarios son líneas de código que no se ejecutan. Se utilizan para documentar el código y explicar qué hace cada parte del programa. En Python, los comentarios se escriben utilizando el símbolo `#` al principio de la línea.
 
-```python
+```{code-cell}
 # Esto es un comentario
 print("Hola mundo") # Esto también es un comentario
 ```
@@ -33,7 +48,7 @@ print("Hola mundo") # Esto también es un comentario
 
 Python utiliza la indentación para definir bloques de código. Un bloque de código es un conjunto de líneas de código que se ejecutan juntas. En Python, los bloques de código se definen utilizando la indentación. La indentación es la sangría que se agrega al principio de una línea de código. 
 
-```python
+```{code-cell}
 # Esto es un bloque de código
 nombre = "Ada"
 apellido = "Lovelace"
@@ -50,4 +65,3 @@ else:
 ```
 
 Con el tiempo iremos familiarizándonos con la indentación y aprenderemos a identificar los bloques de código. Por ahora, solo debes saber que la indentación es importante en Python y que debes utilizarla correctamente.
-
