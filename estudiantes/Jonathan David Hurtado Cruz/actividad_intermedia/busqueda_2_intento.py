@@ -49,17 +49,20 @@ def busqueda(palabra_clave, campo, tipo):
     
     return resultado
 
-""" 
+
+#autorr == [{'family': ' ', 'given': ' '}] 
 
 def unbox(**autores):
-    autorr = " " + " "
-    for autor in biblioteca:
-          for clave, valor in autores.items():
-               autorr += f'{clave} = {valor}, '
-               return autorr
+ autorr = [{'family': '', 'given': ''}] 
+ for autor in biblioteca:
+    for clave, valor in autores.items():
+        autorr += f'{clave} = {valor}, '
+        return autorr
 
-unbox(biblioteca["author"])
- """
+s= unbox(**biblioteca["author"])
+print(unbox(s))
+  
+
 def formateador(resultados):
     resultado = "\n\n"
     for item in resultados:
@@ -68,13 +71,30 @@ def formateador(resultados):
             resultado += f"{clave}: {valor}\n"  
         
         resultado += "--------------------------\n"
-    """     if "family" in biblioteca["author"]: 
-        del ("family")
-         """
-
+        """ if "family" in biblioteca["author"]: 
+            del (biblioteca["author"]["family"])
+                  """
+         
     return resultado
 
 r = busqueda("2000", "issued", "article-journal")
 print(formateador(r))
+
+""" def autores(catalogo): # pasa un parámetro
+    Completa la función para que devuelva una lista con los nombres de los autores
+    autores = []
+    for author in catalogo:
+        autores.append(author)
+    return autores
+
+autores_boom = autores(catalogo= biblioteca)
+print(autores_boom)
+ """
+
+
+
+
+        
+
 
 
