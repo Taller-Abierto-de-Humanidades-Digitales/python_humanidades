@@ -50,18 +50,7 @@ def busqueda(palabra_clave, campo, tipo):
     return resultado
 
 
-#autorr == [{'family': ' ', 'given': ' '}] 
 
-def unbox(**autores):
- autorr = [{'family': '', 'given': ''}] 
- for autor in biblioteca:
-    for clave, valor in autores.items():
-        autorr += f'{clave} = {valor}, '
-        return autorr
-
-s= unbox(**biblioteca["author"])
-print(unbox(s))
-  
 
 def formateador(resultados):
     resultado = "\n\n"
@@ -93,7 +82,40 @@ print(autores_boom)
 
 
 
+#autorr == [{'family': ' ', 'given': ' '}] 
+""" 
+def unbox(**autores):
+ autorr = [{'family': '', 'given': ''}] 
+ for autor in biblioteca:
+    for clave, valor in autores.items():
+        autorr += f'{clave} = {valor}, '
+        return autorr
 
+s= unbox(**biblioteca["author"])
+print(unbox(s))
+   """
+""" def unbox():
+    autores = []
+    for elemento in biblioteca():
+        try:
+            for autor in elemento['author']:
+                autores.append(autor)
+        except KeyError:
+            pass
+    return autores
+    
+   
+   
+print(unbox())
+          
+ """
+""" def unbox(**autores):
+     for k, v in autores.items():
+          print(v)
+
+unbox(family = "Paz-Trillo", given = "Christian")
+
+ """
         
 
 
