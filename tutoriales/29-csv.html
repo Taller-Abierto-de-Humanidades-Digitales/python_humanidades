@@ -1,0 +1,1074 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Manejo de datos en archivos CSV &#8212; Curso de Python para las HD</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Manejar archivos CSV con pandas" href="30-pandasCSV.html" />
+    <link rel="prev" title="La librería os" href="28-os.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso de Python para las HD</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Fundamentos de programación
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción. Configurar un entorno de desarrollo para Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-instalarPython.html">
+   Instalar Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-terminal.html">
+   Terminal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-instalarVSCode.html">
+   Instalar VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-Git.html">
+   Configurar Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-Github.html">
+   Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/1-configuracion.html">
+   Actividad 1: Configurar un entorno de desarrollo para Python
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción a Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-python.html">
+   Introducción a Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-variables.html">
+   Sintaxis, variables y tipos de datos básicos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-operadores.html">
+   Operadores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-operaciones_string.html">
+   Operaciones con cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/2-sintaxis_variables.html">
+   Actividad 2: Variables y sintaxis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Listas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-listas.html">
+   Listas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/3-listas.html">
+   Actividad 3: Listas (operaciones básicas)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Iteraciones (for loops)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-iteraciones.html">
+   Iteraciones (
+   <em>
+    for loops
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/4-iteraciones.html">
+   Actividad 4: Iteraciones
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Condicionales (if else)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-condicionales.html">
+   Introducción a los condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-plogicas.html">
+   Pruebas condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-condicionPertenencia.html">
+   Operadores de pertenencia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-ifelse.html">
+   Sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   ,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     elif
+    </span>
+   </code>
+   y
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     else
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-listaseif.html">
+   Combinar listas y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/5-condicionales.html">
+   Actividad 5: Condicionales y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Diccionarios
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-diccionarios.html">
+   Diccionarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-iterardiccio.html">
+   Iterar a través de un diccionario
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/6-diccionarios.html">
+   Actividad 6: Manejo de diccionarios
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Funciones
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-funcionesIntro.html">
+   Funciones: Introducción
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-input.html">
+   Función
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     input()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-funciones_y_TryExcept.html">
+   Control de errores con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Try
+    </span>
+   </code>
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Except
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/7-funciones.html">
+   Actividad 7: Funciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="22-retornarvalores.html">
+   Retornar valores en una función
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="23-funcionesLlamados.html">
+   Funciones y modularidad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-argsykwargs.html">
+   Pasar cantidades arbitrarias de argumentos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/8-funciones2.html">
+   Actividad 8: Funciones II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="25-importarmodulos.html">
+   Funciones: Modularidad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="26-modularfunciones.html">
+   Crear módulos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Actividad de evaluación intermedia
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/9-actividadintermedia.html">
+   Actividad intermedia: Construye un programa real
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Archivos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="27-archivos.html">
+   Leer y escribir archivos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="28-os.html">
+   La librería
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     os
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Manejo de datos en archivos CSV
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="30-pandasCSV.html">
+   Manejar archivos CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Recursos adicionales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/gh-pages?urlpath=tree/tutoriales/29-csv.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/29-csv.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/tutoriales/29-csv.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/tutoriales/29-csv.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lectura-de-archivos-csv">
+   Lectura de archivos CSV
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lectura-de-archivos-csv-con-encabezados">
+   Lectura de archivos CSV con encabezados
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#agregar-nuevas-filas">
+   Agregar nuevas filas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crear-un-csv-a-partir-de-un-diccionario">
+   Crear un CSV a partir de un diccionario
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   Ejercicios
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-1">
+     Ejercicio 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-2">
+     Ejercicio 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Manejo de datos en archivos CSV</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lectura-de-archivos-csv">
+   Lectura de archivos CSV
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lectura-de-archivos-csv-con-encabezados">
+   Lectura de archivos CSV con encabezados
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#agregar-nuevas-filas">
+   Agregar nuevas filas
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crear-un-csv-a-partir-de-un-diccionario">
+   Crear un CSV a partir de un diccionario
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   Ejercicios
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-1">
+     Ejercicio 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-2">
+     Ejercicio 2
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="manejo-de-datos-en-archivos-csv">
+<h1>Manejo de datos en archivos CSV<a class="headerlink" href="#manejo-de-datos-en-archivos-csv" title="Permalink to this headline">#</a></h1>
+<p>Los archivos CSV (Comma Separated Values) son archivos de texto plano que contienen datos separados por comas. Los archivos CSV son muy utilizados para el intercambio de datos entre aplicaciones porque se escriben como texto plano, no dependen de una plataforma o software específico y replican la estructura de una hoja de cálculo.</p>
+<p>En Python podemos leer y escribir archivos CSV utilizando el módulo <code class="docutils literal notranslate"><span class="pre">csv</span></code>. Este módulo nos permite leer y escribir archivos CSV de forma muy sencilla.</p>
+<p>Por ejemplo, supongamos que queremos llevar nuestro inventario de la biblioteca a un archivo CSV. Para ello, podemos crear un archivo CSV con el siguiente contenido:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>titulo,autor,editorial,anio
+El Aleph,Jorge Luis Borges,Emece,1949
+El Quijote,Miguel de Cervantes,Alfaguara,2005
+El desbarrancadero,Fernando Vallejo,Planeta,2001
+Una novelita Lumpen,Roberto Bolaño,Anagrama,2002
+El amante,Marguerite Duras,Tusquets,1984
+</pre></div>
+</div>
+<p>Para crear el csv debemos importar la librería <code class="docutils literal notranslate"><span class="pre">csv</span></code> y utilizar el método <code class="docutils literal notranslate"><span class="pre">writer</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;inventario.csv&quot;</span><span class="p">),</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">archivo</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s2">&quot;titulo&quot;</span><span class="p">,</span> <span class="s2">&quot;autor&quot;</span><span class="p">,</span> <span class="s2">&quot;editorial&quot;</span><span class="p">,</span> <span class="s2">&quot;anio&quot;</span><span class="p">])</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s2">&quot;El Aleph&quot;</span><span class="p">,</span> <span class="s2">&quot;Jorge Luis Borges&quot;</span><span class="p">,</span> <span class="s2">&quot;Emece&quot;</span><span class="p">,</span> <span class="mi">1949</span><span class="p">])</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s2">&quot;El Quijote&quot;</span><span class="p">,</span> <span class="s2">&quot;Miguel de Cervantes&quot;</span><span class="p">,</span> <span class="s2">&quot;Alfaguara&quot;</span><span class="p">,</span> <span class="mi">2005</span><span class="p">])</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s2">&quot;El desbarrancadero&quot;</span><span class="p">,</span> <span class="s2">&quot;Fernando Vallejo&quot;</span><span class="p">,</span> <span class="s2">&quot;Planeta&quot;</span><span class="p">,</span> <span class="mi">2001</span><span class="p">])</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s2">&quot;Una novelita Lumpen&quot;</span><span class="p">,</span> <span class="s2">&quot;Roberto Bolaño&quot;</span><span class="p">,</span> <span class="s2">&quot;Anagrama&quot;</span><span class="p">,</span> <span class="mi">2002</span><span class="p">])</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s2">&quot;El amante&quot;</span><span class="p">,</span> <span class="s2">&quot;Marguerite Duras&quot;</span><span class="p">,</span> <span class="s2">&quot;Tusquets&quot;</span><span class="p">,</span> <span class="mi">1984</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notarás como utilizamos, en principio, la misma lógica que con los archivos de texto con el método <code class="docutils literal notranslate"><span class="pre">open</span></code>, pero para realizar la escritura del archivo utilizamos el método <code class="docutils literal notranslate"><span class="pre">writer</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">csv</span></code>. Este método nos permite escribir en el archivo fila por fila. Para ello, utilizamos el método <code class="docutils literal notranslate"><span class="pre">writerow</span></code> que recibe una lista con los elementos de la fila.</p>
+<p>Debemos prestar atención a la manera como está escrito el valor dentro de la función <code class="docutils literal notranslate"><span class="pre">writerow</span></code>, es decir, se incluye como una lista de elementos de cualquier tipo. En el caso de los valores numéricos, no se incluyen entre comillas.</p>
+<p>De forma que si tuviéramos una lista de listas con los datos de nuestro inventario, podríamos escribir el archivo CSV de la siguiente manera:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inventario</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;titulo&quot;</span><span class="p">,</span> <span class="s2">&quot;autor&quot;</span><span class="p">,</span> <span class="s2">&quot;editorial&quot;</span><span class="p">,</span> <span class="s2">&quot;anio&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;El Aleph&quot;</span><span class="p">,</span> <span class="s2">&quot;Jorge Luis Borges&quot;</span><span class="p">,</span> <span class="s2">&quot;Emece&quot;</span><span class="p">,</span> <span class="mi">1949</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;El Quijote&quot;</span><span class="p">,</span> <span class="s2">&quot;Miguel de Cervantes&quot;</span><span class="p">,</span> <span class="s2">&quot;Alfaguara&quot;</span><span class="p">,</span> <span class="mi">2005</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;El desbarrancadero&quot;</span><span class="p">,</span> <span class="s2">&quot;Fernando Vallejo&quot;</span><span class="p">,</span> <span class="s2">&quot;Planeta&quot;</span><span class="p">,</span> <span class="mi">2001</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Una novelita Lumpen&quot;</span><span class="p">,</span> <span class="s2">&quot;Roberto Bolaño&quot;</span><span class="p">,</span> <span class="s2">&quot;Anagrama&quot;</span><span class="p">,</span> <span class="mi">2002</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;El amante&quot;</span><span class="p">,</span> <span class="s2">&quot;Marguerite Duras&quot;</span><span class="p">,</span> <span class="s2">&quot;Tusquets&quot;</span><span class="p">,</span> <span class="mi">1984</span><span class="p">],</span>
+<span class="p">]</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;inventario.csv&quot;</span><span class="p">),</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">archivo</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">inventario</span><span class="p">:</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="lectura-de-archivos-csv">
+<h2>Lectura de archivos CSV<a class="headerlink" href="#lectura-de-archivos-csv" title="Permalink to this headline">#</a></h2>
+<p>Para leer un archivo CSV, utilizamos el método <code class="docutils literal notranslate"><span class="pre">reader</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">csv</span></code>. Este método nos permite leer el archivo fila por fila. Para ello, utilizamos el método <code class="docutils literal notranslate"><span class="pre">readrow</span></code> que recibe una lista con los elementos de la fila.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;inventario.csv&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">archivo</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;titulo&#39;, &#39;autor&#39;, &#39;editorial&#39;, &#39;anio&#39;]
+[&#39;El Aleph&#39;, &#39;Jorge Luis Borges&#39;, &#39;Emece&#39;, &#39;1949&#39;]
+[&#39;El Quijote&#39;, &#39;Miguel de Cervantes&#39;, &#39;Alfaguara&#39;, &#39;2005&#39;]
+[&#39;El desbarrancadero&#39;, &#39;Fernando Vallejo&#39;, &#39;Planeta&#39;, &#39;2001&#39;]
+[&#39;Una novelita Lumpen&#39;, &#39;Roberto Bolaño&#39;, &#39;Anagrama&#39;, &#39;2002&#39;]
+[&#39;El amante&#39;, &#39;Marguerite Duras&#39;, &#39;Tusquets&#39;, &#39;1984&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notarás que el método <code class="docutils literal notranslate"><span class="pre">reader</span></code> nos devuelve una lista con los elementos de la fila. De esta forma, podemos acceder a los elementos de la fila por su índice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;inventario.csv&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">archivo</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">fila</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>titulo
+El Aleph
+El Quijote
+El desbarrancadero
+Una novelita Lumpen
+El amante
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="lectura-de-archivos-csv-con-encabezados">
+<h2>Lectura de archivos CSV con encabezados<a class="headerlink" href="#lectura-de-archivos-csv-con-encabezados" title="Permalink to this headline">#</a></h2>
+<p>En el caso de que nuestro archivo CSV tenga encabezados (como es el caso de nuestro csv), podemos utilizar el método <code class="docutils literal notranslate"><span class="pre">DictReader</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">csv</span></code>. Este método nos permite leer el archivo fila por fila. Para ello, utilizamos el método <code class="docutils literal notranslate"><span class="pre">readrow</span></code> que recibe una lista con los elementos de la fila.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;inventario.csv&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictReader</span><span class="p">(</span><span class="n">archivo</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;titulo&#39;: &#39;El Aleph&#39;, &#39;autor&#39;: &#39;Jorge Luis Borges&#39;, &#39;editorial&#39;: &#39;Emece&#39;, &#39;anio&#39;: &#39;1949&#39;}
+{&#39;titulo&#39;: &#39;El Quijote&#39;, &#39;autor&#39;: &#39;Miguel de Cervantes&#39;, &#39;editorial&#39;: &#39;Alfaguara&#39;, &#39;anio&#39;: &#39;2005&#39;}
+{&#39;titulo&#39;: &#39;El desbarrancadero&#39;, &#39;autor&#39;: &#39;Fernando Vallejo&#39;, &#39;editorial&#39;: &#39;Planeta&#39;, &#39;anio&#39;: &#39;2001&#39;}
+{&#39;titulo&#39;: &#39;Una novelita Lumpen&#39;, &#39;autor&#39;: &#39;Roberto Bolaño&#39;, &#39;editorial&#39;: &#39;Anagrama&#39;, &#39;anio&#39;: &#39;2002&#39;}
+{&#39;titulo&#39;: &#39;El amante&#39;, &#39;autor&#39;: &#39;Marguerite Duras&#39;, &#39;editorial&#39;: &#39;Tusquets&#39;, &#39;anio&#39;: &#39;1984&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="agregar-nuevas-filas">
+<h2>Agregar nuevas filas<a class="headerlink" href="#agregar-nuevas-filas" title="Permalink to this headline">#</a></h2>
+<p>Para agregar nuevas filas a un archivo CSV, debemos abrir el archivo en modo de escritura y utilizar el método <code class="docutils literal notranslate"><span class="pre">writer</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">csv</span></code>. Este método nos permite escribir en el archivo fila por fila. Para ello, utilizamos el método <code class="docutils literal notranslate"><span class="pre">writerow</span></code> que recibe una lista con los elementos de la fila.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;inventario.csv&quot;</span><span class="p">),</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">archivo</span><span class="p">)</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s2">&quot;El jugador&quot;</span><span class="p">,</span> <span class="s2">&quot;Fiodor Dostoievsky&quot;</span><span class="p">,</span> <span class="s2">&quot;Salvat&quot;</span><span class="p">,</span> <span class="mi">1969</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Comprobemos que se agregó la nueva fila:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;inventario.csv&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">archivo</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;titulo&#39;, &#39;autor&#39;, &#39;editorial&#39;, &#39;anio&#39;]
+[&#39;El Aleph&#39;, &#39;Jorge Luis Borges&#39;, &#39;Emece&#39;, &#39;1949&#39;]
+[&#39;El Quijote&#39;, &#39;Miguel de Cervantes&#39;, &#39;Alfaguara&#39;, &#39;2005&#39;]
+[&#39;El desbarrancadero&#39;, &#39;Fernando Vallejo&#39;, &#39;Planeta&#39;, &#39;2001&#39;]
+[&#39;Una novelita Lumpen&#39;, &#39;Roberto Bolaño&#39;, &#39;Anagrama&#39;, &#39;2002&#39;]
+[&#39;El amante&#39;, &#39;Marguerite Duras&#39;, &#39;Tusquets&#39;, &#39;1984&#39;]
+[&#39;El jugador&#39;, &#39;Fiodor Dostoievsky&#39;, &#39;Salvat&#39;, &#39;1969&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="crear-un-csv-a-partir-de-un-diccionario">
+<h2>Crear un CSV a partir de un diccionario<a class="headerlink" href="#crear-un-csv-a-partir-de-un-diccionario" title="Permalink to this headline">#</a></h2>
+<p>Supongamos que tenemos un diccionario con los datos de nuestro inventario:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inventario</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;titulo&quot;</span><span class="p">:</span> <span class="s2">&quot;El Aleph&quot;</span><span class="p">,</span> <span class="s2">&quot;autor&quot;</span><span class="p">:</span> <span class="s2">&quot;Jorge Luis Borges&quot;</span><span class="p">,</span> <span class="s2">&quot;editorial&quot;</span><span class="p">:</span> <span class="s2">&quot;Emece&quot;</span><span class="p">,</span> <span class="s2">&quot;anio&quot;</span><span class="p">:</span> <span class="mi">1949</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;titulo&quot;</span><span class="p">:</span> <span class="s2">&quot;El Quijote&quot;</span><span class="p">,</span> <span class="s2">&quot;autor&quot;</span><span class="p">:</span> <span class="s2">&quot;Miguel de Cervantes&quot;</span><span class="p">,</span> <span class="s2">&quot;editorial&quot;</span><span class="p">:</span> <span class="s2">&quot;Alfaguara&quot;</span><span class="p">,</span> <span class="s2">&quot;anio&quot;</span><span class="p">:</span> <span class="mi">2005</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;titulo&quot;</span><span class="p">:</span> <span class="s2">&quot;El desbarrancadero&quot;</span><span class="p">,</span> <span class="s2">&quot;autor&quot;</span><span class="p">:</span> <span class="s2">&quot;Fernando Vallejo&quot;</span><span class="p">,</span> <span class="s2">&quot;editorial&quot;</span><span class="p">:</span> <span class="s2">&quot;Planeta&quot;</span><span class="p">,</span> <span class="s2">&quot;anio&quot;</span><span class="p">:</span> <span class="mi">2001</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;titulo&quot;</span><span class="p">:</span> <span class="s2">&quot;Una novelita Lumpen&quot;</span><span class="p">,</span> <span class="s2">&quot;autor&quot;</span><span class="p">:</span> <span class="s2">&quot;Roberto Bolaño&quot;</span><span class="p">,</span> <span class="s2">&quot;editorial&quot;</span><span class="p">:</span> <span class="s2">&quot;Anagrama&quot;</span><span class="p">,</span> <span class="s2">&quot;anio&quot;</span><span class="p">:</span> <span class="mi">2002</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;titulo&quot;</span><span class="p">:</span> <span class="s2">&quot;El amante&quot;</span><span class="p">,</span> <span class="s2">&quot;autor&quot;</span><span class="p">:</span> <span class="s2">&quot;Marguerite Duras&quot;</span><span class="p">,</span> <span class="s2">&quot;editorial&quot;</span><span class="p">:</span> <span class="s2">&quot;Tusquets&quot;</span><span class="p">,</span> <span class="s2">&quot;anio&quot;</span><span class="p">:</span> <span class="mi">1984</span><span class="p">},</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para crear el csv debemos importar la librería <code class="docutils literal notranslate"><span class="pre">csv</span></code> y utilizar el método <code class="docutils literal notranslate"><span class="pre">DictWriter</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;inventario.csv&quot;</span><span class="p">),</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">DictWriter</span><span class="p">(</span><span class="n">archivo</span><span class="p">,</span> <span class="n">fieldnames</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;titulo&quot;</span><span class="p">,</span> <span class="s2">&quot;autor&quot;</span><span class="p">,</span> <span class="s2">&quot;editorial&quot;</span><span class="p">,</span> <span class="s2">&quot;anio&quot;</span><span class="p">])</span>
+    <span class="n">writer</span><span class="o">.</span><span class="n">writeheader</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">libro</span> <span class="ow">in</span> <span class="n">inventario</span><span class="p">:</span>
+        <span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">(</span><span class="n">libro</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y comprobamos que se creó correctamente el archivo CSV:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;inventario.csv&quot;</span><span class="p">),</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">archivo</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">archivo</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">fila</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;titulo&#39;, &#39;autor&#39;, &#39;editorial&#39;, &#39;anio&#39;]
+[&#39;El Aleph&#39;, &#39;Jorge Luis Borges&#39;, &#39;Emece&#39;, &#39;1949&#39;]
+[&#39;El Quijote&#39;, &#39;Miguel de Cervantes&#39;, &#39;Alfaguara&#39;, &#39;2005&#39;]
+[&#39;El desbarrancadero&#39;, &#39;Fernando Vallejo&#39;, &#39;Planeta&#39;, &#39;2001&#39;]
+[&#39;Una novelita Lumpen&#39;, &#39;Roberto Bolaño&#39;, &#39;Anagrama&#39;, &#39;2002&#39;]
+[&#39;El amante&#39;, &#39;Marguerite Duras&#39;, &#39;Tusquets&#39;, &#39;1984&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notarás que utilizamos el método <code class="docutils literal notranslate"><span class="pre">writeheader</span></code> para escribir la primera fila con los encabezados.</p>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">#</a></h2>
+<section id="ejercicio-1">
+<h3>Ejercicio 1<a class="headerlink" href="#ejercicio-1" title="Permalink to this headline">#</a></h3>
+<p>Crear un archivo CSV con los datos de los libros de la biblioteca. El archivo debe tener las siguientes columnas: <code class="docutils literal notranslate"><span class="pre">titulo</span></code>, <code class="docutils literal notranslate"><span class="pre">autor</span></code>, <code class="docutils literal notranslate"><span class="pre">editorial</span></code>, <code class="docutils literal notranslate"><span class="pre">anio</span></code>. El archivo debe tener como encabezados: <code class="docutils literal notranslate"><span class="pre">Título</span></code>, <code class="docutils literal notranslate"><span class="pre">Autor</span></code>, <code class="docutils literal notranslate"><span class="pre">Editorial</span></code>, <code class="docutils literal notranslate"><span class="pre">Año</span></code>.</p>
+</section>
+<section id="ejercicio-2">
+<h3>Ejercicio 2<a class="headerlink" href="#ejercicio-2" title="Permalink to this headline">#</a></h3>
+<p>Crear un programa que permita a los usuarios agregar nuevos libros al archivo CSV.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutoriales"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="28-os.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">La librería <code class="docutils literal notranslate"><span class="pre">os</span></code></p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="30-pandasCSV.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Manejar archivos CSV con <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

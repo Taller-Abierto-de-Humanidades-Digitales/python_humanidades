@@ -393,18 +393,38 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Clases
+  Archivos
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="27-introObjetos.html">
-   Introducción a la programación orientada a objetos
+  <a class="reference internal" href="27-archivos.html">
+   Leer y escribir archivos
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="28-clases.html">
-   Clases
+  <a class="reference internal" href="28-os.html">
+   La librería
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     os
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="29-csv.html">
+   Manejo de datos en archivos CSV
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="30-pandasCSV.html">
+   Manejar archivos CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
   </a>
  </li>
 </ul>
@@ -1151,6 +1171,9 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <p>Si la subcadena no se encuentra, el método devuelve el valor <code class="docutils literal notranslate"><span class="pre">-1</span></code>:</p>
@@ -1227,6 +1250,9 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
 </div>
 </div>
 <p>Si la cadena no termina con la subcadena, el método devuelve <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
@@ -1279,9 +1305,7 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
 True
 </pre></div>
 </div>
@@ -1299,9 +1323,6 @@ True
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ARRASADO EL JARDÍN
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -1375,9 +1396,6 @@ True
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Arrasado el jardín
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <p>Si en cambio, queremos reemplazar la palabra “jardín” por la palabra “casa” en la frase “Arrasado el jardín”:</p>
@@ -1415,9 +1433,6 @@ True
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Arrasado el jardín&#39;, &#39; profanados los cálices y las aras&#39;, &#39; entraron a caballo los hunos en la biblioteca monástica y rompieron los libros incomprensibles y los vituperaron y los quemaron&#39;, &#39; acaso temerosos de que las letras encubrieran blasfemias contra su dios&#39;, &#39; que era una cimitarra de hierro. Jorge Luis Borges&#39;, &quot; &#39;Los teólogos&#39;.&quot;]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>

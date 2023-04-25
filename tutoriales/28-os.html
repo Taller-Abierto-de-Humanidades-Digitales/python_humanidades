@@ -1,0 +1,1535 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>La librería os &#8212; Curso de Python para las HD</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Manejo de datos en archivos CSV" href="29-csv.html" />
+    <link rel="prev" title="Leer y escribir archivos" href="27-archivos.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso de Python para las HD</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Fundamentos de programación
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción. Configurar un entorno de desarrollo para Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-instalarPython.html">
+   Instalar Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-terminal.html">
+   Terminal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-instalarVSCode.html">
+   Instalar VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-Git.html">
+   Configurar Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-Github.html">
+   Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/1-configuracion.html">
+   Actividad 1: Configurar un entorno de desarrollo para Python
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción a Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-python.html">
+   Introducción a Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-variables.html">
+   Sintaxis, variables y tipos de datos básicos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-operadores.html">
+   Operadores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-operaciones_string.html">
+   Operaciones con cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/2-sintaxis_variables.html">
+   Actividad 2: Variables y sintaxis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Listas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-listas.html">
+   Listas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/3-listas.html">
+   Actividad 3: Listas (operaciones básicas)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Iteraciones (for loops)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-iteraciones.html">
+   Iteraciones (
+   <em>
+    for loops
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/4-iteraciones.html">
+   Actividad 4: Iteraciones
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Condicionales (if else)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-condicionales.html">
+   Introducción a los condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-plogicas.html">
+   Pruebas condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-condicionPertenencia.html">
+   Operadores de pertenencia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-ifelse.html">
+   Sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   ,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     elif
+    </span>
+   </code>
+   y
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     else
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-listaseif.html">
+   Combinar listas y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/5-condicionales.html">
+   Actividad 5: Condicionales y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Diccionarios
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-diccionarios.html">
+   Diccionarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-iterardiccio.html">
+   Iterar a través de un diccionario
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/6-diccionarios.html">
+   Actividad 6: Manejo de diccionarios
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Funciones
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-funcionesIntro.html">
+   Funciones: Introducción
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-input.html">
+   Función
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     input()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-funciones_y_TryExcept.html">
+   Control de errores con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Try
+    </span>
+   </code>
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Except
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/7-funciones.html">
+   Actividad 7: Funciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="22-retornarvalores.html">
+   Retornar valores en una función
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="23-funcionesLlamados.html">
+   Funciones y modularidad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-argsykwargs.html">
+   Pasar cantidades arbitrarias de argumentos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/8-funciones2.html">
+   Actividad 8: Funciones II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="25-importarmodulos.html">
+   Funciones: Modularidad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="26-modularfunciones.html">
+   Crear módulos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Actividad de evaluación intermedia
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/9-actividadintermedia.html">
+   Actividad intermedia: Construye un programa real
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Archivos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="27-archivos.html">
+   Leer y escribir archivos
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   La librería
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     os
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="29-csv.html">
+   Manejo de datos en archivos CSV
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="30-pandasCSV.html">
+   Manejar archivos CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Recursos adicionales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/gh-pages?urlpath=tree/tutoriales/28-os.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/28-os.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/tutoriales/28-os.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/tutoriales/28-os.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-directorio-de-trabajo">
+   El directorio de trabajo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listar-archivos-y-directorios">
+   Listar archivos y directorios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crear-y-eliminar-directorios">
+   Crear y eliminar directorios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rutear-archivos-y-directorios">
+   Rutear archivos y directorios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-el-nombre-de-un-archivo">
+   Obtener el nombre de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-el-directorio-de-un-archivo">
+   Obtener el directorio de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-el-nombre-y-el-directorio-de-un-archivo">
+   Obtener el nombre y el directorio de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-la-extension-de-un-archivo">
+   Obtener la extensión de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-el-tamano-de-un-archivo">
+   Obtener el tamaño de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-la-fecha-de-creacion-de-un-archivo">
+   Obtener la fecha de creación de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-la-fecha-de-modificacion-de-un-archivo">
+   Obtener la fecha de modificación de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-la-fecha-de-acceso-de-un-archivo">
+   Obtener la fecha de acceso de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusión
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notas">
+   Notas
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>La librería os</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#el-directorio-de-trabajo">
+   El directorio de trabajo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#listar-archivos-y-directorios">
+   Listar archivos y directorios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crear-y-eliminar-directorios">
+   Crear y eliminar directorios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rutear-archivos-y-directorios">
+   Rutear archivos y directorios
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-el-nombre-de-un-archivo">
+   Obtener el nombre de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-el-directorio-de-un-archivo">
+   Obtener el directorio de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-el-nombre-y-el-directorio-de-un-archivo">
+   Obtener el nombre y el directorio de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-la-extension-de-un-archivo">
+   Obtener la extensión de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-el-tamano-de-un-archivo">
+   Obtener el tamaño de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-la-fecha-de-creacion-de-un-archivo">
+   Obtener la fecha de creación de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-la-fecha-de-modificacion-de-un-archivo">
+   Obtener la fecha de modificación de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#obtener-la-fecha-de-acceso-de-un-archivo">
+   Obtener la fecha de acceso de un archivo
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusión
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#notas">
+   Notas
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="la-libreria-os">
+<h1>La librería <code class="docutils literal notranslate"><span class="pre">os</span></code><a class="headerlink" href="#la-libreria-os" title="Permalink to this headline">#</a></h1>
+<p>Una de las librerías más utilizadas en Python es <code class="docutils literal notranslate"><span class="pre">os</span></code>. Esta permite interactuar con el sistema operativo (de allí su nombre), de tal manera que podemos crear, eliminar y mover archivos y directorios, entre otras cosas. Debido a que es una interface miscelánea para el sistema operativo, la librería <code class="docutils literal notranslate"><span class="pre">os</span></code> es muy grande y tiene muchos métodos <a class="footnote-reference brackets" href="#id2" id="id1">1</a>. En este tutorial, veremos algunos de los más útiles para trabajar con archivos y directorios.</p>
+<div class="warning admonition">
+<p class="admonition-title">Nota</p>
+<p>En las salidas de este cuaderno las rutas de archivo corresponden al ambiente local desde el cual se ejecuta el programa. Por lo tanto, las salidas serán diferentes para tu computador.</p>
+</div>
+<section id="el-directorio-de-trabajo">
+<h2>El directorio de trabajo<a class="headerlink" href="#el-directorio-de-trabajo" title="Permalink to this headline">#</a></h2>
+<p>El directorio de trabajo es el directorio desde el cual se ejecuta el programa. Para ver cuál es el directorio de trabajo, podemos usar el método <code class="docutils literal notranslate"><span class="pre">getcwd()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E:\Proyectos\curso_python_extenso\tutoriales
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para cambiar el directorio de trabajo, podemos usar el método <code class="docutils literal notranslate"><span class="pre">chdir()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="s2">&quot;../archivos/txt&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>E:\Proyectos\curso_python_extenso\archivos\txt
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="listar-archivos-y-directorios">
+<h2>Listar archivos y directorios<a class="headerlink" href="#listar-archivos-y-directorios" title="Permalink to this headline">#</a></h2>
+<p>Para listar los archivos y directorios de un directorio, podemos usar el método <code class="docutils literal notranslate"><span class="pre">listdir()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="s2">&quot;../archivos/txt&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;arreola.txt&#39;, &#39;ejemplo.txt&#39;, &#39;el_quijote.txt&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>También podemos utilizar el método <code class="docutils literal notranslate"><span class="pre">walk</span></code> en caso de que queramos revisar directorios y subdirectorios:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;../_build/html&quot;</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dirs</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>../_build/html
+[&#39;actividades&#39;, &#39;tutoriales&#39;, &#39;_images&#39;, &#39;_sources&#39;, &#39;_sphinx_design_static&#39;, &#39;_static&#39;]
+[&#39;.buildinfo&#39;, &#39;genindex.html&#39;, &#39;index.html&#39;, &#39;objects.inv&#39;, &#39;references.html&#39;, &#39;search.html&#39;, &#39;searchindex.js&#39;]
+../_build/html\actividades
+[]
+[&#39;1-configuracion.html&#39;, &#39;2-sintaxis_variables.html&#39;, &#39;3-listas.html&#39;, &#39;4-iteraciones.html&#39;, &#39;5-condicionales.html&#39;, &#39;6-diccionarios.html&#39;, &#39;7-funciones.html&#39;, &#39;8-funciones2.html&#39;, &#39;9-actividadintermedia.html&#39;]
+../_build/html\tutoriales
+[]
+[&#39;1-instalarPython.html&#39;, &#39;10-listas.html&#39;, &#39;11-iteraciones.html&#39;, &#39;12-condicionales.html&#39;, &#39;13-ifelse.html&#39;, &#39;13-plogicas.html&#39;, &#39;14-condicionPertenencia.html&#39;, &#39;15-ifelse.html&#39;, &#39;16-listaseif.html&#39;, &#39;17-diccionarios.html&#39;, &#39;18-iterardiccio.html&#39;, &#39;19-funcionesIntro.html&#39;, &#39;2-terminal.html&#39;, &#39;20-funciones_y_TryExcept.html&#39;, &#39;20-input.html&#39;, &#39;21-funciones_y_TryExcept.html&#39;, &#39;22-retornarvalores.html&#39;, &#39;23-funcionesLlamados.html&#39;, &#39;24-argsykwargs.html&#39;, &#39;25-importarmodulos.html&#39;, &#39;25-modularfunciones.html&#39;, &#39;26-importarmodulos.html&#39;, &#39;26-modularfunciones.html&#39;, &#39;27-archivos.html&#39;, &#39;27-introObjetos.html&#39;, &#39;28-clases.html&#39;, &#39;28-os.html&#39;, &#39;29-csv.html&#39;, &#39;3-instalarVSCode.html&#39;, &#39;30-pandasCSV.html&#39;, &#39;4-Git.html&#39;, &#39;5-Github.html&#39;, &#39;6-python.html&#39;, &#39;7-variables.html&#39;, &#39;8-operadores.html&#39;, &#39;9-operaciones_string.html&#39;]
+../_build/html\_images
+[]
+[&#39;condicional.png&#39;, &#39;función_estructura.png&#39;, &#39;parametros.png&#39;, &#39;scratch.png&#39;]
+../_build/html\_sources
+[&#39;actividades&#39;, &#39;tutoriales&#39;]
+[&#39;index.md&#39;, &#39;references.ipynb&#39;, &#39;references.md&#39;]
+../_build/html\_sources\actividades
+[]
+[&#39;1-configuracion.md&#39;, &#39;2-sintaxis_variables.md&#39;, &#39;3-listas.md&#39;, &#39;4-iteraciones.md&#39;, &#39;5-condicionales.md&#39;, &#39;6-diccionarios.md&#39;, &#39;7-funciones.md&#39;, &#39;8-funciones2.md&#39;, &#39;9-actividadintermedia.ipynb&#39;, &#39;9-actividadintermedia.md&#39;]
+../_build/html\_sources\tutoriales
+[]
+[&#39;1-instalarPython.md&#39;, &#39;10-listas.ipynb&#39;, &#39;10-listas.md&#39;, &#39;11-iteraciones.ipynb&#39;, &#39;11-iteraciones.md&#39;, &#39;12-condicionales.ipynb&#39;, &#39;12-condicionales.md&#39;, &#39;13-ifelse.ipynb&#39;, &#39;13-ifelse.md&#39;, &#39;13-plogicas.ipynb&#39;, &#39;13-plogicas.md&#39;, &#39;14-condicionPertenencia.ipynb&#39;, &#39;14-condicionPertenencia.md&#39;, &#39;15-ifelse.ipynb&#39;, &#39;15-ifelse.md&#39;, &#39;16-listaseif.ipynb&#39;, &#39;16-listaseif.md&#39;, &#39;17-diccionarios.ipynb&#39;, &#39;17-diccionarios.md&#39;, &#39;18-iterardiccio.ipynb&#39;, &#39;18-iterardiccio.md&#39;, &#39;19-funcionesIntro.ipynb&#39;, &#39;19-funcionesIntro.md&#39;, &#39;2-terminal.ipynb&#39;, &#39;2-terminal.md&#39;, &#39;20-funciones_y_TryExcept.ipynb&#39;, &#39;20-funciones_y_TryExcept.md&#39;, &#39;20-input.ipynb&#39;, &#39;20-input.md&#39;, &#39;21-funciones_y_TryExcept.ipynb&#39;, &#39;21-funciones_y_TryExcept.md&#39;, &#39;22-retornarvalores.ipynb&#39;, &#39;22-retornarvalores.md&#39;, &#39;23-funcionesLlamados.ipynb&#39;, &#39;23-funcionesLlamados.md&#39;, &#39;24-argsykwargs.ipynb&#39;, &#39;24-argsykwargs.md&#39;, &#39;25-importarmodulos.ipynb&#39;, &#39;25-importarmodulos.md&#39;, &#39;25-modularfunciones.ipynb&#39;, &#39;25-modularfunciones.md&#39;, &#39;26-importarmodulos.ipynb&#39;, &#39;26-importarmodulos.md&#39;, &#39;26-modularfunciones.ipynb&#39;, &#39;26-modularfunciones.md&#39;, &#39;27-archivos.ipynb&#39;, &#39;27-archivos.md&#39;, &#39;27-introObjetos.ipynb&#39;, &#39;27-introObjetos.md&#39;, &#39;28-clases.ipynb&#39;, &#39;28-clases.md&#39;, &#39;28-os.ipynb&#39;, &#39;28-os.md&#39;, &#39;29-csv.ipynb&#39;, &#39;29-csv.md&#39;, &#39;3-instalarVSCode.md&#39;, &#39;30-pandasCSV.ipynb&#39;, &#39;30-pandasCSV.md&#39;, &#39;4-Git.md&#39;, &#39;5-Github.md&#39;, &#39;6-python.ipynb&#39;, &#39;6-python.md&#39;, &#39;7-variables.ipynb&#39;, &#39;7-variables.md&#39;, &#39;8-operadores.ipynb&#39;, &#39;8-operadores.md&#39;, &#39;9-operaciones_string.ipynb&#39;, &#39;9-operaciones_string.md&#39;]
+../_build/html\_sphinx_design_static
+[]
+[&#39;design-style.b7bb847fb20b106c3d81b95245e65545.min.css&#39;, &#39;design-tabs.js&#39;]
+../_build/html\_static
+[&#39;images&#39;, &#39;imgs&#39;, &#39;locales&#39;, &#39;scripts&#39;, &#39;styles&#39;, &#39;vendor&#39;]
+[&#39;basic.css&#39;, &#39;check-solid.svg&#39;, &#39;clipboard.min.js&#39;, &#39;copy-button.svg&#39;, &#39;copybutton.css&#39;, &#39;copybutton.js&#39;, &#39;copybutton_funcs.js&#39;, &#39;design-style.b7bb847fb20b106c3d81b95245e65545.min.css&#39;, &#39;design-tabs.js&#39;, &#39;doctools.js&#39;, &#39;documentation_options.js&#39;, &#39;file.png&#39;, &#39;jquery-3.5.1.js&#39;, &#39;jquery.js&#39;, &#39;language_data.js&#39;, &#39;logo.png&#39;, &#39;minus.png&#39;, &#39;mystnb.css&#39;, &#39;plus.png&#39;, &#39;pygments.css&#39;, &#39;sbt-webpack-macros.html&#39;, &#39;searchtools.js&#39;, &#39;sphinx-thebe.css&#39;, &#39;sphinx-thebe.js&#39;, &#39;togglebutton.css&#39;, &#39;togglebutton.js&#39;, &#39;underscore-1.13.1.js&#39;, &#39;underscore.js&#39;, &#39;webpack-macros.html&#39;]
+../_build/html\_static\images
+[]
+[&#39;logo_binder.svg&#39;, &#39;logo_colab.png&#39;, &#39;logo_deepnote.svg&#39;, &#39;logo_jupyterhub.svg&#39;]
+../_build/html\_static\imgs
+[]
+[&#39;condicional.png&#39;, &#39;función_estructura.png&#39;, &#39;logo.png&#39;, &#39;parametros.png&#39;, &#39;scratch.png&#39;]
+../_build/html\_static\locales
+[&#39;ar&#39;, &#39;bg&#39;, &#39;bn&#39;, &#39;ca&#39;, &#39;cs&#39;, &#39;da&#39;, &#39;de&#39;, &#39;el&#39;, &#39;eo&#39;, &#39;es&#39;, &#39;et&#39;, &#39;fi&#39;, &#39;fr&#39;, &#39;hr&#39;, &#39;id&#39;, &#39;it&#39;, &#39;iw&#39;, &#39;ja&#39;, &#39;ko&#39;, &#39;lt&#39;, &#39;lv&#39;, &#39;ml&#39;, &#39;mr&#39;, &#39;ms&#39;, &#39;nl&#39;, &#39;no&#39;, &#39;pl&#39;, &#39;pt&#39;, &#39;ro&#39;, &#39;ru&#39;, &#39;sk&#39;, &#39;sl&#39;, &#39;sr&#39;, &#39;sv&#39;, &#39;ta&#39;, &#39;te&#39;, &#39;tg&#39;, &#39;th&#39;, &#39;tl&#39;, &#39;tr&#39;, &#39;uk&#39;, &#39;ur&#39;, &#39;vi&#39;, &#39;zh_CN&#39;, &#39;zh_TW&#39;]
+[]
+../_build/html\_static\locales\ar
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\ar\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\bg
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\bg\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\bn
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\bn\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\ca
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\ca\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\cs
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\cs\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\da
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\da\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\de
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\de\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\el
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\el\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\eo
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\eo\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\es
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\es\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\et
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\et\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\fi
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\fi\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\fr
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\fr\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\hr
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\hr\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\id
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\id\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\it
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\it\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\iw
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\iw\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\ja
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\ja\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\ko
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\ko\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\lt
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\lt\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\lv
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\lv\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\ml
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\ml\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\mr
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\mr\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\ms
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\ms\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\nl
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\nl\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\no
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\no\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\pl
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\pl\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\pt
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\pt\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\ro
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\ro\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\ru
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\ru\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\sk
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\sk\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\sl
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\sl\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\sr
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\sr\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\sv
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\sv\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\ta
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\ta\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\te
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\te\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\tg
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\tg\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\th
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\th\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\tl
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\tl\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\tr
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\tr\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\uk
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\uk\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\ur
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\ur\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\vi
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\vi\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\zh_CN
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\zh_CN\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\locales\zh_TW
+[&#39;LC_MESSAGES&#39;]
+[]
+../_build/html\_static\locales\zh_TW\LC_MESSAGES
+[]
+[&#39;booktheme.po&#39;]
+../_build/html\_static\scripts
+[]
+[&#39;pydata-sphinx-theme.js&#39;, &#39;sphinx-book-theme.js&#39;, &#39;sphinx-book-theme.js.map&#39;]
+../_build/html\_static\styles
+[]
+[&#39;pydata-sphinx-theme.css&#39;, &#39;sphinx-book-theme.css&#39;, &#39;theme.css&#39;]
+../_build/html\_static\vendor
+[&#39;fontawesome&#39;]
+[]
+../_build/html\_static\vendor\fontawesome
+[&#39;5.13.0&#39;]
+[]
+../_build/html\_static\vendor\fontawesome\5.13.0
+[&#39;css&#39;, &#39;webfonts&#39;]
+[&#39;LICENSE.txt&#39;]
+../_build/html\_static\vendor\fontawesome\5.13.0\css
+[]
+[&#39;all.min.css&#39;]
+../_build/html\_static\vendor\fontawesome\5.13.0\webfonts
+[]
+[&#39;fa-brands-400.eot&#39;, &#39;fa-brands-400.svg&#39;, &#39;fa-brands-400.ttf&#39;, &#39;fa-brands-400.woff&#39;, &#39;fa-brands-400.woff2&#39;, &#39;fa-regular-400.eot&#39;, &#39;fa-regular-400.svg&#39;, &#39;fa-regular-400.ttf&#39;, &#39;fa-regular-400.woff&#39;, &#39;fa-regular-400.woff2&#39;, &#39;fa-solid-900.eot&#39;, &#39;fa-solid-900.svg&#39;, &#39;fa-solid-900.ttf&#39;, &#39;fa-solid-900.woff&#39;, &#39;fa-solid-900.woff2&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="crear-y-eliminar-directorios">
+<h2>Crear y eliminar directorios<a class="headerlink" href="#crear-y-eliminar-directorios" title="Permalink to this headline">#</a></h2>
+<p>Para crear un directorio, podemos usar el método <code class="docutils literal notranslate"><span class="pre">mkdir()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">&quot;nuevo&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1-instalarPython.md&#39;, &#39;10-listas.md&#39;, &#39;11-iteraciones.md&#39;, &#39;12-condicionales.md&#39;, &#39;13-plogicas.md&#39;, &#39;14-condicionPertenencia.md&#39;, &#39;15-ifelse.md&#39;, &#39;16-listaseif.md&#39;, &#39;17-diccionarios.md&#39;, &#39;18-iterardiccio.md&#39;, &#39;19-funcionesIntro.md&#39;, &#39;2-terminal.md&#39;, &#39;20-input.md&#39;, &#39;21-funciones_y_TryExcept.md&#39;, &#39;22-retornarvalores.md&#39;, &#39;23-funcionesLlamados.md&#39;, &#39;24-argsykwargs.md&#39;, &#39;25-importarmodulos.md&#39;, &#39;26-modularfunciones.md&#39;, &#39;27-archivos.md&#39;, &#39;27-introObjetos.md&#39;, &#39;28-clases.md&#39;, &#39;28-os.md&#39;, &#39;29-csv.md&#39;, &#39;3-instalarVSCode.md&#39;, &#39;30-pandasCSV.md&#39;, &#39;4-Git.md&#39;, &#39;5-Github.md&#39;, &#39;6-python.md&#39;, &#39;7-variables.md&#39;, &#39;8-operadores.md&#39;, &#39;9-operaciones_string.md&#39;, &#39;biblio.py&#39;, &#39;biblioteca.py&#39;, &#39;busqueda.py&#39;, &#39;diccionario.csv&#39;, &#39;inventario.csv&#39;, &#39;nuevo&#39;, &#39;tmp2.py&#39;, &#39;__pycache__&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para eliminar un directorio, podemos usar el método <code class="docutils literal notranslate"><span class="pre">rmdir()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s2">&quot;nuevo&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1-instalarPython.md&#39;, &#39;10-listas.md&#39;, &#39;11-iteraciones.md&#39;, &#39;12-condicionales.md&#39;, &#39;13-plogicas.md&#39;, &#39;14-condicionPertenencia.md&#39;, &#39;15-ifelse.md&#39;, &#39;16-listaseif.md&#39;, &#39;17-diccionarios.md&#39;, &#39;18-iterardiccio.md&#39;, &#39;19-funcionesIntro.md&#39;, &#39;2-terminal.md&#39;, &#39;20-input.md&#39;, &#39;21-funciones_y_TryExcept.md&#39;, &#39;22-retornarvalores.md&#39;, &#39;23-funcionesLlamados.md&#39;, &#39;24-argsykwargs.md&#39;, &#39;25-importarmodulos.md&#39;, &#39;26-modularfunciones.md&#39;, &#39;27-archivos.md&#39;, &#39;27-introObjetos.md&#39;, &#39;28-clases.md&#39;, &#39;28-os.md&#39;, &#39;29-csv.md&#39;, &#39;3-instalarVSCode.md&#39;, &#39;30-pandasCSV.md&#39;, &#39;4-Git.md&#39;, &#39;5-Github.md&#39;, &#39;6-python.md&#39;, &#39;7-variables.md&#39;, &#39;8-operadores.md&#39;, &#39;9-operaciones_string.md&#39;, &#39;biblio.py&#39;, &#39;biblioteca.py&#39;, &#39;busqueda.py&#39;, &#39;diccionario.csv&#39;, &#39;inventario.csv&#39;, &#39;tmp2.py&#39;, &#39;__pycache__&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>También podemos utilizar el método <code class="docutils literal notranslate"><span class="pre">makedirs()</span></code>, el cual es sumamente útil cuando queremos crear directorios anidados:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="s2">&quot;nuevo/nuevo2&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1-instalarPython.md&#39;, &#39;10-listas.md&#39;, &#39;11-iteraciones.md&#39;, &#39;12-condicionales.md&#39;, &#39;13-plogicas.md&#39;, &#39;14-condicionPertenencia.md&#39;, &#39;15-ifelse.md&#39;, &#39;16-listaseif.md&#39;, &#39;17-diccionarios.md&#39;, &#39;18-iterardiccio.md&#39;, &#39;19-funcionesIntro.md&#39;, &#39;2-terminal.md&#39;, &#39;20-input.md&#39;, &#39;21-funciones_y_TryExcept.md&#39;, &#39;22-retornarvalores.md&#39;, &#39;23-funcionesLlamados.md&#39;, &#39;24-argsykwargs.md&#39;, &#39;25-importarmodulos.md&#39;, &#39;26-modularfunciones.md&#39;, &#39;27-archivos.md&#39;, &#39;27-introObjetos.md&#39;, &#39;28-clases.md&#39;, &#39;28-os.md&#39;, &#39;29-csv.md&#39;, &#39;3-instalarVSCode.md&#39;, &#39;30-pandasCSV.md&#39;, &#39;4-Git.md&#39;, &#39;5-Github.md&#39;, &#39;6-python.md&#39;, &#39;7-variables.md&#39;, &#39;8-operadores.md&#39;, &#39;9-operaciones_string.md&#39;, &#39;biblio.py&#39;, &#39;biblioteca.py&#39;, &#39;busqueda.py&#39;, &#39;diccionario.csv&#39;, &#39;inventario.csv&#39;, &#39;nuevo&#39;, &#39;tmp2.py&#39;, &#39;__pycache__&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>El parámetro <code class="docutils literal notranslate"><span class="pre">exist_ok</span></code> indica si se debe lanzar una excepción si el directorio ya existe. Si <code class="docutils literal notranslate"><span class="pre">exist_ok</span></code> es <code class="docutils literal notranslate"><span class="pre">True</span></code>, no se lanzará una excepción. Esto evita que debamos utilizar un bloque <code class="docutils literal notranslate"><span class="pre">try-except</span></code> para manejar la excepción.</p>
+<p>Para eliminar directorios anidados, podemos usar el método <code class="docutils literal notranslate"><span class="pre">removedirs()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">removedirs</span><span class="p">(</span><span class="s2">&quot;nuevo/nuevo2&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1-instalarPython.md&#39;, &#39;10-listas.md&#39;, &#39;11-iteraciones.md&#39;, &#39;12-condicionales.md&#39;, &#39;13-plogicas.md&#39;, &#39;14-condicionPertenencia.md&#39;, &#39;15-ifelse.md&#39;, &#39;16-listaseif.md&#39;, &#39;17-diccionarios.md&#39;, &#39;18-iterardiccio.md&#39;, &#39;19-funcionesIntro.md&#39;, &#39;2-terminal.md&#39;, &#39;20-input.md&#39;, &#39;21-funciones_y_TryExcept.md&#39;, &#39;22-retornarvalores.md&#39;, &#39;23-funcionesLlamados.md&#39;, &#39;24-argsykwargs.md&#39;, &#39;25-importarmodulos.md&#39;, &#39;26-modularfunciones.md&#39;, &#39;27-archivos.md&#39;, &#39;27-introObjetos.md&#39;, &#39;28-clases.md&#39;, &#39;28-os.md&#39;, &#39;29-csv.md&#39;, &#39;3-instalarVSCode.md&#39;, &#39;30-pandasCSV.md&#39;, &#39;4-Git.md&#39;, &#39;5-Github.md&#39;, &#39;6-python.md&#39;, &#39;7-variables.md&#39;, &#39;8-operadores.md&#39;, &#39;9-operaciones_string.md&#39;, &#39;biblio.py&#39;, &#39;biblioteca.py&#39;, &#39;busqueda.py&#39;, &#39;diccionario.csv&#39;, &#39;inventario.csv&#39;, &#39;tmp2.py&#39;, &#39;__pycache__&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="rutear-archivos-y-directorios">
+<h2>Rutear archivos y directorios<a class="headerlink" href="#rutear-archivos-y-directorios" title="Permalink to this headline">#</a></h2>
+<p>Para rutear archivos y directorios, podemos usar el método <code class="docutils literal notranslate"><span class="pre">path.join()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;nuevo&quot;</span><span class="p">,</span> <span class="s2">&quot;nuevo2&quot;</span><span class="p">,</span> <span class="s2">&quot;nuevo3&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nuevo\nuevo2\nuevo3
+</pre></div>
+</div>
+</div>
+</div>
+<p>Es una buena práctica utilizar este método para rutear archivos y directorios, ya que este método es independiente del sistema operativo. Por ejemplo, si queremos rutear el archivo <code class="docutils literal notranslate"><span class="pre">ejemplo.txt</span></code> en el directorio <code class="docutils literal notranslate"><span class="pre">nuevo</span></code>, podemos hacer lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;nuevo&quot;</span><span class="p">,</span> <span class="s2">&quot;ejemplo.txt&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nuevo\ejemplo.txt
+</pre></div>
+</div>
+</div>
+</div>
+<p>En general se desaconseja utilizar el método <code class="docutils literal notranslate"><span class="pre">format</span></code> o la concatenación para crear la ruta de un archivo o directorio. En general un sistema operativo puede deducir si una ruta en Linux o MacOS está escrita con diagonales o con barras invertidas, pero esto no es así en Windows. <code class="docutils literal notranslate"><span class="pre">os</span></code> hace que sea más seguro indicar la ruta y evitar las particularidades de un sistema operativo.</p>
+</section>
+<section id="obtener-el-nombre-de-un-archivo">
+<h2>Obtener el nombre de un archivo<a class="headerlink" href="#obtener-el-nombre-de-un-archivo" title="Permalink to this headline">#</a></h2>
+<p>Para obtener el nombre de un archivo, podemos usar el método <code class="docutils literal notranslate"><span class="pre">path.basename()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="s2">&quot;../archivos/txt/ejemplo.txt&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ejemplo.txt
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="obtener-el-directorio-de-un-archivo">
+<h2>Obtener el directorio de un archivo<a class="headerlink" href="#obtener-el-directorio-de-un-archivo" title="Permalink to this headline">#</a></h2>
+<p>Para obtener el directorio de un archivo, podemos usar el método <code class="docutils literal notranslate"><span class="pre">path.dirname()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="s2">&quot;../archivos/txt/ejemplo.txt&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>../archivos/txt
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="obtener-el-nombre-y-el-directorio-de-un-archivo">
+<h2>Obtener el nombre y el directorio de un archivo<a class="headerlink" href="#obtener-el-nombre-y-el-directorio-de-un-archivo" title="Permalink to this headline">#</a></h2>
+<p>Para obtener el nombre y el directorio de un archivo, podemos usar el método <code class="docutils literal notranslate"><span class="pre">path.split()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;../archivos/txt/ejemplo.txt&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../archivos/txt&#39;, &#39;ejemplo.txt&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="obtener-la-extension-de-un-archivo">
+<h2>Obtener la extensión de un archivo<a class="headerlink" href="#obtener-la-extension-de-un-archivo" title="Permalink to this headline">#</a></h2>
+<p>Para obtener la extensión de un archivo, podemos usar el método <code class="docutils literal notranslate"><span class="pre">path.splitext()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="s2">&quot;../archivos/txt/ejemplo.txt&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;../archivos/txt/ejemplo&#39;, &#39;.txt&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="obtener-el-tamano-de-un-archivo">
+<h2>Obtener el tamaño de un archivo<a class="headerlink" href="#obtener-el-tamano-de-un-archivo" title="Permalink to this headline">#</a></h2>
+<p>Para obtener el tamaño de un archivo, podemos usar el método <code class="docutils literal notranslate"><span class="pre">path.getsize()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getsize</span><span class="p">(</span><span class="s2">&quot;../archivos/txt/ejemplo.txt&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>235
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="obtener-la-fecha-de-creacion-de-un-archivo">
+<h2>Obtener la fecha de creación de un archivo<a class="headerlink" href="#obtener-la-fecha-de-creacion-de-un-archivo" title="Permalink to this headline">#</a></h2>
+<p>Para obtener la fecha de creación de un archivo, podemos usar el método <code class="docutils literal notranslate"><span class="pre">path.getctime()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getctime</span><span class="p">(</span><span class="s2">&quot;../archivos/txt/ejemplo.txt&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1681865490.048676
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="obtener-la-fecha-de-modificacion-de-un-archivo">
+<h2>Obtener la fecha de modificación de un archivo<a class="headerlink" href="#obtener-la-fecha-de-modificacion-de-un-archivo" title="Permalink to this headline">#</a></h2>
+<p>Para obtener la fecha de modificación de un archivo, podemos usar el método <code class="docutils literal notranslate"><span class="pre">path.getmtime()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getmtime</span><span class="p">(</span><span class="s2">&quot;../archivos/txt/ejemplo.txt&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1681852887.547928
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="obtener-la-fecha-de-acceso-de-un-archivo">
+<h2>Obtener la fecha de acceso de un archivo<a class="headerlink" href="#obtener-la-fecha-de-acceso-de-un-archivo" title="Permalink to this headline">#</a></h2>
+<p>Para obtener la fecha de acceso de un archivo, podemos usar el método <code class="docutils literal notranslate"><span class="pre">path.getatime()</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">getatime</span><span class="p">(</span><span class="s2">&quot;../archivos/txt/ejemplo.txt&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1682458743.9908843
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusion">
+<h2>Conclusión<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>En general, la librería <code class="docutils literal notranslate"><span class="pre">os</span></code> facilita significativamente el trabajo con archivos y directorios independientemente de la plataforma. Esto es importante, ya que debemos programar teniendo en cuenta a los usuarios posibles de nuestro programa, quienes tendrán distintos sistemas operativos y distintas configuraciones. <code class="docutils literal notranslate"><span class="pre">os</span></code> no resuelve todos los posibles problemas que surjan en la ejecución de nuestro programa, pero sí nos permite evitar algunos de los problemas más comunes.</p>
+</section>
+<section id="notas">
+<h2>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">#</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>Para ver todos los métodos de la librería <code class="docutils literal notranslate"><span class="pre">os</span></code>, podemos ejecutar <code class="docutils literal notranslate"><span class="pre">dir(os)</span></code>. También puede ser útil consultar la documentación oficial de la librería: <a class="reference external" href="https://docs.python.org/3/library/os.html">https://docs.python.org/3/library/os.html</a>.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutoriales"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="27-archivos.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Leer y escribir archivos</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="29-csv.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Manejo de datos en archivos CSV</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
