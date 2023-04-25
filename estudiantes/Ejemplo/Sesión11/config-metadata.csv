@@ -1,0 +1,15 @@
+field,display_name,browse_link,external_link
+title,titulo,
+creator,creador,
+date,fecha de creacion,
+description,descripcion,
+subject,Subjects,true
+location,Location
+latitude,Latitude
+longitude,Longitude
+source,Source
+identifier,Source Identifier,,
+type,Type,
+format,Format,
+rights,Rights,
+rightsstatement,Rights Statement,,true
