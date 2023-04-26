@@ -50,14 +50,27 @@ def busqueda(palabra_clave, campo, tipo):
     return resultado
 
 
-
+def unbox(autores: list) -> str:
+    resultado = ""
+    for autor in autores:
+        nombre_autor = ""
+        for k, v in autor.items():
+            nombre_autor += v
+            nombre_autor += " "
+        resultado += nombre_autor
+        resultado += ", "
+    
+    return resultado.replace(" ,", ",")
 
 def formateador(resultados):
     resultado = "\n\n"
     for item in resultados:
         resultado += "--------------------------\n"
         for clave, valor in item.items():
-            resultado += f"{clave}: {valor}\n"  
+            if isinstance(valor, list):
+                resultado += f"{clave}: {unbox(valor)}\n"
+            else:
+                resultado += f"{clave}: {valor}\n"  
         
         resultado += "--------------------------\n"
         """ if "family" in biblioteca["author"]: 
@@ -117,6 +130,10 @@ unbox(family = "Paz-Trillo", given = "Christian")
 
  """
         
+
+
+test = [{'family': 'Ramajo Hernández', 'given': 'Nati'}, {'family': 'Ramajo Hernández', 'given': 'Nati'}]
+print(unbox(test))
 
 
 
