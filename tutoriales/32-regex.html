@@ -1,0 +1,1490 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Expresiones regulares &#8212; Curso de Python para las HD</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Bibliografía" href="../references.html" />
+    <link rel="prev" title="Archivos JSON" href="31-json.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso de Python para las HD</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Fundamentos de programación
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción. Configurar un entorno de desarrollo para Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-instalarPython.html">
+   Instalar Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="2-terminal.html">
+   Terminal
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="3-instalarVSCode.html">
+   Instalar VSCode
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4-Git.html">
+   Configurar Git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="5-Github.html">
+   Github
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/1-configuracion.html">
+   Actividad 1: Configurar un entorno de desarrollo para Python
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción a Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-python.html">
+   Introducción a Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-variables.html">
+   Sintaxis, variables y tipos de datos básicos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-operadores.html">
+   Operadores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-operaciones_string.html">
+   Operaciones con cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/2-sintaxis_variables.html">
+   Actividad 2: Variables y sintaxis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Listas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-listas.html">
+   Listas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/3-listas.html">
+   Actividad 3: Listas (operaciones básicas)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Iteraciones (for loops)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-iteraciones.html">
+   Iteraciones (
+   <em>
+    for loops
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/4-iteraciones.html">
+   Actividad 4: Iteraciones
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Condicionales (if else)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-condicionales.html">
+   Introducción a los condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-plogicas.html">
+   Pruebas condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-condicionPertenencia.html">
+   Operadores de pertenencia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-ifelse.html">
+   Sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   ,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     elif
+    </span>
+   </code>
+   y
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     else
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-listaseif.html">
+   Combinar listas y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/5-condicionales.html">
+   Actividad 5: Condicionales y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Diccionarios
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-diccionarios.html">
+   Diccionarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-iterardiccio.html">
+   Iterar a través de un diccionario
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/6-diccionarios.html">
+   Actividad 6: Manejo de diccionarios
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Funciones
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-funcionesIntro.html">
+   Funciones: Introducción
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-input.html">
+   Función
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     input()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-funciones_y_TryExcept.html">
+   Control de errores con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Try
+    </span>
+   </code>
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Except
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/7-funciones.html">
+   Actividad 7: Funciones
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="22-retornarvalores.html">
+   Retornar valores en una función
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="23-funcionesLlamados.html">
+   Funciones y modularidad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-argsykwargs.html">
+   Pasar cantidades arbitrarias de argumentos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/8-funciones2.html">
+   Actividad 8: Funciones II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="25-importarmodulos.html">
+   Funciones: Modularidad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="26-modularfunciones.html">
+   Crear módulos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Actividad de evaluación intermedia
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/9-actividadintermedia.html">
+   Actividad intermedia: Construye un programa real
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Archivos
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="27-archivos.html">
+   Leer y escribir archivos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="28-os.html">
+   La librería
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     os
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="29-csv.html">
+   Manejo de datos en archivos CSV
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="30-pandasCSV.html">
+   Manejar archivos CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="31-json.html">
+   Archivos JSON
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Expresiones regulares
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Expresiones regulares
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Recursos adicionales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/gh-pages?urlpath=tree/tutoriales/32-regex.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/32-regex.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/tutoriales/32-regex.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/tutoriales/32-regex.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#que-son-las-expresiones-regulares">
+   ¿Qué son las expresiones regulares?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uso-de-expresiones-regulares">
+   Uso de expresiones regulares
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sintaxis-de-las-expresiones-regulares">
+   Sintaxis de las expresiones regulares
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coincidencias-exactas">
+     Coincidencias exactas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metacaracteres-clases-de-caracteres-y-cuantificadores">
+     Metacaracteres, clases de caracteres y cuantificadores
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#metacaracteres">
+       Metacaracteres
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clases-de-caracteres">
+       Clases de caracteres
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clases-de-caracteres-personalizadas">
+       Clases de caracteres personalizadas
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   Ejercicios
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-1">
+     Ejercicio 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-2">
+     Ejercicio 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-3">
+     Ejercicio 3
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Expresiones regulares</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#que-son-las-expresiones-regulares">
+   ¿Qué son las expresiones regulares?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#uso-de-expresiones-regulares">
+   Uso de expresiones regulares
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sintaxis-de-las-expresiones-regulares">
+   Sintaxis de las expresiones regulares
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coincidencias-exactas">
+     Coincidencias exactas
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#metacaracteres-clases-de-caracteres-y-cuantificadores">
+     Metacaracteres, clases de caracteres y cuantificadores
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#metacaracteres">
+       Metacaracteres
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clases-de-caracteres">
+       Clases de caracteres
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#clases-de-caracteres-personalizadas">
+       Clases de caracteres personalizadas
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   Ejercicios
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-1">
+     Ejercicio 1
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-2">
+     Ejercicio 2
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ejercicio-3">
+     Ejercicio 3
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="expresiones-regulares">
+<h1>Expresiones regulares<a class="headerlink" href="#expresiones-regulares" title="Permalink to this headline">#</a></h1>
+<p>Durante buena parte de este curso hemos recurrido a operaciones lógicas para “descubrir” coincidencias en los textos. Hemos recurrido a las funciones propias del método <code class="docutils literal notranslate"><span class="pre">str</span></code> de Python para normalizar palabras, hemos usado condicionales para identificar si una palabra es igual o está contenida en un conjunto de caracteres, hemos usado iteraciones para recorrer los conjuntos de palabras de un texto, incluso hemos recurrido a los métodos de <code class="docutils literal notranslate"><span class="pre">try</span></code> y <code class="docutils literal notranslate"><span class="pre">except</span></code> para saber si una palabra es un número o no.</p>
+<p>Sin embargo, hay un método que nos permite hacer todo esto de manera más eficiente: las expresiones regulares. Las expresiones regulares son un lenguaje de programación en sí mismo, que nos permite identificar patrones en los textos. En este tutorial veremos cómo usarlas en Python.</p>
+<section id="que-son-las-expresiones-regulares">
+<h2>¿Qué son las expresiones regulares?<a class="headerlink" href="#que-son-las-expresiones-regulares" title="Permalink to this headline">#</a></h2>
+<p>En términos simples, las expresiones regulares consisten en patrones de caracteres que nos permiten identificar coincidencias en los textos, a partir de una serie de reglas. Téoricamente, las expresiones regulares están fundamentadas en la teoría de los autómatas, un tema propio de la teoría computacional. No es necesario que comprendamos la teoría computacional para usar expresiones regulares, pero sí es relevante tener en cuenta que lo que buscan las expresiones regulares no es una coincidencia exacta, sino un patrón de coincidencia.</p>
+</section>
+<section id="uso-de-expresiones-regulares">
+<h2>Uso de expresiones regulares<a class="headerlink" href="#uso-de-expresiones-regulares" title="Permalink to this headline">#</a></h2>
+<p>Vamos a retomar un ejemplo que utilizamos en la lección <a class="reference internal" href="23-funcionesLlamados.html"><span class="doc std std-doc">Funciones y modularidad</span></a>. En esa lección, creamos una función llamada <code class="docutils literal notranslate"><span class="pre">extraer_fechas()</span></code> que nos permitía extraer las fechas de un texto. La función era la siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">separador</span><span class="p">(</span><span class="n">palabra</span><span class="p">,</span> <span class="n">caracter</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Separa una palabra en una lista de palabras según un caracter.</span>
+
+<span class="sd">    Parámetros</span>
+<span class="sd">    ----------</span>
+<span class="sd">    palabra: str</span>
+<span class="sd">        Palabra a separar</span>
+<span class="sd">    caracter: str</span>
+<span class="sd">        Caracter por el cual se separará la palabra</span>
+
+<span class="sd">    Retorna</span>
+<span class="sd">    -------</span>
+<span class="sd">    palabras: list</span>
+<span class="sd">        Lista de palabras separadas</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">palabras</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">palabra</span> <span class="ow">in</span> <span class="n">palabra</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">caracter</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">palabra</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">palabras</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">palabras</span>
+
+<span class="k">def</span> <span class="nf">extraer_fechas</span><span class="p">(</span><span class="n">texto</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Extrae todas las fechas que aparezcan en un texto.</span>
+<span class="sd">    </span>
+<span class="sd">    Parámetros</span>
+<span class="sd">    ----------</span>
+<span class="sd">    texto: str</span>
+<span class="sd">        Texto del cual se extraerán las fechas</span>
+
+<span class="sd">    Retorna</span>
+<span class="sd">    -------</span>
+<span class="sd">    fechas: list</span>
+<span class="sd">        Lista de fechas extraídas del texto</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">fechas</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">palabra</span> <span class="ow">in</span> <span class="n">texto</span><span class="o">.</span><span class="n">split</span><span class="p">():</span>
+        <span class="n">palabra</span> <span class="o">=</span> <span class="n">palabra</span> <span class="o">=</span> <span class="n">palabra</span><span class="o">.</span><span class="n">strip</span><span class="p">(</span><span class="s2">&quot;,;:()[]</span><span class="si">{}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">palabra</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">):</span>
+            <span class="n">palabra</span> <span class="o">=</span> <span class="n">palabra</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">palabra</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
+            <span class="n">fechas</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="s2">&quot;-&quot;</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+            <span class="n">fechas</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">separador</span><span class="p">(</span><span class="n">palabra</span><span class="p">,</span> <span class="s2">&quot;-&quot;</span><span class="p">))</span>
+        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">palabra</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">5</span> <span class="ow">and</span> <span class="s2">&quot;.&quot;</span> <span class="ow">in</span> <span class="n">palabra</span><span class="p">:</span>
+            <span class="n">fechas</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">separador</span><span class="p">(</span><span class="n">palabra</span><span class="p">,</span> <span class="s2">&quot;.&quot;</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">fechas</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y la utilizamos en un texto de ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cervantes</span> <span class="o">=</span> <span class="s2">&quot;Miguel de Cervantes Saavedra (Alcalá de Henares,4 29 de septiembre de 1547-Madrid, 22 de abril3 de 1616) fue un novelista, poeta, dramaturgo y soldado español.&quot;</span>
+<span class="n">extraer_fechas</span><span class="p">(</span><span class="n">Cervantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1547&#39;, &#39;1616&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como vemos, la función nos devuelve una lista con las fechas que encontró en el texto. Sin embargo, la función tiene un problema: sólo funciona con fechas que estén escritas en el formato <code class="docutils literal notranslate"><span class="pre">dd/mm/aaaa</span></code>. Si la fecha está escrita en otro formato, la función no la detecta. Por ejemplo, si la fecha está escrita en el formato <code class="docutils literal notranslate"><span class="pre">dd-mm-aaaa</span></code>, la función no la detecta:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cervantes</span> <span class="o">=</span> <span class="s2">&quot;Miguel de Cervantes Saavedra (Alcalá de Henares,4 29-09-1547-Madrid, 22-04-1616) fue un novelista, poeta, dramaturgo y soldado español.&quot;</span>
+<span class="n">extraer_fechas</span><span class="p">(</span><span class="n">Cervantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1547&#39;, &#39;1616&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para solucionar este problema, podríamos modificar la función para que detecte fechas en el formato <code class="docutils literal notranslate"><span class="pre">dd-mm-aaaa</span></code>. Sin embargo, esto no solucionaría el problema, ya que podrían haber fechas escritas en otros formatos, como <code class="docutils literal notranslate"><span class="pre">dd.mm.aaaa</span></code> o <code class="docutils literal notranslate"><span class="pre">dd</span> <span class="pre">mm</span> <span class="pre">aaaa</span></code>. En este caso, la solución más eficiente sería usar expresiones regulares.</p>
+</section>
+<section id="sintaxis-de-las-expresiones-regulares">
+<h2>Sintaxis de las expresiones regulares<a class="headerlink" href="#sintaxis-de-las-expresiones-regulares" title="Permalink to this headline">#</a></h2>
+<p>Las expresiones regulares tienen una sintaxis propia, que nos permite identificar patrones en los textos. En este tutorial veremos los patrones más comunes, pero si quieren profundizar en el tema, pueden consultar la <a class="reference external" href="https://docs.python.org/3/library/re.html">documentación oficial de Python</a>.</p>
+<section id="coincidencias-exactas">
+<h3>Coincidencias exactas<a class="headerlink" href="#coincidencias-exactas" title="Permalink to this headline">#</a></h3>
+<p>La coincidencia más simple que podemos buscar es una coincidencia exacta. Por ejemplo, si queremos buscar la palabra “novelista” en el texto de ejemplo, podemos usar la siguiente expresión regular:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;novelista&quot;</span><span class="p">,</span> <span class="n">Cervantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;novelista&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como vemos, la expresión regular nos devuelve una lista con todas las coincidencias exactas que encontró en el texto. Si queremos buscar la palabra “novelista” o “poeta”, podemos usar el operador <code class="docutils literal notranslate"><span class="pre">|</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;novelista|poeta&quot;</span><span class="p">,</span> <span class="n">Cervantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;novelista&#39;, &#39;poeta&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Incluso podemos evitar las mayúsculas y minúsculas aprovechando el parámetro <code class="docutils literal notranslate"><span class="pre">flags</span></code> de la librearía <code class="docutils literal notranslate"><span class="pre">re</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;miguel|madrid&quot;</span><span class="p">,</span> <span class="n">Cervantes</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Miguel&#39;, &#39;Madrid&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Hasta ahora nada sorprendente, ya que podríamos haber usado el método <code class="docutils literal notranslate"><span class="pre">str</span></code> de Python para buscar coincidencias exactas. Sin embargo, las expresiones regulares nos permiten buscar patrones más complejos gracias a los metacaracteres, las clases y los cuantificadores.</p>
+</section>
+<section id="metacaracteres-clases-de-caracteres-y-cuantificadores">
+<h3>Metacaracteres, clases de caracteres y cuantificadores<a class="headerlink" href="#metacaracteres-clases-de-caracteres-y-cuantificadores" title="Permalink to this headline">#</a></h3>
+<p>Las expresiones regulares nos permiten buscar patrones más complejos, usando metacaracteres, clases de caracteres y cuantificadores.</p>
+<section id="metacaracteres">
+<h4>Metacaracteres<a class="headerlink" href="#metacaracteres" title="Permalink to this headline">#</a></h4>
+<p>Una lista de metacaracteres más comunes es la siguiente:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Metacaracter</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">.</span></code></p></td>
+<td><p>Cualquier carácter, excepto nueva línea</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">^</span></code></p></td>
+<td><p>Inicio de la cadena</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">$</span></code></p></td>
+<td><p>Fin de la cadena</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">*</span></code></p></td>
+<td><p>Cero o más ocurrencias</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">+</span></code></p></td>
+<td><p>Una o más ocurrencias</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">?</span></code></p></td>
+<td><p>Cero o una ocurrencia</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">{}</span></code></p></td>
+<td><p>Exactamente el número de ocurrencias especificado</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[]</span></code></p></td>
+<td><p>Un conjunto de caracteres</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">()</span></code></p></td>
+<td><p>Captura y agrupa</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\</span></code></p></td>
+<td><p>Carácter de escape</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">|</span></code></p></td>
+<td><p>Operador OR</p></td>
+</tr>
+</tbody>
+</table>
+<p>Usemos un ejemplo para mostrar un poco el funcionamiento de algunos de estos metacaracteres. Por ejemplo, si queremos buscar todas las palabras que empiezan con “nov”, podemos usar el metacaracter <code class="docutils literal notranslate"><span class="pre">^</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cervantes</span> <span class="o">=</span> <span class="s2">&quot;Miguel de Cervantes Saavedra (Alcalá de Henares,4 29 de septiembre de 1547-Madrid, 22 de abril3 de 1616) fue un novelista, poeta, dramaturgo y soldado español.&quot;</span>
+<span class="n">nov</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Cervantes</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;^nov&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nov</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;novelista,&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como vemos, la expresión regular nos devuelve una lista con todas las palabras que empiezan con “nov”. Si queremos buscar todas las palabras que terminan con “el”, podemos usar el metacaracter <code class="docutils literal notranslate"><span class="pre">$</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">el</span> <span class="o">=</span> <span class="p">[</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">Cervantes</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;el$&quot;</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">el</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora, supongamos que queremos buscar solamente las palabras que estén entre paréntesis. Para esto, podemos usar el metacaracter <code class="docutils literal notranslate"><span class="pre">(</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\(.*\)&quot;</span><span class="p">,</span> <span class="n">Cervantes</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">UNICODE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;(Alcalá de Henares,4 29 de septiembre de 1547-Madrid, 22 de abril3 de 1616)&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Nota que la sintaxis en este caso es un poco más compleja, pero ya no requerimos recurrir a una iteración para encontrar los patrones.. Vamos a explicarla en detalle:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\(</span></code>: el paréntesis izquierdo tiene un significado especial en las expresiones regulares, por lo que debemos usar el metacaracter <code class="docutils literal notranslate"><span class="pre">\</span></code> para indicar que queremos buscar un paréntesis izquierdo.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">.*</span></code>: el punto en esta fórmula significa que buscamos cualquier carácter, excepto nueva línea. El asterisco significa que queremos buscar cero o más ocurrencias de cualquier carácter.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">\)</span></code>: la expresión regular busca todos los caracteres a la derecha del paréntesis izquierdo, hasta que encuentra un paréntesis derecho.</p></li>
+</ul>
+<p>Iremos utilizando otros metacaracteres en tanto avancemos en nuestras búsquedas. Por ahora, veamos las clases de caracteres.</p>
+</section>
+<section id="clases-de-caracteres">
+<h4>Clases de caracteres<a class="headerlink" href="#clases-de-caracteres" title="Permalink to this headline">#</a></h4>
+<p>Las clases de caracteres son un conjunto predefinido de caracteres que encontramos en un texto. En la siguiente tabla mostramos las clases de caracteres predefinidas más comunes:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Clase de caracteres</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\d</span></code></p></td>
+<td><p>Cualquier dígito</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\D</span></code></p></td>
+<td><p>Cualquier carácter que no sea un dígito</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\s</span></code></p></td>
+<td><p>Cualquier espacio en blanco</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\S</span></code></p></td>
+<td><p>Cualquier carácter que no sea un espacio en blanco</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">\w</span></code></p></td>
+<td><p>Cualquier carácter alfanumérico</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">\W</span></code></p></td>
+<td><p>Cualquier carácter que no sea alfanumérico</p></td>
+</tr>
+</tbody>
+</table>
+<p>Hagamos otro reto, utilizando una clase de caracteres, creemos una búsqueda que regrese la primera palabra a la izquierda y la primera a la derecha después de la conjunción “de”:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\w+) de (\w+)&quot;</span><span class="p">,</span> <span class="n">Cervantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Miguel&#39;, &#39;Cervantes&#39;),
+ (&#39;Alcalá&#39;, &#39;Henares&#39;),
+ (&#39;29&#39;, &#39;septiembre&#39;),
+ (&#39;22&#39;, &#39;abril3&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Deconstruyamos esta fórmula para entender cómo funciona:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">(\w+)</span></code>: la expresión regular busca una o más ocurrencias de cualquier carácter alfanumérico. Está utilizando el metacaracter <code class="docutils literal notranslate"><span class="pre">()</span></code> para agrupar el resultado. La clase de caracteres <code class="docutils literal notranslate"><span class="pre">\w</span></code> es equivalente a <code class="docutils literal notranslate"><span class="pre">[a-zA-Z0-9_]</span></code>, que quiere decir que busca cualquier carácter alfanumérico, incluyendo letras mayúsculas y minúsculas, números y el guión bajo. El signo <code class="docutils literal notranslate"><span class="pre">+</span></code> significa que queremos buscar una o más ocurrencias de cualquier carácter alfanumérico.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">de</span></code>: la expresión regular busca la palabra “de” en el texto.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(\w+)</span></code>: la expresión regular busca una o más ocurrencias de cualquier carácter alfanumérico. Está utilizando el metacaracter <code class="docutils literal notranslate"><span class="pre">()</span></code> para agrupar el resultado. En este caso, a la derecha de la palabra “de”.</p></li>
+</ul>
+<p>Subamos la apuesta. Ahora busquemos las tres palabras a la izquierda y tres a la derecha de la palabra “de”. Para que el ejercicio tenga sentido, aumentemos el tamaño del texto a analizar:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Cervantes</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;Es ampliamente considerado una de las máximas figuras de la literatura española. Fue el autor de El ingenioso hidalgo don Quijote de la Mancha, novela conocida habitualmente como El Quijote, que lo llevó a ser mundialmente conocido y a la cual muchos críticos han descrito como la primera novela moderna, así como una de las mejores obras de la literatura universal, cuya cantidad de ediciones y traducciones solo es superada por la Biblia.5 A Cervantes se le ha dado el apelativo de «Príncipe de los Ingenios».6</span>
+
+<span class="s2">Desde el siglo xviii está admitido que el lugar de nacimiento de Miguel de Cervantes fue Alcalá de Henares,4 dado que allí fue bautizado, según su acta bautismal, y que de allí aclaró ser natural en la llamada Información de Argel (1580).7 El día exacto de su nacimiento es menos seguro, aunque lo normal es que naciera el 29 de septiembre, fecha en que se celebra la fiesta del arcángel San Miguel, dada la tradición de recibir el nombre del santoral del día del nacimiento. Miguel de Cervantes fue bautizado el 9 de octubre de 1547 en la parroquia de Santa María la Mayor.89 El acta del bautizo reza:</span>
+
+<span class="s2">Domingo, nueve días del mes de octubre, año del Señor de mill e quinientos e quarenta e siete años, fue baptizado Miguel, hijo de Rodrigo Cervantes e su mujer doña Leonor. Baptizóle el reverendo señor Bartolomé Serrano, cura de Nuestra Señora. Testigos, Baltasar Vázquez, Sacristán, e yo, que le bapticé e firme de mi nombre. Bachiller Serrano.10</span>
+<span class="s2">El padre del escritor era Rodrigo de Cervantes (1509-1585), casado con Leonor de Cortinas, de la cual apenas se sabe nada, excepto que era natural de Arganda del Rey.11 Los hermanos de Cervantes fueron Andrés (1543), Andrea (1544), Luisa (1546), que llegó a ser priora de un convento carmelita; Rodrigo (1550), también soldado, que le acompañó en el cautiverio argelino; Magdalena (1554) y Juan, solo conocido porque su padre lo menciona en el testamento.&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ahora, apliquemos la siguiente expresión regular:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\w+) (\w+) (\w+) de (\w+) (\w+) (\w+)&quot;</span><span class="p">,</span> <span class="n">Cervantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;ampliamente&#39;, &#39;considerado&#39;, &#39;una&#39;, &#39;las&#39;, &#39;máximas&#39;, &#39;figuras&#39;),
+ (&#39;Fue&#39;, &#39;el&#39;, &#39;autor&#39;, &#39;El&#39;, &#39;ingenioso&#39;, &#39;hidalgo&#39;),
+ (&#39;así&#39;, &#39;como&#39;, &#39;una&#39;, &#39;las&#39;, &#39;mejores&#39;, &#39;obras&#39;),
+ (&#39;que&#39;, &#39;el&#39;, &#39;lugar&#39;, &#39;nacimiento&#39;, &#39;de&#39;, &#39;Miguel&#39;),
+ (&#39;El&#39;, &#39;día&#39;, &#39;exacto&#39;, &#39;su&#39;, &#39;nacimiento&#39;, &#39;es&#39;),
+ (&#39;dada&#39;, &#39;la&#39;, &#39;tradición&#39;, &#39;recibir&#39;, &#39;el&#39;, &#39;nombre&#39;),
+ (&#39;bautizado&#39;, &#39;el&#39;, &#39;9&#39;, &#39;octubre&#39;, &#39;de&#39;, &#39;1547&#39;),
+ (&#39;en&#39;, &#39;la&#39;, &#39;parroquia&#39;, &#39;Santa&#39;, &#39;María&#39;, &#39;la&#39;),
+ (&#39;año&#39;, &#39;del&#39;, &#39;Señor&#39;, &#39;mill&#39;, &#39;e&#39;, &#39;quinientos&#39;),
+ (&#39;que&#39;, &#39;era&#39;, &#39;natural&#39;, &#39;Arganda&#39;, &#39;del&#39;, &#39;Rey&#39;),
+ (&#39;11&#39;, &#39;Los&#39;, &#39;hermanos&#39;, &#39;Cervantes&#39;, &#39;fueron&#39;, &#39;Andrés&#39;),
+ (&#39;a&#39;, &#39;ser&#39;, &#39;priora&#39;, &#39;un&#39;, &#39;convento&#39;, &#39;carmelita&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, repetimos tres veces el grupo de caracteres <code class="docutils literal notranslate"><span class="pre">\w+</span></code>. Una solución lógica para simplificar la expresión podría ser el uso de un cuantificador, por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;(\w+ )</span><span class="si">{3}</span><span class="s2">de (\w+ )</span><span class="si">{3}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">Cervantes</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">MULTILINE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;una &#39;, &#39;figuras &#39;),
+ (&#39;autor &#39;, &#39;hidalgo &#39;),
+ (&#39;una &#39;, &#39;obras &#39;),
+ (&#39;lugar &#39;, &#39;Miguel &#39;),
+ (&#39;exacto &#39;, &#39;es &#39;),
+ (&#39;tradición &#39;, &#39;nombre &#39;),
+ (&#39;9 &#39;, &#39;1547 &#39;),
+ (&#39;parroquia &#39;, &#39;la &#39;),
+ (&#39;Señor &#39;, &#39;quinientos &#39;),
+ (&#39;hermanos &#39;, &#39;Andrés &#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pero como verás, en este caso no se obtiene el listado de las palabras, lo cual no es lo que queremos. Por lo tanto, la expresión regular que utilizamos al principio es la más adecuada.</p>
+<p>Ahora, con los metacaracteres y las clases de caracteres, podemos construir una expresión que nos permita extraer los años de este conjunto de textos:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d</span><span class="si">{4}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">Cervantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1547&#39;,
+ &#39;1616&#39;,
+ &#39;1580&#39;,
+ &#39;1547&#39;,
+ &#39;1509&#39;,
+ &#39;1585&#39;,
+ &#39;1543&#39;,
+ &#39;1544&#39;,
+ &#39;1546&#39;,
+ &#39;1550&#39;,
+ &#39;1554&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>¡Y eso es todo! Mientras con la función <code class="docutils literal notranslate"><span class="pre">extraer_fechas()</span></code> tuvimos que explorar una serie de opciones lógicas para extraer los años, con las expresiones regulares pudimos extraer los años en una sola línea de código.</p>
+</section>
+<section id="clases-de-caracteres-personalizadas">
+<h4>Clases de caracteres personalizadas<a class="headerlink" href="#clases-de-caracteres-personalizadas" title="Permalink to this headline">#</a></h4>
+<p>Los corchetes nos permiten crear clases personalizadas, de tal manera que sea más precisa nuestra búsqueda. Por ejemplo, si queremos buscar todas las palabras que empiecen con una letra mayúscula, podemos utilizar la siguiente expresión regular:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;[A-Z]\w+&quot;</span><span class="p">,</span> <span class="n">Cervantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Miguel&#39;,
+ &#39;Cervantes&#39;,
+ &#39;Saavedra&#39;,
+ &#39;Alcalá&#39;,
+ &#39;Henares&#39;,
+ &#39;Madrid&#39;,
+ &#39;Es&#39;,
+ &#39;Fue&#39;,
+ &#39;El&#39;,
+ &#39;Quijote&#39;,
+ &#39;Mancha&#39;,
+ &#39;El&#39;,
+ &#39;Quijote&#39;,
+ &#39;Biblia&#39;,
+ &#39;Cervantes&#39;,
+ &#39;Príncipe&#39;,
+ &#39;Ingenios&#39;,
+ &#39;Desde&#39;,
+ &#39;Miguel&#39;,
+ &#39;Cervantes&#39;,
+ &#39;Alcalá&#39;,
+ &#39;Henares&#39;,
+ &#39;Información&#39;,
+ &#39;Argel&#39;,
+ &#39;El&#39;,
+ &#39;San&#39;,
+ &#39;Miguel&#39;,
+ &#39;Miguel&#39;,
+ &#39;Cervantes&#39;,
+ &#39;Santa&#39;,
+ &#39;María&#39;,
+ &#39;Mayor&#39;,
+ &#39;El&#39;,
+ &#39;Domingo&#39;,
+ &#39;Señor&#39;,
+ &#39;Miguel&#39;,
+ &#39;Rodrigo&#39;,
+ &#39;Cervantes&#39;,
+ &#39;Leonor&#39;,
+ &#39;Baptizóle&#39;,
+ &#39;Bartolomé&#39;,
+ &#39;Serrano&#39;,
+ &#39;Nuestra&#39;,
+ &#39;Señora&#39;,
+ &#39;Testigos&#39;,
+ &#39;Baltasar&#39;,
+ &#39;Vázquez&#39;,
+ &#39;Sacristán&#39;,
+ &#39;Bachiller&#39;,
+ &#39;Serrano&#39;,
+ &#39;El&#39;,
+ &#39;Rodrigo&#39;,
+ &#39;Cervantes&#39;,
+ &#39;Leonor&#39;,
+ &#39;Cortinas&#39;,
+ &#39;Arganda&#39;,
+ &#39;Rey&#39;,
+ &#39;Los&#39;,
+ &#39;Cervantes&#39;,
+ &#39;Andrés&#39;,
+ &#39;Andrea&#39;,
+ &#39;Luisa&#39;,
+ &#39;Rodrigo&#39;,
+ &#39;Magdalena&#39;,
+ &#39;Juan&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>También podemos modificar la expresión para que evite encontrar conectores como “El”, “Es”, “Se”, etc.:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\b(?!El\b|Es\b|Se\b)([A-Z][a-z]+)\b&quot;</span><span class="p">,</span> <span class="n">Cervantes</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Miguel&#39;,
+ &#39;Cervantes&#39;,
+ &#39;Saavedra&#39;,
+ &#39;Henares&#39;,
+ &#39;Madrid&#39;,
+ &#39;Fue&#39;,
+ &#39;Quijote&#39;,
+ &#39;Mancha&#39;,
+ &#39;Quijote&#39;,
+ &#39;Biblia&#39;,
+ &#39;Cervantes&#39;,
+ &#39;Ingenios&#39;,
+ &#39;Desde&#39;,
+ &#39;Miguel&#39;,
+ &#39;Cervantes&#39;,
+ &#39;Henares&#39;,
+ &#39;Argel&#39;,
+ &#39;San&#39;,
+ &#39;Miguel&#39;,
+ &#39;Miguel&#39;,
+ &#39;Cervantes&#39;,
+ &#39;Santa&#39;,
+ &#39;Mayor&#39;,
+ &#39;Domingo&#39;,
+ &#39;Miguel&#39;,
+ &#39;Rodrigo&#39;,
+ &#39;Cervantes&#39;,
+ &#39;Leonor&#39;,
+ &#39;Serrano&#39;,
+ &#39;Nuestra&#39;,
+ &#39;Testigos&#39;,
+ &#39;Baltasar&#39;,
+ &#39;Bachiller&#39;,
+ &#39;Serrano&#39;,
+ &#39;Rodrigo&#39;,
+ &#39;Cervantes&#39;,
+ &#39;Leonor&#39;,
+ &#39;Cortinas&#39;,
+ &#39;Arganda&#39;,
+ &#39;Rey&#39;,
+ &#39;Los&#39;,
+ &#39;Cervantes&#39;,
+ &#39;Andrea&#39;,
+ &#39;Luisa&#39;,
+ &#39;Rodrigo&#39;,
+ &#39;Magdalena&#39;,
+ &#39;Juan&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Con esta expresión empezamos a ver cómo las expresiones regulares pueden volverse ilegibles bastante rápido. Vamos a explicar esta expresión regular:</p>
+<p>Esta expresión está compuesta de dos conjuntos: uno buscar patrones que no queremos y el segundo busca patrones que sí queremos.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">\b(?!El\b|Es\b|Se\b)</span></code>: el primer conjunto busca patrones que no queremos. En este caso, buscamos patrones que empiecen con “El”, “Es” o “Se”. El metacaracter <code class="docutils literal notranslate"><span class="pre">\b</span></code> busca límites de palabras, es decir, que la palabra empiece o termine con el patrón que estamos buscando. El metacaracter <code class="docutils literal notranslate"><span class="pre">|</span></code> funciona como un operador lógico OR, es decir, que si encuentra “El”, “Es” o “Se”, la expresión regular se detiene. El metacaracter <code class="docutils literal notranslate"><span class="pre">?!</span></code> es un operador lógico NOT, es decir, que si encuentra “El”, “Es” o “Se”, la expresión regular se detiene.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">([A-Z][a-z]+)</span></code>: el segundo conjunto busca patrones que sí queremos. En este caso, buscamos patrones que empiecen con una letra mayúscula y que tengan una o más letras minúsculas. El metacaracter <code class="docutils literal notranslate"><span class="pre">+</span></code> significa que queremos buscar una o más ocurrencias de cualquier carácter alfanumérico.</p></li>
+</ul>
+<p>Es fáci identificar que en este caso, si queremos ampliar nuestra lista de expresiones negativas, la fórmula va a adquirir un tamaño casi absurdo, por ejemplo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">patron</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\b(?!Es\b|Se\b|De\b|El\b|La\b|Los\b|Las\b|Un\b|Una\b|Unos\b|Unas\b|Al\b|Del\b|Y\b|O\b|En\b|A\b|Ante\b|Bajo\b|Cabe\b|Con\b|Contra\b|De\b|Desde\b|Durante\b|En\b|Entre\b|Hacia\b|Hasta\b|Mediante\b|Para\b|Por\b|Según\b|Sin\b|Sobre\b|Tras\b|Versus\b|Vía\b)([A-Z][a-z]+)\b&#39;</span>
+
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">patron</span><span class="p">,</span> <span class="n">Cervantes</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Miguel&#39;, &#39;Cervantes&#39;, &#39;Saavedra&#39;, &#39;Henares&#39;, &#39;Madrid&#39;, &#39;Fue&#39;, &#39;Quijote&#39;, &#39;Mancha&#39;, &#39;Quijote&#39;, &#39;Biblia&#39;, &#39;Cervantes&#39;, &#39;Ingenios&#39;, &#39;Miguel&#39;, &#39;Cervantes&#39;, &#39;Henares&#39;, &#39;Argel&#39;, &#39;San&#39;, &#39;Miguel&#39;, &#39;Miguel&#39;, &#39;Cervantes&#39;, &#39;Santa&#39;, &#39;Mayor&#39;, &#39;Domingo&#39;, &#39;Miguel&#39;, &#39;Rodrigo&#39;, &#39;Cervantes&#39;, &#39;Leonor&#39;, &#39;Serrano&#39;, &#39;Nuestra&#39;, &#39;Testigos&#39;, &#39;Baltasar&#39;, &#39;Bachiller&#39;, &#39;Serrano&#39;, &#39;Rodrigo&#39;, &#39;Cervantes&#39;, &#39;Leonor&#39;, &#39;Cortinas&#39;, &#39;Arganda&#39;, &#39;Rey&#39;, &#39;Cervantes&#39;, &#39;Andrea&#39;, &#39;Luisa&#39;, &#39;Rodrigo&#39;, &#39;Magdalena&#39;, &#39;Juan&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, podemos aprovechar los métodos de Python para incluir todos los conectores en una lista y luego usar el método <code class="docutils literal notranslate"><span class="pre">join()</span></code> para unirlos con el operador lógico OR:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">conectores</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Es&quot;</span><span class="p">,</span> <span class="s2">&quot;Se&quot;</span><span class="p">,</span> <span class="s2">&quot;De&quot;</span><span class="p">,</span> <span class="s2">&quot;El&quot;</span><span class="p">,</span> <span class="s2">&quot;La&quot;</span><span class="p">,</span> <span class="s2">&quot;Los&quot;</span><span class="p">,</span> <span class="s2">&quot;Las&quot;</span><span class="p">,</span> <span class="s2">&quot;Un&quot;</span><span class="p">,</span> <span class="s2">&quot;Una&quot;</span><span class="p">,</span> <span class="s2">&quot;Unos&quot;</span><span class="p">,</span> <span class="s2">&quot;Unas&quot;</span><span class="p">,</span> <span class="s2">&quot;Al&quot;</span><span class="p">,</span> <span class="s2">&quot;Del&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;O&quot;</span><span class="p">,</span> <span class="s2">&quot;En&quot;</span><span class="p">,</span> <span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;Ante&quot;</span><span class="p">,</span> <span class="s2">&quot;Bajo&quot;</span><span class="p">,</span> <span class="s2">&quot;Cabe&quot;</span><span class="p">,</span> <span class="s2">&quot;Con&quot;</span><span class="p">,</span> <span class="s2">&quot;Contra&quot;</span><span class="p">,</span> <span class="s2">&quot;De&quot;</span><span class="p">,</span> <span class="s2">&quot;Desde&quot;</span><span class="p">,</span> <span class="s2">&quot;Durante&quot;</span><span class="p">,</span> <span class="s2">&quot;En&quot;</span><span class="p">,</span> <span class="s2">&quot;Entre&quot;</span><span class="p">,</span> <span class="s2">&quot;Hacia&quot;</span><span class="p">,</span> <span class="s2">&quot;Hasta&quot;</span><span class="p">,</span> <span class="s2">&quot;Mediante&quot;</span><span class="p">,</span> <span class="s2">&quot;Para&quot;</span><span class="p">,</span> <span class="s2">&quot;Por&quot;</span><span class="p">,</span> <span class="s2">&quot;Según&quot;</span><span class="p">,</span> <span class="s2">&quot;Sin&quot;</span><span class="p">,</span> <span class="s2">&quot;Sobre&quot;</span><span class="p">,</span> <span class="s2">&quot;Tras&quot;</span><span class="p">,</span> <span class="s2">&quot;Versus&quot;</span><span class="p">,</span> <span class="s2">&quot;Vía&quot;</span><span class="p">]</span>
+
+<span class="n">patron</span> <span class="o">=</span> <span class="sa">r</span><span class="s1">&#39;\b(?!&#39;</span> <span class="o">+</span> <span class="s1">&#39;|&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">conectores</span><span class="p">)</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;\b)([A-Z][a-z]+)\b&#39;</span>
+
+<span class="n">resultado</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">patron</span><span class="p">,</span> <span class="n">Cervantes</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">resultado</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Miguel&#39;, &#39;Cervantes&#39;, &#39;Saavedra&#39;, &#39;Henares&#39;, &#39;Madrid&#39;, &#39;Fue&#39;, &#39;Quijote&#39;, &#39;Mancha&#39;, &#39;Quijote&#39;, &#39;Biblia&#39;, &#39;Cervantes&#39;, &#39;Ingenios&#39;, &#39;Miguel&#39;, &#39;Cervantes&#39;, &#39;Henares&#39;, &#39;San&#39;, &#39;Miguel&#39;, &#39;Miguel&#39;, &#39;Cervantes&#39;, &#39;Santa&#39;, &#39;Mayor&#39;, &#39;Domingo&#39;, &#39;Miguel&#39;, &#39;Rodrigo&#39;, &#39;Cervantes&#39;, &#39;Leonor&#39;, &#39;Nuestra&#39;, &#39;Testigos&#39;, &#39;Baltasar&#39;, &#39;Bachiller&#39;, &#39;Rodrigo&#39;, &#39;Cervantes&#39;, &#39;Leonor&#39;, &#39;Cortinas&#39;, &#39;Rey&#39;, &#39;Cervantes&#39;, &#39;Luisa&#39;, &#39;Rodrigo&#39;, &#39;Magdalena&#39;, &#39;Juan&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>De esta manera el código es mucho más legible y fácil de modificar.</p>
+</section>
+</section>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">#</a></h2>
+<section id="ejercicio-1">
+<h3>Ejercicio 1<a class="headerlink" href="#ejercicio-1" title="Permalink to this headline">#</a></h3>
+<p>Construye una expresión regular que pueda identificar un patrón en el que el nombre y el apellido de una persona estén separados por una coma (por ejemplo, “Cervantes, Miguel”). La expresión debe ser capaz de identificar el nombre y el apellido de la persona.</p>
+</section>
+<section id="ejercicio-2">
+<h3>Ejercicio 2<a class="headerlink" href="#ejercicio-2" title="Permalink to this headline">#</a></h3>
+<p>Construye una expresión regular que permita extraer la fecha completa que tenga el formato dd de mes de aaaa (por ejemplo, “12 de octubre de 1492”). La expresión debe ser capaz de identificar el día, el mes y el año.</p>
+</section>
+<section id="ejercicio-3">
+<h3>Ejercicio 3<a class="headerlink" href="#ejercicio-3" title="Permalink to this headline">#</a></h3>
+<p>Construye una función que permita obtener el contexto de una palabra clave (n palabras a la izquierda y n a la derecha) en un texto. La función debe recibir como parámetros el texto, la palabra clave y el número de palabras a la izquierda y a la derecha que se quieren extraer. La función debe retornar el contexto de la palabra clave.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutoriales"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="31-json.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Archivos JSON</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../references.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bibliografía</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

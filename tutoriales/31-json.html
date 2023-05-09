@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Bibliografía" href="../references.html" />
+    <link rel="next" title="Expresiones regulares" href="32-regex.html" />
     <link rel="prev" title="Manejar archivos CSV con pandas" href="30-pandasCSV.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -430,6 +430,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Archivos JSON
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Expresiones regulares
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="32-regex.html">
+   Expresiones regulares
   </a>
  </li>
 </ul>
@@ -1214,6 +1226,9 @@ El miedo en Occidente (Siglos XIV-XVIII) Una ciudad sitiada
 {&#39;id&#39;: &#39;http://zotero.org/users/163570/items/KM78SEUK&#39;, &#39;type&#39;: &#39;book&#39;, &#39;event-place&#39;: &#39;Madrid&#39;, &#39;ISBN&#39;: &#39;978-84-206-4775-3&#39;, &#39;language&#39;: &#39;Spanish&#39;, &#39;note&#39;: &#39;OCLC: 187040016&#39;, &#39;number-of-pages&#39;: &#39;302&#39;, &#39;publisher&#39;: &#39;Alianza&#39;, &#39;publisher-place&#39;: &#39;Madrid&#39;, &#39;source&#39;: &#39;Open WorldCat&#39;, &#39;title&#39;: &#39;Formas de historia cultural&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Burke&#39;, &#39;given&#39;: &#39;Peter&#39;}], &#39;translator&#39;: [{&#39;family&#39;: &#39;Urrutia&#39;, &#39;given&#39;: &#39;Belén&#39;}], &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2020&#39;]]}, &#39;edition&#39;: &#39;2ª edición&#39;}
 {&#39;id&#39;: &#39;http://zotero.org/users/163570/items/KM78SEUK&#39;, &#39;type&#39;: &#39;book&#39;, &#39;event-place&#39;: &#39;Madrid&#39;, &#39;ISBN&#39;: &#39;978-84-206-4775-3&#39;, &#39;language&#39;: &#39;Spanish&#39;, &#39;note&#39;: &#39;OCLC: 187040016&#39;, &#39;number-of-pages&#39;: &#39;302&#39;, &#39;publisher&#39;: &#39;Alianza&#39;, &#39;publisher-place&#39;: &#39;Madrid&#39;, &#39;source&#39;: &#39;Open WorldCat&#39;, &#39;title&#39;: &#39;Formas de historia cultural&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Burke&#39;, &#39;given&#39;: &#39;Peter&#39;}], &#39;translator&#39;: [{&#39;family&#39;: &#39;Urrutia&#39;, &#39;given&#39;: &#39;Belén&#39;}], &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2020&#39;]]}, &#39;edition&#39;: &#39;2ª edición&#39;}
 {&#39;id&#39;: &#39;http://zotero.org/users/163570/items/KM78SEUK&#39;, &#39;type&#39;: &#39;book&#39;, &#39;event-place&#39;: &#39;Madrid&#39;, &#39;ISBN&#39;: &#39;978-84-206-4775-3&#39;, &#39;language&#39;: &#39;Spanish&#39;, &#39;note&#39;: &#39;OCLC: 187040016&#39;, &#39;number-of-pages&#39;: &#39;302&#39;, &#39;publisher&#39;: &#39;Alianza&#39;, &#39;publisher-place&#39;: &#39;Madrid&#39;, &#39;source&#39;: &#39;Open WorldCat&#39;, &#39;title&#39;: &#39;Formas de historia cultural&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Burke&#39;, &#39;given&#39;: &#39;Peter&#39;}], &#39;translator&#39;: [{&#39;family&#39;: &#39;Urrutia&#39;, &#39;given&#39;: &#39;Belén&#39;}], &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2020&#39;]]}, &#39;edition&#39;: &#39;2ª edición&#39;}
+{&#39;id&#39;: &#39;http://zotero.org/users/163570/items/KM78SEUK&#39;, &#39;type&#39;: &#39;book&#39;, &#39;event-place&#39;: &#39;Madrid&#39;, &#39;ISBN&#39;: &#39;978-84-206-4775-3&#39;, &#39;language&#39;: &#39;Spanish&#39;, &#39;note&#39;: &#39;OCLC: 187040016&#39;, &#39;number-of-pages&#39;: &#39;302&#39;, &#39;publisher&#39;: &#39;Alianza&#39;, &#39;publisher-place&#39;: &#39;Madrid&#39;, &#39;source&#39;: &#39;Open WorldCat&#39;, &#39;title&#39;: &#39;Formas de historia cultural&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Burke&#39;, &#39;given&#39;: &#39;Peter&#39;}], &#39;translator&#39;: [{&#39;family&#39;: &#39;Urrutia&#39;, &#39;given&#39;: &#39;Belén&#39;}], &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2020&#39;]]}, &#39;edition&#39;: &#39;2ª edición&#39;}
+{&#39;id&#39;: &#39;http://zotero.org/users/163570/items/KM78SEUK&#39;, &#39;type&#39;: &#39;book&#39;, &#39;event-place&#39;: &#39;Madrid&#39;, &#39;ISBN&#39;: &#39;978-84-206-4775-3&#39;, &#39;language&#39;: &#39;Spanish&#39;, &#39;note&#39;: &#39;OCLC: 187040016&#39;, &#39;number-of-pages&#39;: &#39;302&#39;, &#39;publisher&#39;: &#39;Alianza&#39;, &#39;publisher-place&#39;: &#39;Madrid&#39;, &#39;source&#39;: &#39;Open WorldCat&#39;, &#39;title&#39;: &#39;Formas de historia cultural&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Burke&#39;, &#39;given&#39;: &#39;Peter&#39;}], &#39;translator&#39;: [{&#39;family&#39;: &#39;Urrutia&#39;, &#39;given&#39;: &#39;Belén&#39;}], &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2020&#39;]]}, &#39;edition&#39;: &#39;2ª edición&#39;}
+{&#39;id&#39;: &#39;http://zotero.org/users/163570/items/KM78SEUK&#39;, &#39;type&#39;: &#39;book&#39;, &#39;event-place&#39;: &#39;Madrid&#39;, &#39;ISBN&#39;: &#39;978-84-206-4775-3&#39;, &#39;language&#39;: &#39;Spanish&#39;, &#39;note&#39;: &#39;OCLC: 187040016&#39;, &#39;number-of-pages&#39;: &#39;302&#39;, &#39;publisher&#39;: &#39;Alianza&#39;, &#39;publisher-place&#39;: &#39;Madrid&#39;, &#39;source&#39;: &#39;Open WorldCat&#39;, &#39;title&#39;: &#39;Formas de historia cultural&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Burke&#39;, &#39;given&#39;: &#39;Peter&#39;}], &#39;translator&#39;: [{&#39;family&#39;: &#39;Urrutia&#39;, &#39;given&#39;: &#39;Belén&#39;}], &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2020&#39;]]}, &#39;edition&#39;: &#39;2ª edición&#39;}
 </pre></div>
 </div>
 </div>
@@ -1292,10 +1307,10 @@ El miedo en Occidente (Siglos XIV-XVIII) Una ciudad sitiada
             <p class="prev-next-title">Manejar archivos CSV con <code class="docutils literal notranslate"><span class="pre">pandas</span></code></p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../references.html" title="next page">
+    <a class='right-next' id="next-link" href="32-regex.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Bibliografía</p>
+        <p class="prev-next-title">Expresiones regulares</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
