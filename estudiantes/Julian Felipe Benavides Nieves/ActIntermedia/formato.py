@@ -25,11 +25,11 @@ def impreresultados (formatoresultados:list):
     print('------------------------------------------')
     print(f'\nSe encontraron {len(formatoresultados)} resultado(s).\n')
 
-if __name__ == "__main__": 
-    from biblioteca import biblioteca
-    biblioteca = biblioteca()
-    resultadobusqueda = [9, 14, 144, 173, 306, 479, 705, 737]
-    impreresultados(formatobusqueda(biblioteca,resultadobusqueda))
+# if __name__ == "__main__": 
+#     from biblioteca import biblioteca
+#     biblioteca = biblioteca()
+#     resultadobusqueda = [9, 14, 144, 173, 306, 479, 705, 737]
+#     impreresultados(formatobusqueda(biblioteca,resultadobusqueda))
         
 
 
