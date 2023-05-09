@@ -15298,49 +15298,6 @@
         }
     },
     {
-        "id": "Mellado.Soriano2013Utopiasa",
-        "type": "article-journal",
-        "abstract": "The technological art emerging during the early part of the second half of the 20th century actively worked to take apart the paradigms that had supported the utopias of the old culture  for over 5 centuries. This new art took over the construction and management of these utopias that had been developed for the industrial society by the artistic avant-garde during the first half of last century and replaced them with those for the digital-cybernetic society. Now, in the 21st century, we can finally analyze the utopias of technological art in historiographical terms.\n\n \n\nThe article’s authors provide their experience in the theory and practice, and as curators, managers and professors of new media and art in order to produce this highly needed, though to date non-existent, critical and self-critical analysis. The necessary distance and perspective that we now have allows us to finally undertake the necessary assessment of the level and significance of these utopias of technological art, and their evolution, fall or current validity.",
-        "container-title": "Artnodes",
-        "DOI": "10/gk785w",
-        "ISSN": "1695-5951",
-        "issue": "13",
-        "note": "00000",
-        "source": "CrossRef",
-        "title": "Utopias of Technological Art: The State of the Question Fifty Years On",
-        "title-short": "Utopias of Technological Art",
-        "URL": "http://journals.uoc.edu/ojs/index.php/artnodes/article/view/n13-alcala-jarque",
-        "volume": "0",
-        "author": [
-            {
-                "family": "Mellado",
-                "given": "José Ramón Alcalá"
-            },
-            {
-                "family": "Soriano",
-                "given": "Vicente Jarque"
-            }
-        ],
-        "accessed": {
-            "date-parts": [
-                [
-                    "2014",
-                    3,
-                    6
-                ]
-            ]
-        },
-        "issued": {
-            "date-parts": [
-                [
-                    "2013",
-                    11,
-                    1
-                ]
-            ]
-        }
-    },
-    {
         "id": "AlsinaCoord.2013Mediaa",
         "type": "article-journal",
         "abstract": "The signs are that we are witnessing a blooming of the “digital humanities”. Technology is reshaping and remodelling traditional research, teaching and outreach in humanities and introducing new methods, techniques and even epistemological frameworks that reflect a new image of knowledge always under construction. Art history faces similar challenges in terms of hybridizing the possibilities offered by the ICTs, but also faces an additional challenge of having to chronicle a set of artistic practices that are directly associated with the media (including the digital media), namely, media art, which has already acquired a few decades of a history of its own.",
@@ -25342,27 +25299,27 @@
         "edition": "2ª edición"
     },
     {
-        "id": "http://zotero.org/users/163570/items/KM78SEUK",
+        "id": "http://zotero.org/users/163570/items/DFIAXHAZ",
         "type": "book",
         "event-place": "Madrid",
-        "ISBN": "978-84-206-4775-3",
+        "ISBN": "978-84-460-0264-2",
         "language": "Spanish",
-        "note": "OCLC: 187040016",
-        "number-of-pages": "302",
-        "publisher": "Alianza",
+        "note": "OCLC: 40162792",
+        "publisher": "Akal",
         "publisher-place": "Madrid",
         "source": "Open WorldCat",
-        "title": "Formas de historia cultural",
+        "title": "El problema de la incredulidad en el siglo XVI: la religión de Rabelais",
+        "title-short": "El problema de la incredulidad",
         "author": [
             {
-                "family": "Burke",
-                "given": "Peter"
+                "family": "Febvre",
+                "given": "Lucien"
             }
         ],
         "translator": [
             {
-                "family": "Urrutia",
-                "given": "Belén"
+                "family": "Balsinde",
+                "given": "Isabel"
             }
         ],
         "issued": {
@@ -25371,73 +25328,6 @@
                     "2020"
                 ]
             ]
-        },
-        "edition": "2ª edición"
-    },
-    {
-        "id": "http://zotero.org/users/163570/items/KM78SEUK",
-        "type": "book",
-        "event-place": "Madrid",
-        "ISBN": "978-84-206-4775-3",
-        "language": "Spanish",
-        "note": "OCLC: 187040016",
-        "number-of-pages": "302",
-        "publisher": "Alianza",
-        "publisher-place": "Madrid",
-        "source": "Open WorldCat",
-        "title": "Formas de historia cultural",
-        "author": [
-            {
-                "family": "Burke",
-                "given": "Peter"
-            }
-        ],
-        "translator": [
-            {
-                "family": "Urrutia",
-                "given": "Belén"
-            }
-        ],
-        "issued": {
-            "date-parts": [
-                [
-                    "2020"
-                ]
-            ]
-        },
-        "edition": "2ª edición"
-    },
-    {
-        "id": "http://zotero.org/users/163570/items/KM78SEUK",
-        "type": "book",
-        "event-place": "Madrid",
-        "ISBN": "978-84-206-4775-3",
-        "language": "Spanish",
-        "note": "OCLC: 187040016",
-        "number-of-pages": "302",
-        "publisher": "Alianza",
-        "publisher-place": "Madrid",
-        "source": "Open WorldCat",
-        "title": "Formas de historia cultural",
-        "author": [
-            {
-                "family": "Burke",
-                "given": "Peter"
-            }
-        ],
-        "translator": [
-            {
-                "family": "Urrutia",
-                "given": "Belén"
-            }
-        ],
-        "issued": {
-            "date-parts": [
-                [
-                    "2020"
-                ]
-            ]
-        },
-        "edition": "2ª edición"
+        }
     }
 ]
