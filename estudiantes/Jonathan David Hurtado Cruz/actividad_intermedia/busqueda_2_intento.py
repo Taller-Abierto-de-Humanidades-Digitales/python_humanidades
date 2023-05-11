@@ -19,7 +19,8 @@ def buscatitulo(tipodocumento: str, cadenaclave:str, biblioteca:list) -> list:
     if tipodocumento != 'todo':
         for elemento in biblioteca:
             if elemento['type'] in tipodocumento and cadenaclave.lower() in elemento['title'].lower():
-                resultadobusqueda.append(int(biblioteca.index(elemento)))
+                #resultadobusqueda.append(int(biblioteca.index(elemento)))
+                resultadobusqueda.append(elemento)
     else:
         for elemento in biblioteca:
             if cadenaclave.lower() in elemento['title'].lower():
@@ -46,7 +47,7 @@ def busqueda(palabra_clave, campo, tipo):
                         resultado.append(elemento)
             except KeyError:
                 pass
-    
+        
     return resultado
 
 
@@ -80,7 +81,8 @@ def formateador(resultados):
     return resultado
 
 r = busqueda("2000", "issued", "article-journal")
-print(formateador(r))
+
+#print(formateador(r))
 
 """ def autores(catalogo): # pasa un parámetro
     Completa la función para que devuelva una lista con los nombres de los autores

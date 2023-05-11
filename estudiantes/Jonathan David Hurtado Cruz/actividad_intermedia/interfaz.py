@@ -1,7 +1,7 @@
-from busqueda_2_intento import busqueda 
-from busqueda_2_intento import buscatitulo
-from busqueda_2_intento import formateador
+from busqueda_2_intento import *
 from biblioteca import biblioteca
+
+
 
 def menu():
     print("1. Buscar por título")
@@ -12,23 +12,29 @@ def menu():
     opcion = input("Ingrese una opción: ")
     return opcion
 
+#########IMPLEMENTAR MENU DE SALIDA############
 
 def main():
     opcion = menu()
     while opcion != "5":
         if opcion == "1":
             titulo = input("Ingrese el título: ")
+            #######AGREGAR TIPO TEXTO##########
             biblio= biblioteca()
-            buscatitulo("article-journal", titulo, biblio)
+            rta=buscatitulo("article-journal", titulo, biblio)
+            if rta==[]:
+                print('\n\n No hay titulos que correspondan con la busqueda')
+            print(formateador(rta))
+            #break
         elif opcion == "2":
-            autor = input("Ingrese el autor: ")
+            input_autor = input("Ingrese el autor: ")
             tipo = input("Ingrese el tipo de texto: ")
-            palabra = input("Ingrese la palabra clave para buscar: ")
+            print(input_autor)
             try:
-                busqueda(palabra, autor, tipo) 
-                
+                print(formateador(busqueda(input_autor, 'author', tipo)))
+              
             except TypeError:
-                print("No se encontraron resultados")
+                print("No se encontraron resultados")######<------ cambiar por un if que diga cuando hay error
         elif opcion == "3":
             tip = input("Ingrese el tipo de texto que desea buscar: ")
             biblio= biblioteca()
@@ -47,7 +53,7 @@ def main():
                 busqueda(palabra_clave, autorrr, tipp) 
             except TypeError:
                 print("No se encontraron resultados")
-            
+           
         else:
             print("opción inválida")
         opcion = menu()
@@ -55,3 +61,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
