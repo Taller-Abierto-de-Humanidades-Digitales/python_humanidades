@@ -5,107 +5,97 @@ from biblioteca import biblioteca
 
 biblioteca = biblioteca()
 
+# Formatting functions
 
-# Funcion de formateado
-#__________________________
-
-def printWithFormat(libro):
-  for clave in libro:
-    if clave == 'accessed' or clave == 'issued':
-      print(clave + ": " + libro[clave]['date-parts'][0][0])
-    elif clave == 'author':
-      for author in libro[clave]:
+def printWithFormat(book):
+  for key in book:
+    if key == 'accessed' or key == 'issued':
+      print(key + ": " + book[key]['date-parts'][0][0])
+    elif key == 'author':
+      for author in book[key]:
         authorsString = ''
         if 'family' in author and 'given' in author:
           authorsString += ' ' + author['family'] + ' ' + author['given']
         else:
           authorsString += ' ' + author['literal']
-        print(clave + ": " + authorsString)
-    elif not isinstance(libro[clave], list):
-      print(clave + ": " + libro[clave])
+        print(key + ": " + authorsString)
+    elif not isinstance(book[key], list):
+      print(key + ": " + book[key])
   print('-----------------')
 
-def printElements(libreria):
-  for libro in libreria:
-    printWithFormat(libro)
+def printElements(library):
+  for book in library:
+    printWithFormat(book)
 
-
-
-# Funcion de busqueda 
-#__________________________
-
-def busqueda(clave, textTosearch, method = 'exact', libreria = biblioteca):
+# Search functions
+def search(key, textToSearch, method = 'exact', library = biblioteca):
   foundElements = []
-  for libro in libreria:
+  for book in library:
     if method == 'exact':
-      if textTosearch.lower() == libro[clave].lower():
-        foundElements.append(libro)
+      if textToSearch.lower() == book[key].lower():
+        foundElements.append(book)
     else:
-      # metodo parcial
-      if textTosearch.lower() in libro[clave].lower():
-        foundElements.append(libro)
+      # means method is partial
+      if textToSearch.lower() in book[key].lower():
+        foundElements.append(book)
   return foundElements
 
-def searchByTitle(titleTosearch, method = 'exact', libreria = biblioteca):
-  return busqueda('title', titleTosearch, method, libreria)
+def searchByTitle(titleToSearch, method = 'exact', library = biblioteca):
+  return search('title', titleToSearch, method, library)
 
-def searchByType(typeTosearch, method = 'exact', libreria = biblioteca):
-  return busqueda('type', typeTosearch, method, libreria)
+def searchByType(typeToSearch, method = 'exact', library = biblioteca):
+  return search('type', typeToSearch, method, library)
 
 
-# busqueda especifica
-##__________________________
-
-def searchByAuthorName(authorTosearch, method = 'exact', libreria = biblioteca):
+# Specific search functions
+def searchByAuthorName(authorToSearch, method = 'exact', library = biblioteca):
   foundElements = []
-  for libro in libreria:
-    if "author" in libro:
-      authors = libro['author']
+  for book in library:
+    if "author" in book:
+      authors = book['author']
       for author in authors:
         for item in author:
           authorPartialName = author[item].lower()
           if method == 'exact':
-            if authorTosearch.lower() == authorPartialName:
-              foundElements.append(libro)
+            if authorToSearch.lower() == authorPartialName:
+              foundElements.append(book)
           else:
-            # metodo parcial
-            if authorTosearch.lower() in authorPartialName:
-              foundElements.append(libro)
+            # means method is partial
+            if authorToSearch.lower() in authorPartialName:
+              foundElements.append(book)
   return foundElements
 
-
-# acceso y emisión
-##__________________________
-
-def searchDate(dateTosearch, clave, method = 'exact', libreria = biblioteca):
+# accessed and issued
+def searchDate(dateToSearch, key, method = 'exact', library = biblioteca):
   foundElements = []
-  for libro in libreria:
-    if (clave in libro):
-      dates = libro[clave]['date-parts'][0]
+  for book in library:
+    if (key in book):
+      dates = book[key]['date-parts'][0]
       for date in dates:
         if method == 'exact':
-          if date == dateTosearch:
-            foundElements.append(libro)
+          if date == dateToSearch:
+            foundElements.append(book)
         else:
-          # metodo parcial
-          if dateTosearch in str(date):
-            foundElements.append(libro)
+          # means method is partial
+          if dateToSearch in str(date):
+            foundElements.append(book)
   return foundElements
 
-def searchByKeyWord(keyWordTosearch, method = 'exact', libreria = biblioteca):
+def searchByKeyWord(keyWordToSearch, method = 'exact', library = biblioteca):
   foundElements = []
-  for libro in libreria:
-    for prop in libro:
-      value = libro[prop]
+  for book in library:
+    for prop in book:
+      value = book[prop]
       if isinstance(value, list) or isinstance(value, dict):
         continue
       if method == 'exact':
-        if keyWordTosearch.lower() == value.lower():
-          foundElements.append(libro)
+        if keyWordToSearch.lower() == value.lower():
+          foundElements.append(book)
       else:
-      # metodo parcial
-        if keyWordTosearch.lower() in value.lower():
-          foundElements.append(libro)
-  foundElements.extend(searchDate(keyWordTosearch, 'accessed', method))
-  foundElements.extend(searchDate(keyWordTosearch, 'issued', method))
+      # means method is partial
+        # print(keyWord, value)
+        if keyWordToSearch.lower() in value.lower():
+          foundElements.append(book)
+  foundElements.extend(searchDate(keyWordToSearch, 'accessed', method))
+  foundElements.extend(searchDate(keyWordToSearch, 'issued', method))
   return foundElements
