@@ -63,6 +63,7 @@ def unbox(autores: list) -> str:
     
     return resultado.replace(" ,", ",")
 
+ 
 def formateador(resultados):
     resultado = "\n\n"
     for item in resultados:
@@ -70,6 +71,10 @@ def formateador(resultados):
         for clave, valor in item.items():
             if isinstance(valor, list):
                 resultado += f"{clave}: {unbox(valor)}\n"
+            elif isinstance (valor, dict): 
+                 resultado += f"{clave}: {valor['date-parts'][0][0]}\n"
+                    
+                   
             else:
                 resultado += f"{clave}: {valor}\n"  
         
@@ -80,8 +85,7 @@ def formateador(resultados):
          
     return resultado
 
-r = busqueda("2000", "issued", "article-journal")
-
+r = busqueda("2002", "issued", "article-journal")
 #print(formateador(r))
 
 """ def autores(catalogo): # pasa un parámetro
@@ -134,8 +138,8 @@ unbox(family = "Paz-Trillo", given = "Christian")
         
 
 
-test = [{'family': 'Ramajo Hernández', 'given': 'Nati'}, {'family': 'Ramajo Hernández', 'given': 'Nati'}]
-print(unbox(test))
+#test = [{'family': 'Ramajo Hernández', 'given': 'Nati'}, {'family': 'Ramajo Hernández', 'given': 'Nati'}]
+#print(unbox(test))
 
 
 
