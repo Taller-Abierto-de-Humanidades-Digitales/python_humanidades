@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Operadores de pertenencia &#8212; Curso de Python para las HD</title>
+    <title>Introducción a la programación orientada a objetos &#8212; Curso de Python para las HD</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Sentencias if, elif y else" href="15-ifelse.html" />
-    <link rel="prev" title="Pruebas condicionales" href="13-plogicas.html" />
+    <link rel="next" title="Clases" href="35-clases.html" />
+    <link rel="prev" title="Funciones de la librería re" href="33-regexcont.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -226,7 +226,7 @@ const thebe_selector_output = ".output, .cell_output"
   Condicionales (if else)
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="12-condicionales.html">
    Introducción a los condicionales
@@ -237,8 +237,8 @@ const thebe_selector_output = ".output, .cell_output"
    Pruebas condicionales
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-condicionPertenencia.html">
    Operadores de pertenencia
   </a>
  </li>
@@ -460,9 +460,9 @@ const thebe_selector_output = ".output, .cell_output"
   Clases
  </span>
 </p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="34-introObjetos.html">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Introducción a la programación orientada a objetos
   </a>
  </li>
@@ -547,7 +547,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/gh-pages?urlpath=tree/tutoriales/14-condicionPertenencia.md"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/gh-pages?urlpath=tree/tutoriales/34-introObjetos.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -607,7 +607,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/14-condicionPertenencia.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/issues/new?title=Issue%20on%20page%20%2Ftutoriales/34-introObjetos.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -635,7 +635,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/tutoriales/14-condicionPertenencia.ipynb"
+        <a href="../_sources/tutoriales/34-introObjetos.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -652,7 +652,7 @@ title="Download notebook file"
       </li>
       
       <li>
-        <a href="../_sources/tutoriales/14-condicionPertenencia.md"
+        <a href="../_sources/tutoriales/34-introObjetos.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -712,18 +712,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operadores-de-no-pertenencia">
-   Operadores de no pertenencia
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operadores-de-pertenencia-y-no-pertenencia-con-cadenas-de-caracteres">
-   Operadores de pertenencia y no pertenencia con cadenas de caracteres
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-continuacion">
-   A continuación…
+  <a class="reference internal nav-link" href="#notas">
+   Notas
   </a>
  </li>
 </ul>
@@ -735,7 +725,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Operadores de pertenencia</h1>
+                <h1>Introducción a la programación orientada a objetos</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -746,18 +736,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operadores-de-no-pertenencia">
-   Operadores de no pertenencia
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#operadores-de-pertenencia-y-no-pertenencia-con-cadenas-de-caracteres">
-   Operadores de pertenencia y no pertenencia con cadenas de caracteres
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a-continuacion">
-   A continuación…
+  <a class="reference internal nav-link" href="#notas">
+   Notas
   </a>
  </li>
 </ul>
@@ -770,117 +750,53 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="operadores-de-pertenencia">
-<h1>Operadores de pertenencia<a class="headerlink" href="#operadores-de-pertenencia" title="Permalink to this headline">#</a></h1>
-<p>En este caso, lo que se busca es determinar si un valor se encuentra dentro de una colección de valores. Si la condición se cumple, será verdadera. Para ello, se utiliza el operador <code class="docutils literal notranslate"><span class="pre">in</span></code>. Veamos algunos ejemplos:</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-la-programacion-orientada-a-objetos">
+<h1>Introducción a la programación orientada a objetos<a class="headerlink" href="#introduccion-a-la-programacion-orientada-a-objetos" title="Permalink to this headline">#</a></h1>
+<p>En términos técnicos, todo en Python es un objeto <span id="id1">[<a class="reference internal" href="../references.html#id6" title="Jacob T. Vanderplas. A whirlwind tour of Python. O'Reilly Media, Sebastopol, CA, first edition edition, 2016. ISBN 978-1-4919-6464-4. OCLC: 1023864062.">Vanderplas, 2016</a>]</span>.<a class="footnote-reference brackets" href="#id3" id="id2">1</a> Incluso los tipos de datos básicos como enteros, cadenas y listas son objetos en sí mismos y tienen sus propios métodos y propiedades.</p>
+<p>Las clases también son objetos y sirven para crear objetos. Tal vez parezca un poco complicado en este momento, pero con la práctica se hará más clara esta idea.</p>
+<p>En términos de la Programación Orientada a Objetos, podemos entender un objeto como una entidad que tiene un estado y un comportamiento. El estado de un objeto se refiere a sus propiedades y el comportamiento a sus métodos. Por ejemplo, un objeto de tipo <code class="docutils literal notranslate"><span class="pre">Coche</span></code> puede tener como propiedades el color, la marca, el modelo, etc. y como métodos el arrancar, el frenar, el girar, etc.</p>
+<p>Otro aspecto importante de entender, antes de iniciar nuestro proceso de programación, es la idea de instanciación. Cuando creamos un objeto a partir de una clase, decimos que estamos instanciando un objeto de esa clase. Por ejemplo, podemos instanciar un objeto de la clase <code class="docutils literal notranslate"><span class="pre">Coche</span></code> y asignarlo a una variable:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perro</span> <span class="o">=</span> <span class="s2">&quot;Firulais&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">perro</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Firulais&quot;</span><span class="p">,</span> <span class="s2">&quot;Lassie&quot;</span><span class="p">,</span> <span class="s2">&quot;Scooby Doo&quot;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Coche</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">marca</span><span class="p">,</span> <span class="n">modelo</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">marca</span> <span class="o">=</span> <span class="n">marca</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">modelo</span> <span class="o">=</span> <span class="n">modelo</span>
+
+<span class="n">mi_coche</span> <span class="o">=</span> <span class="n">Coche</span><span class="p">(</span><span class="s2">&quot;rojo&quot;</span><span class="p">,</span> <span class="s2">&quot;Renault&quot;</span><span class="p">,</span> <span class="s2">&quot;Megane&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>El objeto <code class="docutils literal notranslate"><span class="pre">mi_coche</span></code> es una instancia de la clase <code class="docutils literal notranslate"><span class="pre">Coche</span></code> y tiene como propiedades el color, la marca y el modelo. Podemos acceder a ellas de la siguiente forma:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mi_coche</span><span class="o">.</span><span class="n">color</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mi_coche</span><span class="o">.</span><span class="n">marca</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mi_coche</span><span class="o">.</span><span class="n">modelo</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>rojo
+Renault
+Megane
 </pre></div>
 </div>
 </div>
 </div>
-<p>En este caso, la condición se cumple ya que el valor de la variable <code class="docutils literal notranslate"><span class="pre">perro</span></code> se encuentra dentro de la lista de perros. Ahora, veamos un caso diferente:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perro</span> <span class="o">=</span> <span class="s2">&quot;Firulais&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">perro</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Lassie&quot;</span><span class="p">,</span> <span class="s2">&quot;Scooby Doo&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<p>En este caso, la condición no se cumple ya que el valor de la variable <code class="docutils literal notranslate"><span class="pre">perro</span></code> no se encuentra dentro de la lista de perros. Veamos un ejemplo más:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perro</span> <span class="o">=</span> <span class="s2">&quot;Firulais&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">perro</span> <span class="ow">in</span> <span class="s2">&quot;Firulais&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<p>En este caso, la condición se cumple ya que el valor de la variable <code class="docutils literal notranslate"><span class="pre">perro</span></code> se encuentra dentro de la cadena de caracteres.</p>
-<section id="operadores-de-no-pertenencia">
-<h2>Operadores de no pertenencia<a class="headerlink" href="#operadores-de-no-pertenencia" title="Permalink to this headline">#</a></h2>
-<p>En este caso, lo que se busca es determinar si un valor no se encuentra dentro de una colección de valores. Si la condición se cumple, será verdadera. Para ello, se utiliza el operador <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code>. Veamos algunos ejemplos:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">perro</span> <span class="o">=</span> <span class="s2">&quot;Firulais&quot;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">perro</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Firulais&quot;</span><span class="p">,</span> <span class="s2">&quot;Lassie&quot;</span><span class="p">,</span> <span class="s2">&quot;Scooby Doo&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<p>En este caso, la condición no se cumple ya que el valor de la variable <code class="docutils literal notranslate"><span class="pre">perro</span></code> se encuentra dentro de la lista de perros.</p>
-<p>Como habrás deducido, el operador <code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> es el opuesto del operador <code class="docutils literal notranslate"><span class="pre">in</span></code>.</p>
-</section>
-<section id="operadores-de-pertenencia-y-no-pertenencia-con-cadenas-de-caracteres">
-<h2>Operadores de pertenencia y no pertenencia con cadenas de caracteres<a class="headerlink" href="#operadores-de-pertenencia-y-no-pertenencia-con-cadenas-de-caracteres" title="Permalink to this headline">#</a></h2>
-<p>En el caso de las cadenas de caracteres, el operador <code class="docutils literal notranslate"><span class="pre">in</span></code> determina si un carácter se encuentra dentro de la cadena de caracteres. Veamos un ejemplo:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;a&quot;</span> <span class="ow">in</span> <span class="s2">&quot;Hola&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<p>En este caso, la condición se cumple ya que el carácter <code class="docutils literal notranslate"><span class="pre">a</span></code> se encuentra dentro de la cadena de caracteres. Ahora, veamos un caso diferente:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b&quot;</span> <span class="ow">in</span> <span class="s2">&quot;Hola&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<p>En este caso, la condición no se cumple ya que el carácter <code class="docutils literal notranslate"><span class="pre">b</span></code> no se encuentra dentro de la cadena de caracteres.</p>
-<p>Y el caso contrario:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;b&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s2">&quot;Hola&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<p>En este caso, la condición se cumple ya que el carácter <code class="docutils literal notranslate"><span class="pre">b</span></code> no se encuentra dentro de la cadena de caracteres.</p>
-</section>
-<section id="a-continuacion">
-<h2>A continuación…<a class="headerlink" href="#a-continuacion" title="Permalink to this headline">#</a></h2>
-<p>Ahora que ya tenemos claro cómo realizar operaciones que determinen si una condición es verdadera o falsa, estamos preparados para empezar a utilizar las estructuras de control de flujo. En el siguiente apartado, veremos cómo utilizar las estructuras de control de flujo <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> y <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<p>Podríamos verbalizarlo de la siguiente manera:</p>
+<p>Una clase es una plantilla para la creación de objetos. Cuando creamos un objeto a partir de una clase, decimos que estamos instanciando un objeto de esa clase.</p>
+<p>Lo que es relevante de entender en este momento, es que las clases nos ayudan a pensar como programadores. En lugar de pensar en un problema como un conjunto de variables y funciones, podemos pensar en él como un conjunto de objetos que interactúan entre sí. Esto nos permite abstraer el problema y centrarnos en los aspectos más importantes. Lo anterior implica que debamos diseñar antes de escribir código y en este sentido pasamos de un enfoque imperativo (una sucesión de instrucciones) a un enfoque orientado a objetos.</p>
+<section id="notas">
+<h2>Notas<a class="headerlink" href="#notas" title="Permalink to this headline">#</a></h2>
+<hr class="footnotes docutils" />
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Puedes consultar la cita y algunos ejemplos en el siguiente enlace: <a class="reference external" href="https://jakevdp.github.io/WhirlwindTourOfPython/03-semantics-variables.html#Everything-Is-an-Object">https://jakevdp.github.io/WhirlwindTourOfPython/03-semantics-variables.html#Everything-Is-an-Object</a></p>
+</dd>
+</dl>
 </section>
 </section>
 
@@ -911,17 +827,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="13-plogicas.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="33-regexcont.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Pruebas condicionales</p>
+            <p class="prev-next-title">Funciones de la librería <code class="docutils literal notranslate"><span class="pre">re</span></code></p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="15-ifelse.html" title="next page">
+    <a class='right-next' id="next-link" href="35-clases.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sentencias <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> y <code class="docutils literal notranslate"><span class="pre">else</span></code></p>
+        <p class="prev-next-title">Clases</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
