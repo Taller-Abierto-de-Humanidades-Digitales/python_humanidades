@@ -25,7 +25,8 @@ El padre del escritor era Rodrigo de Cervantes (1509-1585), casado con Leonor de
 
 conectores = ["Es", "Se", "De", "El", "La", "Los", "Las", "Un", "Una", "Unos", "Unas", "Al", "Del", "Y", "O", "En", "A", "Ante", "Bajo", "Cabe", "Con", "Contra", "De", "Desde", "Durante", "En", "Entre", "Hacia", "Hasta", "Mediante", "Para", "Por", "Según", "Sin", "Sobre", "Tras", "Versus", "Vía", "Fue"]
 
-patron = r"\b(?!" + "|".join(conectores) + r"\b)([A-Z][a-ü]+)\b"
+patron = r"(\w+ ){3}el (\w+ ){3}"
+patron = r"(\S+)\s*(\S+)\s*\bel\b\s*(\S+)\s*(\S+)"
 
 busqueda = re.findall(patron, Cervantes)
 print(busqueda)
