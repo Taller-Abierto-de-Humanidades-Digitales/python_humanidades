@@ -3,7 +3,7 @@ from biblioteca import biblioteca
 
 biblioteca = biblioteca()
 
-answer = True;
+answer = True
 while answer == True:
   # print("Search by title")
   # title = input()
@@ -34,5 +34,5 @@ while answer == True:
 
   # final question
   print("Do you want to continue searching?")
-  inputData = input()
-  answer = inputData.lower() == "true"
+  inputData = input("S/N: ") # las instrucciones nunca están de más :p
+  answer = inputData.lower() == "s" # para que coincida con la instrucción previa
