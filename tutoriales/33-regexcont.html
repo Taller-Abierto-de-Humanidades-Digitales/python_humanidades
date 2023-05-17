@@ -1121,9 +1121,6 @@ title="Print to PDF"
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El correo es válido
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 <p>Esta es una fórmula muy sencilla, y deja de lado varias opciones como un correo con terminación <code class="docutils literal notranslate"><span class="pre">.com.co</span></code> o <code class="docutils literal notranslate"><span class="pre">.co</span></code>, pero es un buen punto de partida para validar que un correo electrónico tenga un formato válido <a class="footnote-reference brackets" href="#nota1" id="id1">1</a>.</p>
@@ -1169,7 +1166,9 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El nombre es válido
-Nombre: Jairo
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Nombre: Jairo
 Apellidos: Melo Flórez
 </pre></div>
 </div>
@@ -1295,7 +1294,9 @@ Apellidos: Melo Flórez
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ilustres
-ilustrado
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ilustrado
 ilustre
 ilustres
 ilustre
@@ -1398,9 +1399,7 @@ ilustre
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El Quijote
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cervantes Saavedra
+Cervantes Saavedra
 </pre></div>
 </div>
 </div>
@@ -1420,7 +1419,7 @@ ilustre
 <hr class="footnotes docutils" />
 <dl class="footnote brackets">
 <dt class="label" id="nota1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>En caso de que tengas curiosidad de una expresión regular estándar (aunque simplificada) para validar correos electrónicos usada por los navegadores, es la siguiente: <code class="docutils literal notranslate"><span class="pre">^[a-zA-Z0-9.!#$%&amp;'*+\/=?^_`{|}~-]+&#64;[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$</span></code>. Tomado de David J. Malan, <a class="reference external" href="https://youtu.be/nLRL_NcnK-4?t=34943">Harvard CS50’s Introduction to Programming with Python</a></p>
+<dd><p>En caso de que tengas curiosidad de una expresión regular estándar (aunque simplificada) para validar correos electrónicos usada por los navegadores, es la siguiente: <code class="docutils literal notranslate"><span class="pre">^[a-zA-Z0-9.!#$%&amp;'*+\/=?^_`{|}~-]+&#64;[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$</span></code> Tomado de David J. Malan, <a class="reference external" href="https://youtu.be/nLRL_NcnK-4?t=34943">Harvard CS50’s Introduction to Programming with Python</a>. Una versión más compleja es la siguiente <a class="reference external" href="http://www.ex-parrot.com/~pdw/Mail-RFC822-Address.html">Mail::RFC822::Address: regexp-based address validation</a>, aunque realmente no es recomendable usarla en la práctica. En caso de que desees utilizar un método para validar los correos electrónicos, y antes de empezar a hacer una confusa e ilegible expresión regular, puedes utilizar la librería <a class="reference external" href="https://pypi.org/project/email-validator/">email-validator</a>, que es mucho más sencilla de usar y comprende una importante variedad de posibilidades que una sola expresión regular no podría manejar (p. ej: <a class="reference external" href="https://github.com/JoshData/python-email-validator/blob/main/email_validator/rfc_constants.py">https://github.com/JoshData/python-email-validator/blob/main/email_validator/rfc_constants.py</a>).</p>
 </dd>
 <dt class="label" id="nota2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>En este caso, la función <code class="docutils literal notranslate"><span class="pre">match</span></code> regresa un objeto <code class="docutils literal notranslate"><span class="pre">None</span></code>, que no tiene ningún grupo. Por lo tanto, la función <code class="docutils literal notranslate"><span class="pre">group</span></code> no puede extraer ningún grupo. Por otra parte, el segundo grupo <code class="docutils literal notranslate"><span class="pre">(?:\s+[A-Z][a-ü]+)</span></code> no se captura porque se usa <code class="docutils literal notranslate"><span class="pre">(?:...)</span></code> como grupo no capturador.</p>
