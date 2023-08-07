@@ -1,25 +1,12 @@
-# Actividad 1: Configurar un entorno de desarrollo para Python
+# Actividad 1: Comparte tu cuaderno
 
-La primera actividad del curso consistirá en configurar un entorno de desarrollo para Python, es decir, vamos a instalar Python, Visual Studio Code y Git en nuestro computador y vamos a configurarlos para que sea posible escribir código en Python y compartirlo en Github.
+Como un ejercicio práctico, comparte en el foro "Google Colab" de la unidad "Introducción" el cuaderno que has creado. Solamente copia el enlace público (solo lectura) en el foro para que los demás participantes lo puedan consultar.
 
-1. Instalar Python
-2. Instalar Visual Studio Code
-3. Instalar Git
-4. Crear una cuenta de Github
-5. Configurar Git
-6. Clonar el repositorio del curso
-7. Editar el archivo `README.md` con tu nombre
-    - Agrega la siguiente información en tu archivo `README.md`:
-        - Nombre
-        - Carrera
-        - Semestre
-        - Usuario de Github
-8. Crear un branch, agregar los cambios y hacer un commit
-9. Hacer un push y un pull request
+Solamente unos requisitos básicos:
 
+- incluye al menos una celda de texto
+- incluye al menos una celda de código
+- incluye una ruta a un documento de texto en Google Drive
+- en una celda, escribe el código que muestre que es posible leer el archivo de texto
 
-## Guía para la actividad
-
-En este video podrás ver una guía, paso a paso, para realizar la actividad:
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/T7jfe9QlxXQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+Obviamente tu creatividad es el límite, así que si quieres incluir alguna otra maravilla que hayas realizado (subir una imagen en una celda de texto, etc.), no dudes en hacerlo.
