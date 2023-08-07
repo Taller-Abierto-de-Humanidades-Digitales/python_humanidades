@@ -4,7 +4,7 @@ Las variables y la sintaxis de Python son dos aspectos básicos, sencillos y fun
 
 ## Ejercicio 1: Sintaxis
 
-El primer ejericio consiste en corregir el código de Python que se encuentra en el archivo `act2.py` en el directorio `code` de [este repositorio](https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/tree/main/code). El código tiene múltiples errores que deben ser corregidos para que el programa funcione correctamente.
+El primer ejericio consiste en corregir el código de Python que se encuentra en el archivo `act2.py` en el directorio `code` de [este repositorio](https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B/tree/main/code). El código tiene múltiples errores que deben ser corregidos para que el programa funcione correctamente.
 
 Antes de empezar la actividad, deberás sincronizar tu repositorio local con el repositorio remoto. Para esto, debes abrir la terminal de comandos y ejecutar los siguientes comandos:
 
