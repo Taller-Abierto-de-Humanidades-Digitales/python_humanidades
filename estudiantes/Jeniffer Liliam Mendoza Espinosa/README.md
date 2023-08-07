@@ -1,4 +1,0 @@
-- Nombre: Jeniffer Liliam Mendoza Espinosa
-- Carrera: Maestría en Humanidades Digitales
-- Semestre: 3°
-- Usuario de Github: JLiliam
