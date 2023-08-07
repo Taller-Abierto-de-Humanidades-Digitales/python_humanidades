@@ -83,19 +83,6 @@ Finalmente, vamos a compartir nuestro cuaderno de Google Colab. Estos cuadernos 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mK6NjqGhFEE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## Comparte tu cuaderno
-
-Como un ejercicio práctico, comparte en el foro <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python/issues/new?title=Actividad%20Google%20Colab&body=El%20enlace%20de%20tu%20cuaderno." target="_blank"> Google Colab</a> de la primera semana el cuaderno que has creado. Solamente copia el enlace público (*solo lectura*) en el foro para que los demás participantes lo puedan consultar.
-
-Solamente unos requisitos básicos:
-
-- incluye al menos una celda de texto
-- incluye al menos una celda de código
-- incluye una ruta a un documento de texto en Google Drive
-- en una celda, escribe el código que muestre que es posible leer el archivo de texto
-
-Obviamente tu creatividad es el límite, así que si quieres incluir alguna otra maravilla que hayas realizado (subir una imagen en una celda de texto, etc.), no dudes en hacerlo.
-
 ## Notas
 
 [^jupyter]: El sistema que utiliza Google Colab se denomina [Jupyter Notebook](https://es.wikipedia.org/wiki/Proyecto_Jupyter#Jupyter_Notebook). Si deseas profundizar un poco más en su uso puedes consultar el siguiente [video](https://youtu.be/6Vr9ZUntCyE) de Leonardo Kuffo.
