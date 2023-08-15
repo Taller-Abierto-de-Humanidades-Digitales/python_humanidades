@@ -19,7 +19,7 @@ En esta actividad vamos a construir un programa que nos permita consultar una bi
 
 ## Sobre el conjunto de datos
 
-Para realizar este ejercicio, les brindamos un [conjunto de referencias bibliográficas](https://www.zotero.org/groups/197065/humanidades_digitales/library) exportadas desde el programa [Zotero](https://www.zotero.org/) las cuales pueden visualizar en el [repositorio del curso](https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/blob/main/data/bibliografia.json).
+Para realizar este ejercicio, les brindamos un [conjunto de referencias bibliográficas](https://www.zotero.org/groups/197065/humanidades_digitales/library) exportadas desde el programa [Zotero](https://www.zotero.org/) las cuales pueden visualizar en el [repositorio del curso](https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B/blob/main/data/bibliografia.json).
 
 Este conjunto de datos contiene la siguiente información:
 

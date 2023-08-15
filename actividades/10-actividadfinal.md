@@ -87,4 +87,4 @@ Puedes complejizar tu interface agregando opciones como las siguientes:
 
 A diferencia de las actividades anteriores, este programa estará mejor ubicado en un repositorio propio de Github. Por lo tanto, deberás crear un repositorio en Github y subir tu programa a ese repositorio. El repositorio debe tener un archivo README.md con las instrucciones para ejecutar el programa.
 
-Para que tu programa pueda recibir retroalimentación, envía el enlace de tu repositorio a nuestro foro de discusión a través de la etiqueta [programas](https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/discussions/new?category=programas&title=mi%20programa).
+Para que tu programa pueda recibir retroalimentación, envía el enlace de tu repositorio a nuestro foro de discusión a través de la etiqueta [programas](https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B/discussions/new?category=programas&title=mi%20programa).
