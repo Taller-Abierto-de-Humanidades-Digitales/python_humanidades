@@ -543,6 +543,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B/gh-pages?urlpath=tree/actividades/2-sintaxis_variables.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -610,7 +639,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/actividades/2-sintaxis_variables.md"
+        <a href="../_sources/actividades/2-sintaxis_variables.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -621,7 +650,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -675,31 +704,49 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-2-variables">
-   Ejercicio 2: Variables
+  <a class="reference internal nav-link" href="#ejercicio-2-crea-una-variable-para-el-nombre-de-una-persona-y-otra-para-su-apellido-imprime-el-nombre-completo-de-la-persona">
+   Ejercicio 2: Crea una variable para el nombre de una persona y otra para su apellido. Imprime el nombre completo de la persona.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-3-manipulacion-de-cadenas-de-texto">
-   Ejercicio 3: Manipulación de cadenas de texto
+  <a class="reference internal nav-link" href="#ejercicio-3-crea-una-variable-para-la-marca-de-un-carro">
+   Ejercicio 3: Crea una variable para la marca de un carro.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-4-operadores-con-cadenas-de-texto">
-   Ejercicio 4: Operadores con cadenas de texto
+  <a class="reference internal nav-link" href="#validacion">
+   Validación:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#entrega">
-   Entrega
+  <a class="reference internal nav-link" href="#ejercicio-4-el-siguiente-codigo-esta-escrito-de-manera-incorrecta">
+   Ejercicio 4: El siguiente código está escrito de manera incorrecta.
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fecha-de-entrega">
-     Fecha de entrega
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-5-corrige-las-siguientes-variables-de-texto-para-que-el-codigo-funcione-correctamente">
+   Ejercicio 5: Corrige las siguientes variables de texto para que el código funcione correctamente.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#validacion-ejercicio-5">
+   Validación ejercicio 5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-6">
+   Ejercicio 6
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-7-manipulacion-de-cadenas-de-texto">
+   Ejercicio 7: Manipulación de cadenas de texto
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-8-operadores-con-cadenas-de-texto">
+   Ejercicio 8: Operadores con cadenas de texto
+  </a>
  </li>
 </ul>
 
@@ -726,31 +773,49 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-2-variables">
-   Ejercicio 2: Variables
+  <a class="reference internal nav-link" href="#ejercicio-2-crea-una-variable-para-el-nombre-de-una-persona-y-otra-para-su-apellido-imprime-el-nombre-completo-de-la-persona">
+   Ejercicio 2: Crea una variable para el nombre de una persona y otra para su apellido. Imprime el nombre completo de la persona.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-3-manipulacion-de-cadenas-de-texto">
-   Ejercicio 3: Manipulación de cadenas de texto
+  <a class="reference internal nav-link" href="#ejercicio-3-crea-una-variable-para-la-marca-de-un-carro">
+   Ejercicio 3: Crea una variable para la marca de un carro.
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-4-operadores-con-cadenas-de-texto">
-   Ejercicio 4: Operadores con cadenas de texto
+  <a class="reference internal nav-link" href="#validacion">
+   Validación:
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#entrega">
-   Entrega
+  <a class="reference internal nav-link" href="#ejercicio-4-el-siguiente-codigo-esta-escrito-de-manera-incorrecta">
+   Ejercicio 4: El siguiente código está escrito de manera incorrecta.
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fecha-de-entrega">
-     Fecha de entrega
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-5-corrige-las-siguientes-variables-de-texto-para-que-el-codigo-funcione-correctamente">
+   Ejercicio 5: Corrige las siguientes variables de texto para que el código funcione correctamente.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#validacion-ejercicio-5">
+   Validación ejercicio 5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-6">
+   Ejercicio 6
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-7-manipulacion-de-cadenas-de-texto">
+   Ejercicio 7: Manipulación de cadenas de texto
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicio-8-operadores-con-cadenas-de-texto">
+   Ejercicio 8: Operadores con cadenas de texto
+  </a>
  </li>
 </ul>
 
@@ -765,30 +830,164 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="actividad-2-variables-y-sintaxis">
 <h1>Actividad 2: Variables y sintaxis<a class="headerlink" href="#actividad-2-variables-y-sintaxis" title="Permalink to this headline">#</a></h1>
 <p>Las variables y la sintaxis de Python son dos aspectos básicos, sencillos y fundamentales para la programación. En esta actividad, realizaremos tres ejercicios para practicar la sintaxis de Python y aprender a utilizar variables.</p>
+<p>👉 Abre este cuaderno en tu Google Colab utilizando el botón “Open in Colab”, luego haz una copia en Drive (“Archivo &gt; Guardar una copia en Drive”) y sigue las instrucciones.</p>
+<p><a href="https://colab.research.google.com/gist/jairomelo/ba71f9fe43d731a13679f026677d3efe/2-sintaxis_variables.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><strong>Envío:</strong> Envía la actividad a través del foro “Actividad 2: Variables y sintaxis” de la unidad “Introducción” del curso.</p>
 <section id="ejercicio-1-sintaxis">
 <h2>Ejercicio 1: Sintaxis<a class="headerlink" href="#ejercicio-1-sintaxis" title="Permalink to this headline">#</a></h2>
-<p>El primer ejericio consiste en corregir el código de Python que se encuentra en el archivo <code class="docutils literal notranslate"><span class="pre">act2.py</span></code> en el directorio <code class="docutils literal notranslate"><span class="pre">code</span></code> de <a class="reference external" href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B/tree/main/code">este repositorio</a>. El código tiene múltiples errores que deben ser corregidos para que el programa funcione correctamente.</p>
-<p>Antes de empezar la actividad, deberás sincronizar tu repositorio local con el repositorio remoto. Para esto, debes abrir la terminal de comandos y ejecutar los siguientes comandos:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>curso_python_extenso
-git<span class="w"> </span>pull
+<p>Crea una variable llamada <code class="docutils literal notranslate"><span class="pre">hola</span></code> para el valor “Hola mundo” e imprímela en pantalla.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># crea tu código aquí</span>
 </pre></div>
 </div>
-<p>Antes de hacer cualquier cambio, muevete al brazo en el que estás realizando las actividades:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>tu_brazo
-</pre></div>
 </div>
-<p>Copia los archivos <code class="docutils literal notranslate"><span class="pre">act2.py</span></code> y <code class="docutils literal notranslate"><span class="pre">act2Validator.py</span></code> en el directorio con tu nombre (de preferencia, crea un subdirectorio para esta actividad). Deben estar ambos en el mismo directorio, de otra manera el validador no funcionará.</p>
-<p>Abre el archivo <code class="docutils literal notranslate"><span class="pre">act2.py</span></code> en Visual Studio Code y corrige los errores que se encuentran en el código. Para corregir los errores, debes leer el mensaje de error que aparece en la terminal de comandos y corregir el código en el archivo <code class="docutils literal notranslate"><span class="pre">act2.py</span></code> de acuerdo a lo que te indica el mensaje de error.</p>
-<p>Una vez que hayas corregido los errores, debes guardar los cambios en el archivo <code class="docutils literal notranslate"><span class="pre">act2.py</span></code> y ejecutar el programa. Para ejecutar el programa, debes abrir la terminal de comandos y ejecutar el siguiente comando:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>act2.py
-</pre></div>
 </div>
-<p>También puedes hacerlo directamente desde Visual Studio Code. Para esto, debes abrir el archivo <code class="docutils literal notranslate"><span class="pre">act2.py</span></code> y hacer clic en el botón <code class="docutils literal notranslate"><span class="pre">Run</span></code> que aparece en la parte superior de la ventana.</p>
-<p>Las últimas líneas del programa corresponden a un validador del código. Es decir, el programa ejecuta una serie de pruebas para verificar que el código que has escrito funciona correctamente. Si el programa no muestra ningún mensaje de error, significa que el código que has escrito funciona correctamente. Si el programa muestra un mensaje de error, significa que el código que has escrito tiene errores y debes corregirlo.</p>
 </section>
-<section id="ejercicio-2-variables">
-<h2>Ejercicio 2: Variables<a class="headerlink" href="#ejercicio-2-variables" title="Permalink to this headline">#</a></h2>
-<p>El segundo ejercicio consiste en escribir un programa que exprese la conversación entre dos personas. El programa debe contener las siguientes variables:</p>
+<section id="ejercicio-2-crea-una-variable-para-el-nombre-de-una-persona-y-otra-para-su-apellido-imprime-el-nombre-completo-de-la-persona">
+<h2>Ejercicio 2: Crea una variable para el nombre de una persona y otra para su apellido. Imprime el nombre completo de la persona.<a class="headerlink" href="#ejercicio-2-crea-una-variable-para-el-nombre-de-una-persona-y-otra-para-su-apellido-imprime-el-nombre-completo-de-la-persona" title="Permalink to this headline">#</a></h2>
+<p>La variable debe ser <code class="docutils literal notranslate"><span class="pre">nombre</span></code> y <code class="docutils literal notranslate"><span class="pre">apellido</span></code> respectivamente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe aquí tu código</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-3-crea-una-variable-para-la-marca-de-un-carro">
+<h2>Ejercicio 3: Crea una variable para la marca de un carro.<a class="headerlink" href="#ejercicio-3-crea-una-variable-para-la-marca-de-un-carro" title="Permalink to this headline">#</a></h2>
+<p>El nombre de la variable debe ser <code class="docutils literal notranslate"><span class="pre">nombre_carro</span></code>. Imprime el nombre del carro.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe aquí tu código</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="validacion">
+<h2>Validación:<a class="headerlink" href="#validacion" title="Permalink to this headline">#</a></h2>
+<p>Ejecuta la siguiente celda. Debe mostrar el mensaje correctamente. Si no es así, revisa tu código.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ⚠️ Esta celda solamente se utiliza para validar tu código. No modifiques nada en ella</span>
+
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">apellido</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre_carro</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
+<span class="k">assert</span> <span class="n">saludo</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">nombre</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">apellido</span> <span class="o">+</span> <span class="s2">&quot; y tengo un carro &quot;</span> <span class="o">+</span> <span class="n">nombre_carro</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Felicitaciones! ¡Tu código es correcto!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># ⚠️ Esta celda solamente se utiliza para validar tu código. No modifiques nada en ella</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">apellido</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre_carro</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
+
+<span class="ne">NameError</span>: name &#39;nombre&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-4-el-siguiente-codigo-esta-escrito-de-manera-incorrecta">
+<h2>Ejercicio 4: El siguiente código está escrito de manera incorrecta.<a class="headerlink" href="#ejercicio-4-el-siguiente-codigo-esta-escrito-de-manera-incorrecta" title="Permalink to this headline">#</a></h2>
+<p>Corrige el código para que funcione correctamente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># corrige los errores de sintaxis para que las siguientes sentencias se puedan ejecutar correctamente</span>
+
+<span class="mi">1</span><span class="n">primer_nombre</span> <span class="o">=</span> <span class="n">Akira</span>
+<span class="mi">2</span><span class="n">primer_apellido</span> <span class="o">=</span> <span class="s2">&quot;Toriyama</span>
+
+
+<span class="nb">print</span> <span class="n">autor</span>
+
+<span class="n">fech</span><span class="nd">@_nacimiento</span> <span class="o">=</span> <span class="mi">1955</span>
+
+    <span class="n">Nombre_Manga</span> <span class="o">=</span> <span class="s2">&quot;Dr. Slump&quot;</span>
+
+<span class="n">fecha</span> <span class="n">pub</span> <span class="o">=</span> <span class="s2">&quot;1979&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">    </span><span class="mi">1</span><span class="n">primer_nombre</span> <span class="o">=</span> <span class="n">Akira</span>
+    <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid decimal literal
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-5-corrige-las-siguientes-variables-de-texto-para-que-el-codigo-funcione-correctamente">
+<h2>Ejercicio 5: Corrige las siguientes variables de texto para que el código funcione correctamente.<a class="headerlink" href="#ejercicio-5-corrige-las-siguientes-variables-de-texto-para-que-el-codigo-funcione-correctamente" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">texto1</span> <span class="o">=</span> <span class="s2">&quot;Akira Toriyama publicó su manga &quot;</span><span class="n">Dragon</span> <span class="n">Ball</span><span class="s2">&quot; en 1984&quot;</span>
+<span class="n">texto2</span> <span class="o">=</span> <span class="s2">&quot;Quentin Tarantino es el director&quot;</span> <span class="s2">&quot;de la película Pulp Fiction&quot;</span>
+<span class="n">texto3</span> <span class="o">=</span> <span class="s2">&quot;Yo, señor, soy acontista.</span>
+        <span class="n">Mi</span> <span class="n">profesión</span> <span class="n">es</span> <span class="n">hacer</span> <span class="n">disparos</span> <span class="n">al</span> <span class="n">aire</span><span class="o">.</span>
+        <span class="n">Todavía</span> <span class="n">no</span> <span class="n">habré</span> <span class="n">descendido</span> <span class="n">la</span> <span class="n">primera</span> <span class="n">nube</span><span class="o">.</span>
+        <span class="n">Mas</span><span class="p">,</span> <span class="n">la</span> <span class="n">delicia</span> <span class="n">está</span> <span class="n">en</span> <span class="n">curvar</span> <span class="n">el</span> <span class="n">arco</span>
+        <span class="n">y</span> <span class="n">en</span> <span class="n">suponer</span> <span class="n">la</span> <span class="n">flecha</span> <span class="n">donde</span> <span class="n">la</span> <span class="n">clava</span> <span class="n">el</span> <span class="n">ojo</span><span class="o">.</span><span class="s2">&quot;</span>
+<span class="n">texto4</span> <span class="o">=</span> <span class="s2">&quot;Es posible que </span><span class="si">{nombre}</span><span class="s2"> no haya leído nombre_manga.&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="n">texto3</span> <span class="o">=</span> <span class="s2">&quot;Yo, señor, soy acontista.</span>
+             <span class="o">^</span>
+<span class="ne">SyntaxError</span>: unterminated string literal (detected at line 3)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="validacion-ejercicio-5">
+<h2>Validación ejercicio 5<a class="headerlink" href="#validacion-ejercicio-5" title="Permalink to this headline">#</a></h2>
+<p>Ejecuta la siguiente celda para comprobar que tu ejercicio es correcto:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ⚠️ Esta celda solamente se utiliza para validar tu código. No modifiques nada en ella</span>
+
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">texto1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
+<span class="c1"># check if texto2 is defined and is a string</span>
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">texto2</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
+<span class="k">assert</span> <span class="n">texto2</span> <span class="o">==</span> <span class="s2">&quot;Quentin Tarantino es el director de la película Pulp Fiction&quot;</span><span class="p">,</span> <span class="s2">&quot;La variable texto2 no es correcta&quot;</span>
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">texto3</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">texto4</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
+<span class="k">assert</span> <span class="n">texto4</span> <span class="o">==</span> <span class="sa">f</span><span class="s2">&quot;Es posible que </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2"> no haya leído </span><span class="si">{</span><span class="n">nombre_manga</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="s2">&quot;La variable texto4 no es correcta&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Felicitaciones! ¡Has completado el ejercicio!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># ⚠️ Esta celda solamente se utiliza para validar tu código. No modifiques nada en ella</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">texto1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># check if texto2 is defined and is a string</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">texto2</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
+
+<span class="ne">NameError</span>: name &#39;texto1&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-6">
+<h2>Ejercicio 6<a class="headerlink" href="#ejercicio-6" title="Permalink to this headline">#</a></h2>
+<p>Este ejercicio consiste en escribir un programa que exprese la conversación entre dos personas. El programa debe contener las siguientes variables:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">nombre1</span></code>: Nombre de la primera persona</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">nombre2</span></code>: Nombre de la segunda persona</p></li>
@@ -803,11 +1002,44 @@ git<span class="w"> </span>pull
 <span class="n">Hemos</span> <span class="n">estado</span> <span class="n">conversando</span> <span class="n">por</span> <span class="p">[</span><span class="n">tiempo</span><span class="p">]</span> <span class="n">minutos</span> <span class="n">mientras</span> <span class="n">estábamos</span> <span class="n">en</span> <span class="p">[</span><span class="n">lugar</span><span class="p">]</span><span class="o">.</span>
 </pre></div>
 </div>
-<p>Para este ejercicio, debes crear un archivo llamado <code class="docutils literal notranslate"><span class="pre">act2_2.py</span></code> en el directorio con tu nombre.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe aquí tu código</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ⚠️ Esta celda solamente se utiliza para validar parte de tu código. No modifiques nada en ella</span>
+
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;Tu variable nombre no es un string&quot;</span>
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre2</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;Tu variable nombre no es un string&quot;</span>
+<span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">edad1</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">edad2</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">tiempo</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;Tu variable tiempo no es un string&quot;</span>
+<span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">lugar</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;Tu variable lugar no es un string&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># ⚠️ Esta celda solamente se utiliza para validar parte de tu código. No modifiques nada en ella</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;Tu variable nombre no es un string&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre2</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;Tu variable nombre no es un string&quot;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">edad1</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;nombre1&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="ejercicio-3-manipulacion-de-cadenas-de-texto">
-<h2>Ejercicio 3: Manipulación de cadenas de texto<a class="headerlink" href="#ejercicio-3-manipulacion-de-cadenas-de-texto" title="Permalink to this headline">#</a></h2>
-<p>El tercer ejercicio consiste en escribir un programa que tome una frase y aplique las siguientes funciones:</p>
+<section id="ejercicio-7-manipulacion-de-cadenas-de-texto">
+<h2>Ejercicio 7: Manipulación de cadenas de texto<a class="headerlink" href="#ejercicio-7-manipulacion-de-cadenas-de-texto" title="Permalink to this headline">#</a></h2>
+<p>Este ejercicio consiste en escribir un programa que tome una frase y aplique las siguientes funciones:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">lower()</span></code>: Convierte todas las letras de la frase a minúsculas</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">upper()</span></code>: Convierte todas las letras de la frase a mayúsculas</p></li>
@@ -819,14 +1051,21 @@ git<span class="w"> </span>pull
 <li><p><code class="docutils literal notranslate"><span class="pre">split()</span></code>: Divide la frase en palabras</p></li>
 </ul>
 <p>Cada función debe ser aplicada a la frase e imprimirla usando <code class="docutils literal notranslate"><span class="pre">format()</span></code>. Por ejemplo, si la frase es <code class="docutils literal notranslate"><span class="pre">hola</span> <span class="pre">mundo</span></code>, el programa debe imprimir:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Esta es la frase en minúsculas: </span><span class="si">{</span><span class="n">frase</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Esta es la frase en mayúsculas: </span><span class="si">{</span><span class="n">frase</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Esta</span> <span class="n">es</span> <span class="n">la</span> <span class="n">frase</span> <span class="n">en</span> <span class="n">mayúsculas</span><span class="p">:</span> <span class="n">HOLA</span> <span class="n">MUNDO</span>
 </pre></div>
 </div>
-<p>Para este ejercicio, debes crear un archivo llamado <code class="docutils literal notranslate"><span class="pre">act2_3.py</span></code> en el directorio con tu nombre.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe aquí tu código</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="ejercicio-4-operadores-con-cadenas-de-texto">
-<h2>Ejercicio 4: Operadores con cadenas de texto<a class="headerlink" href="#ejercicio-4-operadores-con-cadenas-de-texto" title="Permalink to this headline">#</a></h2>
-<p>El cuarto ejercicio consiste en escribir un programa que tome una frase y aplique los siguientes operadores:</p>
+<section id="ejercicio-8-operadores-con-cadenas-de-texto">
+<h2>Ejercicio 8: Operadores con cadenas de texto<a class="headerlink" href="#ejercicio-8-operadores-con-cadenas-de-texto" title="Permalink to this headline">#</a></h2>
+<p>El último ejercicio consiste en escribir un programa que tome una frase y aplique los siguientes operadores:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">+</span></code>: Concatena dos cadenas de texto</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">*</span></code>: Repite una cadena de texto un número de veces</p></li>
@@ -836,23 +1075,17 @@ git<span class="w"> </span>pull
 <li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code>: Verifica si dos cadenas de texto son diferentes</p></li>
 </ul>
 <p>Cada operador debe ser aplicado a la frase e imprimirla usando <code class="docutils literal notranslate"><span class="pre">format()</span></code>. Por ejemplo, si la frase es <code class="docutils literal notranslate"><span class="pre">hola</span> <span class="pre">mundo</span></code>, el programa debe imprimir:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Esta es la frase concatenada: </span><span class="si">{</span><span class="n">frase</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;hola&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Esta es la frase concatenada: </span><span class="si">{</span><span class="n">frase</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; hola&#39;</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Esta</span> <span class="n">es</span> <span class="n">la</span> <span class="n">frase</span> <span class="n">concatenada</span><span class="p">:</span> <span class="n">hola</span> <span class="n">mundo</span> <span class="n">hola</span>
 </pre></div>
 </div>
-<p>Para este ejercicio, debes crear un archivo llamado <code class="docutils literal notranslate"><span class="pre">act2_4.py</span></code> en el directorio con tu nombre.</p>
-</section>
-<section id="entrega">
-<h2>Entrega<a class="headerlink" href="#entrega" title="Permalink to this headline">#</a></h2>
-<p>Para entregar la actividad, debes hacer un <code class="docutils literal notranslate"><span class="pre">commit</span></code> de los modificados y hacer un <code class="docutils literal notranslate"><span class="pre">push</span></code> de tu brazo al repositorio remoto.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Entrega de la actividad 2&quot;</span>
-git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>nombre-del-brazo
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe aquí tu código</span>
 </pre></div>
 </div>
-<section id="fecha-de-entrega">
-<h3>Fecha de entrega<a class="headerlink" href="#fecha-de-entrega" title="Permalink to this headline">#</a></h3>
-<p>Entrega la actividad antes del martes 7 de febrero.</p>
-</section>
+</div>
+</div>
 </section>
 </section>
 
