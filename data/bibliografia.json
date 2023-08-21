@@ -25769,5 +25769,71 @@
             ]
         },
         "edition": "2ª edición"
+    },
+    {
+        "id": "http://zotero.org/users/163570/items/KM78SEUK",
+        "type": "book",
+        "event-place": "Madrid",
+        "ISBN": "978-84-206-4775-3",
+        "language": "Spanish",
+        "note": "OCLC: 187040016",
+        "number-of-pages": "302",
+        "publisher": "Alianza",
+        "publisher-place": "Madrid",
+        "source": "Open WorldCat",
+        "title": "Formas de historia cultural",
+        "author": [
+            {
+                "family": "Burke",
+                "given": "Peter"
+            }
+        ],
+        "translator": [
+            {
+                "family": "Urrutia",
+                "given": "Belén"
+            }
+        ],
+        "issued": {
+            "date-parts": [
+                [
+                    "2020"
+                ]
+            ]
+        },
+        "edition": "2ª edición"
+    },
+    {
+        "id": "http://zotero.org/users/163570/items/KM78SEUK",
+        "type": "book",
+        "event-place": "Madrid",
+        "ISBN": "978-84-206-4775-3",
+        "language": "Spanish",
+        "note": "OCLC: 187040016",
+        "number-of-pages": "302",
+        "publisher": "Alianza",
+        "publisher-place": "Madrid",
+        "source": "Open WorldCat",
+        "title": "Formas de historia cultural",
+        "author": [
+            {
+                "family": "Burke",
+                "given": "Peter"
+            }
+        ],
+        "translator": [
+            {
+                "family": "Urrutia",
+                "given": "Belén"
+            }
+        ],
+        "issued": {
+            "date-parts": [
+                [
+                    "2020"
+                ]
+            ]
+        },
+        "edition": "2ª edición"
     }
 ]
