@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Actividad 5: Condicionales y sentencias if &#8212; Curso de Python para las HD</title>
+    <title>Actividad 5: Condicionales &#8212; Curso de Python para las HD</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -256,12 +256,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Actividad 5: Condicionales y sentencias
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     if
-    </span>
-   </code>
+   Actividad 5: Condicionales
   </a>
  </li>
 </ul>
@@ -610,7 +605,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/actividades/5-condicionales.md"
+        <a href="../_sources/actividades/5-condicionales.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -621,7 +616,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -694,18 +689,6 @@ title="Print to PDF"
    Ejercicio 5: Lista de títulos por autor y fecha
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#envio-de-la-actividad">
-   Envío de la actividad
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fecha-de-entrega">
-     Fecha de entrega
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
     </nav>
@@ -715,7 +698,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Actividad 5: Condicionales y sentencias if</h1>
+                <h1>Actividad 5: Condicionales</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -750,18 +733,6 @@ title="Print to PDF"
    Ejercicio 5: Lista de títulos por autor y fecha
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#envio-de-la-actividad">
-   Envío de la actividad
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fecha-de-entrega">
-     Fecha de entrega
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
                         </nav>
@@ -772,26 +743,49 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="actividad-5-condicionales-y-sentencias-if">
-<h1>Actividad 5: Condicionales y sentencias <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#actividad-5-condicionales-y-sentencias-if" title="Permalink to this headline">#</a></h1>
-<p>Para realizar estos ejercicios, reutilizaremos el listado de libros que elaboraste en la <a class="reference internal" href="4-iteraciones.html"><span class="doc std std-doc">actividad 4</span></a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="actividad-5-condicionales">
+<h1>Actividad 5: Condicionales<a class="headerlink" href="#actividad-5-condicionales" title="Permalink to this headline">#</a></h1>
+<p>👉 Abre este cuaderno en tu Google Colab utilizando el botón “Open in Colab”, luego haz una copia en Drive (“Archivo &gt; Guardar una copia en Drive”) y sigue las instrucciones.</p>
+<p><a href="https://colab.research.google.com/gist/jairomelo/c3438396d895e8c310bde21e5560cf06/5-condicionales.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><strong>Envío:</strong> Envía la actividad a través del foro “Actividad 4: Iteraciones” de la unidad “Conceptos básicos” del curso.</p>
 <section id="ejercicio-1-lista-de-libros-a-partir-de-palabras-clave">
 <h2>Ejercicio 1: Lista de libros a partir de palabras clave<a class="headerlink" href="#ejercicio-1-lista-de-libros-a-partir-de-palabras-clave" title="Permalink to this headline">#</a></h2>
 <p>Crea un programa que guarde en una lista los libros que contengan una palabra clave. Para ello, deberás utilizar la sentencia <code class="docutils literal notranslate"><span class="pre">if</span></code> y “guardar” la palabra clave en una variable. Por ejemplo, si la palabra clave es “México”, el programa deberá guardar en una lista los libros que contengan esta palabra. Al final, deberás imprimir la lista de libros que contengan la palabra clave.</p>
 <p>El programa deberá funcionar con coincidencias independientes de mayúsculas y minúsculas. Por ejemplo, si la palabra clave es “méxico” y el título del libro es “Historia de la conquista de México”, el programa deberá guardar el libro en la lista.</p>
 <p>Asimismo, el programa deberá funcionar con cualquier palabra clave que se introduzca. En caso de que la palabra clave no se encuentre en ningún libro, el programa deberá imprimir un mensaje que indique que no se encontraron coincidencias.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe aquí tu programa</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="ejercicio-2-lista-de-libros-a-anteriores-o-posteriores-a-una-fecha">
 <h2>Ejercicio 2: Lista de libros a anteriores o posteriores a una fecha<a class="headerlink" href="#ejercicio-2-lista-de-libros-a-anteriores-o-posteriores-a-una-fecha" title="Permalink to this headline">#</a></h2>
 <p>Crea un programa que permita encontrar en tu listado de libros aquellos que fueron publicados antes o después de una fecha determinada. Al igual que en el ejercicio anterior, deberás guardar el resultado en una lista e imprimir la lista de libros que cumplan con la condición.</p>
 <p>Guarda la fecha de búsqueda en una variable y comprueba que su resultado sea correcto tanto para fechas anteriores como posteriores. Esto implica que debes crear una condición que valide si la consulta es para libros anteriores o posteriores a la fecha de búsqueda.</p>
 <p>En caso de que no se encuentren libros que cumplan con la condición, el programa deberá imprimir un mensaje que indique que no se encontraron coincidencias.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe aquí tu código</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="ejercicio-3-listado-de-titulos-de-libros-por-genero">
 <h2>Ejercicio 3: Listado de títulos de libros por género<a class="headerlink" href="#ejercicio-3-listado-de-titulos-de-libros-por-genero" title="Permalink to this headline">#</a></h2>
 <p>En este tercer programa deberás crear un listado de títulos de libros de tu listado a partir del género de la publicación. Para ello puedes buscar el género por coincidencia en cada elemento de la lista (por ejemplo, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">&quot;ensayo&quot;</span> <span class="pre">in</span> <span class="pre">libro</span></code>) o forzar una coincidencia en el campo correspondiente al género (por ejemplo, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">libro.split(&quot;;</span> <span class="pre">&quot;)[-1]</span> <span class="pre">==</span> <span class="pre">&quot;ensayo&quot;</span></code>). En cualquiera de los casos, deberás guardar el resultado en una lista e imprimir la lista de libros que cumplan con la condición.</p>
 <p>Al igual que en el ejercicio 1, el programa deberá funcionar con coincidencias independientes de mayúsculas y minúsculas.</p>
 <p>En caso de que no se encuentren libros que cumplan con la condición, el programa deberá imprimir un mensaje que indique que no se encontraron coincidencias.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe aquí tu código</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="ejercicio-4-inventario-de-libros-por-categoria">
 <h2>Ejercicio 4: Inventario de libros por categoría<a class="headerlink" href="#ejercicio-4-inventario-de-libros-por-categoria" title="Permalink to this headline">#</a></h2>
@@ -809,6 +803,13 @@ Otros<span class="w"> </span>libros:
 -<span class="w"> </span>&lt;autor&gt;,<span class="w"> </span>&lt;título&gt;<span class="w"> </span><span class="o">(</span>&lt;año&gt;<span class="o">)</span>,<span class="w"> </span>&lt;género&gt;
 </pre></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe tu código aquí</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="ejercicio-5-lista-de-titulos-por-autor-y-fecha">
 <h2>Ejercicio 5: Lista de títulos por autor y fecha<a class="headerlink" href="#ejercicio-5-lista-de-titulos-por-autor-y-fecha" title="Permalink to this headline">#</a></h2>
@@ -819,21 +820,13 @@ Otros<span class="w"> </span>libros:
 </pre></div>
 </div>
 <p>En caso de que no se encuentren libros que cumplan con la condición, el programa deberá imprimir un mensaje que indique que no se encontraron coincidencias.</p>
-</section>
-<section id="envio-de-la-actividad">
-<h2>Envío de la actividad<a class="headerlink" href="#envio-de-la-actividad" title="Permalink to this headline">#</a></h2>
-<p>Al igual que las actividades anteriores, envía tu código a través de Github.</p>
-<p>Los cinco ejercicios deberán ser realizados en un archivo llamado <code class="docutils literal notranslate"><span class="pre">actividad5.py</span></code>. Guárdalo en el directorio con tu nombre (de preferencia en un subdirectorio).</p>
-<p>Para entregar la actividad, debes hacer un <code class="docutils literal notranslate"><span class="pre">commit</span></code> de los modificados y hacer un <code class="docutils literal notranslate"><span class="pre">push</span></code> de tu brazo al repositorio remoto.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Entrega de la actividad 5&quot;</span>
-git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>nombre-del-brazo
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe tu código aquí</span>
 </pre></div>
 </div>
-<section id="fecha-de-entrega">
-<h3>Fecha de entrega<a class="headerlink" href="#fecha-de-entrega" title="Permalink to this headline">#</a></h3>
-<p>Entrega la actividad antes del martes 28 de febrero.</p>
-</section>
+</div>
+</div>
 </section>
 </section>
 
@@ -888,7 +881,7 @@ git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span
     By Jairo Antonio Melo Flórez<br/>
   
     <div class="extra_footer">
-      v. 1.0 [07-08-2023]<br /><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+      v. 1.0.4 [28-08-2023]<br /><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
     </div>
 </p>
         </footer>

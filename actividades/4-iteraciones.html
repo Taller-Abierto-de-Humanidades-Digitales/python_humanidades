@@ -256,12 +256,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="5-condicionales.html">
-   Actividad 5: Condicionales y sentencias
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     if
-    </span>
-   </code>
+   Actividad 5: Condicionales
   </a>
  </li>
 </ul>
@@ -610,7 +605,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/actividades/4-iteraciones.md"
+        <a href="../_sources/actividades/4-iteraciones.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -621,7 +616,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -750,6 +745,9 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="actividad-4-iteraciones">
 <h1>Actividad 4: Iteraciones<a class="headerlink" href="#actividad-4-iteraciones" title="Permalink to this headline">#</a></h1>
+<p>👉 Abre este cuaderno en tu Google Colab utilizando el botón “Open in Colab”, luego haz una copia en Drive (“Archivo &gt; Guardar una copia en Drive”) y sigue las instrucciones.</p>
+<p><a href="https://colab.research.google.com/gist/jairomelo/d24a9d1c95291adc25225dd5fd5d0f3c/4-iteraciones.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><strong>Envío:</strong> Envía la actividad a través del foro “Actividad 4: Iteraciones” de la unidad “Conceptos básicos” del curso.</p>
 <section id="ejercicio-1-crear-un-microcatalogo-bibliografico">
 <h2>Ejercicio 1: Crear un microcatálogo bibliográfico<a class="headerlink" href="#ejercicio-1-crear-un-microcatalogo-bibliografico" title="Permalink to this headline">#</a></h2>
 <p>Para esta actividad, retomaremos la lista que creamos para el <a class="reference external" href="actividades/3-listas.md#ejercicio-2-crear-un-microcatalogo-bibliografico">ejercicio 2 de la actividad 3</a>. Al final del ejercicio han quedado por lo menos tres elementos que tienen la siguiente estructura:</p>
@@ -759,32 +757,75 @@ title="Print to PDF"
 <p>En este ejercicio, vamos a crear cuatro listados: uno para los títulos, otro para los autores, otro para los años y uno final para los géneros. Para ello deberás utilizar un <em>for loop</em> y el método <code class="docutils literal notranslate"><span class="pre">split()</span></code> para separar los elementos de la lista. El resultado final debe ser algo como lo siguiente:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">titulos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Cuentos completos&quot;</span><span class="p">,</span> <span class="s2">&quot;El Aleph&quot;</span><span class="p">,</span> <span class="s2">&quot;Ficciones&quot;</span><span class="p">,</span> <span class="s2">&quot;El libro de arena&quot;</span><span class="p">,</span> <span class="s2">&quot;El jardín de senderos que se bifurcan&quot;</span><span class="p">]</span>
 <span class="n">autores</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Jorge Luis Borges&quot;</span><span class="p">,</span> <span class="s2">&quot;Jorge Luis Borges&quot;</span><span class="p">,</span> <span class="s2">&quot;Jorge Luis Borges&quot;</span><span class="p">,</span> <span class="s2">&quot;Jorge Luis Borges&quot;</span><span class="p">,</span> <span class="s2">&quot;Jorge Luis Borges&quot;</span><span class="p">]</span>
-<span class="n">anios</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;1995&quot;</span><span class="p">,</span> <span class="s2">&quot;1949&quot;</span><span class="p">,</span> <span class="s2">&quot;1944&quot;</span><span class="p">,</span> <span class="s2">&quot;1945&quot;</span><span class="p">,</span> <span class="s2">&quot;1941&quot;</span><span class="p">]</span>
+<span class="n">agnos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;1995&quot;</span><span class="p">,</span> <span class="s2">&quot;1949&quot;</span><span class="p">,</span> <span class="s2">&quot;1944&quot;</span><span class="p">,</span> <span class="s2">&quot;1945&quot;</span><span class="p">,</span> <span class="s2">&quot;1941&quot;</span><span class="p">]</span>
 <span class="n">generos</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ficción&quot;</span><span class="p">,</span> <span class="s2">&quot;Ficción&quot;</span><span class="p">,</span> <span class="s2">&quot;Ficción&quot;</span><span class="p">,</span> <span class="s2">&quot;Ficción&quot;</span><span class="p">,</span> <span class="s2">&quot;Ficción&quot;</span><span class="p">]</span>
 </pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe aquí tu código</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="ejercicio-2-enriquecer-el-microcatalogo-bibliografico">
 <h2>Ejercicio 2: Enriquecer el microcatálogo bibliográfico<a class="headerlink" href="#ejercicio-2-enriquecer-el-microcatalogo-bibliografico" title="Permalink to this headline">#</a></h2>
 <p>En este ejercicio, vas a añadir al menos tres nuevos libros al microcatálogo bibliográfico que creaste en el ejercicio anterior. Para ello, debes crear una nueva lista denominada <code class="docutils literal notranslate"><span class="pre">nuevos_libros</span></code> en la cual incluyas los nuevos elementos. A continuación, debes utilizar el método <code class="docutils literal notranslate"><span class="pre">extend()</span></code> para añadir los nuevos elementos a la lista <code class="docutils literal notranslate"><span class="pre">libros</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe aquí tu código</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="ejercicio-3-eliminar-la-categoria-genero-del-microcatalogo-bibliografico">
 <h2>Ejercicio 3: Eliminar la categoría “género” del microcatálogo bibliográfico<a class="headerlink" href="#ejercicio-3-eliminar-la-categoria-genero-del-microcatalogo-bibliografico" title="Permalink to this headline">#</a></h2>
-<p>En este ejercicio, vas a eliminar la categoría “género” del microcatálogo bibliográfico que creaste en el ejercicio anterior. Para ello, debes utilizar el método <code class="docutils literal notranslate"><span class="pre">pop()</span></code> para eliminar el último elemento de cada uno de los elementos de la lista <code class="docutils literal notranslate"><span class="pre">libros</span></code>. Al finalizar, el listado de libros debe tener los mismos elementos del ejercicio anterior, pero sin la categoría “género”.</p>
+<p>En este ejercicio, vas a eliminar la categoría “género” del microcatálogo bibliográfico que creaste en el ejercicio anterior. Para ello, puedes utilizar el método <code class="docutils literal notranslate"><span class="pre">pop()</span></code> o <code class="docutils literal notranslate"><span class="pre">remove()</span></code> para eliminar el elemento correspondiente al “género” de toda la lista de <code class="docutils literal notranslate"><span class="pre">libros</span></code>.</p>
+<p>Al finalizar, el listado de libros debe tener los mismos elementos del ejercicio anterior, pero sin la categoría “género”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe aquí tu código</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="ejercicio-4-calcula-la-fecha-promedio-de-los-libros-de-tu-catalogo">
 <h2>Ejercicio 4: Calcula la fecha promedio de los libros de tu catálogo<a class="headerlink" href="#ejercicio-4-calcula-la-fecha-promedio-de-los-libros-de-tu-catalogo" title="Permalink to this headline">#</a></h2>
-<p>En este ejercicio, vas a calcular la fecha promedio de los libros de tu catálogo. Para ello, debes crear una lista denominada <code class="docutils literal notranslate"><span class="pre">anios</span></code> en la cual incluyas los años de publicación de cada uno de los libros de tu catálogo. A continuación, debes utilizar un <em>for loop</em> para sumar todos los elementos de la lista <code class="docutils literal notranslate"><span class="pre">anios</span></code>. Finalmente, debes dividir el resultado de la suma entre la longitud de la lista <code class="docutils literal notranslate"><span class="pre">anios</span></code> para obtener la fecha promedio de los libros de tu catálogo.</p>
+<p>En este ejercicio, vas a calcular la fecha promedio de los libros de tu catálogo.</p>
+<p>Para ello, debes crear una lista denominada <code class="docutils literal notranslate"><span class="pre">agnos</span></code> en la cual incluyas los años de publicación de cada uno de los libros de tu catálogo.</p>
+<p>A continuación, debes utilizar un <em>for loop</em> para sumar todos los elementos de la lista <code class="docutils literal notranslate"><span class="pre">agnos</span></code>.</p>
+<p>Finalmente, debes dividir el resultado de la suma entre la longitud de la lista <code class="docutils literal notranslate"><span class="pre">agnos</span></code> para obtener la fecha promedio de los libros de tu catálogo.</p>
 <p>Muestra tu resultado mediante un mensaje formateado de la siguiente manera:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La fecha promedio de los libros de mi catálogo es: </span><span class="si">{</span><span class="n">fecha_promedio</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe aquí tu código</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="ejercicio-5-calcula-el-promedio-de-caracteres-de-los-titulos-de-tu-catalogo">
 <h2>Ejercicio 5: Calcula el promedio de caracteres de los títulos de tu catálogo<a class="headerlink" href="#ejercicio-5-calcula-el-promedio-de-caracteres-de-los-titulos-de-tu-catalogo" title="Permalink to this headline">#</a></h2>
-<p>En este ejercicio, vas a calcular el promedio de caracteres de los títulos de tu catálogo. Para ello, debes crear una lista denominada <code class="docutils literal notranslate"><span class="pre">titulos</span></code> en la cual incluyas los títulos de cada uno de los libros de tu catálogo. A continuación, crea una lista de comprensión en la variable <code class="docutils literal notranslate"><span class="pre">longitud</span></code> que contenga la longitud de cada uno de los títulos de la lista (aprovecha la función <code class="docutils literal notranslate"><span class="pre">len()</span></code>). Encuentra el promedio sumando los valores de la lista <code class="docutils literal notranslate"><span class="pre">longitud</span></code> y dividiendo el resultado entre la longitud de la lista <code class="docutils literal notranslate"><span class="pre">titulos</span></code>. Muestra tu resultado mediante un mensaje formateado de la siguiente manera:</p>
+<p>En este ejercicio, vas a calcular el promedio de caracteres de los títulos de tu catálogo.</p>
+<p>Para ello, debes crear una lista denominada <code class="docutils literal notranslate"><span class="pre">titulos</span></code> en la cual incluyas los títulos de cada uno de los libros de tu catálogo.</p>
+<p>A continuación, crea una lista de comprensión en la variable <code class="docutils literal notranslate"><span class="pre">longitud</span></code> que contenga la longitud de cada uno de los títulos de la lista (aprovecha la función <code class="docutils literal notranslate"><span class="pre">len()</span></code>).</p>
+<p>Encuentra el promedio sumando los valores de la lista <code class="docutils literal notranslate"><span class="pre">longitud</span></code> y dividiendo el resultado entre la longitud de la lista <code class="docutils literal notranslate"><span class="pre">titulos</span></code>.</p>
+<p>Muestra tu resultado mediante un mensaje formateado de la siguiente manera:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El promedio de caracteres de los títulos de mi catálogo es: </span><span class="si">{</span><span class="n">promedio</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe aquí tu código</span>
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>
@@ -840,7 +881,7 @@ title="Print to PDF"
     By Jairo Antonio Melo Flórez<br/>
   
     <div class="extra_footer">
-      v. 1.0 [07-08-2023]<br /><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+      v. 1.0.4 [28-08-2023]<br /><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
     </div>
 </p>
         </footer>
