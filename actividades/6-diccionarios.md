@@ -1,6 +1,6 @@
 # Actividad 6: Manejo de diccionarios
 
-En este ejercicio vamos a convertir nuestros listados bibliográficos en un catálogo de libros más estructurado utilizando diccionarios. Para ello, retomaremos el listado de libros que elaboraste en la [actividad 4](4-iteraciones.md)
+En este ejercicio vamos a convertir nuestros listados bibliográficos en un catálogo de libros más estructurado utilizando diccionarios. Para ello, retomaremos el listado de libros que elaboraste en la [actividad 4](4-iteraciones.html)
 
 ## Ejercicio 1: Crear un diccionario a partir del listado bibliográfico
 
