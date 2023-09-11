@@ -278,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="6-diccionarios.html">
-   Actividad 6: Manejo de diccionarios
+   Actividad 6: Diccionarios
   </a>
  </li>
 </ul>
@@ -876,19 +876,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># ⚠️ Esta celda solamente se utiliza para validar tu código. No modifiques nada en ella</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">apellido</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre_carro</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
-
-<span class="ne">NameError</span>: name &#39;nombre&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="ejercicio-4-el-siguiente-codigo-esta-escrito-de-manera-incorrecta">
@@ -912,14 +899,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">    </span><span class="mi">1</span><span class="n">primer_nombre</span> <span class="o">=</span> <span class="n">Akira</span>
-    <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid decimal literal
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="ejercicio-5-corrige-las-siguientes-variables-de-texto-para-que-el-codigo-funcione-correctamente">
@@ -934,14 +913,6 @@ title="Print to PDF"
         <span class="n">Mas</span><span class="p">,</span> <span class="n">la</span> <span class="n">delicia</span> <span class="n">está</span> <span class="n">en</span> <span class="n">curvar</span> <span class="n">el</span> <span class="n">arco</span>
         <span class="n">y</span> <span class="n">en</span> <span class="n">suponer</span> <span class="n">la</span> <span class="n">flecha</span> <span class="n">donde</span> <span class="n">la</span> <span class="n">clava</span> <span class="n">el</span> <span class="n">ojo</span><span class="o">.</span><span class="s2">&quot;</span>
 <span class="n">texto4</span> <span class="o">=</span> <span class="s2">&quot;Es posible que </span><span class="si">{nombre}</span><span class="s2"> no haya leído nombre_manga.&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-    <span class="n">texto3</span> <span class="o">=</span> <span class="s2">&quot;Yo, señor, soy acontista.</span>
-             <span class="o">^</span>
-<span class="ne">SyntaxError</span>: unterminated string literal (detected at line 3)
 </pre></div>
 </div>
 </div>
@@ -962,19 +933,6 @@ title="Print to PDF"
 <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">texto4</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
 <span class="k">assert</span> <span class="n">texto4</span> <span class="o">==</span> <span class="sa">f</span><span class="s2">&quot;Es posible que </span><span class="si">{</span><span class="n">nombre</span><span class="si">}</span><span class="s2"> no haya leído </span><span class="si">{</span><span class="n">nombre_manga</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">,</span> <span class="s2">&quot;La variable texto4 no es correcta&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¡Felicitaciones! ¡Has completado el ejercicio!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># ⚠️ Esta celda solamente se utiliza para validar tu código. No modifiques nada en ella</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">texto1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># check if texto2 is defined and is a string</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">texto2</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span>
-
-<span class="ne">NameError</span>: name &#39;texto1&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1014,19 +972,6 @@ title="Print to PDF"
 <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">edad2</span><span class="p">)</span>
 <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">tiempo</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;Tu variable tiempo no es un string&quot;</span>
 <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">lugar</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;Tu variable lugar no es un string&quot;</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># ⚠️ Esta celda solamente se utiliza para validar parte de tu código. No modifiques nada en ella</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre1</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;Tu variable nombre no es un string&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">nombre2</span><span class="p">)</span> <span class="o">==</span> <span class="nb">str</span><span class="p">,</span> <span class="s2">&quot;Tu variable nombre no es un string&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">assert</span> <span class="nb">int</span><span class="p">(</span><span class="n">edad1</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;nombre1&#39; is not defined
 </pre></div>
 </div>
 </div>
