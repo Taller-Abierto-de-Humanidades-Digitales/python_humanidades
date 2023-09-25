@@ -339,11 +339,6 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="8-funciones2.html">
-   Actividad 8: Funciones II
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="../tutoriales/25-importarmodulos.html">
    Funciones: Modularidad
   </a>
@@ -546,7 +541,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B/gh-pages?urlpath=tree/actividades/9-actividadintermedia.md"
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B/gh-pages?urlpath=tree/actividades/9-actividadintermedia.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -638,23 +633,6 @@ title="Open an issue"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="../_sources/actividades/9-actividadintermedia.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
 title="Download source file"
 >
   
@@ -662,7 +640,7 @@ title="Download source file"
 <span class="headerbtn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="headerbtn__text-container">.ipynb</span>
 </a>
 
       </li>
@@ -744,11 +722,6 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#envio-de-la-actividad">
-   Envío de la actividad
-  </a>
- </li>
 </ul>
 
     </nav>
@@ -802,11 +775,6 @@ title="Print to PDF"
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#envio-de-la-actividad">
-   Envío de la actividad
-  </a>
- </li>
 </ul>
 
                         </nav>
@@ -823,8 +791,70 @@ title="Print to PDF"
 <section id="sobre-el-conjunto-de-datos">
 <h2>Sobre el conjunto de datos<a class="headerlink" href="#sobre-el-conjunto-de-datos" title="Permalink to this headline">#</a></h2>
 <p>Para realizar este ejercicio, les brindamos un <a class="reference external" href="https://www.zotero.org/groups/197065/humanidades_digitales/library">conjunto de referencias bibliográficas</a> exportadas desde el programa <a class="reference external" href="https://www.zotero.org/">Zotero</a> las cuales pueden visualizar en el <a class="reference external" href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B/blob/main/data/bibliografia.json">repositorio del curso</a>.</p>
-<p>Este conjunto de datos contiene la siguiente información:</p>
-<div class="cell tag_remove-input docutils container">
+<p>Antes de iniciar la actividad, es necesario importar los datos a nuestro programa. Para ello, vamos a utilizar la librería <code class="docutils literal notranslate"><span class="pre">json</span></code> de Python.</p>
+<p><strong>Ejecuta la siguiente celda para obtener el conjunto de datos</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">pip</span> install requests
+
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+
+<span class="k">def</span> <span class="nf">biblioteca</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<span class="w">	</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	Esta función retorna una bibliografía en formato CSL-JSON</span>
+<span class="sd">	&quot;&quot;&quot;</span>
+	<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/main/data/bibliografia.json&quot;</span><span class="p">)</span>
+
+	<span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.Requirement already satisfied: requests in e:\proyectos\curso_python_extenso\curso_env\lib\site-packages (2.28.2)
+Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in e:\proyectos\curso_python_extenso\curso_env\lib\site-packages (from requests) (3.0.1)
+Requirement already satisfied: idna&lt;4,&gt;=2.5 in e:\proyectos\curso_python_extenso\curso_env\lib\site-packages (from requests) (3.4)
+Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in e:\proyectos\curso_python_extenso\curso_env\lib\site-packages (from requests) (1.26.14)
+Requirement already satisfied: certifi&gt;=2017.4.17 in e:\proyectos\curso_python_extenso\curso_env\lib\site-packages (from requests) (2022.12.7)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip is available: 23.0.1 -&gt; 23.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+</pre></div>
+</div>
+</div>
+</div>
+<p>Exploremos un poco los datos que vamos a utilizar:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># contar el número de elementos en la biblioteca</span>
+<span class="n">biblioteca</span>  <span class="o">=</span> <span class="n">biblioteca</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Número de elementos en la biblioteca: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">biblioteca</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># imprimir las claves de todos los elementos:</span>
+
+<span class="n">claves</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">biblioteca</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">clave</span> <span class="ow">in</span> <span class="n">elemento</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">clave</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">claves</span><span class="p">:</span>
+            <span class="n">claves</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">clave</span><span class="p">)</span>
+
+<span class="n">tipos_bibliograficos</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">biblioteca</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">elemento</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">tipos_bibliograficos</span><span class="p">:</span>
+        <span class="n">tipos_bibliograficos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elemento</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">])</span>
+
+<span class="n">tipos_bibliograficos</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="n">claves</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Tipos de elementos: </span><span class="si">{</span><span class="n">tipos_bibliograficos</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Claves de los elementos: </span><span class="si">{</span><span class="n">claves</span><span class="si">}</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número de elementos en la biblioteca: 758
 
@@ -842,35 +872,6 @@ Claves de los elementos: [&#39;DOI&#39;, &#39;ISBN&#39;, &#39;ISSN&#39;, &#39;UR
 <section id="acceder-al-conjunto-de-datos">
 <h3>Acceder al conjunto de datos<a class="headerlink" href="#acceder-al-conjunto-de-datos" title="Permalink to this headline">#</a></h3>
 <p>El archivo contiene una biblioteca de citas bibliográficas en formato CSL-JSON. La biblioteca está construida a partir de una exportación de elementos de Zotero en el formato <a class="reference external" href="https://citeproc-js.readthedocs.io/en/latest/csl-json/markup.html">CSL-JSON</a>. En esta estructura, cada elemento un diccionario dentro de una lista. Cada diccionario contiene una serie de pares clave-valor.</p>
-<p>Para facilitar la recuperación de la información y evitar duplicar innecesariamente los datos, he creado el módulo <a class="reference external" href="http://biblioteca.py">biblioteca.py</a> (ubicado en <code class="docutils literal notranslate"><span class="pre">codigo/actividad_intermedia/biblioteca.py</span></code>) que contiene una función llamada <code class="docutils literal notranslate"><span class="pre">biblioteca</span></code> que se encarga de descargar y leer el conjunto de datos.</p>
-<p>Para usarlo, debes <strong>copiar</strong> el archivo <code class="docutils literal notranslate"><span class="pre">biblioteca.py</span></code> en tu carpeta de trabajo y luego importar la función <code class="docutils literal notranslate"><span class="pre">biblioteca</span></code> en un nuevo archivo de Python:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">biblioteca</span> <span class="kn">import</span> <span class="n">biblioteca</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>También deberás instalar las dependencias necesarias para que el programa se ejecute correctamente. Para ello, debes ejecutar el siguiente comando en la terminal:</p>
-<div class="cell tag_remove-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">py</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pip</span>
-<span class="n">py</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">requests</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="important admonition">
-<p class="admonition-title">Importante</p>
-<p>Puede que la primera instrucción no funcione en tu computadora. En ese caso, debes ejecutar el comando <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></code>.</p>
-<p>Desde un sistema operativo Mac, debes ejecutar el comando <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></code> en lugar de <code class="docutils literal notranslate"><span class="pre">py</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-U</span> <span class="pre">pip</span></code>.</p>
-<p>Sigue la misma lógica para instalar las dependencias de <code class="docutils literal notranslate"><span class="pre">requests</span></code>.</p>
-</div>
-<p>Prueba que la importación sea correcta. En caso de que no lo sea y obtengas un error de <code class="docutils literal notranslate"><span class="pre">ModuleNotFoundError</span></code> o <code class="docutils literal notranslate"><span class="pre">ImportError</span></code>, revisa que el archivo <code class="docutils literal notranslate"><span class="pre">biblioteca.py</span></code> se encuentre en la misma carpeta de trabajo que el archivo donde estás escribiendo el código.</p>
-<div class="warning admonition">
-<p class="admonition-title">Advertencia</p>
-<p>No debes escribir en el código del módulo <code class="docutils literal notranslate"><span class="pre">biblioteca.py</span></code> ni borrar el archivo del directorio original. De otra manera puedes encontrar errores de importación o afectar el funcionamiento de los programas de tus compañeros.</p>
-</div>
 </section>
 <section id="acceder-a-los-elementos-de-la-biblioteca">
 <h3>Acceder a los elementos de la biblioteca<a class="headerlink" href="#acceder-a-los-elementos-de-la-biblioteca" title="Permalink to this headline">#</a></h3>
@@ -878,19 +879,12 @@ Claves de los elementos: [&#39;DOI&#39;, &#39;ISBN&#39;, &#39;ISSN&#39;, &#39;UR
 <p>Por ejemplo, para acceder al primer elemento de la biblioteca, podemos usar la siguiente sintaxis:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">biblioteca</span> <span class="kn">import</span> <span class="n">biblioteca</span>
-
-<span class="n">biblioteca</span> <span class="o">=</span> <span class="n">biblioteca</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">biblioteca</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">biblioteca</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;Paz-Trillo.etal2005information&#39;, &#39;type&#39;: &#39;article-journal&#39;, &#39;container-title&#39;: &#39;Journal of the Brazilian Computer Society&#39;, &#39;DOI&#39;: &#39;10/bq8g32&#39;, &#39;ISSN&#39;: &#39;0104-6500, 1678-4804&#39;, &#39;issue&#39;: &#39;2&#39;, &#39;language&#39;: &#39;en&#39;, &#39;note&#39;: &#39;number: 2\n00022&#39;, &#39;page&#39;: &#39;17-31&#39;, &#39;source&#39;: &#39;CrossRef&#39;, &#39;title&#39;: &#39;An information retrieval application using ontologies&#39;, &#39;URL&#39;: &#39;http://link.springer.com/10.1007/BF03192373&#39;, &#39;volume&#39;: &#39;11&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Paz-Trillo&#39;, &#39;given&#39;: &#39;Christian&#39;}, {&#39;family&#39;: &#39;Wassermann&#39;, &#39;given&#39;: &#39;Renata&#39;}, {&#39;family&#39;: &#39;Braga&#39;, &#39;given&#39;: &#39;Paula P.&#39;}], &#39;accessed&#39;: {&#39;date-parts&#39;: [[&#39;2016&#39;, 11, 15]]}, &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2005&#39;, 6]]}}
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -911,11 +905,9 @@ Claves de los elementos: [&#39;DOI&#39;, &#39;ISBN&#39;, &#39;ISSN&#39;, &#39;UR
 <p>En este sentido, un buscador deberá iterar sobre todo el diccionario y comparar el valor de cada clave con el valor de búsqueda. Por ejemplo, si queremos buscar un elemento por título, podemos usar la siguiente sintaxis para encontrar una coincidencia exacta:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">biblioteca</span> <span class="kn">import</span> <span class="n">biblioteca</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">titulo</span> <span class="o">=</span> <span class="s1">&#39;¿Qué son las Humanidades Digitales?&#39;</span>
 
-<span class="n">titulo</span> <span class="o">=</span> <span class="s1">&#39;¿Qué son las Humanidades Digitales?&#39;</span>
-
-<span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">biblioteca</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">biblioteca</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">elemento</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">titulo</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
 </pre></div>
@@ -934,8 +926,7 @@ Claves de los elementos: [&#39;DOI&#39;, &#39;ISBN&#39;, &#39;ISSN&#39;, &#39;UR
 <h2>Instrucciones<a class="headerlink" href="#instrucciones" title="Permalink to this headline">#</a></h2>
 <section id="construir-el-modulo-de-busquedas">
 <h3>1. Construir el módulo de búsquedas<a class="headerlink" href="#construir-el-modulo-de-busquedas" title="Permalink to this headline">#</a></h3>
-<p>El primer paso es construir un módulo que permita realizar búsquedas en la biblioteca. Para esto, debes crear un nuevo archivo de Python en la carpeta de trabajo con el nombre <code class="docutils literal notranslate"><span class="pre">busqueda.py</span></code>.</p>
-<p>Este archivo debe tener una función para realizar búsquedas con las siguientes condiciones:</p>
+<p>El primer paso consiste en construir las funciones búsqueda que logren cumplir con los siguientes requisitos:</p>
 <ul class="simple">
 <li><p>Debe buscar por título, autor, año de publicación y palabras claves.</p></li>
 <li><p>Debe tener la opción de buscar por libro, artículo, tesis o cualquier otro tipo de elemento.</p></li>
@@ -943,16 +934,15 @@ Claves de los elementos: [&#39;DOI&#39;, &#39;ISBN&#39;, &#39;ISSN&#39;, &#39;UR
 <li><p>Debe tener la capacidad de formatear el resultado para hacerlo legible al usuario.</p></li>
 <li><p>Debe poder lidiar con el tipo de dato de los autores (<code class="docutils literal notranslate"><span class="pre">list</span></code>) y de las fechas (<code class="docutils literal notranslate"><span class="pre">dict</span></code>).</p></li>
 </ul>
-<p>Este módulo debe tener un conjunto de funciones que permitan hacer estas tareas.</p>
-<p>Debe tener por lo menos dos funciones:</p>
+<p>De preferencia, deberás construir dos funciones:</p>
 <ul class="simple">
 <li><p>Una función que permita buscar por título, autor, año de publicación y palabras claves.</p></li>
 <li><p>Una función que permita formatear el resultado de la búsqueda.</p></li>
 </ul>
-<p>El módulo debe estar en la capacidad de replicar un resultado como el siguiente:</p>
+<p>Las funciones deben estar en la capacidad de replicar un resultado como el siguiente:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">busqueda</span> <span class="kn">import</span> <span class="n">busqueda_simple</span><span class="p">,</span> <span class="n">formar_result</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">busqueda</span> <span class="kn">import</span> <span class="n">busqueda_simple</span><span class="p">,</span> <span class="n">formar_result</span> <span class="c1"># &lt;- Solo como ejemplo, no es necesario importar esto</span>
 
 <span class="c1"># Buscar la palabra &quot;Data&quot; en el título de los libros</span>
 <span class="n">resultado</span> <span class="o">=</span> <span class="n">busqueda_simple</span><span class="p">(</span><span class="s1">&#39;Data&#39;</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;book&#39;</span><span class="p">)</span>
@@ -1038,22 +1028,19 @@ issued: 2019
 Se encontraron 4 resultados
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </div>
 </div>
 </section>
 <section id="construir-el-modulo-de-interfaz">
 <h3>2. Construir el módulo de interfaz<a class="headerlink" href="#construir-el-modulo-de-interfaz" title="Permalink to this headline">#</a></h3>
-<p>El segundo paso es construir un módulo que permita interactuar con el usuario. Para esto, debes crear un nuevo archivo de Python en la carpeta de trabajo con el nombre <code class="docutils literal notranslate"><span class="pre">buscador.py</span></code>.</p>
-<p>Este archivo debe tener una función que permita interactuar con el usuario. Esta función debe tener un menú que permita al usuario elegir entre las siguientes opciones:</p>
+<p>El segundo paso consiste en construir una interfaz que permita al usuario interactuar con el programa. Para ello, deberás construir una función que permita al usuario ingresar los parámetros de búsqueda y que muestre el resultado de la búsqueda.</p>
+<p>Esta función debe tener un menú que permita al usuario elegir entre las siguientes opciones:</p>
 <ul class="simple">
 <li><p>Ingresar la palabra clave de búsqueda.</p></li>
 <li><p>Seleccionar si se desea buscar por título, autor, fecha o palabra clave.</p></li>
 <li><p>Seleccionar si se desea filtrar por libro, artículo, tesis o cualquier otro tipo de elemento.</p></li>
 </ul>
-<p>El módulo debe estar en la capacidad de replicar un resultado como el siguiente:</p>
+<p>La función debe estar en la capacidad de replicar un resultado como el siguiente:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Ingrese<span class="w"> </span>los<span class="w"> </span>datos<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>búsqueda
 Palabra<span class="w"> </span>a<span class="w"> </span>buscar:<span class="w"> </span>Data
 Tipos<span class="w"> </span>de<span class="w"> </span>búsqueda:<span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span>Título,<span class="w"> </span><span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span>Autor,<span class="w"> </span><span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span>Fecha,<span class="w"> </span><span class="o">[</span><span class="m">4</span><span class="o">]</span><span class="w"> </span>Palabra<span class="w"> </span>clave
@@ -1106,16 +1093,6 @@ Se<span class="w"> </span>encontraron<span class="w"> </span><span class="m">4</
 </pre></div>
 </div>
 </section>
-</section>
-<section id="envio-de-la-actividad">
-<h2>Envío de la actividad<a class="headerlink" href="#envio-de-la-actividad" title="Permalink to this headline">#</a></h2>
-<p>Al igual que las actividades anteriores, envía tu código a través de Github.</p>
-<p>Para entregar la actividad, debes hacer un <code class="docutils literal notranslate"><span class="pre">commit</span></code> de los modificados y hacer un <code class="docutils literal notranslate"><span class="pre">push</span></code> de tu brazo al repositorio remoto.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
-git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Entrega de la actividad intermedia&quot;</span>
-git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>nombre-del-brazo
-</pre></div>
-</div>
 </section>
 </section>
 
