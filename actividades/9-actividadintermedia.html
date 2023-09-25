@@ -805,18 +805,19 @@ title="Print to PDF"
 <span class="w">	</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">	Esta función retorna una bibliografía en formato CSL-JSON</span>
 <span class="sd">	&quot;&quot;&quot;</span>
-	<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_extenso/main/data/bibliografia.json&quot;</span><span class="p">)</span>
+	<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B/main/data/bibliografia.json&quot;</span><span class="p">)</span>
 
 	<span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.Requirement already satisfied: requests in e:\proyectos\curso_python_extenso\curso_env\lib\site-packages (2.28.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: requests in e:\proyectos\curso_python_extenso\curso_env\lib\site-packages (2.28.2)
 Requirement already satisfied: charset-normalizer&lt;4,&gt;=2 in e:\proyectos\curso_python_extenso\curso_env\lib\site-packages (from requests) (3.0.1)
 Requirement already satisfied: idna&lt;4,&gt;=2.5 in e:\proyectos\curso_python_extenso\curso_env\lib\site-packages (from requests) (3.4)
 Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in e:\proyectos\curso_python_extenso\curso_env\lib\site-packages (from requests) (1.26.14)
 Requirement already satisfied: certifi&gt;=2017.4.17 in e:\proyectos\curso_python_extenso\curso_env\lib\site-packages (from requests) (2022.12.7)
+Note: you may need to restart the kernel to use updated packages.
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip is available: 23.0.1 -&gt; 23.2.1
@@ -856,7 +857,7 @@ Requirement already satisfied: certifi&gt;=2017.4.17 in e:\proyectos\curso_pytho
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número de elementos en la biblioteca: 758
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número de elementos en la biblioteca: 745
 
 Tipos de elementos: [&#39;article-journal&#39;, &#39;article-magazine&#39;, &#39;article-newspaper&#39;, &#39;book&#39;, &#39;broadcast&#39;, &#39;chapter&#39;, &#39;document&#39;, &#39;entry-encyclopedia&#39;, &#39;interview&#39;, &#39;motion_picture&#39;, &#39;paper-conference&#39;, &#39;post-weblog&#39;, &#39;thesis&#39;, &#39;webpage&#39;]
 
@@ -884,7 +885,7 @@ Claves de los elementos: [&#39;DOI&#39;, &#39;ISBN&#39;, &#39;ISSN&#39;, &#39;UR
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;Paz-Trillo.etal2005information&#39;, &#39;type&#39;: &#39;article-journal&#39;, &#39;container-title&#39;: &#39;Journal of the Brazilian Computer Society&#39;, &#39;DOI&#39;: &#39;10/bq8g32&#39;, &#39;ISSN&#39;: &#39;0104-6500, 1678-4804&#39;, &#39;issue&#39;: &#39;2&#39;, &#39;language&#39;: &#39;en&#39;, &#39;note&#39;: &#39;number: 2\n00022&#39;, &#39;page&#39;: &#39;17-31&#39;, &#39;source&#39;: &#39;CrossRef&#39;, &#39;title&#39;: &#39;An information retrieval application using ontologies&#39;, &#39;URL&#39;: &#39;http://link.springer.com/10.1007/BF03192373&#39;, &#39;volume&#39;: &#39;11&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Paz-Trillo&#39;, &#39;given&#39;: &#39;Christian&#39;}, {&#39;family&#39;: &#39;Wassermann&#39;, &#39;given&#39;: &#39;Renata&#39;}, {&#39;family&#39;: &#39;Braga&#39;, &#39;given&#39;: &#39;Paula P.&#39;}], &#39;accessed&#39;: {&#39;date-parts&#39;: [[&#39;2016&#39;, 11, 15]]}, &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2005&#39;, 6]]}}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;RojasCastro2015datos&#39;, &#39;type&#39;: &#39;article-journal&#39;, &#39;container-title&#39;: &#39;Ínsula&#39;, &#39;note&#39;: &#39;ZSCC: 0000000&#39;, &#39;page&#39;: &#39;15-17&#39;, &#39;title&#39;: &#39;De los datos al metamedio&#39;, &#39;volume&#39;: &#39;822&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Rojas Castro&#39;, &#39;given&#39;: &#39;Antonio&#39;}], &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2015&#39;, 6]]}}
 </pre></div>
 </div>
 </div>
@@ -897,7 +898,7 @@ Claves de los elementos: [&#39;DOI&#39;, &#39;ISBN&#39;, &#39;ISSN&#39;, &#39;UR
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>An information retrieval application using ontologies
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>De los datos al metamedio
 </pre></div>
 </div>
 </div>
@@ -1041,7 +1042,7 @@ Se encontraron 4 resultados
 <li><p>Seleccionar si se desea filtrar por libro, artículo, tesis o cualquier otro tipo de elemento.</p></li>
 </ul>
 <p>La función debe estar en la capacidad de replicar un resultado como el siguiente:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Ingrese<span class="w"> </span>los<span class="w"> </span>datos<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>búsqueda
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Ingrese<span class="w"> </span>los<span class="w"> </span>datos<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>búsqueda
 Palabra<span class="w"> </span>a<span class="w"> </span>buscar:<span class="w"> </span>Data
 Tipos<span class="w"> </span>de<span class="w"> </span>búsqueda:<span class="w"> </span><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w"> </span>Título,<span class="w"> </span><span class="o">[</span><span class="m">2</span><span class="o">]</span><span class="w"> </span>Autor,<span class="w"> </span><span class="o">[</span><span class="m">3</span><span class="o">]</span><span class="w"> </span>Fecha,<span class="w"> </span><span class="o">[</span><span class="m">4</span><span class="o">]</span><span class="w"> </span>Palabra<span class="w"> </span>clave
 Tipo<span class="w"> </span>de<span class="w"> </span>búsqueda<span class="w"> </span><span class="o">(</span><span class="m">1</span>,<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="m">4</span><span class="o">)</span>:<span class="w"> </span><span class="m">1</span>
