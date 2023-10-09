@@ -1,0 +1,1333 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Manejar archivos CSV con pandas &#8212; Curso de Python para las HD</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Expresiones regulares" href="32-regex.html" />
+    <link rel="prev" title="Manejo de datos en archivos CSV" href="30-csv.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Curso de Python para las HD</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Fundamentos de programación
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Preliminares
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="1-preliminares.html">
+   Crear un cuaderno para prácticar con código
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/1-GoogleColab.html">
+   Actividad 1: Comparte tu cuaderno
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Introducción a Python
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="6-python.html">
+   Introducción a Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-variables.html">
+   Sintaxis, variables y tipos de datos básicos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="8-operadores.html">
+   Operadores
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="9-operaciones_string.html">
+   Operaciones con cadenas de caracteres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/2-sintaxis_variables.html">
+   Actividad 2: Variables y sintaxis
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Listas
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="10-listas.html">
+   Listas
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/3-listas.html">
+   Actividad 3: Listas (operaciones básicas)
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Iteraciones (for loops)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11-iteraciones.html">
+   Iteraciones (
+   <em>
+    for loops
+   </em>
+   )
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/4-iteraciones.html">
+   Actividad 4: Iteraciones
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Condicionales (if else)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="12-condicionales.html">
+   Introducción a los condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13-plogicas.html">
+   Pruebas condicionales
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14-condicionPertenencia.html">
+   Operadores de pertenencia
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15-ifelse.html">
+   Sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+   ,
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     elif
+    </span>
+   </code>
+   y
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     else
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16-listaseif.html">
+   Combinar listas y sentencias
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     if
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/5-condicionales.html">
+   Actividad 5: Condicionales
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Diccionarios
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="17-diccionarios.html">
+   Diccionarios
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18-iterardiccio.html">
+   Iterar a través de un diccionario
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/6-diccionarios.html">
+   Actividad 6: Diccionarios
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Funciones
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="19-funcionesIntro.html">
+   Funciones: Introducción
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="20-input.html">
+   Función
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     input()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="21-funciones_y_TryExcept.html">
+   Control de errores con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Try
+    </span>
+   </code>
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     Except
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/7-funciones.html">
+   Actividad 7: Funciones (primera parte)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="22-retornarvalores.html">
+   Retornar valores en una función
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="23-funcionesLlamados.html">
+   Funciones y modularidad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="24-argsykwargs.html">
+   Pasar cantidades arbitrarias de argumentos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="25-importarmodulos.html">
+   Funciones: Modularidad
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="26-modularfunciones.html">
+   Crear módulos
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Actividad de evaluación intermedia
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/9-actividadintermedia.html">
+   Actividad intermedia: Construye un programa real
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Archivos
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="27-archivos.html">
+   Leer y escribir archivos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="28-os.html">
+   La librería
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     os
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="29-json.html">
+   Archivos JSON
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/8-cache.html">
+   Actividad 8: Manejo de archivos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="30-csv.html">
+   Manejo de datos en archivos CSV
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Manejar archivos CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Expresiones regulares
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="32-regex.html">
+   Expresiones regulares
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="33-regexcont.html">
+   Funciones de la librería
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     re
+    </span>
+   </code>
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Clases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="34-introObjetos.html">
+   Introducción a la programación orientada a objetos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="35-clases.html">
+   Clases
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Actividad final
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/10-actividadfinal.html">
+   Actividad final
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Para profundizar
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../future.html">
+   Así que… ¿Qué sigue ahora?
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Recursos adicionales
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   Bibliografía
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../infotec.html">
+   Información técnica
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Elaborado con <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B/gh-pages?urlpath=tree/tutoriales/31-pandasCSV.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B/issues/new?title=Issue%20on%20page%20%2Ftutoriales/31-pandasCSV.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/tutoriales/31-pandasCSV.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="../_sources/tutoriales/31-pandasCSV.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instalar-pandas">
+   Instalar
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#leer-archivos-csv">
+   Leer archivos CSV
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#escribir-archivos-csv">
+   Escribir archivos CSV
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#agregar-datos-a-un-csv-con-pandas">
+   Agregar datos a un CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eliminar-datos-de-un-csv-con-pandas">
+   Eliminar datos de un CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#actualizar-datos-de-un-csv-con-pandas">
+   Actualizar datos de un CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crear-una-nueva-columna-en-un-csv-con-pandas">
+   Crear una nueva columna en un CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eliminar-una-columna-de-un-csv-con-pandas">
+   Eliminar una columna de un CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#actualizar-una-columna-de-un-csv-con-pandas">
+   Actualizar una columna de un CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusión
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   Ejercicios
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Manejar archivos CSV con pandas</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instalar-pandas">
+   Instalar
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#leer-archivos-csv">
+   Leer archivos CSV
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#escribir-archivos-csv">
+   Escribir archivos CSV
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#agregar-datos-a-un-csv-con-pandas">
+   Agregar datos a un CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eliminar-datos-de-un-csv-con-pandas">
+   Eliminar datos de un CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#actualizar-datos-de-un-csv-con-pandas">
+   Actualizar datos de un CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crear-una-nueva-columna-en-un-csv-con-pandas">
+   Crear una nueva columna en un CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#eliminar-una-columna-de-un-csv-con-pandas">
+   Eliminar una columna de un CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#actualizar-una-columna-de-un-csv-con-pandas">
+   Actualizar una columna de un CSV con
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusión
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ejercicios">
+   Ejercicios
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="manejar-archivos-csv-con-pandas">
+<h1>Manejar archivos CSV con <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#manejar-archivos-csv-con-pandas" title="Permalink to this headline">#</a></h1>
+<p>Para trabajar con archivos CSV de tamaño modesto, es suficiente (y recomendable) utilizar la librería <code class="docutils literal notranslate"><span class="pre">csv</span></code>, pero para poder trabajar con archivos CSV de gran tamaño y complejidad, es recomendado apelar a la librería <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+<p>Esta librería fue creada por Wes McKinney en 2008 y es una de las más utilizadas en el mundo de la ciencia de datos. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> es una librería de código abierto que provee estructuras de datos y herramientas de análisis de datos de alto rendimiento y fácil de usar. En particular, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> provee estructuras de datos y operaciones para manipular tablas numéricas y series temporales. Además, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> está construida sobre <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, por lo que es posible utilizar las funciones de <code class="docutils literal notranslate"><span class="pre">numpy</span></code> en <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
+<p>En este curso, simplemente utilizaremos la librería <code class="docutils literal notranslate"><span class="pre">pandas</span></code> para leer y escribir archivos CSV. Para aprender más sobre <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, te recomiendo explorar el libro de Wes McKinney, <em>Python for Data Analysis</em> <span id="id1">[<a class="reference internal" href="../references.html#id7" title="Wes McKinney. Python for data analysis: data wrangling with pandas, NumPy, and IPython. O'Reilly Media, Inc, Sebastopol, California, second edition edition, 2018. ISBN 978-1-4919-5766-0. OCLC: ocn959595088.">McKinney, 2018</a>]</span>.</p>
+<div class="warning admonition">
+<p class="admonition-title">Nota</p>
+<p>En muchos foros se suele comentar que utilizar <code class="docutils literal notranslate"><span class="pre">pandas</span></code> simplemente para leer y escribir archivos CSV es como utilizar un tanque para matar una mosca. Ten esto en cuenta para el momento de utilizar esta librería en un entorno de desarrollo profesional.</p>
+</div>
+<section id="instalar-pandas">
+<h2>Instalar <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#instalar-pandas" title="Permalink to this headline">#</a></h2>
+<p>Para instalar <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, podemos utilizar <code class="docutils literal notranslate"><span class="pre">pip</span></code> o <code class="docutils literal notranslate"><span class="pre">conda</span></code>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>pandas
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>pandas
+</pre></div>
+</div>
+<p>La versión actual (abril 2023) es la 2.0.1. Sin embargo, es posible que gran parte de los tutoriales que existen en la actualidad dependan de la versión 1.5 o anterior. Verifica cuál es la versión de tu instalación de <code class="docutils literal notranslate"><span class="pre">pandas</span></code> con el siguiente código:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.5.3
+</pre></div>
+</div>
+</div>
+</div>
+<p>La versión que ves arriba será la que utilizaremos en este tutorial.</p>
+</section>
+<section id="leer-archivos-csv">
+<h2>Leer archivos CSV<a class="headerlink" href="#leer-archivos-csv" title="Permalink to this headline">#</a></h2>
+<p>Para leer un archivo CSV con <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, podemos utilizar el método <code class="docutils literal notranslate"><span class="pre">read_csv()</span></code>. Este método tiene muchos argumentos opcionales que permiten configurar la lectura del archivo CSV. Pasemos a leer nuestro archivo <code class="docutils literal notranslate"><span class="pre">inventario.csv</span></code> con <code class="docutils literal notranslate"><span class="pre">pandas</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">chardet</span>
+
+<span class="c1"># usaremos en este ejemplo la librería chardet para detectar el encoding del archivo</span>
+<span class="n">raw</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;inventario.csv&quot;</span><span class="p">),</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">encodign</span> <span class="o">=</span> <span class="n">chardet</span><span class="o">.</span><span class="n">detect</span><span class="p">(</span><span class="n">raw</span><span class="p">)[</span><span class="s1">&#39;encoding&#39;</span><span class="p">]</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">(),</span> <span class="s2">&quot;inventario.csv&quot;</span><span class="p">),</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encodign</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                titulo                autor  editorial  anio
+0             El Aleph    Jorge Luis Borges      Emece  1949
+1           El Quijote  Miguel de Cervantes  Alfaguara  2005
+2   El desbarrancadero     Fernando Vallejo    Planeta  2001
+3  Una novelita Lumpen       Roberto Bolaño   Anagrama  2002
+4            El amante     Marguerite Duras   Tusquets  1984
+</pre></div>
+</div>
+</div>
+</div>
+<p>Como verás, únicamente requerimos de la función <code class="docutils literal notranslate"><span class="pre">read_csv</span></code> para leer el archivo CSV. Para poder hacer frente a una cantidad de posibles formas de creación del archivo, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> cuenta con un buen número de parámetros que permiten solventar archivos con separadores diferentes a comas (<code class="docutils literal notranslate"><span class="pre">sep=&quot;;&quot;</span></code>), con encabezados (<code class="docutils literal notranslate"><span class="pre">header=0</span></code>), con índices (<code class="docutils literal notranslate"><span class="pre">index_col=0</span></code>), con valores faltantes (<code class="docutils literal notranslate"><span class="pre">na_values=[&quot;&quot;]</span></code>), etc. Para conocer todos los parámetros de la función <code class="docutils literal notranslate"><span class="pre">read_csv</span></code>, puedes consultar la <a class="reference external" href="https://pandas.pydata.org/pandas-docs/version/1.5/reference/api/pandas.read_csv.html">documentación oficial</a>.</p>
+<p>El resultado de la lectura del archivo CSV es un objeto de tipo <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> de <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> es una estructura de datos bidimensional que puede contener datos de diferentes tipos (numéricos, de cadena de caracteres, booleanos, etc.). En este caso, el <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> contiene los datos del archivo CSV, con los tipos de datos que <code class="docutils literal notranslate"><span class="pre">pandas</span></code> consideró más adecuados para cada columna.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="escribir-archivos-csv">
+<h2>Escribir archivos CSV<a class="headerlink" href="#escribir-archivos-csv" title="Permalink to this headline">#</a></h2>
+<p>Para escribir un archivo CSV con <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, podemos utilizar el método <code class="docutils literal notranslate"><span class="pre">to_csv()</span></code>. Sin embargo, debemos convertir los datos que queremos a un formato de <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> para que puedan ser guardados en la tabla. Por ejemplo, si queremos guardar los datos de un diccionario, podemos convertirlo a un <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> y luego guardarlo en un archivo CSV:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">diccionario</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Juan&quot;</span><span class="p">,</span> <span class="s2">&quot;María&quot;</span><span class="p">,</span> <span class="s2">&quot;Pedro&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;edad&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span>
+    <span class="s2">&quot;ciudad&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Bogotá&quot;</span><span class="p">,</span> <span class="s2">&quot;Medellín&quot;</span><span class="p">,</span> <span class="s2">&quot;Cali&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diccionario</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y podemos compronbar que el archivo CSV se creó correctamente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  nombre  edad    ciudad
+0   Juan    25    Bogotá
+1  María    30  Medellín
+2  Pedro    40      Cali
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="agregar-datos-a-un-csv-con-pandas">
+<h2>Agregar datos a un CSV con <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#agregar-datos-a-un-csv-con-pandas" title="Permalink to this headline">#</a></h2>
+<p>En este caso, lo que debemos realizar es una lectura del archivo CSV, agregar los datos que queremos y luego escribir el archivo CSV. Por ejemplo, si queremos agregar una nueva fila al archivo <code class="docutils literal notranslate"><span class="pre">diccionario.csv</span></code>, podemos hacer lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">)</span>
+
+<span class="n">nueva_fila</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nombre&quot;</span><span class="p">:</span> <span class="s2">&quot;Luis&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;edad&quot;</span><span class="p">:</span> <span class="mi">35</span><span class="p">,</span>
+    <span class="s2">&quot;ciudad&quot;</span><span class="p">:</span> <span class="s2">&quot;Barranquilla&quot;</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">nueva_fila</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">])])</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y podemos comprobar que el archivo CSV se creó correctamente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  nombre  edad        ciudad
+0   Juan    25        Bogotá
+1  María    30      Medellín
+2  Pedro    40          Cali
+3   Luis    35  Barranquilla
+</pre></div>
+</div>
+</div>
+</div>
+<p>Paradójicamente, si queremos simplemente agregar una fila al archivo CSV, es más eficiente utilizar la librería <code class="docutils literal notranslate"><span class="pre">csv</span></code> que <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Sin embargo, si queremos agregar varias filas, es mucho mejor utilizar <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Depende de las necesidades del programa que utilicemos o no <code class="docutils literal notranslate"><span class="pre">pandas</span></code> para agregar datos a un archivo CSV.</p>
+</section>
+<section id="eliminar-datos-de-un-csv-con-pandas">
+<h2>Eliminar datos de un CSV con <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#eliminar-datos-de-un-csv-con-pandas" title="Permalink to this headline">#</a></h2>
+<p>En este caso, lo que debemos realizar es una lectura del archivo CSV, eliminar los datos que queremos y luego escribir el archivo CSV. Por ejemplo, si queremos eliminar la fila con nombre “María” del archivo <code class="docutils literal notranslate"><span class="pre">diccionario.csv</span></code>, podemos hacer lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">]</span> <span class="o">!=</span> <span class="s2">&quot;María&quot;</span><span class="p">]</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y podemos comprobar que el archivo CSV se creó correctamente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  nombre  edad        ciudad
+0   Juan    25        Bogotá
+1  Pedro    40          Cali
+2   Luis    35  Barranquilla
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="actualizar-datos-de-un-csv-con-pandas">
+<h2>Actualizar datos de un CSV con <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#actualizar-datos-de-un-csv-con-pandas" title="Permalink to this headline">#</a></h2>
+<p>En este caso, lo que debemos realizar es una lectura del archivo CSV, actualizar los datos que queremos y luego escribir el archivo CSV. Por ejemplo, si queremos actualizar la edad de la fila con nombre “Pedro” del archivo <code class="docutils literal notranslate"><span class="pre">diccionario.csv</span></code>, podemos hacer lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;nombre&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;Pedro&quot;</span><span class="p">,</span> <span class="s2">&quot;edad&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">45</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y podemos comprobar que el archivo CSV se creó correctamente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  nombre  edad        ciudad
+0   Juan    25        Bogotá
+1  Pedro    45          Cali
+2   Luis    35  Barranquilla
+</pre></div>
+</div>
+</div>
+</div>
+<p>La gran ventaja de los dos ejemplos anteriores con respecto a la librería <code class="docutils literal notranslate"><span class="pre">csv</span></code> es que no tenemos que crear un archivo temporal para luego renombrarlo. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> se encarga de todo esto por nosotros.</p>
+</section>
+<section id="crear-una-nueva-columna-en-un-csv-con-pandas">
+<h2>Crear una nueva columna en un CSV con <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#crear-una-nueva-columna-en-un-csv-con-pandas" title="Permalink to this headline">#</a></h2>
+<p>En este caso, lo que debemos realizar es una lectura del archivo CSV, crear la nueva columna y luego escribir el archivo CSV. Por ejemplo, si queremos crear una nueva columna con el nombre “pais_nacimiento” en el archivo <code class="docutils literal notranslate"><span class="pre">diccionario.csv</span></code>, podemos hacer lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;pais_nacimiento&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Colombia&quot;</span><span class="p">,</span> <span class="s2">&quot;Perú&quot;</span><span class="p">,</span> <span class="s2">&quot;Colombia&quot;</span><span class="p">]</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y podemos comprobar que el archivo CSV se creó correctamente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  nombre  edad        ciudad pais_nacimiento
+0   Juan    25        Bogotá        Colombia
+1  Pedro    45          Cali            Perú
+2   Luis    35  Barranquilla        Colombia
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="eliminar-una-columna-de-un-csv-con-pandas">
+<h2>Eliminar una columna de un CSV con <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#eliminar-una-columna-de-un-csv-con-pandas" title="Permalink to this headline">#</a></h2>
+<p>En este caso, lo que debemos realizar es una lectura del archivo CSV, eliminar la columna y luego escribir el archivo CSV. Por ejemplo, si queremos eliminar la columna “pais_nacimiento” del archivo <code class="docutils literal notranslate"><span class="pre">diccionario.csv</span></code>, podemos hacer lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;pais_nacimiento&quot;</span><span class="p">])</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y podemos comprobar que el archivo CSV se creó correctamente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  nombre  edad        ciudad
+0   Juan    25        Bogotá
+1  Pedro    45          Cali
+2   Luis    35  Barranquilla
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="actualizar-una-columna-de-un-csv-con-pandas">
+<h2>Actualizar una columna de un CSV con <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#actualizar-una-columna-de-un-csv-con-pandas" title="Permalink to this headline">#</a></h2>
+<p>En este caso, lo que debemos realizar es una lectura del archivo CSV, actualizar la columna y luego escribir el archivo CSV. Por ejemplo, si queremos actualizar la columna “ciudad” del archivo <code class="docutils literal notranslate"><span class="pre">diccionario.csv</span></code>, podemos hacer lo siguiente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">)</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;ciudad&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Barranquilla&quot;</span><span class="p">,</span> <span class="s2">&quot;Cali&quot;</span><span class="p">,</span> <span class="s2">&quot;Tunja&quot;</span><span class="p">]</span>
+
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Y podemos comprobar que el archivo CSV se creó correctamente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;diccionario.csv&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  nombre  edad        ciudad
+0   Juan    25  Barranquilla
+1  Pedro    45          Cali
+2   Luis    35         Tunja
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusion">
+<h2>Conclusión<a class="headerlink" href="#conclusion" title="Permalink to this headline">#</a></h2>
+<p>En este tutorial apenas arañamos la superficie de lo que se puede hacer con <code class="docutils literal notranslate"><span class="pre">pandas</span></code>. Sin embargo, es suficiente para que puedas empezar a utilizar esta librería para leer, escribir y actualizar archivos CSV.</p>
+</section>
+<section id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Permalink to this headline">#</a></h2>
+<ol class="simple">
+<li><p>Crea un archivo CSV con los datos de tu biblioteca personal. Cada fila debe tener los siguientes datos: título, autor, editorial, año de publicación, género y número de páginas. Luego, crea un programa que lea el archivo CSV y muestre los datos de todos los libros que sean de un género específico.</p></li>
+<li><p>Crea una pequeña interface que permita agregar, eliminar y actualizar los datos del archivo CSV. Puedes aprovechar la librería <code class="docutils literal notranslate"><span class="pre">csv</span></code> o <code class="docutils literal notranslate"><span class="pre">pandas</span></code> para realizar esta tarea.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./tutoriales"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="30-csv.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Manejo de datos en archivos CSV</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="32-regex.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Expresiones regulares</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Jairo Antonio Melo Flórez<br/>
+  
+    <div class="extra_footer">
+      v. 1.0.4 [28-08-2023]<br /><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+    </div>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Actividad 7: Funciones (primera parte) &#8212; Curso de Python para las HD</title>
+    <title>Actividad 8: Manejo de archivos &#8212; Curso de Python para las HD</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Retornar valores en una función" href="../tutoriales/22-retornarvalores.html" />
-    <link rel="prev" title="Control de errores con Try Except" href="../tutoriales/21-funciones_y_TryExcept.html" />
+    <link rel="next" title="Manejo de datos en archivos CSV" href="../tutoriales/30-csv.html" />
+    <link rel="prev" title="Archivos JSON" href="../tutoriales/29-json.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -287,7 +287,7 @@ const thebe_selector_output = ".output, .cell_output"
   Funciones
  </span>
 </p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../tutoriales/19-funcionesIntro.html">
    Funciones: Introducción
@@ -318,8 +318,8 @@ const thebe_selector_output = ".output, .cell_output"
    </code>
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="7-funciones.html">
    Actividad 7: Funciones (primera parte)
   </a>
  </li>
@@ -366,7 +366,7 @@ const thebe_selector_output = ".output, .cell_output"
   Archivos
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../tutoriales/27-archivos.html">
    Leer y escribir archivos
@@ -387,8 +387,8 @@ const thebe_selector_output = ".output, .cell_output"
    Archivos JSON
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="8-cache.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Actividad 8: Manejo de archivos
   </a>
  </li>
@@ -577,7 +577,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B/issues/new?title=Issue%20on%20page%20%2Factividades/7-funciones.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B/issues/new?title=Issue%20on%20page%20%2Factividades/8-cache.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -605,7 +605,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../_sources/actividades/7-funciones.ipynb"
+        <a href="../_sources/actividades/8-cache.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -665,18 +665,18 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-1-crear-una-funcion-que-permita-consultar-el-catalogo">
-   Ejercicio 1. Crear una función que permita consultar el catálogo
+  <a class="reference internal nav-link" href="#ejercicio-1-construir-un-archivo-json-local">
+   Ejercicio 1: Construir un archivo JSON local
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-2-crear-una-funcion-que-permita-consultar-el-catalogo-por-fecha">
-   Ejercicio 2. Crear una función que permita consultar el catálogo por fecha
+  <a class="reference internal nav-link" href="#ejercicio-2-registro-de-consultas-y-busquedas">
+   Ejercicio 2: Registro de consultas y búsquedas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-3-crear-una-funcion-para-administrar-el-catalogo">
-   Ejercicio 3. Crear una función para administrar el catálogo
+  <a class="reference internal nav-link" href="#ejercicio-3-busqueda-en-cache-y-en-bibliografia">
+   Ejercicio 3: Búsqueda en Cache y en Bibliografía
   </a>
  </li>
 </ul>
@@ -688,7 +688,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Actividad 7: Funciones (primera parte)</h1>
+                <h1>Actividad 8: Manejo de archivos</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -699,18 +699,18 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-1-crear-una-funcion-que-permita-consultar-el-catalogo">
-   Ejercicio 1. Crear una función que permita consultar el catálogo
+  <a class="reference internal nav-link" href="#ejercicio-1-construir-un-archivo-json-local">
+   Ejercicio 1: Construir un archivo JSON local
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-2-crear-una-funcion-que-permita-consultar-el-catalogo-por-fecha">
-   Ejercicio 2. Crear una función que permita consultar el catálogo por fecha
+  <a class="reference internal nav-link" href="#ejercicio-2-registro-de-consultas-y-busquedas">
+   Ejercicio 2: Registro de consultas y búsquedas
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ejercicio-3-crear-una-funcion-para-administrar-el-catalogo">
-   Ejercicio 3. Crear una función para administrar el catálogo
+  <a class="reference internal nav-link" href="#ejercicio-3-busqueda-en-cache-y-en-bibliografia">
+   Ejercicio 3: Búsqueda en Cache y en Bibliografía
   </a>
  </li>
 </ul>
@@ -723,62 +723,114 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="actividad-7-funciones-primera-parte">
-<h1>Actividad 7: Funciones (primera parte)<a class="headerlink" href="#actividad-7-funciones-primera-parte" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="actividad-8-manejo-de-archivos">
+<h1>Actividad 8: Manejo de archivos<a class="headerlink" href="#actividad-8-manejo-de-archivos" title="Permalink to this headline">#</a></h1>
 <p>👉 Abre este cuaderno en tu Google Colab utilizando el botón “Open in Colab”, luego haz una copia en Drive (“Archivo &gt; Guardar una copia en Drive”) y sigue las instrucciones.</p>
-<p><a href="https://colab.research.google.com/gist/jairomelo/db0d5aa9d24f909f07a90de07c6dc342/7-funciones.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
-<p><strong>Envío:</strong> Envía la actividad a través del foro “Actividad 7: Funciones” de la unidad “Conceptos básicos” del curso.</p>
-<section id="ejercicio-1-crear-una-funcion-que-permita-consultar-el-catalogo">
-<h2>Ejercicio 1. Crear una función que permita consultar el catálogo<a class="headerlink" href="#ejercicio-1-crear-una-funcion-que-permita-consultar-el-catalogo" title="Permalink to this headline">#</a></h2>
-<p>Este primer ejercicio servirá como un buscador por título. El programa debe pedirle al usuario que ingrese una palabra clave para el título del elemento del catálogo que desea consultar. Mediante una función, debe imprimirse en pantalla el listado de elementos que coincidan con la palabra clave ingresada. La función debe lidiar con mayúsculas y minúsculas, es decir, si el usuario ingresa “el” o “El”, el programa debe imprimir los elementos que contengan “el” o “El”.</p>
-<p>También, deberá imprimirse el número de elementos encontrados. En caso de no encontrar elementos, el programa debe imprimir un mensaje indicando que no se encontraron elementos.</p>
-<p>La función debe estar documentada y, si es el caso, cachar posible errores que puedan ocurrir.</p>
-<p>El resultado debe ser similar a lo siguiente:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Ingresa<span class="w"> </span>una<span class="w"> </span>palabra<span class="w"> </span>clave<span class="w"> </span>para<span class="w"> </span>el<span class="w"> </span>título:<span class="w">  </span>el
-Se<span class="w"> </span>encontraron<span class="w"> </span><span class="m">2</span><span class="w"> </span>elementos:
--<span class="w"> </span>El<span class="w"> </span>señor<span class="w"> </span>de<span class="w"> </span>los<span class="w"> </span>anillos
--<span class="w"> </span>El<span class="w"> </span>principito
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe tu código aquí...</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="ejercicio-2-crear-una-funcion-que-permita-consultar-el-catalogo-por-fecha">
-<h2>Ejercicio 2. Crear una función que permita consultar el catálogo por fecha<a class="headerlink" href="#ejercicio-2-crear-una-funcion-que-permita-consultar-el-catalogo-por-fecha" title="Permalink to this headline">#</a></h2>
-<p>Este ejercicio es similar al anterior, pero en este caso, debe agregarse un parámetro que permita filtrar por fecha.</p>
-<p>El programa debe solicitarle al usuario una palabra clave para el título y un año. En el mensaje del <code class="docutils literal notranslate"><span class="pre">input()</span></code> debe indicarse la forma de ingresar el año (por ejemplo, “Año de publicación (YYYY): “).</p>
-<p>La función debe intentar lidiar con posibles errores de dedo (por ejemplo, si el usuario ingresa 1890 en lugar de 1980), para lo cual se pueden tomar las fechas extremas del catálogo e indicarlas en las instrucciones del <code class="docutils literal notranslate"><span class="pre">input()</span></code>.</p>
-<p>La función debe imprimir el listado de elementos que coincidan con la palabra clave y el año ingresados. La función debe estar documentada y, si es el caso, cachar posible errores que puedan ocurrir.</p>
-<p>El resultado debe ser similar a lo siguiente:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>Ingresa<span class="w"> </span>una<span class="w"> </span>palabra<span class="w"> </span>clave<span class="w"> </span>para<span class="w"> </span>el<span class="w"> </span>título:<span class="w">  </span>el
-Año<span class="w"> </span>de<span class="w"> </span>publicación<span class="w"> </span><span class="o">(</span>YYYY<span class="o">)</span>:<span class="w">  </span><span class="m">1980</span>
-
-Se<span class="w"> </span>encontraron<span class="w"> </span><span class="m">1</span><span class="w"> </span>elementos:
--<span class="w"> </span>El<span class="w"> </span>señor<span class="w"> </span>de<span class="w"> </span>los<span class="w"> </span>anillos
-</pre></div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe tu código aquí...</span>
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="ejercicio-3-crear-una-funcion-para-administrar-el-catalogo">
-<h2>Ejercicio 3. Crear una función para administrar el catálogo<a class="headerlink" href="#ejercicio-3-crear-una-funcion-para-administrar-el-catalogo" title="Permalink to this headline">#</a></h2>
-<p>En este ejercicio, crearemos una función que permita agregar elementos al catálogo. La función debe:</p>
+<p><a href="https://colab.research.google.com/gist/jairomelo/edf555c56ade30e31991f7cb1d85eb60/8-cache.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a></p>
+<p><strong>Envío:</strong> Envía la actividad a través del foro “Actividad 8: Manejo de archivos” de la unidad “Archivos” del curso.</p>
+<section id="ejercicio-1-construir-un-archivo-json-local">
+<h2>Ejercicio 1: Construir un archivo JSON local<a class="headerlink" href="#ejercicio-1-construir-un-archivo-json-local" title="Permalink to this headline">#</a></h2>
+<p>En la <a class="reference internal" href="9-actividadintermedia.html"><span class="doc std std-doc">actividad intermedia</span></a> te compartimos un archivo JSON con un <a class="reference external" href="https://github.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B/blob/main/data/bibliografia.json">conjunto de referencias bibliográficas</a>. En esta actividad, simplemente deberás crear un archivo JSON en tu entorno local de Google Colab.</p>
+<p>Para ello deberás:</p>
 <ol class="simple">
-<li><p>pedirle al usuario que ingrese los datos del elemento que desea agregar.</p></li>
-<li><p>Debe agregar el elemento al catálogo y</p></li>
-<li><p>Mostrar un mensaje indicando que el elemento fue agregado.</p></li>
+<li><p>Habilitar el acceso a tu Google Drive desde Google Colab.</p></li>
+<li><p>Crear un directorio en tu Google Drive desde el cual puedas acceder a tus archivos.</p></li>
+<li><p>Crear un archivo JSON con el mismo formato que el archivo compartido en la actividad intermedia. Puedes simplemente descargarlo en el directorio.</p></li>
+<li><p>Leer el archivo JSON desde tu directorio local y mostrarlo en pantalla.</p></li>
 </ol>
-<p>La función debe estar documentada y, si es el caso, cachar posible errores que puedan ocurrir.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe tu código aquí...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-2-registro-de-consultas-y-busquedas">
+<h2>Ejercicio 2: Registro de consultas y búsquedas<a class="headerlink" href="#ejercicio-2-registro-de-consultas-y-busquedas" title="Permalink to this headline">#</a></h2>
+<p>En este ejercicio, realizaremos una aplicación que nos permita registrar las consultas y búsquedas que realizamos en la bibliografía.</p>
+<p>Para ello, crea una función que se denomine <code class="docutils literal notranslate"><span class="pre">registro()</span></code> y que reciba como parámetros los inputs del usuario al hacer la búsqueda de un autor, título o palabra clave. Esta función debe crear un archivo JSON que registre la búsqueda realizada y la fecha en que se realizó. Para registrar la fecha, puedes utilizar la función <code class="docutils literal notranslate"><span class="pre">datetime.now()</span></code> del módulo <code class="docutils literal notranslate"><span class="pre">datetime</span></code>, así:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="n">fecha</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>El registro del archivo JSON debe ser similar al siguiente:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;unique_id&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;fecha&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2021-10-10 12:00:00&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;busqueda&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Borges&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tipo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;autor&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;clase&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;libro&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;resultado&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;zotero_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;unique_id&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;titulo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Book Title 1&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;autor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jorge Luis Borges&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;tipo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;libro&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;zotero_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;unique_id&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;titulo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Book Title 2&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;autor&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Another Author&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;tipo&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;libro&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe tu código aquí...</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ejercicio-3-busqueda-en-cache-y-en-bibliografia">
+<h2>Ejercicio 3: Búsqueda en Cache y en Bibliografía<a class="headerlink" href="#ejercicio-3-busqueda-en-cache-y-en-bibliografia" title="Permalink to this headline">#</a></h2>
+<p>En este ejercicio, realizaremos una aplicación que nos permita buscar en la bibliografía y en el registro de búsquedas.</p>
+<p>Los pasos básicos de la aplicación son los siguientes:</p>
+<ol class="simple">
+<li><p>El usuario ingresa un término de búsqueda, un tipo de búsqueda y una clase de búsqueda.</p></li>
+<li><p>La aplicación busca en el registro de búsquedas si existe una búsqueda previa con los mismos parámetros.</p></li>
+<li><p>Si existe una búsqueda previa, la aplicación devuelve los resultados de la búsqueda previa.</p></li>
+<li><p>Si no existe una búsqueda previa, la aplicación busca en la bibliografía y devuelve los resultados de la búsqueda.</p></li>
+<li><p>La aplicación registra la búsqueda en el registro de búsquedas.</p></li>
+</ol>
+<p>Un pseudocódigo de alto nivel que les puede servir como guía es el siguiente:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">buscar</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">tipo</span><span class="p">,</span> <span class="n">clase</span><span class="p">):</span>
+    <span class="c1"># Comprobar la caché en busca de resultados existentes</span>
+    <span class="n">entrada_cache</span> <span class="o">=</span> <span class="n">obtener_entrada_cache</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">tipo</span><span class="p">,</span> <span class="n">clase</span><span class="p">)</span>
+    
+    <span class="c1"># Si existe una entrada de caché válida</span>
+    <span class="k">if</span> <span class="n">entrada_cache</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">entrada_cache</span><span class="p">[</span><span class="s2">&quot;resultado&quot;</span><span class="p">]</span>
+    
+    <span class="c1"># Si no existe una entrada de caché válida</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="c1"># Realizar una nueva búsqueda en el archivo JSON bibliográfico completo</span>
+        <span class="n">nuevos_resultados</span> <span class="o">=</span> <span class="n">realizar_nueva_busqueda</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">tipo</span><span class="p">,</span> <span class="n">clase</span><span class="p">)</span>
+        
+        <span class="c1"># Actualizar o crear una entrada de caché para la consulta</span>
+        <span class="n">actualizar_entrada_cache</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">tipo</span><span class="p">,</span> <span class="n">clase</span><span class="p">,</span> <span class="n">nuevos_resultados</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">nuevos_resultados</span>
+
+<span class="k">def</span> <span class="nf">obtener_entrada_cache</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">tipo</span><span class="p">,</span> <span class="n">clase</span><span class="p">):</span>
+    <span class="c1"># Recuperar la entrada de caché según los parámetros de consulta</span>
+    <span class="c1"># Devolver None si no se encuentra ninguna entrada de caché</span>
+
+<span class="k">def</span> <span class="nf">realizar_nueva_busqueda</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">tipo</span><span class="p">,</span> <span class="n">clase</span><span class="p">):</span>
+    <span class="c1"># Realizar una nueva búsqueda en el archivo JSON bibliográfico completo</span>
+    <span class="c1"># Devolver los resultados de la búsqueda como una lista</span>
+
+<span class="k">def</span> <span class="nf">actualizar_entrada_cache</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">tipo</span><span class="p">,</span> <span class="n">clase</span><span class="p">,</span> <span class="n">resultados</span><span class="p">):</span>
+    <span class="c1"># Actualizar o crear una entrada de caché para la consulta</span>
+    <span class="c1"># Incluir la marca de tiempo actual</span>
+    <span class="c1"># Guardar la caché actualizada en el archivo de caché</span>
+</pre></div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Escribe tu código aquí...</span>
@@ -816,17 +868,17 @@ Se<span class="w"> </span>encontraron<span class="w"> </span><span class="m">1</
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../tutoriales/21-funciones_y_TryExcept.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../tutoriales/29-json.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Control de errores con <code class="docutils literal notranslate"><span class="pre">Try</span></code> <code class="docutils literal notranslate"><span class="pre">Except</span></code></p>
+            <p class="prev-next-title">Archivos JSON</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../tutoriales/22-retornarvalores.html" title="next page">
+    <a class='right-next' id="next-link" href="../tutoriales/30-csv.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Retornar valores en una función</p>
+        <p class="prev-next-title">Manejo de datos en archivos CSV</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

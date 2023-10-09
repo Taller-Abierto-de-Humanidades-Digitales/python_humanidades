@@ -188,17 +188,3 @@ print(f.readlines())
 ## Conclusión
 
 Como hemos visto, hay una serie de métodos que nos permiten manipular archivos de texto. Este tipo de métodos pueden extenderse a prácticamente cualquier tipo de archivo, incluso a archivos binarios. No obstante, entre más complejo sea el archivo, más compleja será la manipulación.
-
-## Ejercicios
-
-### Ejercicio 1
-
-Crear un archivo de texto con un texto cualquiera. Leer el archivo y mostrar su contenido en pantalla.
-
-### Ejercicio 2
-
-Contar el número de palabras del archivo de texto que creaste en el ejercicio 1.
-
-### Ejercicio 3
-
-Crear un programa que permita encontrar cuántas veces aparece una palabra en un archivo de texto.
