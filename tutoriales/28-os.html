@@ -936,347 +936,41 @@ title="Print to PDF"
 <p>También podemos utilizar el método <code class="docutils literal notranslate"><span class="pre">walk</span></code> en caso de que queramos revisar directorios y subdirectorios:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;../_build/html&quot;</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">dirs</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">files</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">root</span><span class="p">,</span> <span class="n">dirs</span><span class="p">,</span> <span class="n">files</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="s2">&quot;../_static&quot;</span><span class="p">):</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Directorio raíz:</span><span class="se">\n</span><span class="si">{</span><span class="n">root</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Subdirectorios:</span><span class="se">\n</span><span class="si">{</span><span class="n">dirs</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Archivos:</span><span class="se">\n</span><span class="si">{</span><span class="n">files</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>../_build/html
-[&#39;actividades&#39;, &#39;tutoriales&#39;, &#39;_images&#39;, &#39;_sources&#39;, &#39;_sphinx_design_static&#39;, &#39;_static&#39;]
-[&#39;.buildinfo&#39;, &#39;future.html&#39;, &#39;genindex.html&#39;, &#39;index.html&#39;, &#39;infotec.html&#39;, &#39;objects.inv&#39;, &#39;references.html&#39;, &#39;search.html&#39;, &#39;searchindex.js&#39;]
-../_build/html\actividades
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Directorio raíz:
+../_static
+Subdirectorios:
+[&#39;imgs&#39;]
+Archivos:
 []
-[&#39;1-configuracion.html&#39;, &#39;1-GoogleColab.html&#39;, &#39;10-actividadfinal.html&#39;, &#39;2-sintaxis_variables.html&#39;, &#39;3-listas.html&#39;, &#39;4-iteraciones.html&#39;, &#39;5-condicionales.html&#39;, &#39;6-diccionarios.html&#39;, &#39;7-funciones.html&#39;, &#39;8-funciones2.html&#39;, &#39;9-actividadintermedia.html&#39;]
-../_build/html\tutoriales
-[]
-[&#39;1-instalarPython.html&#39;, &#39;1-preliminares.html&#39;, &#39;10-listas.html&#39;, &#39;11-iteraciones.html&#39;, &#39;12-condicionales.html&#39;, &#39;13-ifelse.html&#39;, &#39;13-plogicas.html&#39;, &#39;14-condicionPertenencia.html&#39;, &#39;15-ifelse.html&#39;, &#39;16-listaseif.html&#39;, &#39;17-diccionarios.html&#39;, &#39;18-iterardiccio.html&#39;, &#39;19-funcionesIntro.html&#39;, &#39;2-terminal.html&#39;, &#39;20-funciones_y_TryExcept.html&#39;, &#39;20-input.html&#39;, &#39;21-funciones_y_TryExcept.html&#39;, &#39;22-retornarvalores.html&#39;, &#39;23-funcionesLlamados.html&#39;, &#39;24-argsykwargs.html&#39;, &#39;25-importarmodulos.html&#39;, &#39;25-modularfunciones.html&#39;, &#39;26-importarmodulos.html&#39;, &#39;26-modularfunciones.html&#39;, &#39;27-archivos.html&#39;, &#39;27-introObjetos.html&#39;, &#39;28-clases.html&#39;, &#39;28-os.html&#39;, &#39;29-csv.html&#39;, &#39;3-instalarVSCode.html&#39;, &#39;30-pandasCSV.html&#39;, &#39;31-json.html&#39;, &#39;32-regex.html&#39;, &#39;33-regexcont.html&#39;, &#39;34-introObjetos.html&#39;, &#39;35-clases.html&#39;, &#39;4-Git.html&#39;, &#39;5-Github.html&#39;, &#39;6-python.html&#39;, &#39;7-variables.html&#39;, &#39;8-operadores.html&#39;, &#39;9-operaciones_string.html&#39;]
-../_build/html\_images
-[]
-[&#39;cambiar_nombre.gif&#39;, &#39;colab_ini.png&#39;, &#39;condicional.png&#39;, &#39;función_estructura.png&#39;, &#39;nuevo_cuaderno.png&#39;, &#39;parametros.png&#39;, &#39;scratch.png&#39;]
-../_build/html\_sources
-[&#39;actividades&#39;, &#39;tutoriales&#39;]
-[&#39;future.md&#39;, &#39;index.md&#39;, &#39;infotec.ipynb&#39;, &#39;infotec.md&#39;, &#39;references.ipynb&#39;, &#39;references.md&#39;]
-../_build/html\_sources\actividades
-[]
-[&#39;1-configuracion.md&#39;, &#39;1-GoogleColab.md&#39;, &#39;10-actividadfinal.ipynb&#39;, &#39;10-actividadfinal.md&#39;, &#39;2-sintaxis_variables.ipynb&#39;, &#39;2-sintaxis_variables.md&#39;, &#39;3-listas.ipynb&#39;, &#39;3-listas.md&#39;, &#39;4-iteraciones.ipynb&#39;, &#39;4-iteraciones.md&#39;, &#39;5-condicionales.ipynb&#39;, &#39;5-condicionales.md&#39;, &#39;6-diccionarios.ipynb&#39;, &#39;6-diccionarios.md&#39;, &#39;7-funciones.ipynb&#39;, &#39;7-funciones.md&#39;, &#39;8-funciones2.md&#39;, &#39;9-actividadintermedia.ipynb&#39;, &#39;9-actividadintermedia.md&#39;]
-../_build/html\_sources\tutoriales
-[]
-[&#39;1-instalarPython.ipynb&#39;, &#39;1-instalarPython.md&#39;, &#39;1-preliminares.ipynb&#39;, &#39;1-preliminares.md&#39;, &#39;10-listas.ipynb&#39;, &#39;10-listas.md&#39;, &#39;11-iteraciones.ipynb&#39;, &#39;11-iteraciones.md&#39;, &#39;12-condicionales.ipynb&#39;, &#39;12-condicionales.md&#39;, &#39;13-ifelse.ipynb&#39;, &#39;13-ifelse.md&#39;, &#39;13-plogicas.ipynb&#39;, &#39;13-plogicas.md&#39;, &#39;14-condicionPertenencia.ipynb&#39;, &#39;14-condicionPertenencia.md&#39;, &#39;15-ifelse.ipynb&#39;, &#39;15-ifelse.md&#39;, &#39;16-listaseif.ipynb&#39;, &#39;16-listaseif.md&#39;, &#39;17-diccionarios.ipynb&#39;, &#39;17-diccionarios.md&#39;, &#39;18-iterardiccio.ipynb&#39;, &#39;18-iterardiccio.md&#39;, &#39;19-funcionesIntro.ipynb&#39;, &#39;19-funcionesIntro.md&#39;, &#39;2-terminal.ipynb&#39;, &#39;2-terminal.md&#39;, &#39;20-funciones_y_TryExcept.ipynb&#39;, &#39;20-funciones_y_TryExcept.md&#39;, &#39;20-input.ipynb&#39;, &#39;20-input.md&#39;, &#39;21-funciones_y_TryExcept.ipynb&#39;, &#39;21-funciones_y_TryExcept.md&#39;, &#39;22-retornarvalores.ipynb&#39;, &#39;22-retornarvalores.md&#39;, &#39;23-funcionesLlamados.ipynb&#39;, &#39;23-funcionesLlamados.md&#39;, &#39;24-argsykwargs.ipynb&#39;, &#39;24-argsykwargs.md&#39;, &#39;25-importarmodulos.ipynb&#39;, &#39;25-importarmodulos.md&#39;, &#39;25-modularfunciones.ipynb&#39;, &#39;25-modularfunciones.md&#39;, &#39;26-importarmodulos.ipynb&#39;, &#39;26-importarmodulos.md&#39;, &#39;26-modularfunciones.ipynb&#39;, &#39;26-modularfunciones.md&#39;, &#39;27-archivos.ipynb&#39;, &#39;27-archivos.md&#39;, &#39;27-introObjetos.ipynb&#39;, &#39;27-introObjetos.md&#39;, &#39;28-clases.ipynb&#39;, &#39;28-clases.md&#39;, &#39;28-os.ipynb&#39;, &#39;28-os.md&#39;, &#39;29-csv.ipynb&#39;, &#39;29-csv.md&#39;, &#39;3-instalarVSCode.md&#39;, &#39;30-pandasCSV.ipynb&#39;, &#39;30-pandasCSV.md&#39;, &#39;31-json.ipynb&#39;, &#39;31-json.md&#39;, &#39;32-regex.ipynb&#39;, &#39;32-regex.md&#39;, &#39;33-regexcont.ipynb&#39;, &#39;33-regexcont.md&#39;, &#39;34-introObjetos.ipynb&#39;, &#39;34-introObjetos.md&#39;, &#39;35-clases.ipynb&#39;, &#39;35-clases.md&#39;, &#39;4-Git.md&#39;, &#39;5-Github.md&#39;, &#39;6-python.ipynb&#39;, &#39;6-python.md&#39;, &#39;7-variables.ipynb&#39;, &#39;7-variables.md&#39;, &#39;8-operadores.ipynb&#39;, &#39;8-operadores.md&#39;, &#39;9-operaciones_string.ipynb&#39;, &#39;9-operaciones_string.md&#39;]
-../_build/html\_sphinx_design_static
-[]
-[&#39;design-style.b7bb847fb20b106c3d81b95245e65545.min.css&#39;, &#39;design-tabs.js&#39;]
-../_build/html\_static
-[&#39;images&#39;, &#39;imgs&#39;, &#39;locales&#39;, &#39;scripts&#39;, &#39;styles&#39;, &#39;vendor&#39;]
-[&#39;basic.css&#39;, &#39;check-solid.svg&#39;, &#39;clipboard.min.js&#39;, &#39;copy-button.svg&#39;, &#39;copybutton.css&#39;, &#39;copybutton.js&#39;, &#39;copybutton_funcs.js&#39;, &#39;design-style.b7bb847fb20b106c3d81b95245e65545.min.css&#39;, &#39;design-tabs.js&#39;, &#39;doctools.js&#39;, &#39;documentation_options.js&#39;, &#39;file.png&#39;, &#39;jquery-3.5.1.js&#39;, &#39;jquery.js&#39;, &#39;language_data.js&#39;, &#39;logo.png&#39;, &#39;minus.png&#39;, &#39;mystnb.css&#39;, &#39;plus.png&#39;, &#39;pygments.css&#39;, &#39;sbt-webpack-macros.html&#39;, &#39;searchtools.js&#39;, &#39;sphinx-thebe.css&#39;, &#39;sphinx-thebe.js&#39;, &#39;togglebutton.css&#39;, &#39;togglebutton.js&#39;, &#39;underscore-1.13.1.js&#39;, &#39;underscore.js&#39;, &#39;webpack-macros.html&#39;]
-../_build/html\_static\images
-[]
-[&#39;logo_binder.svg&#39;, &#39;logo_colab.png&#39;, &#39;logo_deepnote.svg&#39;, &#39;logo_jupyterhub.svg&#39;]
-../_build/html\_static\imgs
+
+Directorio raíz:
+../_static\imgs
+Subdirectorios:
 [&#39;crear-carpeta&#39;, &#39;intro&#39;]
+Archivos:
 [&#39;condicional.png&#39;, &#39;función_estructura.png&#39;, &#39;logo.png&#39;, &#39;parametros.png&#39;, &#39;scratch.png&#39;]
-../_build/html\_static\imgs\crear-carpeta
+
+Directorio raíz:
+../_static\imgs\crear-carpeta
+Subdirectorios:
 []
+Archivos:
 [&#39;cambiar_nombre.gif&#39;, &#39;colab_ini.png&#39;, &#39;nuevo_cuaderno.png&#39;]
-../_build/html\_static\imgs\intro
+
+Directorio raíz:
+../_static\imgs\intro
+Subdirectorios:
 []
+Archivos:
 [&#39;ejemplo_actividad.gif&#39;]
-../_build/html\_static\locales
-[&#39;ar&#39;, &#39;bg&#39;, &#39;bn&#39;, &#39;ca&#39;, &#39;cs&#39;, &#39;da&#39;, &#39;de&#39;, &#39;el&#39;, &#39;eo&#39;, &#39;es&#39;, &#39;et&#39;, &#39;fi&#39;, &#39;fr&#39;, &#39;hr&#39;, &#39;id&#39;, &#39;it&#39;, &#39;iw&#39;, &#39;ja&#39;, &#39;ko&#39;, &#39;lt&#39;, &#39;lv&#39;, &#39;ml&#39;, &#39;mr&#39;, &#39;ms&#39;, &#39;nl&#39;, &#39;no&#39;, &#39;pl&#39;, &#39;pt&#39;, &#39;ro&#39;, &#39;ru&#39;, &#39;sk&#39;, &#39;sl&#39;, &#39;sr&#39;, &#39;sv&#39;, &#39;ta&#39;, &#39;te&#39;, &#39;tg&#39;, &#39;th&#39;, &#39;tl&#39;, &#39;tr&#39;, &#39;uk&#39;, &#39;ur&#39;, &#39;vi&#39;, &#39;zh_CN&#39;, &#39;zh_TW&#39;]
-[]
-../_build/html\_static\locales\ar
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\ar\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\bg
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\bg\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\bn
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\bn\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\ca
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\ca\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\cs
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\cs\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\da
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\da\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\de
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\de\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\el
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\el\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\eo
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\eo\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\es
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\es\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\et
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\et\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\fi
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\fi\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\fr
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\fr\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\hr
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\hr\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\id
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\id\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\it
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\it\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\iw
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\iw\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\ja
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\ja\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\ko
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\ko\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\lt
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\lt\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\lv
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\lv\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\ml
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\ml\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\mr
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\mr\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\ms
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\ms\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\nl
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\nl\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\no
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\no\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\pl
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\pl\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\pt
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\pt\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\ro
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\ro\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\ru
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\ru\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\sk
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\sk\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\sl
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\sl\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\sr
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\sr\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\sv
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\sv\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\ta
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\ta\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\te
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\te\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\tg
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\tg\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\th
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\th\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\tl
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\tl\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\tr
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\tr\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\uk
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\uk\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\ur
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\ur\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\vi
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\vi\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\zh_CN
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\zh_CN\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\locales\zh_TW
-[&#39;LC_MESSAGES&#39;]
-[]
-../_build/html\_static\locales\zh_TW\LC_MESSAGES
-[]
-[&#39;booktheme.po&#39;]
-../_build/html\_static\scripts
-[]
-[&#39;pydata-sphinx-theme.js&#39;, &#39;sphinx-book-theme.js&#39;, &#39;sphinx-book-theme.js.map&#39;]
-../_build/html\_static\styles
-[]
-[&#39;pydata-sphinx-theme.css&#39;, &#39;sphinx-book-theme.css&#39;, &#39;theme.css&#39;]
-../_build/html\_static\vendor
-[&#39;fontawesome&#39;]
-[]
-../_build/html\_static\vendor\fontawesome
-[&#39;5.13.0&#39;]
-[]
-../_build/html\_static\vendor\fontawesome\5.13.0
-[&#39;css&#39;, &#39;webfonts&#39;]
-[&#39;LICENSE.txt&#39;]
-../_build/html\_static\vendor\fontawesome\5.13.0\css
-[]
-[&#39;all.min.css&#39;]
-../_build/html\_static\vendor\fontawesome\5.13.0\webfonts
-[]
-[&#39;fa-brands-400.eot&#39;, &#39;fa-brands-400.svg&#39;, &#39;fa-brands-400.ttf&#39;, &#39;fa-brands-400.woff&#39;, &#39;fa-brands-400.woff2&#39;, &#39;fa-regular-400.eot&#39;, &#39;fa-regular-400.svg&#39;, &#39;fa-regular-400.ttf&#39;, &#39;fa-regular-400.woff&#39;, &#39;fa-regular-400.woff2&#39;, &#39;fa-solid-900.eot&#39;, &#39;fa-solid-900.svg&#39;, &#39;fa-solid-900.ttf&#39;, &#39;fa-solid-900.woff&#39;, &#39;fa-solid-900.woff2&#39;]
 </pre></div>
 </div>
 </div>
