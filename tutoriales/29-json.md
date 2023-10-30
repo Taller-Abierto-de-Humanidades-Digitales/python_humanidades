@@ -341,11 +341,3 @@ with open("../data/bibliografia.json", "w", encoding='utf-8') as archivo:
 ## Conclusión
 
 Como habrás notado, trabajar con archivos JSON es muy similar a hacerlo con diccionarios. Solamente debemos tener en cuenta que el objeto que se está recibiendo es una lista de diccionarios y que, por lo tanto, debemos iterar sobre ella para poder acceder a los elementos que contiene.
-
-## Ejercicio
-
-En la interfaz de la actividad intermedia, crea un archivo JSON que funcione como "base de datos" de la bibliografía, así, en lugar de interactuar con el archivo JSON que está en línea, lo puede hacer más rápidamente desde un directorio local.
-
-Un ejercicio intermedio: Crea un archivo JSON que te ayude a llevar la estadística de las consultas y búsquedas hechas en la bibliografía. Por ejemplo, cuántas veces se busca determinado autor o título.
-
-Un ejercicio "avanzado": Crea un archivo JSON que sirva como 'cache' de tu aplicación. Este, debe almacenar las búsquedas y así, en lugar de realizar siempre la búsqueda en todos los registros del JSON, puede recurrir a las búsquedas ya realizadas y solamente en caso de no encontrarlas busca en la totalidad de los registros. Con esta acción la aplicación aumentará significativamente su eficiencia.
