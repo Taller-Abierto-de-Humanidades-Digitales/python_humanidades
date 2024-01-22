@@ -110,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Fundamentos de programación
+                    Fundamentos de programación para las humanidades
                 </a>
             </li>
         </ul>
@@ -128,6 +128,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../actividades/1-GoogleColab.html">
    Actividad 1: Comparte tu cuaderno
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Proyecto del curso
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/evaluaciones/proyecto-curso.html">
+   Proyecto del curso: Creación de un Analizador de Texto Literario
   </a>
  </li>
 </ul>
@@ -351,13 +363,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Actividad de evaluación intermedia
+  Clases
  </span>
 </p>
 <ul class="nav bd-sidenav">
  <li class="toctree-l1">
-  <a class="reference internal" href="../actividades/evaluaciones/1-actividadintermedia.html">
-   Actividad intermedia: Construye un programa real
+  <a class="reference internal" href="34-introObjetos.html">
+   Introducción a la programación orientada a objetos
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="35-clases.html">
+   Clases
   </a>
  </li>
 </ul>
@@ -437,35 +454,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../actividades/10-regex.html">
    Actividad 10: Expresiones regulares
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Clases
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="34-introObjetos.html">
-   Introducción a la programación orientada a objetos
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="35-clases.html">
-   Clases
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Actividad final
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../actividades/evaluaciones/2-actividadfinal.html">
-   Actividad final
   </a>
  </li>
 </ul>
@@ -933,7 +921,7 @@ title="Print to PDF"
 <h1>Manejar archivos CSV con <code class="docutils literal notranslate"><span class="pre">pandas</span></code><a class="headerlink" href="#manejar-archivos-csv-con-pandas" title="Permalink to this headline">#</a></h1>
 <p>Para trabajar con archivos CSV de tamaño modesto, es suficiente (y recomendable) utilizar la librería <code class="docutils literal notranslate"><span class="pre">csv</span></code>, pero para poder trabajar con archivos CSV de gran tamaño y complejidad, es recomendado apelar a la librería <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
 <p>Esta librería fue creada por Wes McKinney en 2008 y es una de las más utilizadas en el mundo de la ciencia de datos. <code class="docutils literal notranslate"><span class="pre">pandas</span></code> es una librería de código abierto que provee estructuras de datos y herramientas de análisis de datos de alto rendimiento y fácil de usar. En particular, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> provee estructuras de datos y operaciones para manipular tablas numéricas y series temporales. Además, <code class="docutils literal notranslate"><span class="pre">pandas</span></code> está construida sobre <code class="docutils literal notranslate"><span class="pre">numpy</span></code>, por lo que es posible utilizar las funciones de <code class="docutils literal notranslate"><span class="pre">numpy</span></code> en <code class="docutils literal notranslate"><span class="pre">pandas</span></code>.</p>
-<p>En este curso, simplemente utilizaremos la librería <code class="docutils literal notranslate"><span class="pre">pandas</span></code> para leer y escribir archivos CSV. Para aprender más sobre <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, te recomiendo explorar el libro de Wes McKinney, <em>Python for Data Analysis</em> <span id="id1">[<a class="reference internal" href="../references.html#id7" title="Wes McKinney. Python for data analysis: data wrangling with pandas, NumPy, and IPython. O'Reilly Media, Inc, Sebastopol, California, second edition edition, 2018. ISBN 978-1-4919-5766-0. OCLC: ocn959595088.">McKinney, 2018</a>]</span>.</p>
+<p>En este curso, simplemente utilizaremos la librería <code class="docutils literal notranslate"><span class="pre">pandas</span></code> para leer y escribir archivos CSV. Para aprender más sobre <code class="docutils literal notranslate"><span class="pre">pandas</span></code>, te recomiendo explorar el libro de Wes McKinney, <em>Python for Data Analysis</em> <span id="id1">[<a class="reference internal" href="../references.html#id8" title="Wes McKinney. Python for data analysis: data wrangling with pandas, NumPy, and IPython. O'Reilly Media, Inc, Sebastopol, California, second edition edition, 2018. ISBN 978-1-4919-5766-0. OCLC: ocn959595088.">McKinney, 2018</a>]</span>.</p>
 <div class="warning admonition">
 <p class="admonition-title">Nota</p>
 <p>En muchos foros se suele comentar que utilizar <code class="docutils literal notranslate"><span class="pre">pandas</span></code> simplemente para leer y escribir archivos CSV es como utilizar un tanque para matar una mosca. Ten esto en cuenta para el momento de utilizar esta librería en un entorno de desarrollo profesional.</p>
@@ -1323,7 +1311,7 @@ title="Print to PDF"
     By Jairo Antonio Melo Flórez<br/>
   
     <div class="extra_footer">
-      v. 1.0.4 [28-08-2023]<br /><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+      v. 1.1 [unreleased]<br /><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
     </div>
 </p>
         </footer>

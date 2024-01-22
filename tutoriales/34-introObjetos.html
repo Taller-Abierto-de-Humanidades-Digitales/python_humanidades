@@ -54,7 +54,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Clases" href="35-clases.html" />
-    <link rel="prev" title="Actividad 10: Expresiones regulares" href="../actividades/10-regex.html" />
+    <link rel="prev" title="Crear módulos" href="26-modularfunciones.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -110,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../index.html">
-                    Fundamentos de programación
+                    Fundamentos de programación para las humanidades
                 </a>
             </li>
         </ul>
@@ -128,6 +128,18 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../actividades/1-GoogleColab.html">
    Actividad 1: Comparte tu cuaderno
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Proyecto del curso
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../actividades/evaluaciones/proyecto-curso.html">
+   Proyecto del curso: Creación de un Analizador de Texto Literario
   </a>
  </li>
 </ul>
@@ -351,13 +363,18 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading">
  <span class="caption-text">
-  Actividad de evaluación intermedia
+  Clases
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introducción a la programación orientada a objetos
+  </a>
+ </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../actividades/evaluaciones/1-actividadintermedia.html">
-   Actividad intermedia: Construye un programa real
+  <a class="reference internal" href="35-clases.html">
+   Clases
   </a>
  </li>
 </ul>
@@ -437,35 +454,6 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../actividades/10-regex.html">
    Actividad 10: Expresiones regulares
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Clases
- </span>
-</p>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
-   Introducción a la programación orientada a objetos
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="35-clases.html">
-   Clases
-  </a>
- </li>
-</ul>
-<p aria-level="2" class="caption" role="heading">
- <span class="caption-text">
-  Actividad final
- </span>
-</p>
-<ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../actividades/evaluaciones/2-actividadfinal.html">
-   Actividad final
   </a>
  </li>
 </ul>
@@ -761,7 +749,7 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="introduccion-a-la-programacion-orientada-a-objetos">
 <h1>Introducción a la programación orientada a objetos<a class="headerlink" href="#introduccion-a-la-programacion-orientada-a-objetos" title="Permalink to this headline">#</a></h1>
-<p>En términos técnicos, todo en Python es un objeto <span id="id1">[<a class="reference internal" href="../references.html#id6" title="Jacob T. Vanderplas. A whirlwind tour of Python. O'Reilly Media, Sebastopol, CA, first edition edition, 2016. ISBN 978-1-4919-6464-4. OCLC: 1023864062.">Vanderplas, 2016</a>]</span>.<a class="footnote-reference brackets" href="#id3" id="id2">1</a> Incluso los tipos de datos básicos como enteros, cadenas y listas son objetos en sí mismos y tienen sus propios métodos y propiedades.</p>
+<p>En términos técnicos, todo en Python es un objeto <span id="id1">[<a class="reference internal" href="../references.html#id7" title="Jacob T. Vanderplas. A whirlwind tour of Python. O'Reilly Media, Sebastopol, CA, first edition edition, 2016. ISBN 978-1-4919-6464-4. OCLC: 1023864062.">Vanderplas, 2016</a>]</span>.<a class="footnote-reference brackets" href="#id3" id="id2">1</a> Incluso los tipos de datos básicos como enteros, cadenas y listas son objetos en sí mismos y tienen sus propios métodos y propiedades.</p>
 <p>Las clases también son objetos y sirven para crear objetos. Tal vez parezca un poco complicado en este momento, pero con la práctica se hará más clara esta idea.</p>
 <p>En términos de la Programación Orientada a Objetos, podemos entender un objeto como una entidad que tiene un estado y un comportamiento. El estado de un objeto se refiere a sus propiedades y el comportamiento a sus métodos. Por ejemplo, un objeto de tipo <code class="docutils literal notranslate"><span class="pre">Coche</span></code> puede tener como propiedades el color, la marca, el modelo, etc. y como métodos el arrancar, el frenar, el girar, etc.</p>
 <p>Otro aspecto importante de entender, antes de iniciar nuestro proceso de programación, es la idea de instanciación. Cuando creamos un objeto a partir de una clase, decimos que estamos instanciando un objeto de esa clase. Por ejemplo, podemos instanciar un objeto de la clase <code class="docutils literal notranslate"><span class="pre">Coche</span></code> y asignarlo a una variable:</p>
@@ -836,11 +824,11 @@ Megane
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../actividades/10-regex.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="26-modularfunciones.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Actividad 10: Expresiones regulares</p>
+            <p class="prev-next-title">Crear módulos</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="35-clases.html" title="next page">
@@ -860,7 +848,7 @@ Megane
     By Jairo Antonio Melo Flórez<br/>
   
     <div class="extra_footer">
-      v. 1.0.4 [28-08-2023]<br /><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+      v. 1.1 [unreleased]<br /><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
     </div>
 </p>
         </footer>

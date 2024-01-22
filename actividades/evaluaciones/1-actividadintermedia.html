@@ -110,7 +110,7 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../index.html">
-                    Fundamentos de programación
+                    Fundamentos de programación para las humanidades
                 </a>
             </li>
         </ul>
@@ -820,7 +820,7 @@ title="Print to PDF"
 <span class="w">	</span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">	Esta función retorna una bibliografía en formato CSL-JSON</span>
 <span class="sd">	&quot;&quot;&quot;</span>
-	<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/Taller-Abierto-de-Humanidades-Digitales/curso_python_2023B/main/data/bibliografia.json&quot;</span><span class="p">)</span>
+	<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/Taller-Abierto-de-Humanidades-Digitales/datos_ejemplo/main/JSON/bibliografia.json&quot;</span><span class="p">)</span>
 
 	<span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
@@ -833,10 +833,6 @@ Requirement already satisfied: idna&lt;4,&gt;=2.5 in e:\proyectos\curso_python_e
 Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in e:\proyectos\curso_python_extenso\curso_env\lib\site-packages (from requests) (1.26.14)
 Requirement already satisfied: certifi&gt;=2017.4.17 in e:\proyectos\curso_python_extenso\curso_env\lib\site-packages (from requests) (2022.12.7)
 Note: you may need to restart the kernel to use updated packages.
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[notice] A new release of pip is available: 23.0.1 -&gt; 23.3.1
-[notice] To update, run: python.exe -m pip install --upgrade pip
 </pre></div>
 </div>
 </div>
@@ -872,11 +868,19 @@ Note: you may need to restart the kernel to use updated packages.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número de elementos en la biblioteca: 745
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Número de elementos en la biblioteca: 100
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">17</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">tipos_bibliograficos</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> <span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">biblioteca</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">17</span>     <span class="k">if</span> <span class="n">elemento</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">tipos_bibliograficos</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>         <span class="n">tipos_bibliograficos</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elemento</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">])</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="n">tipos_bibliograficos</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
 
-Tipos de elementos: [&#39;article-journal&#39;, &#39;article-magazine&#39;, &#39;article-newspaper&#39;, &#39;book&#39;, &#39;broadcast&#39;, &#39;chapter&#39;, &#39;document&#39;, &#39;entry-encyclopedia&#39;, &#39;interview&#39;, &#39;motion_picture&#39;, &#39;paper-conference&#39;, &#39;post-weblog&#39;, &#39;thesis&#39;, &#39;webpage&#39;]
-
-Claves de los elementos: [&#39;DOI&#39;, &#39;ISBN&#39;, &#39;ISSN&#39;, &#39;URL&#39;, &#39;abstract&#39;, &#39;accessed&#39;, &#39;archive&#39;, &#39;archive_location&#39;, &#39;author&#39;, &#39;call-number&#39;, &#39;collection-number&#39;, &#39;collection-title&#39;, &#39;container-title&#39;, &#39;contributor&#39;, &#39;dimensions&#39;, &#39;director&#39;, &#39;edition&#39;, &#39;editor&#39;, &#39;event-place&#39;, &#39;event-title&#39;, &#39;genre&#39;, &#39;guest&#39;, &#39;id&#39;, &#39;issue&#39;, &#39;issued&#39;, &#39;journalAbbreviation&#39;, &#39;language&#39;, &#39;license&#39;, &#39;medium&#39;, &#39;note&#39;, &#39;number-of-pages&#39;, &#39;number-of-volumes&#39;, &#39;page&#39;, &#39;performer&#39;, &#39;producer&#39;, &#39;publisher&#39;, &#39;publisher-place&#39;, &#39;source&#39;, &#39;title&#39;, &#39;title-short&#39;, &#39;translator&#39;, &#39;type&#39;, &#39;volume&#39;]
+<span class="ne">KeyError</span>: &#39;type&#39;
 </pre></div>
 </div>
 </div>
@@ -900,7 +904,7 @@ Claves de los elementos: [&#39;DOI&#39;, &#39;ISBN&#39;, &#39;ISSN&#39;, &#39;UR
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;RojasCastro2015datos&#39;, &#39;type&#39;: &#39;article-journal&#39;, &#39;container-title&#39;: &#39;Ínsula&#39;, &#39;note&#39;: &#39;ZSCC: 0000000&#39;, &#39;page&#39;: &#39;15-17&#39;, &#39;title&#39;: &#39;De los datos al metamedio&#39;, &#39;volume&#39;: &#39;822&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Rojas Castro&#39;, &#39;given&#39;: &#39;Antonio&#39;}], &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2015&#39;, 6]]}}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;key&#39;: &#39;FTU5X3NU&#39;, &#39;version&#39;: 3324, &#39;library&#39;: {&#39;type&#39;: &#39;group&#39;, &#39;id&#39;: 197065, &#39;name&#39;: &#39;Humanidades Digitales&#39;, &#39;links&#39;: {&#39;alternate&#39;: {&#39;href&#39;: &#39;https://www.zotero.org/groups/humanidades_digitales&#39;, &#39;type&#39;: &#39;text/html&#39;}}}, &#39;links&#39;: {&#39;self&#39;: {&#39;href&#39;: &#39;https://api.zotero.org/groups/197065/items/FTU5X3NU&#39;, &#39;type&#39;: &#39;application/json&#39;}, &#39;alternate&#39;: {&#39;href&#39;: &#39;https://www.zotero.org/groups/humanidades_digitales/items/FTU5X3NU&#39;, &#39;type&#39;: &#39;text/html&#39;}}, &#39;meta&#39;: {&#39;createdByUser&#39;: {&#39;id&#39;: 1443821, &#39;username&#39;: &#39;antoniorojascastro&#39;, &#39;name&#39;: &#39;Antonio Rojas Castro&#39;, &#39;links&#39;: {&#39;alternate&#39;: {&#39;href&#39;: &#39;https://www.zotero.org/antoniorojascastro&#39;, &#39;type&#39;: &#39;text/html&#39;}}}, &#39;lastModifiedByUser&#39;: {&#39;id&#39;: 210947, &#39;username&#39;: &#39;teresa.marquez&#39;, &#39;name&#39;: &#39;Teresa Márquez&#39;, &#39;links&#39;: {&#39;alternate&#39;: {&#39;href&#39;: &#39;https://www.zotero.org/teresa.marquez&#39;, &#39;type&#39;: &#39;text/html&#39;}}}, &#39;creatorSummary&#39;: &#39;Rojas Castro&#39;, &#39;parsedDate&#39;: &#39;2023-11-30&#39;, &#39;numChildren&#39;: 0}, &#39;data&#39;: {&#39;key&#39;: &#39;FTU5X3NU&#39;, &#39;version&#39;: 3324, &#39;itemType&#39;: &#39;bookSection&#39;, &#39;title&#39;: &#39;Multilingual Interfaces for All? Localisation Strategies in Proyecto Humboldt Digital&#39;, &#39;creators&#39;: [{&#39;creatorType&#39;: &#39;bookAuthor&#39;, &#39;firstName&#39;: &#39;Lorella&#39;, &#39;lastName&#39;: &#39;Viola&#39;}, {&#39;creatorType&#39;: &#39;bookAuthor&#39;, &#39;firstName&#39;: &#39;Paul&#39;, &#39;lastName&#39;: &#39;Spence&#39;}, {&#39;creatorType&#39;: &#39;author&#39;, &#39;firstName&#39;: &#39;Antonio&#39;, &#39;lastName&#39;: &#39;Rojas Castro&#39;}], &#39;abstractNote&#39;: &#39;This chapter focuses on multilingualism in graphical user interfaces. After reflecting on the concepts of localisation, locale, and GILT process, the chapter presents Proyecto Humboldt Digital while drawing special attention to the definition of its target audience to create digital outputs that are user friendly and accessible. To illustrate these ideas, two case studies are discussed critically: on the one hand, the localisation of a software extension from German into Spanish, which enables researchers to mark up texts without dealing with the underlying XML format; on the other hand, the development of a multilingual website available in Spanish, German, and English to disseminate digital scholarly editions.&#39;, &#39;bookTitle&#39;: &#39;Multilingual Digital Humanities&#39;, &#39;series&#39;: &#39;&#39;, &#39;seriesNumber&#39;: &#39;&#39;, &#39;volume&#39;: &#39;&#39;, &#39;numberOfVolumes&#39;: &#39;&#39;, &#39;edition&#39;: &#39;1&#39;, &#39;place&#39;: &#39;London&#39;, &#39;publisher&#39;: &#39;Routledge&#39;, &#39;date&#39;: &#39;2023-11-30&#39;, &#39;pages&#39;: &#39;183-196&#39;, &#39;language&#39;: &#39;en&#39;, &#39;ISBN&#39;: &#39;978-1-00-339369-6&#39;, &#39;shortTitle&#39;: &#39;Multilingual Interfaces for All?&#39;, &#39;url&#39;: &#39;https://www.taylorfrancis.com/books/9781003393696/chapters/10.4324/9781003393696-16&#39;, &#39;accessDate&#39;: &#39;2023-12-05T17:17:39Z&#39;, &#39;archive&#39;: &#39;&#39;, &#39;archiveLocation&#39;: &#39;&#39;, &#39;libraryCatalog&#39;: &#39;DOI.org (Crossref)&#39;, &#39;callNumber&#39;: &#39;&#39;, &#39;rights&#39;: &#39;All rights reserved&#39;, &#39;extra&#39;: &#39;DOI: 10.4324/9781003393696-16&#39;, &#39;tags&#39;: [{&#39;tag&#39;: &#39;/unread&#39;, &#39;type&#39;: 1}], &#39;collections&#39;: [], &#39;relations&#39;: {}, &#39;dateAdded&#39;: &#39;2023-12-08T14:03:48Z&#39;, &#39;dateModified&#39;: &#39;2023-12-08T18:21:36Z&#39;}}
 </pre></div>
 </div>
 </div>
@@ -913,7 +917,12 @@ Claves de los elementos: [&#39;DOI&#39;, &#39;ISBN&#39;, &#39;ISSN&#39;, &#39;UR
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>De los datos al metamedio
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="n">biblioteca</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
+
+<span class="ne">KeyError</span>: &#39;title&#39;
 </pre></div>
 </div>
 </div>
@@ -930,8 +939,15 @@ Claves de los elementos: [&#39;DOI&#39;, &#39;ISBN&#39;, &#39;ISSN&#39;, &#39;UR
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;id&#39;: &#39;Afanador2019Que&#39;, &#39;type&#39;: &#39;motion_picture&#39;, &#39;abstract&#39;: &#39;Maria José Afanador, profesora de la Maestría en Humanidades Digitales de la Universidad de los Andes, explica qué son las Humanidades Digitales y cuál es su pertinencia en la actualidad.&#39;, &#39;dimensions&#39;: &#39;0:56&#39;, &#39;note&#39;: &#39;Directors: _:n3225&#39;, &#39;source&#39;: &#39;YouTube&#39;, &#39;title&#39;: &#39;¿Qué son las Humanidades Digitales?&#39;, &#39;URL&#39;: &#39;https://www.youtube.com/watch?v=otNSk8oNz8k&#39;, &#39;director&#39;: [{&#39;family&#39;: &#39;Afanador&#39;, &#39;given&#39;: &#39;María José&#39;}], &#39;accessed&#39;: {&#39;date-parts&#39;: [[&#39;2019&#39;, 10, 14]]}, &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2019&#39;, 10, 14]]}}
-{&#39;id&#39;: &#39;GalinaRussell2011Que&#39;, &#39;type&#39;: &#39;article-journal&#39;, &#39;container-title&#39;: &#39;Revista digital universitaria&#39;, &#39;issue&#39;: &#39;7&#39;, &#39;note&#39;: &#39;ZSCC: 0000080&#39;, &#39;page&#39;: &#39;3-10&#39;, &#39;title&#39;: &#39;¿Qué son las humanidades digitales?&#39;, &#39;URL&#39;: &#39;http://www.revista.unam.mx/vol.12/num7/art68/art68.pdf&#39;, &#39;volume&#39;: &#39;12&#39;, &#39;author&#39;: [{&#39;family&#39;: &#39;Galina Russell&#39;, &#39;given&#39;: &#39;Isabel&#39;}], &#39;issued&#39;: {&#39;date-parts&#39;: [[&#39;2011&#39;]]}}
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">titulo</span> <span class="o">=</span> <span class="s1">&#39;¿Qué son las Humanidades Digitales?&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="n">biblioteca</span><span class="p">:</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="k">if</span> <span class="n">elemento</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="n">titulo</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>         <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: &#39;title&#39;
 </pre></div>
 </div>
 </div>
@@ -1096,7 +1112,7 @@ Se<span class="w"> </span>encontraron<span class="w"> </span><span class="m">4</
     By Jairo Antonio Melo Flórez<br/>
   
     <div class="extra_footer">
-      v. 1.0.4 [28-08-2023]<br /><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
+      v. 1.1 [unreleased]<br /><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Esta obra está bajo una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licencia de Creative Commons Reconocimiento 4.0 Internacional</a>.
     </div>
 </p>
         </footer>
